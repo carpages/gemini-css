@@ -1,0 +1,248 @@
+/*------------------------------------*\
+  $GRID
+\*------------------------------------*/
+
+/**
+ * This is inspired by the Foundation Grid
+ * http://foundation.zurb.com/docs/components/grid.html
+
+ * You can play with a live example here:
+ * http://codepen.io/mattdrose/pen/crEHG?editors=100
+ */
+
+//
+// Grid Functions
+//
+@function gridCalc($colNumber, $totalColumns) {
+  @return percentage(($colNumber / $totalColumns));
+}
+
+/*
+ * SCREEN SPECIFIED GRID STYLINGS
+ */
+@mixin screen-grid($screen){
+
+  // Center the column
+  .l-column--#{$screen}-centered {
+    margin-left: auto;
+    margin-right: auto;
+    float: none !important;
+  }
+
+  // Add extra spacing between columns
+  .l-row--#{$screen}-spaced > [class*="l-column"]{
+    padding:0 ($column-gutter);
+  }
+  .l-row--#{$screen}-spaced-double > [class*="l-column"]{
+    padding: 0 ($column-gutter * 2);
+  }
+    .l-row--#{$screen}-spaced > [class*="l-column"]:first-child,
+    .l-row--#{$screen}-spaced-double > [class*="l-column"]:first-child{
+      padding-left:$column-gutter / 2;
+    }
+    .l-row--#{$screen}-spaced > [class*="l-column"]:last-child,
+    .l-row--#{$screen}-spaced-double > [class*="l-column"]:last-child{
+      padding-right:$column-gutter / 2;
+    }
+
+  // Remove the margin that spaces the columns on smaller screens
+  [class*="l-column--#{$screen}"]{
+    margin-bottom:0;
+  }
+
+  // Basic column usage
+  @for $i from 1 through $total-columns {
+    .l-column--#{$screen}-#{$i} {
+      width: gridCalc($i, $total-columns);
+    }
+  }
+
+  // Column offsets
+  @for $i from 1 through $total-columns - 2 {
+    .l-column--#{$screen}-offset-#{$i} {
+      margin-left: gridCalc($i, $total-columns);
+    }
+  }
+
+  @if $screen != 'small' {
+    // Reset pull/push to overwrite the smaller screen setting
+    .l-column--#{$screen}-push-reset { left: inherit; }
+    .l-column--#{$screen}-pull-reset { right: inherit; }
+  }
+
+  // Basic push and pulls
+  @for $i from 2 through $total-columns - 2 {
+    .l-column--#{$screen}-push-#{$i} {
+      left: gridCalc($i, $total-columns);
+    }
+    .l-column--#{$screen}-pull-#{$i} {
+      right: gridCalc($i, $total-columns);
+    }
+  }
+    [class*=".l-column--#{$screen}-push"]{
+      right: auto;
+    }
+    [class*=".l-column--#{$screen}-pull"]{
+      left: auto;
+    }
+}
+
+@if $use-grid == true{
+
+/**
+  * @module Grid Row [.l-row]
+  * @description Grid container for columns
+  *
+  * @modifier [.l-row--collapse] Collapse spacing between inner columns
+  * @modifier [.l-row--flush] Flush out the columns to the edge of the container
+  * @modifier [.l-row--{screen}-spaced] Space out the inner columns
+  * @modifier [.l-row--{screen}-double-spaced] Space out the inner columns
+  *
+  * @markup
+  <div class="l-row">
+    <div class="l-column--small-3 l-column--large-9">
+      <div class="greybox greybox--small">Small: 3, Large: 9</div>
+    </div>
+    <div class="l-column--small-9 l-column--large-3">
+      <div class="greybox greybox--small">Small: 9, Large: 3</div>
+    </div>
+  </div>
+  */
+.l-row {
+  @extend .clearfix;
+  width: 100%;
+  margin: 0 auto;
+  max-width: $max-row-width;
+
+  // Since columns have padding, we need to counter it in embeds
+  // Fullfillment of #519 should allow for this:
+  // [class*="l-column"] > & {
+  [class*="l-column"] &{
+    width: auto;
+    margin-left: -($column-gutter/2);
+    margin-right: -($column-gutter/2);
+    max-width: none;
+  }
+}
+  // Collapsed columns with no spacing
+  .l-row--collapse > [class*="l-column"] {
+    padding: 0;
+
+    & > .l-row{
+      margin:0;
+    }
+  }
+    //Don't counter the padding if it's an embed
+    [class*="l-column"] .l-row--collapse{
+      margin-left:0;
+      margin-right:0;
+    }
+  // Only collapse the spacing on the end columns
+  .l-row--flush > [class*="l-column"]{
+    &:first-child{
+      padding-left:0!important;
+    }
+    &:last-child{
+      padding-right:0!important;
+    }
+  }
+
+/**
+  * @module Grid Column [.l-column]
+  * @description Column within a row. Screen size is mobile first (ie. small applies to medium, large, and xlarge).
+  *
+  * @modifier [.l-column--{screen}-{number}] The width you want that column to occupy on the specified screen size
+  * @modifier [.l-column--{screen}-offset-{number}] The space that you want offset before the column on the specified screen size
+  * @modifier [.l-column--{screen}-centered] Center the column on the specified screen size
+  * @modifier [.l-column--{screen}-pull-{number}] How many units you want to pull the column to the left on the specified screen size
+  * @modifier [.l-column--{screen}-push-{number}] How many units you want to push the column to the right on the specified screen size
+  * @modifier [.l-column--{screen}-pull-reset] Reset the pull on the specified screen size
+  * @modifier [.l-column--{screen}-push-reset] Reset the push on the specified screen size
+  */
+[class*="l-column"] {
+  @extend .clearfix;
+  padding: 0 ($column-gutter/2);
+  width: 100%;
+  float: left;
+  margin-bottom: $base-spacing-unit;
+}
+
+//Float the last column to the right
+[class*="l-column"] + [class*="l-column"]:last-child {
+  float: right;
+
+  //Unless the last column is specified as end
+  &.end{
+    float: left;
+  }
+}
+
+/*
+ * INCLUDE SCREEN BREAKPOINTS
+ */
+@include screen-grid('small');
+
+@include media-query($grid-medium-breakpoint) {
+  @include screen-grid('medium');
+}
+
+@include media-query($grid-large-breakpoint) {
+  @include screen-grid('large');
+}
+
+@include media-query($grid-xlarge-breakpoint) {
+  @include screen-grid('xlarge');
+}
+
+@media print{
+  @include screen-grid('print');
+}
+
+/**
+  * @example Nest Your Grid
+  * @description The grid allows for nesting down as far as you'd like.
+  *
+  * @markup
+  <div class="l-row">
+    <div class="l-column--small-6">
+      <div class="l-row">
+        <div class="l-column--small-6"><div class="greybox">6&rarr;6</div></div>
+        <div class="l-column--small-6"><div class="greybox">6&rarr;6</div></div>
+      </div>
+    </div>
+    <div class="l-column--small-6"><div class="greybox">6</div></div>
+  </div>
+  */
+
+/**
+  * @example Offset
+  * @description Offsets allow you to create additional space between columns in a row.
+  *
+  * @markup
+  <div class="l-row">
+    <div class="l-column--small-3 l-column--small-offset-2">
+      <div class="greybox">3, offset 2</div>
+    </div>
+    <div class="l-column--small-6 l-column--small-offset-1">
+      <div class="greybox">6, offset 1</div>
+    </div>
+  </div>
+  */
+
+/**
+  * @example Pull and push
+  * @description Pull and push allow you to move columns to the left or right of their natural placement. This is useful for changing the order of elements on different devices.
+  * @markup
+  <div class="l-row">
+    <div class="l-column--small-3 l-column--small-push-9
+                l-column--medium-push-reset">
+      <div class="inner">3, first</div>
+    </div>
+    <div class="l-column--small-9 l-column--small-pull-3
+                l-column--medium-pull-reset">
+      <div class="inner">9, last</div>
+    </div>
+  </div>
+  */
+
+}//end

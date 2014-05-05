@@ -1,0 +1,26 @@
+/*------------------------------------*\
+	$BRAND
+\*------------------------------------*/
+
+/**
+  * @module Brand [.brand]
+  * @description '.brand' is a quick and simple way to apply your brand face 
+  * and/or colour to any element using a handy helper class.
+  *
+  * @modifier [.brand--face] Just apply the font face
+  * @modifier [.brand--colour] Just apply the colour
+  *
+  * @markup
+  *   <h2 class="brand">I like cheese</h2>
+ **/
+ //Use readable fonts for print
+.brand{
+	@media screen{ font-family:$brand-face +!important; }
+	color:$brand-color +!important;
+}
+.brand--face{
+	@media screen{ font-family:$brand-face +!important; }
+}
+.brand--colour{
+	color:$brand-color +!important;
+}

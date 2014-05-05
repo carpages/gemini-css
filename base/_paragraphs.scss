@@ -1,0 +1,21 @@
+/*------------------------------------*\
+	$PARAGRAPHS
+\*------------------------------------*/
+/**
+ * The `.lede` class is used to make the introductory text (usually a paragraph)
+ * of a document slightly larger.
+ */
+/**
+  * @module Paragraph [p]
+  * @description Check em' paragraphs out
+  *
+  * @modifier [.lede] Make the introductory text (usually a paragraph) of a document slightly larger.
+  *
+  * @markup
+  *   <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+  */
+
+.lede,
+.lead{
+	@include font-size($base-font-size * 1.125);
+}

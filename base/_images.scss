@@ -1,0 +1,60 @@
+/*------------------------------------*\
+	$IMAGES
+\*------------------------------------*/
+/**
+  * @module Images [img]
+  * @description We got some images o-er he-ya
+  *
+  * @modifier [.img--round] Rounded images
+  * @modifier [.img--right] Place right
+  * @modifier [.img--left] Place left
+  * @modifier [.img--center] Place center
+  *
+  * @markup
+  *   <img src="http://www.placecage.com/c/100/100" />
+  */
+/**
+ * Fluid images.
+ */
+img, .img{
+	max-width:100%;
+	display: block;
+	font-style: italic;//So that `alt` text is visually offset if images don’t load.
+}
+
+
+/**
+ * Non-fluid images if you specify `width` and/or `height` attributes.
+ */
+img[width],
+img[height]{
+	max-width:none;
+}
+
+
+/**
+ * Rounded images.
+ */
+.img--round { border-radius:$brand-round; }
+
+
+/**
+ * Image placement variations.
+ */
+.img--right{
+	float:right;
+	margin-bottom:$base-spacing-unit;
+	margin-left:$base-spacing-unit;
+}
+.img--left{
+	float:left;
+	margin-right:$base-spacing-unit;
+	margin-bottom:$base-spacing-unit;
+}
+.img--center, .img--centre{
+	display:block;
+	margin-right:auto;
+	margin-bottom:$base-spacing-unit;
+	margin-left:auto;
+}
+

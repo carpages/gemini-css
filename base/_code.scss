@@ -1,0 +1,71 @@
+/*------------------------------------*\
+	$CODE
+\*------------------------------------*/
+
+code,
+pre {
+	padding: 0 3px 2px;
+	font-family: $monaco;
+	font-size: $base-font-size - 2;
+	color: $dark-grey;
+	@include border-radius(3px);
+}
+
+/**
+  * @module Inline Code [code]
+  * @description Display inline code
+  *
+  * @markup
+  *   <p><code>console.log('Hello World!');</code></p>
+  */
+code {
+	padding: 2px 4px;
+	color: $dark-blue;
+	background-color: $lightest-grey;
+	border: 1px solid $lighter-grey;
+	white-space: nowrap;
+}
+
+/**
+  * @module Blocked Code [pre]
+  * @description Display blocks of code
+  *
+  * @modifier [.pre__scrollable] Gives max height so that block is scrollable
+  *
+  * @markup
+  *   <pre><code>
+  *       var foo = "Hello";<br/>
+  *       var bar = " World!";<br/>
+  *       console.log(foo + bar);
+  *   </code></pre>
+  */
+pre {
+	display: block;
+	padding: ($half-spacing-unit - 1) / 2;
+	font-size: $base-font-size - 1; // 14px to 13px
+	line-height: $base-line-height;
+	word-break: break-all;
+	word-wrap: break-word;
+	white-space: pre;
+	white-space: pre-wrap;
+	background-color: $lightest-grey;
+	border: 1px solid #ccc; // fallback for IE7-8
+	border: 1px solid rgba(0,0,0,.15);
+	@include border-radius($brand-round);
+
+	// Enable scrollable blocks of code
+	&.pre__scrollable {
+		max-height: 340px;
+		overflow-y: scroll;
+	}
+
+	// Account for some code outputs that place code tags in pre tags
+	code {
+		padding: 0;
+		color: inherit;
+		white-space: pre;
+		white-space: pre-wrap;
+		background-color: transparent;
+		border: 0;
+	}
+}

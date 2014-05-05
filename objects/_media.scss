@@ -1,0 +1,75 @@
+@if $use-media == true{
+
+/*------------------------------------*\
+	$MEDIA
+\*------------------------------------*/
+
+/**
+  * @module Media [.media]
+  * @description Place any image and text-like content side-by-side
+  */
+.media{
+	display:block;
+	@extend .clearfix;
+
+	&:last-child{
+		@extend .flush--bottom;
+	}
+}
+
+	/**
+	  * @submodule Media Image [.media__img]
+	  * @description Image container for media
+	  *
+	  * @modifier [.media__img--rev] Reverse the image location
+	  */
+	.media__img{
+		float:left;
+		margin-right:$base-spacing-unit;
+	}
+	/**
+	 * Reversed image location (right instead of left).
+	 */
+	.media__img--rev{
+		float:right;
+		margin-left:$base-spacing-unit;
+	}
+
+		.media__img img,
+		.media__img--rev img{
+			display:block;
+		}
+
+	/**
+	  * @submodule Media Body [.media__content]
+	  * @description Body copy associated to the image
+	  */
+	.media__content{
+		overflow:hidden;
+	}
+		.media__content,
+		.media__content > :last-child{
+			margin-bottom:0;
+		}
+
+/**
+  * @example
+  *
+  * @markup
+	<div class=media>
+		<img src=http://www.placecage.com/150/150 alt="" class=media__img>
+		<p class=media__content>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+	</div>
+  */
+
+/**
+  * @example Reversed media object
+  *
+  * @markup
+	<div class=media>
+		<img src=http://www.placecage.com/150/150 alt="" class=media__img--rev>
+		<p class=media__content>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+	</div>
+  */
+
+}//endif

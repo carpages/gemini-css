@@ -1,0 +1,91 @@
+@if $use-stats == true{
+
+ /*------------------------------------*\
+	 $STATS
+ \*------------------------------------*/
+
+/**
+  * @module Stat Group [.stat-group]
+  * @description Group of stat objects
+  */
+.stat-group{
+	@extend .clearfix;
+	margin-left:-$base-spacing-unit;
+}
+
+	%stat-group--n{
+	  margin-left:0;
+	  .stat{
+		margin-left:0;
+	  }
+	}
+
+	.stat-group--3{
+	  @extend %stat-group--n;
+	  .stat{
+		width:33.333%;
+	  }
+	}
+
+	.stat-group--4{
+	  @extend %stat-group--n;
+	  .stat{
+		width:25%;
+	  }
+	}
+
+	/**
+	  * @module Stat [.stat]
+	  * @description Simple object to display key–value statistic-like information
+	  *
+	  * @markup
+	  *
+		<dl class=stat>
+			<dt class=stat__title>Followers</dt>
+			<dd class=stat__value>12,105</dd>
+		</dl>
+	  */
+	.stat{
+		float:left;
+		margin-left:$base-spacing-unit;
+	}
+
+		/**
+		  * @submodule Stat Title [.stat__title]
+		  * @description Title of a stat
+		  */
+
+		.stat__title{
+		  margin-left:0;
+		}
+		/**
+		  * @submodule Stat Value [.stat__title]
+		  * @description Title of a stat
+		  */
+		.stat__value{
+		  margin-left:0;
+		}
+
+/**
+  * @example Group of Stats
+  *
+  * @markup
+	<div class=stat-group>
+		<dl class=stat>
+			<dt class=stat__title>Tweets</dt>
+			<dd class=stat__value>27,740</dd>
+		</dl>
+
+		<dl class=stat>
+			<dt class=stat__title>Following</dt>
+			<dd class=stat__value>11,529</dd>
+		</dl>
+
+		<dl class=stat>
+			<dt class=stat__title>Followers</dt>
+			<dd class=stat__value>12,105</dd>
+		</dl>
+	</div>
+  */
+
+}//endif

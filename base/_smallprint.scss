@@ -1,0 +1,23 @@
+/*------------------------------------*\
+	$SMALLPRINT
+\*------------------------------------*/
+
+/**
+ * @module Small Print
+ * @description A series of classes for setting tiny type; for use in smallprint etc.
+ *
+ * @modifier [.milli] Small
+ *
+ * @modifier [.micro] Even smaller
+ *
+ * @markup
+ *   <small class="milli">Milli</small>
+ *   <small class="micro">Micro</small>
+ */
+.smallprint,
+.milli{
+	@include font-size($milli-size);
+}
+.micro{
+	@include font-size($micro-size);
+}

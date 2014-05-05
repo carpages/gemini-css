@@ -1,0 +1,40 @@
+@if $use-link-complex == true{
+
+/*------------------------------------*\
+	$LINK-COMPLEX
+\*------------------------------------*/
+
+/**
+  * @module Complext Links [.link-complex]
+  * @description Add hover behaviour to only selected items within links (https://github.com/necolas/suit-utils-link/blob/master/link.css)
+  */
+.link-complex,
+.link-complex:hover,
+.link-complex:active,
+.link-complex:focus{
+	text-decoration:none;
+	color:inherit;
+}
+  .link-complex__target{
+	color:$link-color;
+  }
+	/**
+	  * @submodule Link target [.link-complex__target]
+	  * @description Text in link to underline
+	  */
+	.link-complex:hover .link-complex__target,
+	.link-complex:active .link-complex__target,
+	.link-complex:focus .link-complex__target{
+		text-decoration:underline;
+	}
+
+/**
+  * @example
+  *
+  * @markup
+	<a href=# class=link-complex>
+		<span class=link-complex__target>Log in</span> to your account
+	</a>
+  */
+
+}//endif

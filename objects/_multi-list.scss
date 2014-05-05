@@ -1,0 +1,64 @@
+@if $use-multi-list == true{
+
+/*------------------------------------*\
+	$MULTI-LIST
+\*------------------------------------*/
+
+/**
+  * @module Multi Lists [.multi-list]
+  * @description Splits a list into multiple columns
+  *
+  * @modifier [.multi-list--small-2] Two columns
+  * @modifier [.multi-list--small-3] Three columns
+  *
+  * @markup
+	<ul class="multi-list  multi-list--small-2">
+		<li>Lorem</li>
+		<li>Ipsum</li>
+		<li>Dolor</li>
+		<li>Sit</li>
+  	</ul>
+  */
+.multi-list{
+	list-style:none;
+	margin-left:0;
+	@extend .clearfix;
+}
+	.multi-list > li{
+		float:left;
+		width:100%;
+	}
+
+
+	/**
+	 * Apply these classes alongside the `.matrix` or `.multi-list` classes on
+	 * lists to determine how wide their columns are.
+	 */
+	@for $i from 2 through 4{
+		.multi-list--small-#{$i} > li{
+			width:percentage(1/$i);
+		}
+	}
+	@include quick-media-query(medium){
+		@for $i from 2 through 4{
+			.multi-list--medium-#{$i} > li{
+				width:percentage(1/$i);
+			}
+		}
+	}
+	@include quick-media-query(large){
+		@for $i from 2 through 5{
+			.multi-list--large-#{$i} > li{
+				width:percentage(1/$i);
+			}
+		}
+	}
+	/**
+	 * Unfortunately we have to qualify this selector in order to bring its
+	 * specificity above the `.[number]-cols > li` selectors above.
+	 */
+	.multi-list > .all-cols{
+		width:100%;
+	}
+
+}//endif

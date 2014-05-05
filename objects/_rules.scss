@@ -1,0 +1,108 @@
+@if $use-rules == true{
+
+/*------------------------------------*\
+	$RULES
+\*------------------------------------*/
+
+/**
+  * @module Horizontal Rules [.rule]
+  * @description Adds a horizontal line as a break (extends 'hr')
+  *
+  * @modifier [.rule--dotted] Dotted rules
+  * @modifier [.rule--dashed] Dashed rules
+  * @modifier [.rule--ornament] Ornament rules
+  *
+  * @markup
+	<h1 class="rule">Carpages.ca</h1>
+
+	<p>This one's dotted</p>
+	<hr class="rule rule--dotted">
+
+	<p>This one's dashed</p>
+	<hr class="rule rule--dashed">
+
+	<p>This one has an ornament over it</p>
+	<hr class="rule rule--ornament">
+  */
+
+/**
+  * @example Custom ornaments
+  * @description You can add custom ornaments through the data attribute
+  *
+  * @markup
+	<h3>Mmmm... so custom</h3>
+	<hr class="rule rule--ornament" data-ornament="!">
+  */
+
+%rule{
+  border:none;
+}
+
+.rule{
+	@extend %rule;
+	border-bottom:1px solid $base-ui-color;
+}
+  .rule--left{
+	@extend %rule;
+	border-left:1px solid $base-ui-color;
+  }
+  .rule--right{
+	@extend %rule;
+	border-right:1px solid $base-ui-color;
+  }
+  .rule--top{
+	@extend %rule;
+	border-top:1px solid $base-ui-color;
+  }
+
+.rule--brand{
+  border-color:$brand-color;
+}
+
+.rule--large{
+  border-width:4px;
+}
+
+/**
+ * Dotted rules
+ */
+.rule--dotted{
+	border-bottom-style:dotted;
+}
+
+
+/**
+ * Dashed rules
+ */
+.rule--dashed{
+	border-bottom-style:dashed;
+}
+
+
+/**
+ * Ornamental rules. Places a § over the rule.
+ */
+.rule--ornament{
+	position:relative;
+
+	&:after{
+		content:"\00A7";
+		position:absolute;
+		top:   0;
+		right: 0;
+		left:  0;
+		line-height:0;
+		text-align:center;
+	}
+
+	/**
+	* Pass in an arbitrary ornament though a data attribute
+	*/
+	&[data-ornament]:after{
+		content:attr(data-ornament);
+	}
+}
+
+
+
+}//endif

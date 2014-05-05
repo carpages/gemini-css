@@ -1,0 +1,485 @@
+/*------------------------------------*\
+	$MIXINS
+\*------------------------------------*/
+/**
+  * @module Mixins
+  * @description A number of useful mixins for writing SASS. I haven't come up with a good way of documenting them yet :(. For not, just check the source code for documentation.
+  */
+
+/**
+ * Create a fully formed type style (sizing and vertical rhythm) by passing in a
+ * single value, e.g.:
+ *
+   `@include font-size(10px);`
+ *
+ * Thanks to @redclov3r for the `line-height` Sass:
+ * twitter.com/redclov3r/status/250301539321798657
+ */
+@mixin font-size($font-size, $line-height:false){
+	font-size:$font-size;
+	@if $use-rem == true{
+		font-size:($font-size / $base-font-size)*1rem;
+	}
+	@if $line-height != false{
+		line-height:ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+	}
+}
+
+
+/**
+ * Style any number of headings in one fell swoop, e.g.:
+ *
+   .foo{
+	   @include headings(1, 3){
+		   color:#BADA55;
+	   }
+	}
+ *
+ * With thanks to @lar_zzz, @paranoida, @rowanmanning and ultimately
+ * @thierrylemoulec for refining and improving my initial mixin.
+ */
+@mixin headings($from: 1, $to: 6){
+	%base-heading {
+		@content
+	}
+
+	@if $from >= 1 and $to <= 6{
+		@for $i from $from through $to{
+			h#{$i}{
+				@extend %base-heading;
+			}
+		}
+	}
+}
+
+
+/**
+ * Create vendor-prefixed CSS in one go, e.g.
+ *
+   `@include vendor(border-radius, 4px);`
+ *
+ */
+@mixin vendor($property, $value...){
+	-webkit-#{$property}:$value;
+	   -moz-#{$property}:$value;
+		-ms-#{$property}:$value;
+		 -o-#{$property}:$value;
+			#{$property}:$value;
+}
+
+
+/**
+ * Create CSS keyframe animations for all vendors in one go, e.g.:
+ *
+   .foo{
+	   @include vendor(animation, shrink 3s);
+   }
+
+   @include keyframe(shrink){
+	   from{
+		   font-size:5em;
+	   }
+   }
+ *
+ * Courtesy of @integralist: twitter.com/integralist/status/260484115315437569
+ */
+@mixin keyframe ($animation-name){
+	@-webkit-keyframes $animation-name{
+		@content;
+	}
+
+	@-moz-keyframes $animation-name{
+		@content;
+	}
+
+	@-ms-keyframes $animation-name{
+		@content;
+	}
+
+	@-o-keyframes $animation-name{
+		@content;
+	}
+
+	@keyframes $animation-name{
+		@content;
+	}
+}
+
+
+/**
+ * Force overly long spans of text to truncate, e.g.:
+ *
+   `@include truncate(100%);`
+ *
+ * Where `$truncation-boundary` is a united measurement.
+ */
+@mixin truncate($truncation-boundary){
+	max-width:$truncation-boundary;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+
+/**
+ * Have fallback for rgba background for browsers that don't support
+ *
+	@include rgba-background(#090, .5);
+	@include rgba-background(rgb(0,0,0), .5);
+ *
+ */
+@mixin rgba-background($colour, $alpha){
+	background:$colour;
+	background:rgba($colour, $alpha);
+}
+
+
+/**
+ * CSS arrows!!! But... before you read on, you might want to grab a coffee...
+ *
+ * This mixin creates a CSS arrow on a given element. We can have the arrow
+ * appear in one of 12 locations, thus:
+ *
+ *       01    02    03
+ *    +------------------+
+ * 12 |                  | 04
+ *    |                  |
+ * 11 |                  | 05
+ *    |                  |
+ * 10 |                  | 06
+ *    +------------------+
+ *       09    08    07
+ *
+ * You pass this position in along with a desired arrow color and optional
+ * border color, for example:
+ *
+ * `@include arrow(top, left, red)`
+ *
+ * for just a single, red arrow, or:
+ *
+ * `@include arrow(bottom, center, red, black)`
+ *
+ * which will create a red triangle with a black border which sits at the bottom
+ * center of the element. Call the mixin thus:
+ *
+   .foo{
+	   background-color:#BADA55;
+	   border:1px solid #ACE;
+	   @include arrow(top, left, #BADA55, #ACE);
+   }
+ *
+ */
+@mixin arrow($arrow-edge, $arrow-location, $arrow-color, $border-color: $arrow-color){
+
+	@if $arrow-edge == top{
+
+		@extend %arrow--top;
+
+		@if $border-color != false{
+			&:before{
+				border-bottom-color:$border-color!important;
+			}
+		}
+
+		&:after{
+			border-bottom-color:$arrow-color!important;
+		}
+
+		@if $arrow-location == left{
+			@extend %arrow--left;
+		}
+
+		@if $arrow-location == center{
+			@extend %arrow--center;
+		}
+
+		@if $arrow-location == right{
+			@extend %arrow--right;
+		}
+
+	}
+
+	@if $arrow-edge == right{
+
+		@extend %arrow--far;
+
+		@if $border-color != false{
+			&:before{
+				border-bottom-color:$border-color!important;
+			}
+		}
+
+		&:after{
+			border-left-color:$arrow-color!important;
+		}
+
+		@if $arrow-location == top{
+			@extend %arrow--upper;
+		}
+
+		@if $arrow-location == center{
+			@extend %arrow--middle;
+		}
+
+		@if $arrow-location == bottom{
+			@extend %arrow--lower;
+		}
+
+	}
+
+	@if $arrow-edge == bottom{
+
+		@extend %arrow--bottom;
+
+		&:before{
+			border-top-color:$border-color!important;
+		}
+
+		&:after{
+			border-top-color:$arrow-color!important;
+		}
+
+		@if $arrow-location == left{
+			@extend %arrow--left;
+		}
+
+		@if $arrow-location == center{
+			@extend %arrow--center;
+		}
+
+		@if $arrow-location == right{
+			@extend %arrow--right;
+		}
+
+	}
+
+	@if $arrow-edge == left{
+
+		@extend %arrow--near;
+
+		&:before{
+			border-right-color:$border-color!important;
+		}
+
+		&:after{
+			border-right-color:$arrow-color!important;
+		}
+
+		@if $arrow-location == top{
+			@extend %arrow--upper;
+		}
+
+		@if $arrow-location == center{
+			@extend %arrow--middle;
+		}
+
+		@if $arrow-location == bottom{
+			@extend %arrow--lower;
+		}
+
+	}
+
+}
+
+
+/**
+ * Quick media query mixin.
+ *
+ * It’s not great practice to define solid breakpoints up-front, preferring to
+ * modify your design when it needs it, rather than assuming you’ll want a
+ * change at ‘mobile’. However, as inuit.css is required to take a hands off
+ * approach to design decisions, this is the closest we can get to baked-in
+ * responsiveness. It’s flexible enough to allow you to set your own breakpoints
+ * but solid enough to be frameworkified.
+ *
+ * We define some broad breakpoints in our vars file that are picked up here
+ * for use in a simple media query mixin. Our options are:
+ *
+ * medium
+ * large
+ * xlarge
+ *
+ * visible-small
+ * visible-medium
+ * visible-large
+ *
+ * hidden-small
+ * hidden-medium
+ * hidden-large
+ *
+ * Not using a media query will, naturally, serve styles to all devices.
+ *
+ * `@include media-query(small-only){ [styles here] }`
+ *
+ * We work out your end points for you:
+ */
+$small-end:              $medium-start - 1px;
+$medium-end:               $large-start - 1px;
+
+@mixin quick-media-query($media-query, $print: false){
+
+	@if $media-query == medium or $media-query == hidden-small{
+
+		@include media-query($medium-start, 99999, $print) { @content; }
+
+	}
+
+	@if $media-query == large or $media-query == visible-large{
+
+		@include media-query($large-start, 99999, $print) { @content; }
+
+	}
+
+	@if $media-query == xlarge{
+
+		@include media-query($xlarge-start, 99999, $print) { @content; }
+
+	}
+
+	@if $media-query == visible-small{
+
+		@include media-query(0, $small-end, $print) { @content; }
+
+	}
+
+	@if $media-query == visible-medium{
+
+		@include media-query($medium-start, $medium-end, $print) { @content; }
+
+	}
+
+	@if $media-query == hidden-medium{
+
+		@include media-query($large-start, $small-end, $print) { @content; }
+
+	}
+
+	@if $media-query == hidden-large{
+
+		@include media-query(0, $medium-end, $print) { @content; }
+
+	}
+
+	@if $media-query == retina{
+
+		@media
+		only screen and (-webkit-min-device-pixel-ratio: 2),
+		only screen and (   min--moz-device-pixel-ratio: 2),
+		only screen and (     -o-min-device-pixel-ratio: 2/1),
+		only screen and (        min-device-pixel-ratio: 2),
+		only screen and (                min-resolution: 192dpi),
+		only screen and (                min-resolution: 2dppx) {
+
+		@content;
+
+		}
+
+	}
+
+	@if $media-query == ''{
+		@content;
+	}
+
+}
+/**
+ * Media Query Mixin
+ *
+ * This is a simple media query mixin that supports min and max widths.
+ *
+ * IE8 doesn't support media queries, so set $fixed-queries to a width to
+ * create style sheets for that particular width.
+ * Inspired by: //http://jakearchibald.github.com/sass-ie/
+ *
+ **/
+
+@mixin media-query($min, $max: 99999, $print: false){
+
+	$print-query: "";
+	@if $print == true {$print-query: "print, ";}
+
+	// If we're outputting for a fixed media query...
+	@if $fixed-queries {
+		//If the fixed query is in the media query range
+
+		@if $fixed-queries >= $min and $fixed-queries <= $max { @content }
+
+	}
+	@else {
+
+		@if $min >= 0 and $max < 99999 {
+			@media #{$print-query}screen and (min-width: $min) and (max-width: $max) { @content; }
+		}
+
+		@else if $min >= 0 {
+			@media #{$print-query}screen and (min-width: $min) { @content; }
+		}
+
+		@else if $max < 99999 {
+			@media #{$print-query}screen and (max-width: $min) { @content; }
+		}
+
+	}
+}
+
+/**
+ * Font Face from the Bourbon library
+ *
+ * I'm not a big fan of the Compass font-face mixin.
+ * Bourbon's is better http://bourbon.io/docs/#font-face
+ */
+
+@mixin bourbon-font-face($font-family, $file-path, $weight: normal, $style: normal, $version: 1 ) {
+  @font-face {
+	font-family: $font-family;
+	src: url('#{$file-path}.eot?bust=v#{$version}');
+	src: url('#{$file-path}.eot?#iefix')               format('embedded-opentype'),
+	     url('#{$file-path}.woff?bust=v#{$version}')   format('woff'),
+	     url('#{$file-path}.ttf?bust=v#{$version}')    format('truetype'),
+	     url('#{$file-path}.svg##{$font-family}')      format('svg');
+	font-weight: $weight;
+	font-style: $style;
+  }
+}
+
+/*
+ * This will be in Compass Stable soon
+ * https://github.com/chriseppstein/compass/issues/1296
+ */
+
+// Computes the "brightness" of a color
+//
+// Brightness is similiar to lightness in HSL but more closely approximates
+// how humans perceive the intensity of the different RGB components of
+// a color. Brightness is sometimes called luminance.
+//
+// Returns a number between 0% and 100%, where 100% is fully bright
+// (white) and 0% is fully dark (black).
+@function brightness($color) {
+	@return ((red($color) * .299) + (green($color) * .587) + (blue($color) * .114)) / 255 * 100%;
+}
+
+@function contrast-color(
+		$color,
+		$dark: #333,
+		$light: #fff
+	) {
+	@if $color == null {
+		@return null;
+	}
+	@else {
+		$color-brightness: brightness($color);
+		$dark-text-brightness: brightness($dark);
+		$light-text-brightness: brightness($light);
+
+		@return if(abs($color-brightness - $light-text-brightness) > abs($color-brightness - $dark-text-brightness), $light, $dark);
+	}
+}
+
+// Lighten works weird. https://groups.google.com/d/msg/compass-users/umJGUEn6jpQ/MKeUs97DIj0J
+// https://github.com/nex3/sass/issues/598
+@function lighter($color, $percent){
+	@return scale-color($color, $lightness: $percent);
+}
+
+@function darker($color, $percent){
+	@return scale-color($color, $lightness: -$percent);
+}

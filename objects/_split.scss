@@ -1,0 +1,37 @@
+@if $use-split == true{
+
+/*------------------------------------*\
+	$SPLIT
+\*------------------------------------*/
+
+/**
+  * @module Split [.split]
+  * @description Simple split item for creating two elements floated away from one another
+  */
+.split{
+	text-align:right;
+	list-style:none;
+	margin-left:0;
+}
+	/**
+	  * @submodule Split Title [.split__title]
+	  * @description Title of the item (pushes it to the left)
+	  */
+	.split__title{
+		text-align:left;
+		float:left;
+		clear:left;
+	}
+
+/**
+  * @example Split list
+  *
+  * @markup
+	<ol class="split">
+		<li class=first><b class=split__title>Engine</b> V8</li>
+		<li class=second><b class=split__title>Seating</b> 4 Peeps</li>
+		<li class=third><b class=split__title>Bluetooth</b> Yup</li>
+	</ol>​
+  */
+
+}//endif

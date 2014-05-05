@@ -1,0 +1,178 @@
+/*------------------------------------*\
+    $FORMS
+\*------------------------------------*/
+
+/**
+  * @module Default Forms [form]
+  * @description Default form layout
+  *
+  * @modifier [.form--inline] Make all elements inline
+  *
+  * @markup
+  *   <form>
+  *       <fieldset>
+  *           <legend>Legend</legend>
+  *           <label>Label name</label>
+  *           <input class="text-input" type="text" placeholder="Type something…">
+  *           <label class="checkbox">
+  *               <input type="checkbox"> Check me out
+  *           </label>
+  *           <button type="submit" class="button">Submit</button>
+  *       </fieldset>
+  *   </form>
+  */
+
+.form--inline{
+	.hN{
+		display:inline-block;
+		margin-bottom:0;
+	}
+	fieldset{
+ 		display:inline-block;
+ 		margin-bottom:0;
+ 	}
+}
+
+/**
+* Labels
+*/
+label {
+	display: block;
+
+	&.required:before{ 
+		content: '* '
+	}
+	
+	input[type="checkbox"] + &{
+		display:inline-block;
+		padding-left:$half-spacing-unit;
+	}
+
+	@include quick-media-query(medium){
+		.form--inline &{
+			display: inline-block;
+		}
+	}
+}
+	/**
+	* Extra help text in `label`s, e.g.:
+	*
+	<label>Card number <small class=additional>No spaces</small></label>
+	*
+	*/
+	.additional{
+		display:block;
+		font-weight:normal;
+	}
+
+/**
+  * @module Text inputs [.text-input]
+  * @description Instead of a `[type]` selector for each kind of form input, we just use a
+  * class to target any/every one, e.g.:
+  *
+  * @markup
+  *   <input type="text" class="text-input" placeholder="Text…">
+  *   <input type="email" class="text-input" placeholder="Email…">
+  *   <input type="password" class="text-input" placeholder="Password…">
+  */
+
+.text-input{
+	max-width:100%;
+}
+
+.text-input,
+textarea{
+	/**
+     * Style these via your theme stylesheet.
+     */
+
+	//Inline
+	.form--inline &{
+		display: inline-block;
+		margin-bottom: 0;
+		vertical-align: middle;
+	}
+}
+
+
+
+/**
+  * @module Radio/Checkbox intputs [.checkbox]
+  * @description Checkbox elements
+  *
+  * @markup
+  *   <label class="checkbox">
+  *       <input type="checkbox" /> Check it!
+  *   </label>
+  */
+.radio,
+.checkbox {
+	//padding-left: $base-spacing-unit;
+
+	//Inline
+	.form--inline &{
+		padding-left: 0;
+		margin-bottom: 0;
+		vertical-align: middle;
+	}
+}
+	.radio input[type="radio"],
+	.checkbox input[type="checkbox"] {
+
+		//Inline
+		.form--inline &{
+			float: left;
+			margin-right: $half-spacing-unit;
+			margin-left: 0;
+		}
+	}
+
+// Position radios and checkboxes better
+input[type="radio"],
+input[type="checkbox"] {
+	margin: 4px 0 0;
+	margin-top: 1px \9; /* IE8-9 */
+	line-height: normal;
+}
+
+// Reset width of input images, buttons, radios, checkboxes
+input[type="file"],
+input[type="image"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="radio"],
+input[type="checkbox"] {
+	width: auto; // Override of generic input selector
+}
+
+
+// Change the cursor
+label,
+select,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="radio"],
+input[type="checkbox"]{
+	cursor:pointer;
+}
+
+
+/**
+  * @module Extra Help [.extra-help]
+  * @description Extra help text displayed after a field when that field is in focus
+  *
+  * @markup
+  *   <label for="email">Email:</label>
+  *   <input type="email" class="text-input" id="email">
+  *   <small class="extra-help">.edu emails only</small>
+  */
+/*small*/.extra-help{
+	display:inline-block;
+	visibility:hidden;
+}
+.text-input:active + .extra-help,
+.text-input:focus + .extra-help{
+	visibility:visible;
+}

@@ -1,0 +1,124 @@
+/*------------------------------------*\
+	$HEADINGS
+\*------------------------------------*/
+
+/**
+  * @module Headings
+  * @description When we define a heading we also define a corresponding class to go with it.
+  *
+  * @markup
+  *   <h1>Heading 1</h1>
+  *   <h2>Heading 2</h2>
+  *   <h3>Heading 3</h3>
+  *   <h4>Heading 4</h4>
+  *   <h5>Heading 5</h5>
+  *   <h6>Heading 6</h6>
+  *
+  *   <h1 class="zeta">Heading 1</h1>
+  *   <h2 class="epsilon">Heading 2</h2>
+  *   <h3 class="delta">Heading 3</h3>
+  *   <h4 class="gamma">Heading 4</h4>
+  *   <h5 class="beta">Heading 5</h5>
+  *   <h6 class="alpha">Heading 6</h6>
+  */
+
+/**
+ * As per: csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
+ *
+ * When we define a heading we also define a corresponding class to go with it.
+ * This allows us to apply, say, `class=alpha` to a `h3`; a double-stranded
+ * heading hierarchy.
+ */
+
+//Map headings, class, and font-sizes
+$headings: 	('h1' 'alpha' $h1-size),
+			('h2' 'beta' $h2-size),
+			('h3' 'gamma' $h3-size),
+			('h4' 'delta' $h4-size),
+			('h5' 'epsilon' $h5-size),
+			('h6' 'zeta' $h6-size);
+
+//Set line-heights
+%heading-line-height{
+	line-height: $heading-line-height;
+}
+
+@each $heading in $headings {
+	#{nth($heading, 1)}, .#{nth($heading, 2)}, .#{nth($heading, 2)}--medium, .#{nth($heading, 2)}--large{
+		@extend %heading-line-height;
+	}
+}
+
+//Small screens
+@each $heading in $headings {
+
+	#{nth($heading, 1)}, .#{nth($heading, 2)}{
+		@include font-size(nth($heading, 3));
+	}
+
+}
+
+//Medium screens
+@include quick-media-query(medium){
+
+	@each $heading in $headings {
+
+		.#{nth($heading, 2)}--medium{
+			@include font-size(nth($heading, 3));
+		}
+
+	}
+
+}
+
+//Large screens
+@include quick-media-query(large){
+
+	@each $heading in $headings {
+
+		.#{nth($heading, 2)}--large{
+			@include font-size(nth($heading, 3));
+		}
+
+	}
+
+}
+
+/**
+  * @module Any Heading [.hN]
+  * @description A general heading class to target any heading
+  *
+  * @markup
+	<hgroup>
+		<h1 class=hN>Carpages.ca</h1>
+		<h3 class=hN>Car shopping made easy.</h3>
+	</hgroup> 
+  */
+.hN{
+}
+hgroup .hN{
+	margin-bottom:0;
+}
+
+
+/**
+  * @module Massive Headings
+  * @description A series of classes for setting massive type; for use in heroes, mastheads, promos, etc.
+  *
+  * @markup
+  *   <h2 class="giga">Giga Heading</h2>
+  *   <h2 class="mega">Mega Heading</h2>
+  *   <h2 class="kilo">Kilo Heading</h2>
+  */
+.giga{
+	@extend %heading-line-height;
+	@include font-size($giga-size);
+}
+.mega{
+	@extend %heading-line-height;
+	@include font-size($mega-size);
+}
+.kilo{
+	@extend %heading-line-height;
+	@include font-size($kilo-size);
+}

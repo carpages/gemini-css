@@ -1,0 +1,19 @@
+/*------------------------------------*\
+    $LINKS
+\*------------------------------------*/
+
+/**
+  * @module Links [a]
+  * @description Your basic link
+  *
+  * @markup
+  *   <a href="http://www.carpages.ca" target="_blank">Click me!</a>
+  */
+a{
+	color:$link-color;
+	text-decoration:none;
+
+	&:hover{
+		text-decoration: underline;
+	}
+}

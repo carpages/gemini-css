@@ -1,0 +1,228 @@
+@if $use-nav == true or $use-pagination == true{
+
+/*------------------------------------*\
+	$NAV
+\*------------------------------------*/
+
+/**
+  * @module Navigation Lists [.nav]
+  * @description When used on an `ol` or `ul`, this class throws the list into horizontal mode. As per: csswizardry.com/2011/09/the-nav-abstraction
+  *
+  * @modifier [.nav--stacked] Throws the list into vertical mode
+  * @modifier [.nav--centre] Centres the list
+  * @modifier [.nav--centre] Right aligns the list
+  * @modifier [.nav--block] Give nav links a big, blocky hit area
+  * @modifier [.nav--spaced] Spread the nav links out horizontally
+  * @modifier [.nav--fit] Force a nav to occupy 100% of the available width of its parent
+  * @modifier [.nav--keywords] Make a list of keywords
+  * @modifier [.nav--breadcrumb] Simple breadcrumb styling to apply to (ordered) lists
+  *
+  * @markup Default
+	  <ul class='nav'>
+		  <li><a href=#>Home</a></li>
+		  <li><a href=#>About</a></li>
+		  <li><a href=#>Portfolio</a></li>
+		  <li><a href=#>Contact</a></li>
+	  </ul>
+  */
+.nav{
+	list-style:none;
+	margin:0;
+	@extend .clearfix;
+
+	> li{
+
+		&,
+		> a{
+			display:inline-block;
+		   *display:inline;
+			zoom:1;
+		}
+	}
+}
+
+/**
+  * @example Stacked
+  *
+  * @markup
+	<ul class='nav nav--stacked'>
+		<li><a href=#>Home</a></li>
+		<li><a href=#>About</a></li>
+		<li><a href=#>Portfolio</a></li>
+		<li><a href=#>Contact</a></li>
+	</ul>
+  */
+.nav--stacked{
+
+	> li{
+		display:list-item;
+
+		> a{
+			display:block;
+		}
+	}
+}
+
+
+/**
+  * @example Centred
+  *
+  * @markup
+	<ul class='nav nav--centre'>
+		<li><a href=#>Home</a></li>
+		<li><a href=#>About</a></li>
+		<li><a href=#>Portfolio</a></li>
+		<li><a href=#>Contact</a></li>
+	</ul>
+  */
+.nav--centre{
+	text-align:center;
+}
+
+/**
+  * @example Right Justified
+  *
+  * @markup
+	<ul class='nav nav--right'>
+		<li><a href=#>Home</a></li>
+		<li><a href=#>About</a></li>
+		<li><a href=#>Portfolio</a></li>
+		<li><a href=#>Contact</a></li>
+	</ul>
+  */
+.nav--right{
+	text-align:right;
+}
+
+/**
+  * @example Blocked
+  *
+  * @markup
+	<ul class='nav nav--block'>
+		<li><a href=#>Home</a></li>
+		<li><a href=#>About</a></li>
+		<li><a href=#>Portfolio</a></li>
+		<li><a href=#>Contact</a></li>
+	</ul>
+  */
+.nav--block{
+	line-height:1;
+	/**
+	 * Remove whitespace caused by `inline-block`.
+	 */
+	letter-spacing:-0.31em;
+	word-spacing:-0.43em;
+	white-space:nowrap;
+
+	> li{
+		letter-spacing:normal;
+		word-spacing:normal;
+
+		&,
+		> a{
+			padding:$half-spacing-unit;
+		}
+	}
+}
+
+/**
+  * @example Spaced
+  *
+  * @markup
+	<ul class='nav nav--spaced'>
+		<li><a href=#>Home</a></li>
+		<li><a href=#>About</a></li>
+		<li><a href=#>Portfolio</a></li>
+		<li><a href=#>Contact</a></li>
+	</ul>
+  */
+.nav--spaced{
+	> li{
+	  margin-right: $base-spacing-unit;
+
+	  &:last-child{
+		margin-right: 0; 
+	  }
+	}
+}
+	.nav--spaced-left{
+		> li{
+		  margin-left: $base-spacing-unit;
+
+		  &:first-child{
+			margin-left: 0; 
+		  }
+		}
+	}
+
+/**
+  * @example Fitted
+  *
+  * @markup
+	<ul class='nav nav--fit'>
+		<li><a href=#>Home</a></li>
+		<li><a href=#>About</a></li>
+		<li><a href=#>Portfolio</a></li>
+		<li><a href=#>Contact</a></li>
+	</ul>
+  */
+.nav--fit{
+	display:table;
+	width:100%;
+
+	> li{
+		display:table-cell;
+
+		> a{
+			display:block;
+		}
+	}
+}
+
+/**
+  * @example Keywords
+  *
+  * @markup
+	<ul class='nav nav--keywords'>
+		<li><a href=#>Home</a></li>
+		<li><a href=#>About</a></li>
+		<li><a href=#>Portfolio</a></li>
+		<li><a href=#>Contact</a></li>
+	</ul>
+  */
+.nav--keywords{
+
+	> li{
+
+		&:after{
+			content:"\002C" "\00A0";
+		}
+
+		&:last-child:after{
+			display:none;
+		}
+	}
+}
+
+/**
+  * @example Breadcrumbs
+  *
+  * @markup
+	<ul class='nav nav--breadcrumb'>
+		<li><a href=#>2013</a></li>
+		<li data-breadcrumb='|'><a href=#>Ford</a></li>
+		<li><a href=#>Mustang</a></li>
+	</ul>
+  */
+.nav--breadcrumb > li{
+
+	+ li:before{
+		content:"\002F" "\00A0";
+	}
+
+	+ li[data-breadcrumb]:before{
+		content:attr(data-breadcrumb) "\00A0";
+	}
+}
+
+}//endif
