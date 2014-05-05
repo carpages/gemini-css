@@ -5,10 +5,11 @@
   * @module Images [img]
   * @description We got some images o-er he-ya
   *
-  * @modifier [.img--round] Rounded images
   * @modifier [.img--right] Place right
   * @modifier [.img--left] Place left
   * @modifier [.img--center] Place center
+  * @modifier [.round] Rounded images
+  * @modifier [.circle] Circle images
   *
   * @markup
   *   <img src="http://www.placecage.com/c/100/100" />
@@ -33,12 +34,6 @@ img[height]{
 
 
 /**
- * Rounded images.
- */
-.img--round { border-radius:$brand-round; }
-
-
-/**
  * Image placement variations.
  */
 .img--right{
@@ -57,4 +52,3 @@ img[height]{
 	margin-bottom:$base-spacing-unit;
 	margin-left:auto;
 }
-

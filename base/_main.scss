@@ -21,6 +21,6 @@ body{
 	overflow-x: hidden;//Fixes issue with white box around content
 
 	.android &{
-		text-rendering: auto;//Fixes font rendering on android (requires Modernizr.js)
+		text-rendering: auto;//Fixes font rendering on android (requires JS sniffing / class adding like Modernizr)
 	}
 }
