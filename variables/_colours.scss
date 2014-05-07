@@ -41,3 +41,6 @@ $yellow:            #db0!default;
 $light-yellow:      lighter($yellow, 25%)!default;
 $dark-yellow:       darker($yellow, 25%)!default;
 .yellow{color:$yellow;}
+
+$orange: #ff9000!default;
+.orange{color:$orange;}
