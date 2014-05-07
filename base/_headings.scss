@@ -89,13 +89,14 @@ $headings: 	('h1' 'alpha' $h1-size),
   * @description A general heading class to target any heading
   *
   * @markup
-	<hgroup>
+	<div class="hgroup">
 		<h1 class=hN>Carpages.ca</h1>
 		<h3 class=hN>Car shopping made easy.</h3>
-	</hgroup> 
+	</div>
   */
 .hN{
 }
+.hgroup .hN,
 hgroup .hN{
 	margin-bottom:0;
 }

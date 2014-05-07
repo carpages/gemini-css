@@ -12,8 +12,8 @@
   *   <form>
   *       <fieldset>
   *           <legend>Legend</legend>
-  *           <label>Label name</label>
-  *           <input class="text-input" type="text" placeholder="Type something…">
+  *           <label for="thing">Label name</label>
+  *           <input id="thing" name="thing" class="text-input" type="text" placeholder="Type something…">
   *           <label class="checkbox">
   *               <input type="checkbox"> Check me out
   *           </label>
@@ -39,10 +39,10 @@
 label {
 	display: block;
 
-	&.required:before{ 
+	&.required:before{
 		content: '* '
 	}
-	
+
 	input[type="checkbox"] + &{
 		display:inline-block;
 		padding-left:$half-spacing-unit;

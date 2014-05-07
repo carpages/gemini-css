@@ -101,10 +101,10 @@
   * @markup
   <div class="l-row">
     <div class="l-column--small-3 l-column--large-9">
-      <div class="greybox greybox--small">Small: 3, Large: 9</div>
+      <div class="my-class my-class--small">Small: 3, Large: 9</div>
     </div>
     <div class="l-column--small-9 l-column--large-3">
-      <div class="greybox greybox--small">Small: 9, Large: 3</div>
+      <div class="my-class my-class--small">Small: 9, Large: 3</div>
     </div>
   </div>
   */
@@ -206,11 +206,11 @@
   <div class="l-row">
     <div class="l-column--small-6">
       <div class="l-row">
-        <div class="l-column--small-6"><div class="greybox">6&rarr;6</div></div>
-        <div class="l-column--small-6"><div class="greybox">6&rarr;6</div></div>
+        <div class="l-column--small-6"><div class="my-class">6&rarr;6</div></div>
+        <div class="l-column--small-6"><div class="my-class">6&rarr;6</div></div>
       </div>
     </div>
-    <div class="l-column--small-6"><div class="greybox">6</div></div>
+    <div class="l-column--small-6"><div class="my-class">6</div></div>
   </div>
   */
 
@@ -221,10 +221,10 @@
   * @markup
   <div class="l-row">
     <div class="l-column--small-3 l-column--small-offset-2">
-      <div class="greybox">3, offset 2</div>
+      <div class="my-class">3, offset 2</div>
     </div>
     <div class="l-column--small-6 l-column--small-offset-1">
-      <div class="greybox">6, offset 1</div>
+      <div class="my-class">6, offset 1</div>
     </div>
   </div>
   */
