@@ -1,0 +1,20 @@
+/*------------------------------------*\
+    $COPY TEXT
+\*------------------------------------*/
+/* Styles to make copy more readable.
+ * Ideal for content heavy sections like blog.
+ */
+
+.copy{
+  section, .section, header{
+    margin-bottom:$base-spacing-unit*3;
+  }
+
+  p{
+    font-size:$h5-size;
+  }
+
+  img{
+    display:inline;
+  }
+}
