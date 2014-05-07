@@ -1,0 +1,25 @@
+@if $use-bullet-list == true{
+
+/*------------------------------------*\
+    $BULLET LISTS
+\*------------------------------------*/
+
+.bullet-list{
+  margin:0;
+
+  & > li{
+    list-style:none;
+    position:relative;
+    padding-left: $base-spacing-unit;
+    @extend %icon;
+
+    &:before{
+      position:absolute;
+      top:0;left:0;
+      color:$grey;
+    }
+  }
+}
+
+
+}//endif

@@ -39,3 +39,12 @@ li{
 /*ul*/.numbered-list{
 	list-style-type:decimal;
 }
+
+/**
+ * Remove list styles
+ */
+.list--no-style{
+  list-style:none;
+  margin-left:0;
+}
+
