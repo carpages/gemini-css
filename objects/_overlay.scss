@@ -1,0 +1,87 @@
+/*------------------------------------*\
+    $OVERLAY
+\*------------------------------------*/
+//Use position absolute to overlay items
+/**
+  * @module Overlay [.overlay]
+  * @description Overlays content ontop of the parent content
+  */
+
+.overlay{
+  position:relative;
+}
+
+
+  .overlay__content{
+    position:absolute;
+  }
+
+  .overlay__content--logo{
+    @extend .overlay__content;
+    left:$base-spacing-unit;
+    bottom:-$half-spacing-unit;
+  }
+
+  .overlay__content--top-right{
+    @extend .overlay__content;
+    right:$base-spacing-unit;
+    top:$base-spacing-unit;
+  }
+  .overlay__content--top-left{
+    @extend .overlay__content;
+    left:0;
+    top:0;
+  }
+
+  .overlay__content--bottom-left{
+    @extend .overlay__content;
+    bottom:0;
+    left:0;
+  }
+
+  .overlay__content--bottom-right{
+    @extend .overlay__content;
+    bottom:0;
+    right:0;
+  }
+
+  .overlay__content--bottom{
+    @extend .overlay__content;
+    bottom:0;
+    left:0;
+  }
+
+  .overlay__content--left{
+    @extend .overlay__content;
+    left:0;
+    top:0;
+    height:100%;
+    width:percentage(1/3);
+  }
+
+/*
+ * ADDING COVERS (works with javascript)
+ */
+.cover{
+  @extend .overlay;
+}
+
+.cover.is-active:after{
+  content:'';
+  background: rgba($white,0.8);
+}
+
+.cover.is-active:after, .cover__message{
+  @extend .overlay__content;
+  left:0;top:0;
+  width:100%;height:100%;
+}
+
+.cover__message{
+  display:none;
+  z-index:2;
+
+  .cover.is-active &{
+    display:block;
+  }
+}
