@@ -1,3 +1,5 @@
+@if $use-alerts == true{
+
 /*------------------------------------*\
     $ALERT BOXES
 \*------------------------------------*/
@@ -44,3 +46,6 @@
 .alert--grey{
   @include alert-colour($grey);
 }
+
+
+}//endif
