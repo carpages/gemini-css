@@ -1,0 +1,110 @@
+/*------------------------------------*\
+    $IMAGES
+\*------------------------------------*/
+/**
+  * @module Fit Image [.fit-img]
+  * @description Fits the image into a static box based on ratio (default 16:9)
+  *
+  * @modifier [.fit-img--stretch] Stretches the image to full width
+  *
+  * @markup
+  <div class="fit-img" style="width:300px;">
+    <img src="http://www.placecage.com/300/150/">
+  </div>
+  */
+
+.fit-img, .fit-img--static{
+  display:block;
+  width:100%;
+  position:relative;
+  overflow:hidden;
+}
+
+@mixin fitImage($width: 4, $height: 3, $container: 100%){
+padding: ($height/$width * $container / 2) 0;
+}
+
+.fit-img{
+  @include fitImage();
+}
+  .fit-img--5-2{
+    @include fitImage(5,2,80%);
+    width:80%;
+    margin: 0 auto;
+  }
+.fit-img, .fit-img--static{
+  img, iframe{
+    position:absolute;
+    width:auto;
+    max-width:100%;
+    max-height:100%;
+    margin:auto;
+    top:0;left:0;bottom:0;right:0;
+  }
+}
+
+.fit-img--stretch{
+  img, iframe{
+    width:100%;
+    max-height:none;
+    min-height:100%;
+  }
+}
+
+.fit-img--circle{
+  @include fitImage(1, 1);
+  @include border-radius(9999px);
+
+  img{
+    width:100%;
+    max-height:none;
+    min-height:100%;
+  }
+}
+
+/**
+  * @module Inline Image [.inline-img]
+  * @description Display an image inline with the text (small images/ glyphs)
+  *
+  * @modifier [.inline-img--ucda] Inline UCDA logo
+  *
+  * @markup
+  <div class="inline-img--ucda">&nbsp;</div>
+  */
+
+.inline-img{
+  display:inline-block;
+  background:transparent no-repeat center center;
+
+  &:hover{
+    text-decoration:none;
+  }
+}
+  .inline-img--ucda{
+    //51x16
+    @extend .inline-img;
+    width:54px;
+    background-image:url("#{$img-dir}/ucda/tag.png");
+
+    @include quick-media-query(retina){
+      background-image:url('#{$img-dir}/ucda/tag@2x.png');
+      background-size:51px 16px;
+    }
+  }
+
+/* Image Container */
+.fit-img--grey-box{
+  @include fitImage(5,2,80%);
+  overflow:visible;
+  width:80%;
+  margin:0 auto;
+  background: $lighter-grey;
+  @include border-radius($brand-round);
+  @include box-shadow(0 1px 2px rgba($black, 0.3));
+
+  img{
+    position:absolute;
+    top:inherit;
+    max-height:120%;
+  }
+}
