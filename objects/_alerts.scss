@@ -1,0 +1,46 @@
+/*------------------------------------*\
+    $ALERT BOXES
+\*------------------------------------*/
+/**
+  * @module Fade In [.alert]
+  * @description An alert box
+  */
+
+@mixin alert-colour($colour){
+  color: $colour;
+  border: 1px solid lighter($colour, 60%);
+  background:lighter($colour, 80%);
+}
+
+.alert{
+  @extend .round;
+  display:block;
+  padding:$half-spacing-unit $base-spacing-unit;
+  @include alert-colour($grey);
+  margin-bottom: $base-spacing-unit;
+  text-shadow:none;
+
+  ul{
+    margin-bottom:0;
+  }
+}
+
+.alert--red{
+  @include alert-colour(#b94a48);
+}
+
+.alert--green{
+  @include alert-colour(#468847);
+}
+
+.alert--blue{
+  @include alert-colour(#3a87ad);
+}
+
+.alert--yellow{
+  @include alert-colour(#c09853);
+}
+
+.alert--grey{
+  @include alert-colour($grey);
+}
