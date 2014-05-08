@@ -4,6 +4,8 @@
     $BULLET LISTS
 \*------------------------------------*/
 
+/* 1 */ // This isn't heavily supported, but some screen readers may pass this icon.
+// The best practice is to not map the icon to a letter, but a symbol.
 .bullet-list{
   margin:0;
 
@@ -15,8 +17,10 @@
 
     &:before{
       position:absolute;
-      top:0;left:0;
+      top:0;
+      left:0;
       color:$grey;
+      speak: none;/* 1 */
     }
   }
 }
