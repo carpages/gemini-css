@@ -1,0 +1,38 @@
+@if $use-order == true{
+
+/*------------------------------------*\
+    $ORDER MODULE
+\*------------------------------------*/
+/*
+ * Change the order of elements on smaller screens
+ */
+/**
+  * @module Order [.l-order--smal]
+  * @description Change the order of the layout on smaller screens
+  *
+  * @modifier [l-order--small-$n] N is the order is should be on small screens
+  *
+  * @markup
+  <div class="l-order--small">
+    <div class="l-order--small-2">First</div>
+    <div class="l-order--small-1">Second</div>
+  </div>
+  */
+
+
+@include quick-media-query(visible-small){
+  .l-order--small{
+    @include display-box;
+    @include box-orient(vertical);
+    @include box-direction(column);
+  }
+  @for $i from 1 through 6 {
+    .l-order--small-#{$i}{
+      float:none!important;
+      @include box-ordinal-group($i);
+    }
+  }
+}
+
+
+}//endif
