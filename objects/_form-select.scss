@@ -4,18 +4,6 @@
     $FORM EXTENSIONS
 \*------------------------------------*/
 
-//Make select boxes look better
-select:focus{
-    outline: none;
-}
-
-select{
-  border: 1px solid $light-grey;
-  @include border-radius($brand-round);
-  vertical-align: middle;
-}
-
-
 //Custom select dropdowns
 .select{
   @extend %beautons;
