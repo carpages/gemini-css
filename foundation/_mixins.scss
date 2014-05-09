@@ -308,7 +308,7 @@
  *
  * Not using a media query will, naturally, serve styles to all devices.
  *
- * `@include media-query(small-only){ [styles here] }`
+ * `@include quick-media-query(medium){ [styles here] }`
  *
  * We work out your end points for you:
  */
@@ -389,6 +389,9 @@ $medium-end:               $large-start - 1px;
  * create style sheets for that particular width.
  * Inspired by: //http://jakearchibald.github.com/sass-ie/
  *
+ * `@include media-query($small-end){ [styles here] }`
+ * `@include media-query($small-end, $large-start, true){ [styles here] }`
+ * `@include media-query(511px, 4300px){ [styles here] }`
  **/
 
 @mixin media-query($min, $max: 99999, $print: false){

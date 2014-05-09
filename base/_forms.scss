@@ -158,6 +158,17 @@ input[type="checkbox"]{
 	cursor:pointer;
 }
 
+//Make select boxes look better
+select:focus{
+    outline: none;
+}
+
+select{
+  border: 1px solid $light-grey;
+  @include border-radius($brand-round);
+  vertical-align: middle;
+}
+
 
 /**
   * @module Extra Help [.extra-help]

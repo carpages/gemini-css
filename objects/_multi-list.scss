@@ -61,4 +61,43 @@
 		width:100%;
 	}
 
+
+/**
+  * @submodule Multi-list Vertical [.multi-list--vertical]
+	*	Requires Javascript
+	* See cp.support.js
+	*/
+	.yes-columnCount{
+		.multi-list--vertical{
+			@extend %gpu;
+			& > li{
+				float:none;
+				width:100%;
+			}
+
+			@for $i from 2 through 3{
+				&.multi-list--small-#{$i}{
+					@include column-count($i);
+				}
+			}
+
+			@include quick-media-query(medium){
+				@for $i from 2 through 4{
+					&.multi-list--medium-#{$i}{
+						@include column-count($i);
+					}
+				}
+			}
+
+			@include quick-media-query(large){
+				@for $i from 2 through 5{
+					&.multi-list--large-#{$i}{
+						@include column-count($i);
+					}
+				}
+			}
+		}
+	}
+
+
 }//endif
