@@ -1,18 +1,29 @@
+@mixin alert-colour($colour){
+  color: $colour;
+  border: 1px solid lighter($colour, 60%);
+  background:lighter($colour, 80%);
+}
+
 @if $use-alerts == true{
 
 /*------------------------------------*\
     $ALERT BOXES
 \*------------------------------------*/
 /**
-  * @module Fade In [.alert]
-  * @description An alert box
-  */
+  * @module Alert Boxes [.alert]
+  * @description Create text alerts to visually stand out to the user.
 
-@mixin alert-colour($colour){
-  color: $colour;
-  border: 1px solid lighter($colour, 60%);
-  background:lighter($colour, 80%);
-}
+  @markup
+
+  <div class="alert alert--red">
+    Please correct the following:
+
+    <ul>
+        <li>Please enter your email address</li>
+        <li>Please enter your password</li>
+    </ul>
+  </div>
+  */
 
 .alert{
   @extend .round;
@@ -41,10 +52,6 @@
 
 .alert--yellow{
   @include alert-colour(#c09853);
-}
-
-.alert--grey{
-  @include alert-colour($grey);
 }
 
 
