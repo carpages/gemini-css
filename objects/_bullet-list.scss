@@ -13,7 +13,7 @@
     list-style:none;
     position:relative;
     padding-left: $base-spacing-unit;
-    @extend %icon;
+    //@extend %icon;
 
     &:before{
       position:absolute;

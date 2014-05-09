@@ -116,11 +116,11 @@
     bottom:0;
     right:$half-spacing-unit;
     cursor:pointer;
-    @extend %icon;
-    @extend .icon--star;
+    //@extend %icon;
+    //@extend .icon--star;
 
     &.is-active, &:hover{
-      @extend .icon--star-3;
+      //@extend .icon--star-3;
     }
     &.is-active{
       color:$brand-color;

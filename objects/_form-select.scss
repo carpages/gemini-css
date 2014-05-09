@@ -21,8 +21,8 @@
     @include box-shadow(0 1px 4px rgba($black, 0.15));
   }
 
-  @extend %icon;
-  @extend .icon--arrow-down-2;
+  //@extend %icon;
+  //@extend .icon--arrow-down-2;
 
   &:before{
     position:absolute;
@@ -55,7 +55,7 @@
     border-bottom-color:$white;
 
     &.select{
-      @extend .icon--list-2;
+      //@extend .icon--list-2;
     }
   }
   .w-select--tab{
