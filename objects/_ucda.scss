@@ -1,0 +1,79 @@
+@if $use-ucda == true and $use-container == true{
+/**
+  * Extends Container
+  * @description Containers to change the style of the content
+  *
+  * @modifier [.container--ucda] White background with soft box-shadow
+  *
+  * @markup
+  <div class="container--brand soft">
+    This is Carpages green!!
+  </div>
+  */
+
+.container--ucda{
+  @extend %container--bg;
+  background-image:url("#{$img-dir}/backgrounds/ucda-small.jpg");
+  @include quick-media-query(medium){
+    background-image:url("#{$img-dir}/backgrounds/ucda.jpg");
+  }
+}
+
+
+}//endif use-container
+
+
+
+@if $use-ucda == true and $use-tags == true{
+/**
+  * Extends Tags
+  * @description Give text a background so it looks like a UCDA tag
+  *
+  * @modifier [.tag--ucda] Yellow Background and blue text for ucda
+  *
+  * @markup
+  <div class="tag--ucda">Ucda Tag</div>
+  *
+  */
+.tag--ucda{
+  color:mix(#00185B, $yellow, 60%);
+  background:$yellow url('#{$img-dir}/ucda/tag.png') no-repeat 10px center;
+  padding-left:70px;
+
+  @include quick-media-query(retina){
+    background-image:url('#{$img-dir}/ucda/tag@2x.png');
+    background-size:51px 16px;
+  }
+}
+
+
+}//endif use-tags
+
+
+
+@if $use-ucda == true and  $use-fit-image == true{
+/**
+  * Extends Fit Image (dependency)
+  * @description Fits the image into a static box based on ratio (default 16:9)
+  *
+  * @modifier [.inline-img--ucda] Stretches the image to full width
+  *
+  * @markup
+  <div class="fit-img" style="width:300px;">
+    <img src="http://www.placecage.com/300/150/">
+  </div>
+  */
+  .inline-img--ucda{
+    //51x16
+    @extend .inline-img;
+    width:54px;
+    background-image:url("#{$img-dir}/ucda/tag.png");
+
+    @include quick-media-query(retina){
+      background-image:url('#{$img-dir}/ucda/tag@2x.png');
+      background-size:51px 16px;
+    }
+  }
+
+
+}//endif use-fit-image

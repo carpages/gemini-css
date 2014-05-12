@@ -68,10 +68,8 @@
   * @module Inline Image [.inline-img]
   * @description Display an image inline with the text (small images/ glyphs)
   *
-  * @modifier [.inline-img--ucda] Inline UCDA logo
-  *
   * @markup
-  <div class="inline-img--ucda">&nbsp;</div>
+  <div class="inline-img">&nbsp;</div>
   */
 
 .inline-img{
@@ -82,17 +80,6 @@
     text-decoration:none;
   }
 }
-  .inline-img--ucda{
-    //51x16
-    @extend .inline-img;
-    width:54px;
-    background-image:url("#{$img-dir}/ucda/tag.png");
-
-    @include quick-media-query(retina){
-      background-image:url('#{$img-dir}/ucda/tag@2x.png');
-      background-size:51px 16px;
-    }
-  }
 
 /* Image Container */
 .fit-img--grey-box{
