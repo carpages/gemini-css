@@ -7,13 +7,8 @@
   * @module Tags [.tag]
   * @description Give text a background so it looks like a tag
   *
-  * @modifier [.tag--organge] Orange Background
-  * @modifier [.tag--ucda] Yellow Background and blue text for ucda
-  *
   * @markup
   <div class="tag">Tag</div>
-  <div class="tag--organge">Orange Tag</div>
-  <div class="tag--ucda">Ucda Tag</div>
   *
   * Extend this with your own sizes and colours. Eg.:
     .tag--zeta{
@@ -24,6 +19,9 @@
     }
     .tag--orange{
       background:$orange;
+    }
+    .tag--disabled{
+      color:mix($brand-color, $white);
     }
   */
 
@@ -37,22 +35,8 @@
   &:hover{
     text-decoration: none;
   }
-
-  .grey{
-    color:mix($brand-color, $white);
-  }
 }
 
-.tag--ucda{
-  color:mix(#00185B, $yellow, 60%);
-  background:$yellow url('#{$img-dir}/ucda/tag.png') no-repeat 10px center;
-  padding-left:70px;
-
-  @include quick-media-query(retina){
-    background-image:url('#{$img-dir}/ucda/tag@2x.png');
-    background-size:51px 16px;
-  }
-}
 
 
 }//endif
