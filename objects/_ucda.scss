@@ -11,13 +11,11 @@
   */
 .tag--ucda{
   color:mix(#00185B, $yellow, 60%);
-  // background:$yellow url('#{$img-dir}/ucda/tag.png') no-repeat 10px center;
-  background:$yellow url('http://www.carpages.ca/images/primary/ucda/tag.png') no-repeat 10px center;
+  background:$yellow url('#{$img-dir}/ucda/tag.png') no-repeat 10px center;
   padding-left:70px;
 
   @include quick-media-query(retina){
-    // background-image:url('#{$img-dir}/ucda/tag@2x.png');
-    background-image:url('http://www.carpages.ca/images/primary/ucda/tag@2x.png');
+    background-image:url('#{$img-dir}/ucda/tag@2x.png');
     background-size:51px 16px;
   }
 }
