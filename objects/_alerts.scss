@@ -39,21 +39,25 @@
   }
 
 }
+$alert--red:               #b94a48!default;
+$alert--green:             #468847!default;
+$alert--blue:              #3a87ad!default;
+$alert--yellow:            #c09853!default;
 
 .alert--red{
-  @include alert-colour(#b94a48);
+  @include alert-colour($alert--red);
 }
 
 .alert--green{
-  @include alert-colour(#468847);
+  @include alert-colour($alert--green);
 }
 
 .alert--blue{
-  @include alert-colour(#3a87ad);
+  @include alert-colour($alert--blue);
 }
 
 .alert--yellow{
-  @include alert-colour(#c09853);
+  @include alert-colour($alert--yellow);
 }
 
 
