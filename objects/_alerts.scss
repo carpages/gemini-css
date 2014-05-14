@@ -33,9 +33,11 @@
   margin-bottom: $base-spacing-unit;
   text-shadow:none;
 
+  p:last-child,
   ul{
     margin-bottom:0;
   }
+
 }
 
 .alert--red{
