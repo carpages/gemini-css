@@ -7,11 +7,8 @@
   * @module Tags [.tag]
   * @description Give text a background so it looks like a tag
   *
-  * @modifier [.tag--organge] Orange Background
-  *
   * @markup
-  <div class="tag">Tag</div>
-  <div class="tag--organge">Orange Tag</div>
+  * <div class="tag">Tag</div>
   *
   * Extend this with your own sizes and colours. Eg.:
     .tag--zeta{
@@ -22,6 +19,9 @@
     }
     .tag--orange{
       background:$orange;
+    }
+    .tag--disabled{
+      color:mix($brand-color, $white);
     }
   */
 
@@ -34,10 +34,6 @@
 
   &:hover{
     text-decoration: none;
-  }
-
-  .grey{
-    color:mix($brand-color, $white);
   }
 }
 
