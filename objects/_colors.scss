@@ -3,54 +3,23 @@
 /*------------------------------------*\
     $COLORS
 \*------------------------------------*/
+/**
+  * @module Colors
+  * @description Easy references to common global colours. These are variables
+  * that can be handy to use for text colours (esp icons) or backgrounds
+  *
+  * @markup
+  .share--facebook { color: $c--facebook; }
+  .social--facebook { background-color: $c--facebook; }
+  *
+  */
 
 /* SOCIAL COLORS */
-.c--facebook{
-  color: #3A5998;
-}
-.c--twitter{
-  color: #1AB2E8;
-}
-.c--google{
-  color: #4386F7;
-}
-.c--google-plus{
-  color: #DD4C39;
-}
-.c--pinterest{
-  color: #C9232D;
-}
-
-/* OTHER COLOURS */
-.c--red{
-  color: $red !important;
-}
-.c--green{
-  color: $green !important;
-}
-.c--blue{
-  color: $blue !important;
-}
-.c--yellow{
-  color: $yellow !important;
-}
-
-/* SHADES */
-.c--white{
-  color: $white !important;
-}
-
-
-/* SHADES */
-.c--light-grey{
-  color: $light-grey !important;
-}
-.c--grey{
-  color: $grey !important;
-}
-.c--dark-grey{
-  color: $dark-grey !important;
-}
+$c--facebook: #3A5998;
+$c--twitter: #1AB2E8;
+$c--google: #4386F7;
+$c--google-plus: #DD4C39;
+$c--pinterest: #C9232D;
 
 
 }//endif
