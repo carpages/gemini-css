@@ -117,13 +117,6 @@
     color:$brand-color;
   }
 }
-.container--ucda{
-  @extend %container--bg;
-  background-image:url("#{$img-dir}/backgrounds/ucda-small.jpg");
-  @include quick-media-query(medium){
-    background-image:url("#{$img-dir}/backgrounds/ucda.jpg");
-  }
-}
   .container--large{
     padding:$base-spacing-unit*6 0;
 
