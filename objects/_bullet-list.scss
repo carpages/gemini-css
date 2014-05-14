@@ -4,8 +4,17 @@
     $BULLET LISTS
 \*------------------------------------*/
 
+/**
+  * @module Bullet Lists [.bullet-list]
+  * @description Allows you to replace default bullets with icons
+  * Has a dependency of the icons module
+  *
+  * @markup
+
+  */
+
 /* 1 */ // This isn't heavily supported, but some screen readers may pass this icon.
-// The best practice is to not map the icon to a letter, but a symbol.
+        // The best practice is to not map the icon to a letter, but a symbol.
 .bullet-list{
   margin:0;
 
