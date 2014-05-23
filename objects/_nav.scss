@@ -9,8 +9,8 @@
   * @description When used on an `ol` or `ul`, this class throws the list into horizontal mode. As per: csswizardry.com/2011/09/the-nav-abstraction
   *
   * @modifier [.nav--stacked] Throws the list into vertical mode
-  * @modifier [.nav--centre] Centres the list
-  * @modifier [.nav--centre] Right aligns the list
+  * @modifier [.nav--center] Centers the list
+  * @modifier [.nav--right] Right aligns the list
   * @modifier [.nav--block] Give nav links a big, blocky hit area
   * @modifier [.nav--spaced] Spread the nav links out horizontally
   * @modifier [.nav--fit] Force a nav to occupy 100% of the available width of its parent
@@ -75,6 +75,7 @@
 		<li><a href=#>Contact</a></li>
 	</ul>
   */
+.nav--center,
 .nav--centre{
 	text-align:center;
 }
@@ -141,7 +142,7 @@
 	  margin-right: $base-spacing-unit;
 
 	  &:last-child{
-		margin-right: 0; 
+		margin-right: 0;
 	  }
 	}
 }
@@ -150,7 +151,7 @@
 		  margin-left: $base-spacing-unit;
 
 		  &:first-child{
-			margin-left: 0; 
+			margin-left: 0;
 		  }
 		}
 	}
@@ -208,11 +209,11 @@
   * @example Breadcrumbs
   *
   * @markup
-	<ul class='nav nav--breadcrumb'>
+	<ol class='nav nav--breadcrumb'>
 		<li><a href=#>2013</a></li>
 		<li data-breadcrumb='|'><a href=#>Ford</a></li>
 		<li><a href=#>Mustang</a></li>
-	</ul>
+	</ol>
   */
 .nav--breadcrumb > li{
 

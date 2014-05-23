@@ -1,0 +1,101 @@
+@mixin fitImage($width: 4, $height: 3, $container: 100%){
+  padding: ($height/$width * $container / 2) 0;
+}
+
+@if $use-fit-image == true{
+
+/*------------------------------------*\
+    $IMAGES
+\*------------------------------------*/
+/**
+  * @module Fit Image [.fit-img]
+  * @description Fits the image into a static box based on ratio (default 16:9) - works like CSS background-size:contrain;
+  * Demo: http://codepen.io/mattdrose/pen/DKGoL
+  *
+  * @modifier [.fit-img--static] For containers that don't need padding to fix the size ratio
+  * @modifier [.fit-img--stretch] Stretches the image to full width - which crops like CSS background-size:cover;
+  * @modifier [.fit-img--circle] Crops the image in a circle container
+  *
+  * @markup
+  <div class="fit-img" style="width:300px;">
+    <img src="http://www.placecage.com/300/150/" alt="">
+  </div>
+
+  <div class="fit-img fit-img--stretch" style="height:500px;">
+    <img src="http://www.placehold.it/900/900/" alt="">
+  </div>
+  *
+  * Extend your own viewport ratios in Sass like:
+  .fit-img--5-2{
+    @include fitImage(5,2,80%);
+    width:80%;
+    margin: auto;
+  }
+  */
+
+.fit-img,
+.fit-img--static{
+  display:block;
+  width:100%;
+  position:relative;
+  overflow:hidden;
+}
+
+.fit-img{
+  @include fitImage();
+}
+
+.fit-img,
+.fit-img--static{
+  img, iframe{
+    position:absolute;
+    width:auto;
+    max-width:100%;
+    max-height:100%;
+    margin:auto;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+  }
+}
+
+.fit-img--stretch{
+  img, iframe{
+    width:100%;
+    max-height:none;
+    min-height:100%;
+  }
+}
+
+.fit-img--circle{
+  @include fitImage(1, 1);
+  @include border-radius(9999px);
+
+  img{
+    width:100%;
+    max-height:none;
+    min-height:100%;
+    z-index: -1;
+  }
+}
+
+/**
+  * @module Inline Image [.inline-img]
+  * @description Display an image inline with the text (small images/ glyphs)
+  *
+  * @markup
+  <div class="inline-img">&nbsp;</div>
+  */
+
+.inline-img{
+  display:inline-block;
+  background:transparent no-repeat center center;
+
+  &:hover{
+    text-decoration:none;
+  }
+}
+
+
+}//endif

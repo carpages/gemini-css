@@ -12,7 +12,7 @@
   * @modifier [.multi-list--small-3] Three columns
   *
   * @markup
-	<ul class="multi-list  multi-list--small-2">
+	<ul class="multi-list  multi-list--small-2  multi-list--medium-4  multi-list--large-5">
 		<li>Lorem</li>
 		<li>Ipsum</li>
 		<li>Dolor</li>
@@ -31,7 +31,7 @@
 
 
 	/**
-	 * Apply these classes alongside the `.matrix` or `.multi-list` classes on
+	 * Apply these classes alongside the `.multi-list` class on
 	 * lists to determine how wide their columns are.
 	 */
 	@for $i from 2 through 4{
@@ -53,12 +53,52 @@
 			}
 		}
 	}
-	/**
-	 * Unfortunately we have to qualify this selector in order to bring its
-	 * specificity above the `.[number]-cols > li` selectors above.
-	 */
-	.multi-list > .all-cols{
-		width:100%;
+
+
+/**
+  * @submodule Multi-list Vertical [.multi-list--vertical]
+	*	Requires Javascript to add the yes-columnCount parent class
+	* See cp.support.js
+	*
+	* @description causes the LI to be listed vertically in columns like:
+	*
+	*   1   4   7
+	*   2   5   8
+	*   3   6   9
+	*
+	* instead of the default multi-list when LIs float:left.
+	*/
+	.yes-columnCount{
+		.multi-list--vertical{
+			@extend %gpu;
+			& > li{
+				float:none;
+				width:100%;
+			}
+
+			@for $i from 2 through 3{
+				&.multi-list--small-#{$i}{
+					@include column-count($i);
+				}
+			}
+
+			@include quick-media-query(medium){
+				@for $i from 2 through 4{
+					&.multi-list--medium-#{$i}{
+						@include column-count($i);
+					}
+				}
+			}
+
+			@include quick-media-query(large){
+				@for $i from 2 through 5{
+					&.multi-list--large-#{$i}{
+						@include column-count($i);
+					}
+				}
+			}
+		}
 	}
+
 
 }//endif

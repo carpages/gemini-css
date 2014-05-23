@@ -18,7 +18,7 @@
   *
   * @modifier [.float--right] Float right
   * @modifier [.float--left] Float left
-  * @modifier [.float--none] Clear floates
+  * @modifier [.float--none] Clear floats
  **/
 .float--right   { float:right!important; }
 .float--left    { float:left !important; }
@@ -45,7 +45,7 @@
 
 /**
   * @module Font Weights
-  * @description Easily add font weights (excluding bold)
+  * @description Easily add font weights
   *
   * @modifier [.weight--light] Light
   * @modifier [.weight--normal] Normal
@@ -164,11 +164,9 @@
 .soft-half--ends     { padding-top:   $half-spacing-unit!important; padding-bottom:$half-spacing-unit!important; }
 .soft-half--sides    { padding-right: $half-spacing-unit!important; padding-left:  $half-spacing-unit!important; }
 
-.extra-soft{padding:$double-spacing-unit!important;}
-.extra-soft--ends{padding:$double-spacing-unit 0!important;}
-.extra-soft--right{padding-right:$double-spacing-unit!important;}
-
-.mega-soft--ends{padding:$double-spacing-unit*2 0!important;}
+.soft-double{padding:$double-spacing-unit!important;}
+.soft-double--ends{padding:$double-spacing-unit 0!important;}
+.soft-double--right{padding-right:$double-spacing-unit!important;}
 
 /**
   * @module Block Hardener [.hard]
@@ -207,7 +205,7 @@
   * @description Add a pointer cursor to any element to show that it's clickable
   *
   * @markup
-  *   <span class="informative">Information on hover</span>
+  *   <span class="clickable">Clickable on hover</span>
  **/
 .clickable{
   cursor:pointer!important;
@@ -219,8 +217,8 @@
   * @description Mute an object by reducing its opacity.
   *
   * @markup
-  *   <img class="muted" src="http://www.placecage.com/c/200/200" />
-  *   <img class="muted-75" src="http://www.placecage.com/c/200/200" />
+  *   <img class="muted" src="http://www.placecage.com/c/200/200">
+  *   <img class="muted-75" src="http://www.placecage.com/c/200/200">
  **/
 .muted{
 	opacity:0.5!important;
@@ -231,16 +229,6 @@
     filter:alpha(opacity = 75)!important;
   }
 
-/**
-  * @module Proceed [.proceed]
-  * @description Align items to the right where they imply progression/movement forward.
-  *
-  * @markup
-  *   <p class=proceed><a href=#>Read more...</a></p>
- **/
-.proceed{
-	text-align:right!important;
-}
 
 /**
   * @module More [.more]
@@ -281,7 +269,7 @@
   * @description Truncate a fixed width string with an ellipsis
   *
   * @markup
-  * <p width="250px;" class="truncate">This is a test for truncating.</p>
+  * <p style="width:250px;" class="truncate">This is a test for truncating.</p>
   */
 .truncate{
 	white-space: nowrap;
@@ -392,13 +380,10 @@
   * @module Accessibility [.accessibility]
   * @description Hide content off-screen without resorting to `display:none;`.
   *
-  * @modifier [.accessibility--medium] Hidden for medium screens and above
-  * @modifier [.accessibility--large] Hidden for large screens and above
-  * @modifier [.accessibility--xlarge] Hidden for extra large screens
-  *
   * @markup
   *   <p class="accessibility">This text is only seen by screen readers!</p>
   */
+.a11y,
 .accessibility{
 	@include accessibility;
 }
@@ -414,7 +399,8 @@
   * @module GPU Rendering [%gpu]
   * @description A SASS helper to use the gpu on that element ( translateZ(0) )
   */
-.gpu, %gpu{
+.gpu,
+%gpu{
   @include vendor(transform, translateZ(0));
 }
 
@@ -433,12 +419,12 @@
   *
   * @markup
   <ul class="block-list">
-	<li class="visible--small">.visible--small</li>
-	<li class="hidden--small">.hidden--small</li>
-	<li class="visible--medium">.visible--medium</li>
-	<li class="hidden--medium">.hidden--medium</li>
-	<li class="visible--large">.visible--large</li>
-	<li class="hidden--large">.hidden--large</li>
+  	<li class="visible--small">.visible--small</li>
+  	<li class="hidden--small">.hidden--small</li>
+  	<li class="visible--medium">.visible--medium</li>
+  	<li class="hidden--medium">.hidden--medium</li>
+  	<li class="visible--large">.visible--large</li>
+  	<li class="hidden--large">.hidden--large</li>
   </ul>
   */
 
