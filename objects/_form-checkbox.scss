@@ -1,0 +1,37 @@
+@if $use-form-checkbox == true{
+
+/*------------------------------------*\
+    $FORM EXTENSIONS
+\*------------------------------------*/
+
+//Checkboxes
+.checkbox{
+  cursor:pointer;
+  @extend .unselectable;
+
+  // Hide checkbox
+  > input{
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    position: static\9; /* IE6+ Fallback */
+  }
+}
+
+  // Icon
+  .checkbox__icon{
+    @extend %icon;
+    width:1em;
+    display:inline-block;
+    display:none\9; /* IE6+ Fallback */
+
+    /* Default State */
+    @extend .icon--default-plus;
+
+    /* Active State */
+    input:checked ~ &{
+      @extend .icon--default-checkmark-heavy;
+    }
+  }
+
+}//endif
