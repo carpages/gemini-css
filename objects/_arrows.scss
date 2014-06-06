@@ -1,3 +1,8 @@
+$arrow-size:            $base-spacing-unit * 0.4!default;
+$arrow-border:          2!default;
+$border:                $arrow-size;
+$arrow:                 $arrow-size - $arrow-border;
+
 @if $use-arrows == true{
 
 /*------------------------------------*\
@@ -12,11 +17,6 @@
   * @description Arrows are built as a SASS extension at the moment. For now, check out the source code to understand how they work.
   * These styles have a mixin dependency.
   */
-
-$arrow-size:            $base-spacing-unit * 0.6!default;
-$arrow-border:          2!default;
-$border:                $arrow-size;
-$arrow:                 $arrow-size - $arrow-border;
 
 /**
  * Forms the basis for any/all CSS arrows.
