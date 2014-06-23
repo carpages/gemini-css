@@ -22,14 +22,19 @@
 
 @include quick-media-query(visible-small){
   .l-order--small{
-    @include display-box;
-    @include box-orient(vertical);
-    @include box-direction(column);
+    // See https://github.com/KKBOX/FireApp/blob/master/lib/ruby/compass_1.0/compass-core-1.0.0.alpha.19/stylesheets/compass/css3/_flexbox.scss
+    @include flexbox((
+      display: box,
+      box-orient: hoizontal,
+      box-direction: column,
+    ));
   }
   @for $i from 1 through 6 {
     .l-order--small-#{$i}{
       float:none!important;
-      @include box-ordinal-group($i);
+      @include flexbox((
+        box-ordinal-group: $i,
+      ));
     }
   }
 }
