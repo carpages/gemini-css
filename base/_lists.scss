@@ -6,7 +6,7 @@
   * @module Lists [ul, ol]
   * @description Your basic lists
   *
-  * @modifier [.numbered-list] Have a numbered `ul` without the semantics implied by using an `ol`.
+  * @modifier [.numbered-list] Have a numbered 'ul' without the semantics implied by using an 'ol'.
   *
   * @markup
 	<ul>
@@ -34,7 +34,7 @@ li{
 }
 
 /**
- * Have a numbered `ul` without the semantics implied by using an `ol`.
+ * Have a numbered 'ul' without the semantics implied by using an 'ol'.
  */
 /*ul*/.numbered-list{
 	list-style-type:decimal;

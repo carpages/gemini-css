@@ -8,7 +8,7 @@
   */
 
 /**
- * Where `margin-bottom` is concerned, this value will be the same as the
+ * Where 'margin-bottom' is concerned, this value will be the same as the
  * base line-height. This allows us to keep a consistent vertical rhythm.
  * As per: csswizardry.com/2012/06/single-direction-margin-declarations
  */
@@ -33,7 +33,7 @@ pre,
 }
 
 /**
- * Doubled up `margin-bottom` helper class.
+ * Doubled up 'margin-bottom' helper class.
  */
  %double-margin-bottom,
 .landmark{
@@ -44,7 +44,7 @@ pre,
 }
 
 /**
- * Half `margin-bottom` helper class.
+ * Half 'margin-bottom' helper class.
  */
  %half-margin-bottom{
 	margin-bottom:$half-spacing-unit;
@@ -54,7 +54,7 @@ pre,
 }
 
 /**
- * Quarter `margin-bottom` helper class.
+ * Quarter 'margin-bottom' helper class.
  */
  %quarter-margin-bottom{
 	margin-bottom:$quarter-spacing-unit;
@@ -65,7 +65,7 @@ pre,
 
 
 /**
- * `hr` elements only take up a few pixels, so we need to give them special
+ * 'hr' elements only take up a few pixels, so we need to give them special
  * treatment regarding vertical rhythm.
  */
 hr{
@@ -77,7 +77,7 @@ hr{
 
 
 /**
- * Where `margin-left` is concerned we want to try and indent certain elements
+ * Where 'margin-left' is concerned we want to try and indent certain elements
  * by a consistent amount. Define that amount once, here.
  */
 ul,ol,dd{

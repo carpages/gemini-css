@@ -10,9 +10,9 @@
  * Create a fully formed type style (sizing and vertical rhythm) by passing in a
  * single value, e.g.:
  *
-   `@include font-size(10px);`
+   '@include font-size(10px);'
  *
- * Thanks to @redclov3r for the `line-height` Sass:
+ * Thanks to @redclov3r for the 'line-height' Sass:
  * twitter.com/redclov3r/status/250301539321798657
  */
 @mixin font-size($font-size, $line-height:false){
@@ -56,7 +56,7 @@
 /**
  * Create vendor-prefixed CSS in one go, e.g.
  *
-   `@include vendor(border-radius, 4px);`
+   '@include vendor(border-radius, 4px);'
  *
  */
 @mixin vendor($property, $value...){
@@ -109,9 +109,9 @@
 /**
  * Force overly long spans of text to truncate, e.g.:
  *
-   `@include truncate(100%);`
+   '@include truncate(100%);'
  *
- * Where `$truncation-boundary` is a united measurement.
+ * Where '$truncation-boundary' is a united measurement.
  */
 @mixin truncate($truncation-boundary){
 	max-width:$truncation-boundary;
@@ -152,11 +152,11 @@
  * You pass this position in along with a desired arrow color and optional
  * border color, for example:
  *
- * `@include arrow(top, left, red)`
+ * '@include arrow(top, left, red)'
  *
  * for just a single, red arrow, or:
  *
- * `@include arrow(bottom, center, red, black)`
+ * '@include arrow(bottom, center, red, black)'
  *
  * which will create a red triangle with a black border which sits at the bottom
  * center of the element. Call the mixin thus:
@@ -308,7 +308,7 @@
  *
  * Not using a media query will, naturally, serve styles to all devices.
  *
- * `@include quick-media-query(medium){ [styles here] }`
+ * '@include quick-media-query(medium){ [styles here] }'
  *
  * We work out your end points for you:
  */
@@ -389,9 +389,9 @@ $medium-end:               $large-start - 1px;
  * create style sheets for that particular width.
  * Inspired by: //http://jakearchibald.github.com/sass-ie/
  *
- * `@include media-query($small-end){ [styles here] }`
- * `@include media-query($small-end, $large-start, true){ [styles here] }`
- * `@include media-query(511px, 4300px){ [styles here] }`
+ * '@include media-query($small-end){ [styles here] }'
+ * '@include media-query($small-end, $large-start, true){ [styles here] }'
+ * '@include media-query(511px, 4300px){ [styles here] }'
  **/
 
 @mixin media-query($min, $max: 99999, $print: false){

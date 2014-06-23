@@ -4,10 +4,10 @@
 /**
  * A series of helper classes to use arbitrarily. Only use a helper class if an
  * element/component doesn’t already have a class to which you could apply this
- * styling, e.g. if you need to float `.main-nav` left then add `float:left;` to
- * that ruleset as opposed to adding the `.float--left` class to the markup.
+ * styling, e.g. if you need to float '.main-nav' left then add 'float:left;' to
+ * that ruleset as opposed to adding the '.float--left' class to the markup.
  *
- * A lot of these classes carry `!important` as you will always want them to win
+ * A lot of these classes carry '!important' as you will always want them to win
  * out over other selectors.
  */
 
@@ -191,7 +191,7 @@
 /**
   * @module Informative [.informative]
   * @description Add a help cursor to any element that gives the user extra information on
-  * `:hover`.
+  * ':hover'.
   *
   * @markup
   *   <span class="informative">Information on hover</span>
@@ -258,7 +258,7 @@
 
 /**
   * @module Capitalize [.caps]
-  * @description Apply capital case to an element (usually a `strong`).
+  * @description Apply capital case to an element (usually a 'strong').
  **/
 .caps{
 	text-transform:uppercase!important;
@@ -358,7 +358,7 @@
 
 /**
   * @mixin accessibility
-  * @description Hide content off-screen without resorting to `display:none;`.
+  * @description Hide content off-screen without resorting to 'display:none;'.
   *
   * @example
   *   .foo{
@@ -378,7 +378,7 @@
 
 /**
   * @module Accessibility [.accessibility]
-  * @description Hide content off-screen without resorting to `display:none;`.
+  * @description Hide content off-screen without resorting to 'display:none;'.
   *
   * @markup
   *   <p class="accessibility">This text is only seen by screen readers!</p>

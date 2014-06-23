@@ -6,7 +6,7 @@
 
 /**
   * @module Navigation Lists [.nav]
-  * @description When used on an `ol` or `ul`, this class throws the list into horizontal mode. As per: csswizardry.com/2011/09/the-nav-abstraction
+  * @description When used on an 'ol' or 'ul', this class throws the list into horizontal mode. As per: csswizardry.com/2011/09/the-nav-abstraction
   *
   * @modifier [.nav--stacked] Throws the list into vertical mode
   * @modifier [.nav--center] Centers the list
@@ -109,7 +109,7 @@
 .nav--block{
 	line-height:1;
 	/**
-	 * Remove whitespace caused by `inline-block`.
+	 * Remove whitespace caused by 'inline-block'.
 	 */
 	letter-spacing:-0.31em;
 	word-spacing:-0.43em;

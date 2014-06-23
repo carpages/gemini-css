@@ -12,7 +12,7 @@
 	@extend .nav;
 	text-align:center;
 	/**
-	 * Remove whitespace caused by `inline-block`.
+	 * Remove whitespace caused by 'inline-block'.
 	 */
 	letter-spacing:-0.31em;
 	word-spacing:-0.43em;
@@ -43,7 +43,7 @@
 
 /**
   * @example
-  * @description Requires some funky commenting to collapse any white-space caused by the `display:inline-block;` rules.
+  * @description Requires some funky commenting to collapse any white-space caused by the 'display:inline-block;' rules.
   *
   * @markup
 	<ol class="pagination">
