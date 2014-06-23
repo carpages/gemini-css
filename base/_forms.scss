@@ -13,7 +13,7 @@
   *       <fieldset>
   *           <legend>Legend</legend>
   *           <label for="thing">Label name</label>
-  *           <input id="thing" name="thing" class="text-input" type="text" placeholder="Type something…">
+  *           <input id="thing" name="thing" class="text-input" type="text" placeholder="Type something...">
   *           <label class="checkbox">
   *               <input type="checkbox"> Check me out
   *           </label>
@@ -71,9 +71,9 @@ label {
   * class to target any/every one, e.g.:
   *
   * @markup
-  *   <input type="text" class="text-input" placeholder="Text…">
-  *   <input type="email" class="text-input" placeholder="Email…">
-  *   <input type="password" class="text-input" placeholder="Password…">
+  *   <input type="text" class="text-input" placeholder="Text...">
+  *   <input type="email" class="text-input" placeholder="Email...">
+  *   <input type="password" class="text-input" placeholder="Password...">
   */
 
 .text-input{
