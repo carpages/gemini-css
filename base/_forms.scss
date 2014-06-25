@@ -23,47 +23,47 @@
   */
 
 .form--inline{
-	.hN{
-		display:inline-block;
-		margin-bottom:0;
-	}
-	fieldset{
- 		display:inline-block;
- 		margin-bottom:0;
- 	}
+  .hN{
+    display:inline-block;
+    margin-bottom:0;
+  }
+  fieldset{
+    display:inline-block;
+    margin-bottom:0;
+  }
 }
 
 /**
 * Labels
 */
 label {
-	display: block;
+  display: block;
 
-	&.required:before{
-		content: '* '
-	}
+  &.required:before{
+    content: '* '
+  }
 
-	input[type="checkbox"] + &{
-		display:inline-block;
-		padding-left:$half-spacing-unit;
-	}
+  input[type="checkbox"] + &{
+    display:inline-block;
+    padding-left:$half-spacing-unit;
+  }
 
-	@include quick-media-query(medium){
-		.form--inline &{
-			display: inline-block;
-		}
-	}
+  @include quick-media-query(medium){
+    .form--inline &{
+      display: inline-block;
+    }
+  }
 }
-	/**
-	* Extra help text in 'label's, e.g.:
-	*
-	<label>Card number <small class=additional>No spaces</small></label>
-	*
-	*/
-	.additional{
-		display:block;
-		font-weight:normal;
-	}
+  /**
+  * Extra help text in 'label's, e.g.:
+  *
+  <label>Card number <small class=additional>No spaces</small></label>
+  *
+  */
+  .additional{
+    display:block;
+    font-weight:normal;
+  }
 
 /**
   * @module Text inputs [.text-input]
@@ -76,22 +76,43 @@ label {
   *   <input type="password" class="text-input" placeholder="Password...">
   */
 
+/**
+ * Base Text-Input
+ *
+ * These styles work well with _buttons.scss
+ *
+ * 1. Make text-inputs inherit font size.
+ * 2. Stop text-inputs from overflowing.
+ * 3. Line up different sized form elements a little nicer.
+ * 4. Scalable inputs can be a pain in the butt when it comes to height since
+ *    line-height has no effect according to spec. Some browser's allow you to
+ *    set it anyway, but others don't (like Firefox). Therefore, the best way to
+ *    style inputs and buttons is using height attr and em's in order to
+ *    properly scale and line them up across all browsers.
+ * 5. Normalise box model padding, and remove vertical padding in order to work
+ *    with height styles.
+ */
+
 .text-input{
-	max-width:100%;
+  font-size: 100%;           /*1*/
+  max-width: 100%;           /*2*/
+  vertical-align: middle;    /*3*/
+  height: 2em;               /*4*/
+  padding: 0 .5em;           /*5*/
 }
 
 .text-input,
 textarea{
-	/**
-     * Style these via your theme stylesheet.
-     */
+  /**
+   * Style these via your theme stylesheet.
+   */
 
-	//Inline
-	.form--inline &{
-		display: inline-block;
-		margin-bottom: 0;
-		vertical-align: middle;
-	}
+  //Inline
+  .form--inline &{
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
 }
 
 
@@ -107,32 +128,32 @@ textarea{
   */
 .radio,
 .checkbox {
-	//padding-left: $base-spacing-unit;
+  //padding-left: $base-spacing-unit;
 
-	//Inline
-	.form--inline &{
-		padding-left: 0;
-		margin-bottom: 0;
-		vertical-align: middle;
-	}
+  //Inline
+  .form--inline &{
+    padding-left: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
 }
-	.radio input[type="radio"],
-	.checkbox input[type="checkbox"] {
+  .radio input[type="radio"],
+  .checkbox input[type="checkbox"] {
 
-		//Inline
-		.form--inline &{
-			float: left;
-			margin-right: $half-spacing-unit;
-			margin-left: 0;
-		}
-	}
+    //Inline
+    .form--inline &{
+      float: left;
+      margin-right: $half-spacing-unit;
+      margin-left: 0;
+    }
+  }
 
 // Position radios and checkboxes better
 input[type="radio"],
 input[type="checkbox"] {
-	margin: 4px 0 0;
-	margin-top: 1px \9; /* IE8-9 */
-	line-height: normal;
+  margin: 4px 0 0;
+  margin-top: 1px \9; /* IE8-9 */
+  line-height: normal;
 }
 
 // Reset width of input images, buttons, radios, checkboxes
@@ -143,7 +164,7 @@ input[type="reset"],
 input[type="button"],
 input[type="radio"],
 input[type="checkbox"] {
-	width: auto; // Override of generic input selector
+  width: auto; // Override of generic input selector
 }
 
 
@@ -155,7 +176,7 @@ input[type="reset"],
 input[type="submit"],
 input[type="radio"],
 input[type="checkbox"]{
-	cursor:pointer;
+  cursor:pointer;
 }
 
 //Make select boxes look better
@@ -180,10 +201,10 @@ select{
   *   <small class="extra-help">.edu emails only</small>
   */
 /*small*/.extra-help{
-	display:inline-block;
-	visibility:hidden;
+  display:inline-block;
+  visibility:hidden;
 }
 .text-input:active + .extra-help,
 .text-input:focus + .extra-help{
-	visibility:visible;
+  visibility:visible;
 }
