@@ -1,5 +1,5 @@
 /*------------------------------------*\
-    $RESET
+  $RESET
 \*------------------------------------*/
 /**
  * @module Reset
@@ -7,14 +7,28 @@
  */
 
 /**
-* Let's make the box model all nice, shall we...?
-*/
+ * Let's make the box model all nice, shall we...?
+ */
 *{
-    &,
-    &:before,
-    &:after{
-        @include vendor(box-sizing, border-box);
-    }
+  &,
+  &:before,
+  &:after{
+    @include vendor(box-sizing, border-box);
+  }
+}
+
+/**
+ * Safari and Chrome default input[type="search"] to border-box, while
+ * everything else is content-box. In order to normalize this, normalize.css
+ * sets input[type="search"] back to content-box. Unfortunately, since we
+ * actually want border-box, we need to overwrite normalize.css and set this
+ * to border-box. Fun.
+ *
+ * https://github.com/necolas/normalize.css/blob/v2.1.3/normalize.css#L352-L363
+ * https://github.com/necolas/normalize.css/issues/187#issuecomment-21511692
+ */
+input[type="search"] {
+  @include vendor(box-sizing, border-box);
 }
 
 /**
@@ -26,27 +40,27 @@ dl,dd,ol,ul,
 form,fieldset,legend,
 table,th,td,caption,
 hr{
-    margin:0;
-    padding:0;
+  margin:0;
+  padding:0;
 }
 
 /**
  * Give a help cursor to elements that give extra info on ':hover'.
  */
 abbr[title],dfn[title]{
-    cursor:help;
+  cursor:help;
 }
 
 /**
  * Remove underlines from potentially troublesome elements.
  */
 u,ins{
-    text-decoration:none;
+  text-decoration:none;
 }
 
 /**
  * Apply faux underline via 'border-bottom'.
  */
 ins{
-    border-bottom:1px solid;
+  border-bottom:1px solid;
 }
