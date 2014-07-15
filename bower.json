@@ -1,6 +1,11 @@
 {
   "name": "gemini-css",
   "authors": [
-    {"name": "Matt Rose", "email": "mrose@carpages.com"}
-  ]
+    {"name": "Matt Rose", "email": "matt@mattrose.ca"},
+    {"name": "Arley McBlain", "email": "arley@mcblain.ca"}
+  ],
+  "main": [
+    "init.scss"
+  ],
+  "ignore": []
 }
