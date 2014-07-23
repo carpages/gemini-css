@@ -29,22 +29,6 @@
     float: none !important;
   }
 
-  // Add extra spacing between columns
-  .l-row--#{$screen}-spaced > [class*="l-column"]{
-    padding:0 ($column-gutter);
-  }
-  .l-row--#{$screen}-spaced-double > [class*="l-column"]{
-    padding: 0 ($column-gutter * 2);
-  }
-    .l-row--#{$screen}-spaced > [class*="l-column"]:first-child,
-    .l-row--#{$screen}-spaced-double > [class*="l-column"]:first-child{
-      padding-left:$column-gutter / 2;
-    }
-    .l-row--#{$screen}-spaced > [class*="l-column"]:last-child,
-    .l-row--#{$screen}-spaced-double > [class*="l-column"]:last-child{
-      padding-right:$column-gutter / 2;
-    }
-
   // Remove the margin that spaces the columns on smaller screens
   [class*="l-column--#{$screen}"]{
     margin-bottom:0;
@@ -94,9 +78,6 @@
   * @description Grid container for columns
   *
   * @modifier [.l-row--collapse] Collapse spacing between inner columns
-  * @modifier [.l-row--flush] Flush out the columns to the edge of the container
-  * @modifier [.l-row--{screen}-spaced] Space out the inner columns
-  * @modifier [.l-row--{screen}-double-spaced] Space out the inner columns
   *
   * @markup
   <div class="l-row">
@@ -114,13 +95,11 @@
   margin: 0 auto;
   max-width: $max-row-width;
 
-  // Since columns have padding, we need to counter it in embeds
-  // Fullfillment of #519 should allow for this:
-  // [class*="l-column"] > & {
-  [class*="l-column"] &{
-    width: auto;
+  //Keep the end columns flush with the gutter
+  & .l-row {
     margin-left: -($column-gutter/2);
     margin-right: -($column-gutter/2);
+    width: auto;
     max-width: none;
   }
 }
@@ -129,21 +108,8 @@
     padding: 0;
 
     & > .l-row{
-      margin:0;
-    }
-  }
-    //Don't counter the padding if it's an embed
-    [class*="l-column"] .l-row--collapse{
       margin-left:0;
       margin-right:0;
-    }
-  // Only collapse the spacing on the end columns
-  .l-row--flush > [class*="l-column"]{
-    &:first-child{
-      padding-left:0!important;
-    }
-    &:last-child{
-      padding-right:0!important;
     }
   }
 
