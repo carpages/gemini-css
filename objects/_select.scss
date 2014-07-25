@@ -4,62 +4,85 @@
     $SELECT DROPDOWN
 \*------------------------------------*/
 
-//Custom select dropdowns
-.select{
-  @extend %beautons;
-  position:relative;
-  padding:0;
-  text-shadow:none;
-  background:$white;
-  color:$base-color;
-  overflow:hidden;
+// From http://codepen.io/mattdrose/pen/snCEx
 
-  border:1px solid $light-grey;
+/**
+ *  .select Wrapper
+ *
+ *  1. Allow for box model styles
+ *  2. Needed to style the icon absolute, relative to the wrapper
+ *  3. So the .select positions nicely inline with other elements
+ *  4. Ensures padding is done by the child select
+ *  5. Hides default select UI
+ *  6. Extends icon styles
+ *  7. Position icon centered on the right
+ *  8. Allow select to be clicked through icon
+ *
+ *  select
+ *
+ *  9. Force select to appear clickable
+ * 10. Add padding to select rather than the wrapper so that the click target it larger
+ * 11. Leave space on the right for the icon
+ * 12. The magic number to push the default select arrow outside of the wrappers overflow
+ * 13. Hide the default styles of the select
+ * 14. Push the button slighly to the right to hide the select arrow in Firefox
+ *     http://stackoverflow.com/a/18327666
+ * 15. Push the default select arrow a little further on IE8
+ * 16. Hide the select outline
+ */
+
+// Expecting em to be scalable
+$select-padding: 0.25em!default;
+
+.select{
+  display: inline-block; /* 1 */
+  position: relative; /* 2 */
+  vertical-align: middle; /* 3 */
+  padding: 0; /* 4 */
+  overflow: hidden; /* 5 */
+
+  // A little styling
+  background:#fff;
+  color:#555;
+  border:1px solid #aaa;
+  text-shadow: none;
   @include border-radius($brand-round);
 
-  @extend %icon;
-  @extend .icon--default-arrow-down;
+  @extend %icon; /* 6 */
+  @extend .icon--default-arrow-down; /* 6 */
 
   &:before{
-    position:absolute;
-    top:0;
-    right:1em;
-    pointer-events:none;
+    position: absolute; /* 7 */
+    top: $select-padding; /* 7 */
+    right: $select-padding + 0.25em; /* 7 */
+    pointer-events: none; /* 8 */
   }
 
   select{
-    //https://coderwall.com/p/w7npmq
-    position:relative;
-    padding:0.3em 2.5em 0.3em 1em;
-    width: 130%;
-    border: none;
-    box-shadow: none;
-    background: transparent;
-    background-image: none;
-    @include vendor(appearance, none);
+    cursor: pointer; /* 9 */
+    padding: $select-padding; /* 10 */
+    padding-left: $select-padding + 0.25; /* 10 */
+    padding-right: $select-padding + 1.75em; /* 11 */
+    width: 130%; /* 12 */
+    border: none; /* 13 */
+    background: transparent; /* 13 */
+    background-image: none; /* 13 */
+    -webkit-appearance: none; /* 13 */
+       -moz-appearance: none; /* 13 */
+            appearance: none; /* 13 */
 
-    .lt-ie9 &{
-      width: 160%;
-    }
+    // Mozilla Hack
+    text-indent: 0.01px; /* 14 */
+    text-overflow: ''; /* 14 */
+
+    // IE 6-8 Hack
+    width: 160%\9; /* 15 */
+
     &:focus{
-      outline:none;
+      outline:none; /* 16 */
     }
   }
 }
-  .select--tab{
-    @include border-bottom-radius(0);
-    border-bottom-color:$white;
-
-    &.select{
-      //@extend .icon--list-2;
-    }
-  }
-  .w-select--tab{
-    display:block;
-    border-bottom:1px solid $light-grey;
-    margin-bottom:$base-spacing-unit;
-  }
-
 
 
 }//endif
