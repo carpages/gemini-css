@@ -52,8 +52,7 @@
  * 7. If the button's text is 1em, and the button is (2 * font-size) tall, then
  *    there is 1em of space above and below that text. We therefore apply 1em
  *    of space to the left and right, as padding, to keep consistent spacing.
- *    We also use height instead of line-height to have consistency with
- *    text input's.
+ *    We also use height  have consistency with text input's.
  * 8. Don't allow buttons to have underlines; it kinda ruins the illusion.
  */
 .beauton, %beautons{
@@ -67,6 +66,7 @@
     padding-top:   0;           /* [6] */
     padding-bottom:0;           /* [6] */
     height:2em;                 /* [7] */
+    line-height:2em;            /* [7] */
     padding-right:0.5em;        /* [7] */
     padding-left: 0.5em;        /* [7] */
 }
@@ -74,11 +74,11 @@
 
 .button{
     @extend %beautons;
-    cursor:pointer;             /* [5] */
+    cursor: pointer;             /* [5] */
 
     //Background
-    background-repeat:no-repeat;
-    background-color:$lighter-grey;
+    background-repeat: no-repeat;
+    background-color: $lighter-grey;
 
     //Corners
     @include border-radius($brand-round);
@@ -144,19 +144,22 @@
 .button--small{
     padding-right:0.5em;
     padding-left: 0.5em;
-    line-height:1.5;
+    line-height:1.5em;
+    height:1.5em;
 }
 
 .button--large{
     padding-right:1.5em;
     padding-left: 1.5em;
-    line-height:3;
+    line-height:3em;
+    height:3em;
 }
 
 .button--huge{
     padding-right:2em;
     padding-left: 2em;
-    line-height:4;
+    line-height:4em;
+    height:4em;
 }
 .button--squeeze{
     padding-right:0.25em;
