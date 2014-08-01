@@ -8,6 +8,7 @@
   * @module Multi Lists [.multi-list]
   * @description Splits a list into multiple columns
   *
+  * @modifier [.multi-list--block] Display list using inline-block. This is especially useful for content with dynamic heights
   * @modifier [.multi-list--small-2] Two columns
   * @modifier [.multi-list--small-3] Three columns
   *
@@ -17,7 +18,15 @@
 		<li>Ipsum</li>
 		<li>Dolor</li>
 		<li>Sit</li>
-  	</ul>
+  </ul>
+  *
+  * @markup
+	<ul class="multi-list  multi-list--block  multi-list--medium-4  multi-list--large-5"><!--
+		--><li>Lorem</li><!--
+		--><li>Ipsum</li><!--
+		--><li>Dolor</li><!--
+		--><li>Sit</li><!--
+  --></ul>
   */
 .multi-list{
 	list-style:none;
@@ -28,6 +37,12 @@
 		float:left;
 		width:100%;
 	}
+	.multi-list--block > li {
+    float: none;
+    display: inline-block;
+    vertical-align: top;
+    padding-bottom: $base-spacing-unit;
+  }
 
 
 	/**
