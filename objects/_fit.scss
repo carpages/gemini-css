@@ -13,6 +13,7 @@
   * Demo: http://codepen.io/mattdrose/pen/DKGoL
   *
   * @modifier [.fit--stretch] Stretches the image to full width - which crops like CSS background-size:cover;
+  * @modifier [.fit--square] Uses 1:1 ratio as a container
   * @modifier [.fit--circle] Crops the image in a circle container
   *
   * @markup
@@ -60,8 +61,12 @@
   }
 }
 
-.fit--circle{
+.fit--square{
   @include fitRatio(1, 1);
+}
+
+.fit--circle{
+  @extend .fit--square;
   @include border-radius(9999px);
 
   > img, > .fit__target {
