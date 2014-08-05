@@ -52,3 +52,20 @@ img[height]{
 	margin-bottom:$base-spacing-unit;
 	margin-left:auto;
 }
+
+/**
+  * @module Inline Image [.inline-img]
+  * @description Display an image inline with the text (small images/ glyphs)
+  *
+  * @markup
+  <div class="inline-img">&nbsp;</div>
+  */
+
+.inline-img{
+  display:inline-block;
+  background:transparent no-repeat center center;
+
+  &:hover{
+    text-decoration:none;
+  }
+}
