@@ -127,6 +127,7 @@
   */
 [class*="l-column"] {
   @extend .clearfix;
+  position: relative;
   padding: 0 ($column-gutter/2);
   width: 100%;
   float: left;
