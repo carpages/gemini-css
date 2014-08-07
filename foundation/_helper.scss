@@ -1,5 +1,5 @@
 /*------------------------------------*\
-	$HELPER
+  $HELPER
 \*------------------------------------*/
 /**
  * A series of helper classes to use arbitrarily. Only use a helper class if an
@@ -197,7 +197,7 @@
   *   <span class="informative">Information on hover</span>
  **/
 .informative{
-	cursor:help!important;
+  cursor:help!important;
 }
 
 /**
@@ -221,8 +221,8 @@
   *   <img class="muted-75" src="http://www.placecage.com/c/200/200">
  **/
 .muted{
-	opacity:0.5!important;
-	filter:alpha(opacity = 50)!important;
+  opacity:0.5!important;
+  filter:alpha(opacity = 50)!important;
 }
   .muted-75{
     opacity:0.75!important;
@@ -241,27 +241,27 @@
   *
  **/
 .more:after{
-	content:"\00A0" "\00BB"!important;
+  content:"\00A0" "\00BB"!important;
 }
-	/**
-	 * @example More Button
-	 * @markup
-	 *   <a href=# class="more more--button">Read more</a>
-	**/
-	.more--button{
-		display:inline-block;
-		padding-right:1em;
-		padding-left:1em;
-		background:$grey;
-		color:$white;
-	}
+  /**
+   * @example More Button
+   * @markup
+   *   <a href=# class="more more--button">Read more</a>
+  **/
+  .more--button{
+    display:inline-block;
+    padding-right:1em;
+    padding-left:1em;
+    background:$grey;
+    color:$white;
+  }
 
 /**
   * @module Capitalize [.caps]
   * @description Apply capital case to an element (usually a 'strong').
  **/
 .caps{
-	text-transform:uppercase!important;
+  text-transform:uppercase!important;
 }
 
 /**
@@ -272,9 +272,9 @@
   * <p style="width:250px;" class="truncate">This is a test for truncating.</p>
   */
 .truncate{
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /**
@@ -332,11 +332,11 @@
 .center-this{
   text-align:center;
   &:before{
-	content:'';
-	display:inline-block;
-	height:100%;
-	vertical-align: middle;
-	margin-right:-0.25em;
+  content:'';
+  display:inline-block;
+  height:100%;
+  vertical-align: middle;
+  margin-right:-0.25em;
   }
 }
 .center-this__target{
@@ -366,14 +366,14 @@
   *   }
   */
 @mixin accessibility{
-	border:0!important;
-	clip:rect(0 0 0 0)!important;
-	height:1px!important;
-	margin:-1px!important;
-	overflow:hidden!important;
-	padding:0!important;
-	position: absolute!important;
-	width:1px!important;
+  border:0!important;
+  clip:rect(0 0 0 0)!important;
+  height:1px!important;
+  margin:-1px!important;
+  overflow:hidden!important;
+  padding:0!important;
+  position: absolute!important;
+  width:1px!important;
 }
 
 /**
@@ -385,15 +385,15 @@
   */
 .a11y,
 .accessibility{
-	@include accessibility;
+  @include accessibility;
 }
-	@each $state in medium, large, xlarge{
-		@include quick-media-query(#{$state}){
-			.accessibility--#{$state}{
-				@include accessibility;
-			}
-		}
-	}
+  @each $state in medium, large, xlarge{
+    @include quick-media-query(#{$state}){
+      .accessibility--#{$state}{
+        @include accessibility;
+      }
+    }
+  }
 
 /**
   * @module GPU Rendering [%gpu]
@@ -419,18 +419,19 @@
   *
   * @markup
   <ul class="block-list">
-  	<li class="visible--small">.visible--small</li>
-  	<li class="hidden--small">.hidden--small</li>
-  	<li class="visible--medium">.visible--medium</li>
-  	<li class="hidden--medium">.hidden--medium</li>
-  	<li class="visible--large">.visible--large</li>
-  	<li class="hidden--large">.hidden--large</li>
+    <li class="visible--small">.visible--small</li>
+    <li class="hidden--small">.hidden--small</li>
+    <li class="visible--medium">.visible--medium</li>
+    <li class="hidden--medium">.hidden--medium</li>
+    <li class="visible--large">.visible--large</li>
+    <li class="hidden--large">.hidden--large</li>
   </ul>
   */
 
 %hide-small, .hidden{
   position: absolute !important;
   left: -9999px !important;
+  top: -9999px !important;
 }
 
 //For Javascript
@@ -450,10 +451,12 @@
   %hide-medium{
     position: absolute !important;
     left: -9999px !important;
+    top: -9999px !important;
   }
   %visible-medium{
     position: static !important;
     left: auto !important;
+    top: auto !important;
   }
 
   .visible--small  { @extend %hide-medium; }
@@ -467,10 +470,12 @@
   %hide-large{
     position: absolute !important;
     left: -9999px !important;
+    top: -9999px !important;
   }
   %visible-large{
     position: static !important;
     left: auto !important;
+    top: auto !important;
   }
 
   .visible--medium { @extend %hide-large; }
@@ -487,10 +492,12 @@
   %hide-print{
     position: absolute !important;
     left: -9999px !important;
+    top: -9999px !important;
   }
   %visible-print{
     position: static !important;
     left: auto !important;
+    top: auto !important;
   }
 
   .visible--print  { @extend %visible-print; }
