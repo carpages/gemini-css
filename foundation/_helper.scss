@@ -430,8 +430,8 @@
 
 %hide-small, .hidden{
   position: absolute !important;
-  left: -9999px !important;
-  top: -9999px !important;
+  left: -999% !important;
+  top: -999% !important;
 }
 
 //For Javascript
@@ -450,8 +450,8 @@
 @include quick-media-query(medium, true){
   %hide-medium{
     position: absolute !important;
-    left: -9999px !important;
-    top: -9999px !important;
+    left: -999% !important;
+    top: -999% !important;
   }
   %visible-medium{
     position: static !important;
@@ -469,8 +469,8 @@
 @include quick-media-query(large, true){
   %hide-large{
     position: absolute !important;
-    left: -9999px !important;
-    top: -9999px !important;
+    left: -999% !important;
+    top: -999% !important;
   }
   %visible-large{
     position: static !important;
@@ -491,8 +491,8 @@
 @media print {
   %hide-print{
     position: absolute !important;
-    left: -9999px !important;
-    top: -9999px !important;
+    left: -999% !important;
+    top: -999% !important;
   }
   %visible-print{
     position: static !important;
