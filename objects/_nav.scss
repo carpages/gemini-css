@@ -1,7 +1,7 @@
 @if $use-nav == true or $use-pagination == true{
 
 /*------------------------------------*\
-	$NAV
+  $NAV
 \*------------------------------------*/
 
 /**
@@ -18,49 +18,49 @@
   * @modifier [.nav--breadcrumb] Simple breadcrumb styling to apply to (ordered) lists
   *
   * @markup Default
-	  <ul class='nav'>
-		  <li><a href=#>Home</a></li>
-		  <li><a href=#>About</a></li>
-		  <li><a href=#>Portfolio</a></li>
-		  <li><a href=#>Contact</a></li>
-	  </ul>
+    <ul class='nav'>
+      <li><a href=#>Home</a></li>
+      <li><a href=#>About</a></li>
+      <li><a href=#>Portfolio</a></li>
+      <li><a href=#>Contact</a></li>
+    </ul>
   */
 .nav{
-	list-style:none;
-	margin:0;
-	@extend .clearfix;
+  list-style:none;
+  margin:0;
+  @extend .clearfix;
 
-	> li{
+  > li{
 
-		&,
-		> a{
-			display:inline-block;
-		   *display:inline;
-			zoom:1;
-		}
-	}
+    &,
+    > a{
+      display:inline-block;
+       *display:inline;
+      zoom:1;
+    }
+  }
 }
 
 /**
   * @example Stacked
   *
   * @markup
-	<ul class='nav nav--stacked'>
-		<li><a href=#>Home</a></li>
-		<li><a href=#>About</a></li>
-		<li><a href=#>Portfolio</a></li>
-		<li><a href=#>Contact</a></li>
-	</ul>
+  <ul class='nav nav--stacked'>
+    <li><a href=#>Home</a></li>
+    <li><a href=#>About</a></li>
+    <li><a href=#>Portfolio</a></li>
+    <li><a href=#>Contact</a></li>
+  </ul>
   */
 .nav--stacked{
 
-	> li{
-		display:list-item;
+  > li{
+    display:list-item;
 
-		> a{
-			display:block;
-		}
-	}
+    > a{
+      display:block;
+    }
+  }
 }
 
 
@@ -68,162 +68,178 @@
   * @example Centred
   *
   * @markup
-	<ul class='nav nav--centre'>
-		<li><a href=#>Home</a></li>
-		<li><a href=#>About</a></li>
-		<li><a href=#>Portfolio</a></li>
-		<li><a href=#>Contact</a></li>
-	</ul>
+  <ul class='nav nav--centre'>
+    <li><a href=#>Home</a></li>
+    <li><a href=#>About</a></li>
+    <li><a href=#>Portfolio</a></li>
+    <li><a href=#>Contact</a></li>
+  </ul>
   */
 .nav--center,
 .nav--centre{
-	text-align:center;
+  text-align:center;
 }
 
 /**
   * @example Right Justified
   *
   * @markup
-	<ul class='nav nav--right'>
-		<li><a href=#>Home</a></li>
-		<li><a href=#>About</a></li>
-		<li><a href=#>Portfolio</a></li>
-		<li><a href=#>Contact</a></li>
-	</ul>
+  <ul class='nav nav--right'>
+    <li><a href=#>Home</a></li>
+    <li><a href=#>About</a></li>
+    <li><a href=#>Portfolio</a></li>
+    <li><a href=#>Contact</a></li>
+  </ul>
   */
 .nav--right{
-	text-align:right;
+  text-align:right;
 }
 
 /**
   * @example Blocked
   *
   * @markup
-	<ul class='nav nav--block'>
-		<li><a href=#>Home</a></li>
-		<li><a href=#>About</a></li>
-		<li><a href=#>Portfolio</a></li>
-		<li><a href=#>Contact</a></li>
-	</ul>
+  <ul class='nav nav--block'>
+    <li><a href=#>Home</a></li>
+    <li><a href=#>About</a></li>
+    <li><a href=#>Portfolio</a></li>
+    <li><a href=#>Contact</a></li>
+  </ul>
   */
 .nav--block{
-	line-height:1;
-	/**
-	 * Remove whitespace caused by 'inline-block'.
-	 */
-	letter-spacing:-0.31em;
-	word-spacing:-0.43em;
-	white-space:nowrap;
+  line-height:1;
+  /**
+   * Remove whitespace caused by 'inline-block'.
+   */
+  letter-spacing:-0.31em;
+  word-spacing:-0.43em;
+  white-space:nowrap;
 
-	> li{
-		letter-spacing:normal;
-		word-spacing:normal;
+  > li{
+    letter-spacing:normal;
+    word-spacing:normal;
 
-		&,
-		> a{
-			padding:$half-spacing-unit;
-		}
-	}
+    &,
+    > a{
+      padding:$half-spacing-unit;
+    }
+  }
 }
 
 /**
   * @example Spaced
   *
   * @markup
-	<ul class='nav nav--spaced'>
-		<li><a href=#>Home</a></li>
-		<li><a href=#>About</a></li>
-		<li><a href=#>Portfolio</a></li>
-		<li><a href=#>Contact</a></li>
-	</ul>
+  <ul class='nav nav--spaced'>
+    <li><a href=#>Home</a></li>
+    <li><a href=#>About</a></li>
+    <li><a href=#>Portfolio</a></li>
+    <li><a href=#>Contact</a></li>
+  </ul>
   */
 .nav--spaced{
-	> li{
-	  margin-right: $base-spacing-unit;
+  > li{
+    margin-right: $base-spacing-unit;
 
-	  &:last-child{
-		margin-right: 0;
-	  }
-	}
+    &:last-child{
+    margin-right: 0;
+    }
+  }
 }
-	.nav--spaced-left{
-		> li{
-		  margin-left: $base-spacing-unit;
+  .nav--spaced-left{
+    > li{
+      margin-left: $base-spacing-unit;
 
-		  &:first-child{
-			margin-left: 0;
-		  }
-		}
-	}
+      &:first-child{
+      margin-left: 0;
+      }
+    }
+  }
 
 /**
   * @example Fitted
   *
   * @markup
-	<ul class='nav nav--fit'>
-		<li><a href=#>Home</a></li>
-		<li><a href=#>About</a></li>
-		<li><a href=#>Portfolio</a></li>
-		<li><a href=#>Contact</a></li>
-	</ul>
+  <ul class='nav nav--fit'>
+    <li><a href=#>Home</a></li>
+    <li><a href=#>About</a></li>
+    <li><a href=#>Portfolio</a></li>
+    <li><a href=#>Contact</a></li>
+  </ul>
   */
 .nav--fit{
-	display:table;
-	width:100%;
+  display:table;
+  width:100%;
 
-	> li{
-		display:table-cell;
+  > li{
+    display:table-cell;
 
-		> a{
-			display:block;
-		}
-	}
+    > a{
+      display:block;
+    }
+  }
 }
 
 /**
   * @example Keywords
   *
   * @markup
-	<ul class='nav nav--keywords'>
-		<li><a href=#>Home</a></li>
-		<li><a href=#>About</a></li>
-		<li><a href=#>Portfolio</a></li>
-		<li><a href=#>Contact</a></li>
-	</ul>
+  <ul class='nav nav--keywords'>
+    <li><a href=#>Home</a></li>
+    <li><a href=#>About</a></li>
+    <li><a href=#>Portfolio</a></li>
+    <li><a href=#>Contact</a></li>
+  </ul>
   */
 .nav--keywords{
 
-	> li{
+  > li{
 
-		&:after{
-			content:"\002C" "\00A0";
-		}
+    &:after{
+      content:"\002C" "\00A0";
+    }
 
-		&:last-child:after{
-			display:none;
-		}
-	}
+    &:last-child:after{
+      display:none;
+    }
+  }
 }
 
 /**
   * @example Breadcrumbs
   *
   * @markup
-	<ol class='nav nav--breadcrumb'>
-		<li><a href=#>2013</a></li>
-		<li data-breadcrumb='|'><a href=#>Ford</a></li>
-		<li><a href=#>Mustang</a></li>
-	</ol>
+  <ol class='nav nav--breadcrumb'>
+    <li><a href=#>2013</a></li>
+    <li data-breadcrumb='|'><a href=#>Ford</a></li>
+    <li><a href=#>Mustang</a></li>
+  </ol>
   */
 .nav--breadcrumb > li{
 
-	+ li:before{
-		content:"\002F" "\00A0";
-	}
+  + li:before{
+    content:"\002F" "\00A0";
+  }
 
-	+ li[data-breadcrumb]:before{
-		content:attr(data-breadcrumb) "\00A0";
-	}
+  + li[data-breadcrumb]:before{
+    content:attr(data-breadcrumb) "\00A0";
+  }
+}
+
+/**
+  * @example Breadcrumbs
+  *
+  * @markup
+  <ul class='nav nav--scroll'>
+    <li><img src="http://www.placetim.com/300/100/"></li>
+    <li><img src="http://www.placetim.com/200/100/"></li>
+    <li><img src="http://www.placetim.com/150/100/"></li>
+    <li><img src="http://www.placetim.com/250/100/"></li>
+  </ul>
+  */
+.nav--scroll {
+  white-space: nowrap;
+  overflow-x: scroll;
 }
 
 }//endif
