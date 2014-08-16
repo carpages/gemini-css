@@ -500,6 +500,6 @@
     top: auto !important;
   }
 
-  .visible--print  { @extend %visible-print !important; }
-  .hidden--print   { @extend %hide-print !important; }
+  .visible--print  { @extend %visible-print; }
+  .hidden--print   { @extend %hide-print; }
 }
