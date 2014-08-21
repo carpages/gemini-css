@@ -56,8 +56,7 @@
 .fit--stretch{
   > img, > .fit__target {
     width: 100%;
-    max-height: none;
-    min-height: 100%;
+    height: 100%;
   }
 }
 
