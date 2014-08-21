@@ -25,17 +25,24 @@
       <li><a href=#>Contact</a></li>
     </ul>
   */
+
+ /**
+   * 1. Fixes a weird bug in IE8 where tabs overlap
+   *    http://compsoftplc.blogspot.ca/2009/11/inline-block-not-quite-inline-blocking.html
+   * ​   https://github.com/twbs/bootstrap/issues/5455
+   */
 .nav{
   list-style:none;
   margin:0;
   @extend .clearfix;
 
   > li{
+    margin-right: 0.1px\9; /* 1 */
 
     &,
     > a{
       display:inline-block;
-       *display:inline;
+      *display:inline;
       zoom:1;
     }
   }
