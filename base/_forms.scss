@@ -161,7 +161,7 @@ input[type="checkbox"] {
 // I've opened a ticket with Chromium
 // https://code.google.com/p/chromium/issues/detail?q=radio%20button%20overflow%20hidden&colspec=ID%20Pri%20M%20Iteration%20ReleaseBlock%20Cr%20Status%20Owner%20Summary%20OS%20Modified&id=396726&thanks=396726&ts=1406140510
 input[type="radio"] {
-  margin-left: 0.5px;
+  margin-left: 1px;
 }
 
 // Reset width of input images, buttons, radios, checkboxes
