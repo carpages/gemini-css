@@ -1,5 +1,5 @@
 /*------------------------------------*\
-	$TABLES
+  $TABLES
 \*------------------------------------*/
 
 /**
@@ -62,15 +62,15 @@
  *   </table>
  */
 table{
-	width:100%;
+  width:100%;
 }
 th,
 td{
-	padding:$base-spacing-unit / 4;
-	@media screen and (min-width:480px){
-		padding:$half-spacing-unit;
-	}
-	text-align:left;
+  padding:$base-spacing-unit / 4;
+  @media screen and (min-width:480px){
+    padding:$half-spacing-unit;
+  }
+  text-align:left;
 }
 
 
@@ -78,19 +78,19 @@ td{
  * Cell alignments
  */
 [colspan]{
-	text-align:center;
+  text-align:center;
 }
 [colspan="1"]{
-	text-align:left;
+  text-align:left;
 }
 [rowspan]{
-	vertical-align:middle;
+  vertical-align:middle;
 }
 [rowspan="1"]{
-	vertical-align:top;
+  vertical-align:top;
 }
 .numerical{
-	text-align:right;
+  text-align:right;
 }
 
 /**
@@ -131,22 +131,22 @@ td{
  */
 .table--bordered{
 
-	th,
-	td{
-		border:1px solid $base-ui-color;
+  th,
+  td{
+    border:1px solid $base-ui-color;
 
-		&:empty{
-			border:none;
-		}
-	}
+    &:empty{
+      border:none;
+    }
+  }
 
-	thead tr:last-child th{
-		border-bottom-width:2px;
-	}
+  thead tr:last-child th{
+    border-bottom-width:2px;
+  }
 
-	tbody tr th:last-of-type{
-		border-right-width:2px;
-	}
+  tbody tr th:last-of-type{
+    border-right-width:2px;
+  }
 }
 
 
@@ -155,9 +155,9 @@ td{
  */
 .table--striped{
 
-	tbody tr:nth-of-type(odd){
-		background-color:$lighter-grey; /* Override this color in your theme stylesheet */
-	}
+  tbody tr:nth-of-type(odd){
+    background-color:$lighter-grey; /* Override this color in your theme stylesheet */
+  }
 }
 
 
@@ -165,5 +165,33 @@ td{
  * Data table
  */
 .table--data{
-	font:12px/1.5 sans-serif;
+  font:12px/1.5 sans-serif;
 }
+
+
+/**
+ * Responsive table
+ * This isn't mobile first for the sake of backwards compatability
+ */
+@include quick-media-query(visible-small) {
+  .table--responsive {
+    thead {
+      display: none; // Hide heading
+    }
+    th, td, tr {
+      display: block; // Block all the things
+    }
+    td {
+      text-align: left;
+
+      &:before {
+        content: attr(data-th)": ";
+        font-weight: bold;
+      }
+    }
+    tr {
+      margin-bottom: $base-spacing-unit;
+    }
+  }
+}
+
