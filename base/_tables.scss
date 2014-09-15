@@ -185,7 +185,7 @@ td{
       text-align: left;
 
       &:before {
-        content: attr(data-th)": ";
+        content: attr(data-th);
         font-weight: bold;
       }
     }
