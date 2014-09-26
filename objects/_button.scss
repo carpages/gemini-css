@@ -1,10 +1,10 @@
 /**
  ********************************
- * _BUTTONS.SCSS
+ * _BUTTON.SCSS
  ********************************
  */
 
-@if $use-buttons == true {
+@if $use-button == true {
 
   /**
    * @module Buttons [.button]
@@ -53,7 +53,7 @@
    * 8. Don't allow buttons to have underlines; it kinda ruins the illusion.
    */
   .beauton,
-  %beautons {
+  %beauton {
     display: inline-block;       /* [1] */
     vertical-align: middle;      /* [2] */
     white-space: nowrap;         /* [3] */

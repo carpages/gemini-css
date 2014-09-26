@@ -1,6 +1,6 @@
 /**
  ********************************
- * _ARROWS.SCSS
+ * _ARROW.SCSS
  ********************************
  */
 
@@ -14,7 +14,7 @@ $arrow-border: 2!default;
 $border: $arrow-size;
 $arrow: $arrow-size - $arrow-border;
 
-@if $use-arrows == true {
+@if $use-arrow == true {
 
   /**
    * @module Arrows
