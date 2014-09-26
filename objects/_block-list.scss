@@ -1,40 +1,41 @@
-@if $use-block-list == true{
-
-/*------------------------------------*\
-    $BLOCK-LIST
-\*------------------------------------*/
-
 /**
-  * @module Block List [.block-list]
-  * @description Create big blocky lists of content.
-  *
-  * @markup
-  *   <ul class=block-list>
-  *       <li>Foo</li>
-  *       <li>Bar</li>
-  *       <li>Baz</li>
-  *       <li><a href=# class=block-list__link>Foo Bar Baz</a></li>
-  *   </ul>
-  */
+ ********************************
+ * _BLOCK-LIST.SCSS
+ ********************************
+ */
 
-.block-list{
-	list-style:none;
-	margin-left:0;
+@if $use-block-list == true {
 
-	> li{
-		padding:$half-spacing-unit 0;
-	}
-}
-  .block-list--sides{
-    > li{
-      padding:$half-spacing-unit;
+  /**
+   * @module Block List [.block-list]
+   * @description Create big blocky lists of content.
+   *
+   * @markup
+   *   <ul class=block-list>
+   *       <li>Foo</li>
+   *       <li>Bar</li>
+   *       <li>Baz</li>
+   *       <li><a href=# class=block-list__link>Foo Bar Baz</a></li>
+   *   </ul>
+   */
+
+  .block-list {
+    list-style: none;
+    margin-left: 0;
+
+    > li {
+      padding: $half-spacing-unit 0;
+    }
+  }
+  .block-list--sides {
+    > li {
+      padding: $half-spacing-unit;
     }
   }
 
-	.block-list__link{
-		display:block;
-		padding:$half-spacing-unit 0;
-		margin:-$half-spacing-unit 0;
-	}
-
+  .block-list__link {
+    display: block;
+    padding: $half-spacing-unit 0;
+    margin: -$half-spacing-unit 0;
+  }
 }//endif

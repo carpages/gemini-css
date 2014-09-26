@@ -1,151 +1,154 @@
-$arrow-size:            $base-spacing-unit * 0.4!default;
-$arrow-border:          2!default;
-$border:                $arrow-size;
-$arrow:                 $arrow-size - $arrow-border;
+/**
+ ********************************
+ * _ARROWS.SCSS
+ ********************************
+ */
 
-@if $use-arrows == true{
-
-/*------------------------------------*\
-	$ARROWS
-\*------------------------------------*/
 /**
  * It is a common design treatment to give an element a triangular points-out
  * arrow, we typically build these with CSS.
  */
-/**
-  * @module Arrows
-  * @description Arrows are built as a SASS extension at the moment. For now, check out the source code to understand how they work.
-  * These styles have a mixin dependency.
+
+$arrow-size: $base-spacing-unit * 0.4!default;
+$arrow-border: 2!default;
+$border: $arrow-size;
+$arrow: $arrow-size - $arrow-border;
+
+@if $use-arrows == true {
+
+  /**
+   * @module Arrows
+   * @description Arrows are built as a SASS extension at the moment. For now, check out the source code to understand how they work.
+   * These styles have a mixin dependency.
+   */
+
+ /**
+  * Forms the basis for any/all CSS arrows.
   */
+  %arrow {
+    position: relative;
 
-/**
- * Forms the basis for any/all CSS arrows.
- */
-%arrow{
-	position:relative;
-
-	&:before,
-	&:after{
-		content:"";
-		position:absolute;
-		border-collapse:separate;
-	}
-	&:before{
-		border:$border solid transparent;
-	}
-	&:after{
-		border:$arrow solid transparent;
-	}
-}
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      border-collapse: separate;
+    }
+    &:before {
+      border: $border solid transparent;
+    }
+    &:after {
+      border: $arrow solid transparent;
+    }
+  }
 
 
-/**
- * Define individual edges so we can combine what we need, when we need.
- */
-%arrow--top{
-	@extend %arrow;
+ /**
+  * Define individual edges so we can combine what we need, when we need.
+  */
+  %arrow--top {
+    @extend %arrow;
 
-	&:before,
-	&:after{
-		bottom:100%;
-	}
-}
+    &:before,
+    &:after {
+      bottom: 100%;
+    }
+  }
 
-%arrow--upper{
-	@extend %arrow;
+  %arrow--upper {
+    @extend %arrow;
 
-	&:before{
-		top:$arrow;
-	}
-	&:after{
-		top:$border;
-	}
-}
+    &:before {
+      top: $arrow;
+    }
+    &:after {
+      top: $border;
+    }
+  }
 
-%arrow--middle{
-	@extend %arrow;
+  %arrow--middle {
+    @extend %arrow;
 
-	&:before,
-	&:after{
-		top:50%;
-		margin-top:-$border;
-	}
-	&:after{
-		margin-top:-$arrow;
-	}
-}
+    &:before,
+    &:after {
+      top: 50%;
+      margin-top: -$border;
+    }
+    &:after {
+      margin-top: -$arrow;
+    }
+  }
 
-%arrow--lower{
-	@extend %arrow;
+  %arrow--lower {
+    @extend %arrow;
 
-	&:before{
-		bottom:$arrow;
-	}
-	&:after{
-		bottom:$border;
-	}
-}
+    &:before {
+      bottom: $arrow;
+    }
+    &:after {
+      bottom: $border;
+    }
+  }
 
-%arrow--bottom{
-	@extend %arrow;
+  %arrow--bottom {
+    @extend %arrow;
 
-	&:before,
-	&:after{
-		top:100%;
-	}
-}
+    &:before,
+    &:after {
+      top: 100%;
+    }
+  }
 
-%arrow--near{
-	@extend %arrow;
+  %arrow--near {
+    @extend %arrow;
 
-	&:before,
-	&:after{
-		right:100%;
-	}
-}
+    &:before,
+    &:after {
+      right: 100%;
+    }
+  }
 
-%arrow--left{
-	@extend %arrow;
+  %arrow--left {
+    @extend %arrow;
 
-	&:before{
-		left:$arrow;
-	}
-	&:after{
-		left:$border;
-	}
-}
+    &:before {
+      left: $arrow;
+    }
+    &:after {
+      left: $border;
+    }
+  }
 
-%arrow--center{
-	@extend %arrow;
+  %arrow--center {
+    @extend %arrow;
 
-	&:before,
-	&:after{
-		left:50%;
-		margin-left:-$border;
-	}
-	&:after{
-		margin-left:-$arrow;
-	}
-}
+    &:before,
+    &:after {
+      left: 50%;
+      margin-left: -$border;
+    }
+    &:after {
+      margin-left: -$arrow;
+    }
+  }
 
-%arrow--right{
-	@extend %arrow;
+  %arrow--right {
+    @extend %arrow;
 
-	&:before{
-		right:$arrow + 10px;
-	}
-	&:after{
-		right:$border + 10px;
-	}
-}
+    &:before {
+      right: $arrow + 10px;
+    }
+    &:after {
+      right: $border + 10px;
+    }
+  }
 
-%arrow--far{
-	@extend %arrow;
+  %arrow--far {
+    @extend %arrow;
 
-	&:before,
-	&:after{
-		left:100%;
-	}
-}
-
+    &:before,
+    &:after {
+      left: 100%;
+    }
+  }
 }//endif

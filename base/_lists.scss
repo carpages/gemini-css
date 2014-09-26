@@ -1,50 +1,51 @@
-/*------------------------------------*\
-	$LISTS
-\*------------------------------------*/
+/**
+ ********************************
+ * _LISTS.SCSS
+ ********************************
+ */
 
 /**
-  * @module Lists [ul, ol]
-  * @description Your basic lists
-  *
-  * @modifier [.numbered-list] Have a numbered 'ul' without the semantics implied by using an 'ol'.
-  *
-  * @markup
-	<ul>
-		<li>Item 1</li>
-		<li>Item 2</li>
-		<li>Item 3</li>
-	</ul>
+ * @module Lists [ul, ol]
+ * @description Your basic lists
+ *
+ * @modifier [.numbered-list] Have a numbered 'ul' without the semantics implied by using an 'ol'.
+ *
+ * @markup
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
 
-	<ul class="numbered-list">
-		<li>Item 1</li>
-		<li>Item 2</li>
-		<li>Item 3</li>
-	</ul>
-  */
+  <ul class="numbered-list">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+ */
 
 
 /**
  * Remove vertical spacing from nested lists.
  */
-li{
-	> ul,
-	> ol{
-		margin-bottom:0;
-	}
+li {
+  > ul,
+  > ol {
+    margin-bottom: 0;
+  }
 }
 
 /**
  * Have a numbered 'ul' without the semantics implied by using an 'ol'.
  */
-/*ul*/.numbered-list{
-	list-style-type:decimal;
+/*ul*/.numbered-list {
+  list-style-type: decimal;
 }
 
 /**
  * Remove list styles
  */
-.list--no-style{
-  list-style:none;
-  margin-left:0;
+.list--no-style {
+  list-style: none;
+  margin-left: 0;
 }
-

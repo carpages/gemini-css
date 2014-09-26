@@ -1,26 +1,28 @@
-/*------------------------------------*\
-	$MAIN
-\*------------------------------------*/
+/**
+ ********************************
+ * _MAIN.SCSS
+ ********************************
+ */
 
 /**
-  * @module Main styling [html, body]
-  * @description Just your basic styling on the document
-  */
+ * @module Main styling [html, body]
+ * @description Just your basic styling on the document
+ */
 
-html{
-	font:#{($base-font-size/16px)*1em}/#{$line-height-ratio} $base-font-family;
-	overflow-y:scroll;
-	min-height:100%;
+html {
+  font: #{($base-font-size / 16px) * 1em}/#{$line-height-ratio} $base-font-family;
+  overflow-y: scroll;
+  min-height: 100%;
 }
 
-body{
-	position:relative;
-	text-rendering: optimizespeed;//Optimizespeed because optimizeLegibility has a conflict with translateZ(0) http://bit.ly/Tj1Pm4
-	background: $base-bg-color;
-	color: $base-color;
-	overflow-x: hidden;//Fixes issue with white box around content
+body {
+  position: relative;
+  text-rendering: optimizespeed;//Optimizespeed because optimizeLegibility has a conflict with translateZ(0) http://bit.ly/Tj1Pm4
+  background: $base-bg-color;
+  color: $base-color;
+  overflow-x: hidden;//Fixes issue with white box around content
 
-	.android &{
-		text-rendering: auto;//Fixes font rendering on android (requires JS sniffing / class adding like Modernizr)
-	}
+  .android & {
+    text-rendering: auto;//Fixes font rendering on android (requires JS sniffing / class adding like Modernizr)
+  }
 }

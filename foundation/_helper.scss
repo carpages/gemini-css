@@ -1,6 +1,9 @@
-/*------------------------------------*\
-  $HELPER
-\*------------------------------------*/
+/**
+ ********************************
+ * _HELPERS.SCSS
+ ********************************
+ */
+
 /**
  * A series of helper classes to use arbitrarily. Only use a helper class if an
  * element/component doesn't already have a class to which you could apply this
@@ -13,26 +16,26 @@
 
 
 /**
-  * @module Float
-  * @description Add/remove floats
-  *
-  * @modifier [.float--right] Float right
-  * @modifier [.float--left] Float left
-  * @modifier [.float--none] Clear floats
- **/
+ * @module Float
+ * @description Add/remove floats
+ *
+ * @modifier [.float--right] Float right
+ * @modifier [.float--left] Float left
+ * @modifier [.float--none] Clear floats
+ */
 .float--right   { float:right!important; }
 .float--left    { float:left !important; }
 .float--none    { float:none !important; }
 
 
 /**
-  * @module Text Alignment
-  * @description Easily align text
-  *
-  * @modifier [.align--left] Align left
-  * @modifier [.align--center] Align center
-  * @modifier [.align--right] Align right
- **/
+ * @module Text Alignment
+ * @description Easily align text
+ *
+ * @modifier [.align--left] Align left
+ * @modifier [.align--center] Align center
+ * @modifier [.align--right] Align right
+ */
 .align--left     { text-align:left  !important; }
 .align--center   { text-align:center!important; }
 .align--right    { text-align:right !important; }
@@ -44,13 +47,13 @@
 
 
 /**
-  * @module Font Weights
-  * @description Easily add font weights
-  *
-  * @modifier [.weight--light] Light
-  * @modifier [.weight--normal] Normal
-  * @modifier [.weight--semibold] Semibold
- **/
+ * @module Font Weights
+ * @description Easily add font weights
+ *
+ * @modifier [.weight--light] Light
+ * @modifier [.weight--normal] Normal
+ * @modifier [.weight--semibold] Semibold
+ */
 .weight--light      { font-weight:300!important; }
 .weight--normal     { font-weight:400!important; }
 .weight--semibold   { font-weight:600!important; }
@@ -63,23 +66,23 @@
 
 
 /**
-  * @module Block Pusher [.push]
-  * @description Add base spacing as a margin around a block
-  *
-  * @modifier [.push--top] Add margin to top
-  * @modifier [.push--right] Add margin to right
-  * @modifier [.push--bottom] Add margin to bottom
-  * @modifier [.push--left] Add margin to left
-  * @modifier [.push--ends] Add margin to top and bottom
-  * @modifier [.push--sides] Add margin to left and right
-  * @modifier [.push-half] Add half margin
-  * @modifier [.push-half--top] Add half margin to top
-  * @modifier [.push-half--right] Add half margin to right
-  * @modifier [.push-half--bottom] Add half margin to bottom
-  * @modifier [.push-half--left] Add half margin to left
-  * @modifier [.push-half--ends] Add half margin to top and bottom
-  * @modifier [.push-half--sides] Add half margin to left and right
- **/
+ * @module Block Pusher [.push]
+ * @description Add base spacing as a margin around a block
+ *
+ * @modifier [.push--top] Add margin to top
+ * @modifier [.push--right] Add margin to right
+ * @modifier [.push--bottom] Add margin to bottom
+ * @modifier [.push--left] Add margin to left
+ * @modifier [.push--ends] Add margin to top and bottom
+ * @modifier [.push--sides] Add margin to left and right
+ * @modifier [.push-half] Add half margin
+ * @modifier [.push-half--top] Add half margin to top
+ * @modifier [.push-half--right] Add half margin to right
+ * @modifier [.push-half--bottom] Add half margin to bottom
+ * @modifier [.push-half--left] Add half margin to left
+ * @modifier [.push-half--ends] Add half margin to top and bottom
+ * @modifier [.push-half--sides] Add half margin to left and right
+ */
 .push           { margin:       $base-spacing-unit!important; }
 .push--top      { margin-top:   $base-spacing-unit!important; }
 .push--right    { margin-right: $base-spacing-unit!important; }
@@ -100,16 +103,16 @@
 .push-double--top      { margin-top:$double-spacing-unit!important; }
 
 /**
-  * @module Block Flusher [.flush]
-  * @description Remove the margin around a block
-  *
-  * @modifier [.flush--top] Remove margin from top
-  * @modifier [.flush--right] Remove margin from right
-  * @modifier [.flush--bottom] Remove margin from bottom
-  * @modifier [.flush--left] Remove margin from left
-  * @modifier [.flush--ends] Remove margin from top and bottom
-  * @modifier [.flush--sides] Remove margin from left and right
- **/
+ * @module Block Flusher [.flush]
+ * @description Remove the margin around a block
+ *
+ * @modifier [.flush--top] Remove margin from top
+ * @modifier [.flush--right] Remove margin from right
+ * @modifier [.flush--bottom] Remove margin from bottom
+ * @modifier [.flush--left] Remove margin from left
+ * @modifier [.flush--ends] Remove margin from top and bottom
+ * @modifier [.flush--sides] Remove margin from left and right
+ */
 .flush          { margin:       0!important; }
 .flush--top     { margin-top:   0!important; }
 .flush--right   { margin-right: 0!important; }
@@ -120,34 +123,34 @@
 
 
 /**
-  * @module Bleed inner block [.flush]
-  * @description Apply negative margins to bleed a child to the edge of the parent
-  *
-  * @modifier [.bleed] Negative margins on the sides
-  * @modifier [.bleed-half] Half negative margins on the sides
- **/
+ * @module Bleed inner block [.flush]
+ * @description Apply negative margins to bleed a child to the edge of the parent
+ *
+ * @modifier [.bleed] Negative margins on the sides
+ * @modifier [.bleed-half] Half negative margins on the sides
+ */
 .bleed{margin-right: -$base-spacing-unit!important; margin-left:  -$base-spacing-unit!important;}
 .bleed-half{margin-right: -$half-spacing-unit!important; margin-left:  -$half-spacing-unit!important;}
 
 
 /**
-  * @module Block Softener [.soft]
-  * @description Add base spacing as padding around a block
-  *
-  * @modifier [.soft--top] Add padding to top
-  * @modifier [.soft--right] Add padding to right
-  * @modifier [.soft--bottom] Add padding to bottom
-  * @modifier [.soft--left] Add padding to left
-  * @modifier [.soft--ends] Add padding to top and bottom
-  * @modifier [.soft--sides] Add padding to left and right
-  * @modifier [.soft-half] Add half padding
-  * @modifier [.soft-half--top] Add half padding to top
-  * @modifier [.soft-half--right] Add half padding to right
-  * @modifier [.soft-half--bottom] Add half padding to bottom
-  * @modifier [.soft-half--left] Add half padding to left
-  * @modifier [.soft-half--ends] Add half padding to top and bottom
-  * @modifier [.soft-half--sides] Add half padding to left and right
- **/
+ * @module Block Softener [.soft]
+ * @description Add base spacing as padding around a block
+ *
+ * @modifier [.soft--top] Add padding to top
+ * @modifier [.soft--right] Add padding to right
+ * @modifier [.soft--bottom] Add padding to bottom
+ * @modifier [.soft--left] Add padding to left
+ * @modifier [.soft--ends] Add padding to top and bottom
+ * @modifier [.soft--sides] Add padding to left and right
+ * @modifier [.soft-half] Add half padding
+ * @modifier [.soft-half--top] Add half padding to top
+ * @modifier [.soft-half--right] Add half padding to right
+ * @modifier [.soft-half--bottom] Add half padding to bottom
+ * @modifier [.soft-half--left] Add half padding to left
+ * @modifier [.soft-half--ends] Add half padding to top and bottom
+ * @modifier [.soft-half--sides] Add half padding to left and right
+ */
 .soft           { padding:       $base-spacing-unit!important; }
 .soft--top      { padding-top:   $base-spacing-unit!important; }
 .soft--right    { padding-right: $base-spacing-unit!important; }
@@ -169,16 +172,16 @@
 .soft-double--right{padding-right:$double-spacing-unit!important;}
 
 /**
-  * @module Block Hardener [.hard]
-  * @description Remove the padding around a block
-  *
-  * @modifier [.hard--top] Remove padding from top
-  * @modifier [.hard--right] Remove padding from right
-  * @modifier [.hard--bottom] Remove padding from bottom
-  * @modifier [.hard--left] Remove padding from left
-  * @modifier [.hard--ends] Remove padding from top and bottom
-  * @modifier [.hard--sides] Remove padding from left and right
- **/
+ * @module Block Hardener [.hard]
+ * @description Remove the padding around a block
+ *
+ * @modifier [.hard--top] Remove padding from top
+ * @modifier [.hard--right] Remove padding from right
+ * @modifier [.hard--bottom] Remove padding from bottom
+ * @modifier [.hard--left] Remove padding from left
+ * @modifier [.hard--ends] Remove padding from top and bottom
+ * @modifier [.hard--sides] Remove padding from left and right
+ */
 .hard           { padding:       0!important; }
 .hard--top      { padding-top:   0!important; }
 .hard--right    { padding-right: 0!important; }
@@ -189,37 +192,37 @@
 
 
 /**
-  * @module Informative [.informative]
-  * @description Add a help cursor to any element that gives the user extra information on
-  * ':hover'.
-  *
-  * @markup
-  *   <span class="informative">Information on hover</span>
- **/
+ * @module Informative [.informative]
+ * @description Add a help cursor to any element that gives the user extra information on
+ * ':hover'.
+ *
+ * @markup
+ *   <span class="informative">Information on hover</span>
+ */
 .informative{
   cursor:help!important;
 }
 
 /**
-  * @module Clickable [.clickable]
-  * @description Add a pointer cursor to any element to show that it's clickable
-  *
-  * @markup
-  *   <span class="clickable">Clickable on hover</span>
- **/
+ * @module Clickable [.clickable]
+ * @description Add a pointer cursor to any element to show that it's clickable
+ *
+ * @markup
+ *   <span class="clickable">Clickable on hover</span>
+*/
 .clickable{
   cursor:pointer!important;
 }
 
 
 /**
-  * @module Muted [.muted]
-  * @description Mute an object by reducing its opacity.
-  *
-  * @markup
-  *   <img class="muted" src="http://www.placecage.com/c/200/200">
-  *   <img class="muted-75" src="http://www.placecage.com/c/200/200">
- **/
+ * @module Muted [.muted]
+ * @description Mute an object by reducing its opacity.
+ *
+ * @markup
+ *   <img class="muted" src="http://www.placecage.com/c/200/200">
+ *   <img class="muted-75" src="http://www.placecage.com/c/200/200">
+ */
 .muted{
   opacity:0.5!important;
   filter:alpha(opacity = 50)!important;
@@ -231,15 +234,15 @@
 
 
 /**
-  * @module More [.more]
-  * @description Add a right-angled quote to links that imply movement.
-  *
-  * @modifier [.more--button] Make a simple more button
-  *
-  * @markup
-  *   <a href=# class="more">Read more</a>
-  *
- **/
+ * @module More [.more]
+ * @description Add a right-angled quote to links that imply movement.
+ *
+ * @modifier [.more--button] Make a simple more button
+ *
+ * @markup
+ *   <a href=# class="more">Read more</a>
+ *
+ */
 .more:after{
   content:"\00A0" "\00BB"!important;
 }
@@ -247,7 +250,7 @@
    * @example More Button
    * @markup
    *   <a href=# class="more more--button">Read more</a>
-  **/
+   */
   .more--button{
     display:inline-block;
     padding-right:1em;
@@ -257,20 +260,20 @@
   }
 
 /**
-  * @module Capitalize [.caps]
-  * @description Apply capital case to an element (usually a 'strong').
- **/
+ * @module Capitalize [.caps]
+ * @description Apply capital case to an element (usually a 'strong').
+ */
 .caps{
   text-transform:uppercase!important;
 }
 
 /**
-  * @module Truncate Ellipsis [.truncate]
-  * @description Truncate a fixed width string with an ellipsis
-  *
-  * @markup
-  * <p style="width:250px;" class="truncate">This is a test for truncating.</p>
-  */
+ * @module Truncate Ellipsis [.truncate]
+ * @description Truncate a fixed width string with an ellipsis
+ *
+ * @markup
+ * <p style="width:250px;" class="truncate">This is a test for truncating.</p>
+ */
 .truncate{
   white-space: nowrap;
   overflow: hidden;
@@ -278,35 +281,35 @@
 }
 
 /**
-  * @module Rounded Corners [.round]
-  * @description Round the corners as much as possible
-  *
-  * @markup
-  * <input type="text" value="Rounded" class="round" />
-  */
+ * @module Rounded Corners [.round]
+ * @description Round the corners as much as possible
+ *
+ * @markup
+ * <input type="text" value="Rounded" class="round" />
+ */
 .round{
   @include border-radius($brand-round !important);
 }
 
 /**
-  * @module Circled Corners [.circle]
-  * @description Circle the corners as much as possible
-  *
-  * @markup
-  * <input type="text" value="Circled" class="circle" />
-  */
+ * @module Circled Corners [.circle]
+ * @description Circle the corners as much as possible
+ *
+ * @markup
+ * <input type="text" value="Circled" class="circle" />
+ */
 .circle{
   @include border-radius(999px!important);
 }
 
 /**
-  * @module Full Width [.full]
-  * @description Make something full width (100%)
-  *
-  *
-  * @markup
-  * <input type="text" value="Rounded" class="full" />
-  */
+ * @module Full Width [.full]
+ * @description Make something full width (100%)
+ *
+ *
+ * @markup
+ * <input type="text" value="Rounded" class="full" />
+ */
 .full{
   width:100%!important;
   // Min-width isn't supported well in IE8
@@ -316,15 +319,15 @@
 }
 
 /**
-  * @module Scroll Content [.scroll]
-  * @description Make element scrollable on all devices
-  */
+ * @module Scroll Content [.scroll]
+ * @description Make element scrollable on all devices
+ */
 .scroll{
   overflow:scroll;
   -webkit-overflow-scrolling:touch;
 }
 
-/*
+/**
  * Vertically Center
  *
  * http://css-tricks.com/centering-in-the-unknown/
@@ -346,25 +349,25 @@
 }
 
 /**
-  * @module Unselectable [.unselectable]
-  * @description Make it so that you can't highlight the text
-  *
-  * @markup
-  *   <span class="unselectable">Can't select me >:)</span>
-  */
+ * @module Unselectable [.unselectable]
+ * @description Make it so that you can't highlight the text
+ *
+ * @markup
+ *   <span class="unselectable">Can't select me >:)</span>
+ */
 .unselectable{
   @include vendor(user-select, none);
 }
 
 /**
-  * @mixin accessibility
-  * @description Hide content off-screen without resorting to 'display:none;'.
-  *
-  * @example
-  *   .foo{
-  *       @include accessibility;
-  *   }
-  */
+ * @mixin accessibility
+ * @description Hide content off-screen without resorting to 'display:none;'.
+ *
+ * @example
+ *   .foo{
+ *       @include accessibility;
+ *   }
+ */
 @mixin accessibility{
   border:0!important;
   clip:rect(0 0 0 0)!important;
@@ -377,12 +380,12 @@
 }
 
 /**
-  * @module Accessibility [.accessibility]
-  * @description Hide content off-screen without resorting to 'display:none;'.
-  *
-  * @markup
-  *   <p class="accessibility">This text is only seen by screen readers!</p>
-  */
+ * @module Accessibility [.accessibility]
+ * @description Hide content off-screen without resorting to 'display:none;'.
+ *
+ * @markup
+ *   <p class="accessibility">This text is only seen by screen readers!</p>
+ */
 .a11y,
 .accessibility{
   @include accessibility;
@@ -396,28 +399,28 @@
   }
 
 /**
-  * @module GPU Rendering [%gpu]
-  * @description A SASS helper to use the gpu on that element ( translateZ(0) )
-  */
+ * @module GPU Rendering [%gpu]
+ * @description A SASS helper to use the gpu on that element ( translateZ(0) )
+ */
 .gpu,
 %gpu{
   @include vendor(transform, translateZ(0));
 }
 
 /**
-  * @module Visibility Utilities
-  * @description Helper classes to quickly show and hide elements based on screen size
-  *
-  * @modifier [.visible--small] Show on small, hide on medium and large
-  * @modifier [.visible--medium] Show on medium, hide on small and large
-  * @modifier [.visible--large] Show on large, hide on small and medium
-  * @modifier [.hidden--small] Hide on small, show on medium and large
-  * @modifier [.hidden--medium] Hide on medium, show on small and large
-  * @modifier [.hidden--large] Hide on large, show on small and medium
-  * @modifier [.visible--print] Show on print, hide on rest
-  * @modifier [.hidden--large] Hide on print, show on rest
-  *
-  * @markup
+ * @module Visibility Utilities
+ * @description Helper classes to quickly show and hide elements based on screen size
+ *
+ * @modifier [.visible--small] Show on small, hide on medium and large
+ * @modifier [.visible--medium] Show on medium, hide on small and large
+ * @modifier [.visible--large] Show on large, hide on small and medium
+ * @modifier [.hidden--small] Hide on small, show on medium and large
+ * @modifier [.hidden--medium] Hide on medium, show on small and large
+ * @modifier [.hidden--large] Hide on large, show on small and medium
+ * @modifier [.visible--print] Show on print, hide on rest
+ * @modifier [.hidden--large] Hide on print, show on rest
+ *
+ * @markup
   <ul class="block-list">
     <li class="visible--small">.visible--small</li>
     <li class="hidden--small">.hidden--small</li>
@@ -426,7 +429,7 @@
     <li class="visible--large">.visible--large</li>
     <li class="hidden--large">.hidden--large</li>
   </ul>
-  */
+ */
 
 %hide-small, .hidden{
   position: absolute !important;

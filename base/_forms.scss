@@ -1,6 +1,8 @@
-/*------------------------------------*\
-    $FORMS
-\*------------------------------------*/
+/**
+ ********************************
+ * _FORMS.SCSS
+ ********************************
+ */
 
 /**
   * @module Default Forms [form]
@@ -22,48 +24,49 @@
   *   </form>
   */
 
-.form--inline{
-  .hN{
-    display:inline-block;
-    margin-bottom:0;
+.form--inline {
+  .hN {
+    display: inline-block;
+    margin-bottom: 0;
   }
-  fieldset{
-    display:inline-block;
-    margin-bottom:0;
+  fieldset {
+    display: inline-block;
+    margin-bottom: 0;
   }
 }
 
 /**
-* Labels
-*/
+ * Labels
+ */
 label {
   display: block;
 
-  &.required:before{
-    content: '* '
+  &.required:before {
+    content: "* ";
   }
 
-  input[type="checkbox"] + &{
-    display:inline-block;
-    padding-left:$half-spacing-unit;
+  input[type="checkbox"] + & {
+    display: inline-block;
+    padding-left: $half-spacing-unit;
   }
 
-  @include quick-media-query(medium){
-    .form--inline &{
+  @include quick-media-query(medium) {
+    .form--inline & {
       display: inline-block;
     }
   }
 }
-  /**
-  * Extra help text in 'label's, e.g.:
-  *
-  <label>Card number <small class=additional>No spaces</small></label>
-  *
-  */
-  .additional{
-    display:block;
-    font-weight:normal;
-  }
+
+/**
+ * Extra help text in 'label's, e.g.:
+ *
+    <label>Card number <small class=additional>No spaces</small></label>
+ *
+ */
+.additional {
+  display: block;
+  font-weight: normal;
+}
 
 /**
   * @module Text inputs [.text-input]
@@ -93,22 +96,22 @@ label {
  *    with height styles.
  */
 
-.text-input{
+.text-input {
   font-size: 100%;           /*1*/
   max-width: 100%;           /*2*/
   vertical-align: middle;    /*3*/
   height: 2em;               /*4*/
-  padding: 0 .5em;           /*5*/
+  padding: 0 0.5em;          /*5*/
 }
 
 .text-input,
-textarea{
+textarea {
   /**
    * Style these via your theme stylesheet.
    */
 
   //Inline
-  .form--inline &{
+  .form--inline & {
     display: inline-block;
     margin-bottom: 0;
     vertical-align: middle;
@@ -131,22 +134,22 @@ textarea{
   //padding-left: $base-spacing-unit;
 
   //Inline
-  .form--inline &{
+  .form--inline & {
     padding-left: 0;
     margin-bottom: 0;
     vertical-align: middle;
   }
 }
-  .radio input[type="radio"],
-  .checkbox input[type="checkbox"] {
 
-    //Inline
-    .form--inline &{
-      float: left;
-      margin-right: $half-spacing-unit;
-      margin-left: 0;
-    }
+.radio input[type="radio"],
+.checkbox input[type="checkbox"] {
+  //Inline
+  .form--inline & {
+    float: left;
+    margin-right: $half-spacing-unit;
+    margin-left: 0;
   }
+}
 
 // Position radios and checkboxes better
 input[type="radio"],
@@ -183,15 +186,15 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 input[type="radio"],
-input[type="checkbox"]{
-  cursor:pointer;
+input[type="checkbox"] {
+  cursor: pointer;
 }
 
 //Make select boxes look better
-select{
+select {
   vertical-align: middle;
-  :focus{
-      outline: none;
+  :focus {
+    outline: none;
   }
 }
 
@@ -205,11 +208,11 @@ select{
   *   <input type="email" class="text-input" id="email">
   *   <small class="extra-help">.edu emails only</small>
   */
-/*small*/.extra-help{
-  display:inline-block;
-  visibility:hidden;
+/*small*/.extra-help {
+  display: inline-block;
+  visibility: hidden;
 }
 .text-input:active + .extra-help,
-.text-input:focus + .extra-help{
-  visibility:visible;
+.text-input:focus + .extra-help {
+  visibility: visible;
 }

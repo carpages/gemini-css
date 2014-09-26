@@ -1,16 +1,19 @@
-@if $use-tags == true{
-
-/*------------------------------------*\
-    $TAGS
-\*------------------------------------*/
 /**
-  * @module Tags [.tag]
-  * @description Give text a background so it looks like a tag
-  *
-  * @markup
-  * <div class="tag">Tag</div>
-  *
-  * Extend this with your own sizes and colours. Eg.:
+ ********************************
+ * _TAGS.SCSS
+ ********************************
+ */
+
+@if $use-tags == true {
+
+  /**
+   * @module Tags [.tag]
+   * @description Give text a background so it looks like a tag
+   *
+   * @markup
+   * <div class="tag">Tag</div>
+   *
+   * Extend this with your own sizes and colours. Eg.:
     .tag--zeta{
       font-size:$h6-size;
     }
@@ -23,19 +26,16 @@
     .tag--disabled{
       color:mix($brand-color, $white);
     }
-  */
+   */
 
-.tag{
-  @extend %beautons;
+  .tag {
+    @extend %beautons;
+    background: $brand-color;
+    color: $white;
+    text-shadow: none;
 
-  background:$brand-color;
-  color:$white;
-  text-shadow:none;
-
-  &:hover{
-    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
   }
-}
-
-
 }//endif

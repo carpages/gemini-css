@@ -1,74 +1,76 @@
-@if $use-overlay == true{
-
-/*------------------------------------*\
-    $OVERLAY
-\*------------------------------------*/
-//Use position absolute to overlay items
 /**
-  * @module Overlay [.overlay]
-  * @description Overlays content on top of the parent content
-  *
-  * @markup
-  <div class="overlay">
+ ********************************
+ * _OVERLAY.SCSS
+ ********************************
+ */
 
-    <h2>Overlay time!</h2>
+@if $use-overlay == true {
 
-    <div class="overlay__content--top-right">
-      Top Right content
-    </div>
+  //Use position absolute to overlay items
+  /**
+   * @module Overlay [.overlay]
+   * @description Overlays content on top of the parent content
+   *
+   * @markup
+    <div class="overlay">
 
-  </div><!-- overlay -->
-  */
+      <h2>Overlay time!</h2>
 
-.overlay{
-  position:relative;
-}
-  %overlay__content{
-    position:absolute;
+      <div class="overlay__content--top-right">
+        Top Right content
+      </div>
+
+    </div><!-- overlay -->
+   */
+
+  .overlay {
+    position: relative;
+  }
+  %overlay__content {
+    position: absolute;
   }
 
-  .overlay__content--top-left{
+  .overlay__content--top-left {
     @extend %overlay__content;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
   }
-  .overlay__content--top-right{
+  .overlay__content--top-right {
     @extend %overlay__content;
-    top:0;
-    right:0;
+    top: 0;
+    right: 0;
   }
-  .overlay__content--bottom-left{
+  .overlay__content--bottom-left {
     @extend %overlay__content;
-    bottom:0;
-    left:0;
+    bottom: 0;
+    left: 0;
   }
-  .overlay__content--bottom-right{
+  .overlay__content--bottom-right {
     @extend %overlay__content;
-    bottom:0;
-    right:0;
+    bottom: 0;
+    right: 0;
   }
 
-  .overlay__content--top{
+  .overlay__content--top {
     @extend %overlay__content;
     @extend .overlay__content--top-left;
-    width:100%;
+    width: 100%;
   }
-  .overlay__content--right{
+  .overlay__content--right {
     @extend %overlay__content;
     @extend .overlay__content--top-right;
-    height:100%;
-    width:percentage(1/2);
+    height: 100%;
+    width: percentage(1/2);
   }
-  .overlay__content--bottom{
+  .overlay__content--bottom {
     @extend %overlay__content;
     @extend .overlay__content--bottom-left;
-    width:100%;
+    width: 100%;
   }
-  .overlay__content--left{
+  .overlay__content--left {
     @extend %overlay__content;
     @extend .overlay__content--top-left;
-    height:100%;
-    width:percentage(1/2);
+    height: 100%;
+    width: percentage(1/2);
   }
-
 }//endif

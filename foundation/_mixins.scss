@@ -1,6 +1,9 @@
-/*------------------------------------*\
-  $MIXINS
-\*------------------------------------*/
+/**
+ ********************************
+ * _MIXINS.SCSS
+ ********************************
+ */
+
 /**
   * @module Mixins
   * @description A number of useful mixins for writing SASS. I haven't come up with a good way of documenting them yet :(. For now, just check the source code for documentation.
@@ -15,7 +18,7 @@
  * Thanks to @redclov3r for the 'line-height' Sass:
  * twitter.com/redclov3r/status/250301539321798657
  */
-@mixin font-size($font-size, $line-height:false){
+@mixin font-size($font-size, $line-height:false) {
   font-size: $font-size;
   @if $use-rem == true{
     font-size: rem($font-size);
@@ -38,14 +41,14 @@
  * With thanks to @lar_zzz, @paranoida, @rowanmanning and ultimately
  * @thierrylemoulec for refining and improving my initial mixin.
  */
-@mixin headings($from: 1, $to: 6){
+@mixin headings($from: 1, $to: 6) {
   %base-heading {
     @content
   }
 
-  @if $from >= 1 and $to <= 6{
-    @for $i from $from through $to{
-      h#{$i}{
+  @if $from >= 1 and $to <= 6 {
+    @for $i from $from through $to {
+      h#{$i} {
         @extend %base-heading;
       }
     }
@@ -59,12 +62,12 @@
    '@include vendor(border-radius, 4px);'
  *
  */
-@mixin vendor($property, $value...){
-  -webkit-#{$property}:$value;
-     -moz-#{$property}:$value;
-    -ms-#{$property}:$value;
-     -o-#{$property}:$value;
-      #{$property}:$value;
+@mixin vendor($property, $value...) {
+  -webkit-#{$property}: $value;
+     -moz-#{$property}: $value;
+      -ms-#{$property}: $value;
+       -o-#{$property}: $value;
+          #{$property}: $value;
 }
 
 
@@ -83,24 +86,24 @@
  *
  * Courtesy of @integralist: twitter.com/integralist/status/260484115315437569
  */
-@mixin keyframe ($animation-name){
-  @-webkit-keyframes $animation-name{
+@mixin keyframe ($animation-name) {
+  @-webkit-keyframes $animation-name {
     @content;
   }
 
-  @-moz-keyframes $animation-name{
+  @-moz-keyframes $animation-name {
     @content;
   }
 
-  @-ms-keyframes $animation-name{
+  @-ms-keyframes $animation-name {
     @content;
   }
 
-  @-o-keyframes $animation-name{
+  @-o-keyframes $animation-name {
     @content;
   }
 
-  @keyframes $animation-name{
+  @keyframes $animation-name {
     @content;
   }
 }
@@ -113,7 +116,7 @@
  *
  * Where '$truncation-boundary' is a united measurement.
  */
-@mixin truncate($truncation-boundary){
+@mixin truncate($truncation-boundary) {
   max-width:$truncation-boundary;
   white-space:nowrap;
   overflow:hidden;
@@ -127,7 +130,7 @@
   @include rgba-background(rgb(0,0,0), .5);
  *
  */
-@mixin rgba-background($colour, $alpha){
+@mixin rgba-background($colour, $alpha) {
   background:$colour;
   background:rgba($colour, $alpha);
 }
@@ -168,111 +171,111 @@
    }
  *
  */
-@mixin arrow($arrow-edge, $arrow-location, $arrow-color, $border-color: $arrow-color){
+@mixin arrow($arrow-edge, $arrow-location, $arrow-color, $border-color: $arrow-color) {
 
-  @if $arrow-edge == top{
+  @if $arrow-edge == top {
 
     @extend %arrow--top;
 
-    @if $border-color != false{
-      &:before{
-        border-bottom-color:$border-color!important;
+    @if $border-color != false {
+      &:before {
+        border-bottom-color: $border-color!important;
       }
     }
 
-    &:after{
-      border-bottom-color:$arrow-color!important;
+    &:after {
+      border-bottom-color: $arrow-color!important;
     }
 
-    @if $arrow-location == left{
+    @if $arrow-location == left {
       @extend %arrow--left;
     }
 
-    @if $arrow-location == center{
+    @if $arrow-location == center {
       @extend %arrow--center;
     }
 
-    @if $arrow-location == right{
+    @if $arrow-location == right {
       @extend %arrow--right;
     }
 
   }
 
-  @if $arrow-edge == right{
+  @if $arrow-edge == right {
 
     @extend %arrow--far;
 
-    @if $border-color != false{
-      &:before{
-        border-bottom-color:$border-color!important;
+    @if $border-color != false {
+      &:before {
+        border-bottom-color: $border-color!important;
       }
     }
 
-    &:after{
-      border-left-color:$arrow-color!important;
+    &:after {
+      border-left-color: $arrow-color!important;
     }
 
-    @if $arrow-location == top{
+    @if $arrow-location == top {
       @extend %arrow--upper;
     }
 
-    @if $arrow-location == center{
+    @if $arrow-location == center {
       @extend %arrow--middle;
     }
 
-    @if $arrow-location == bottom{
+    @if $arrow-location == bottom {
       @extend %arrow--lower;
     }
 
   }
 
-  @if $arrow-edge == bottom{
+  @if $arrow-edge == bottom {
 
     @extend %arrow--bottom;
 
-    &:before{
-      border-top-color:$border-color!important;
+    &:before {
+      border-top-color: $border-color!important;
     }
 
-    &:after{
-      border-top-color:$arrow-color!important;
+    &:after {
+      border-top-color: $arrow-color!important;
     }
 
-    @if $arrow-location == left{
+    @if $arrow-location == left {
       @extend %arrow--left;
     }
 
-    @if $arrow-location == center{
+    @if $arrow-location == center {
       @extend %arrow--center;
     }
 
-    @if $arrow-location == right{
+    @if $arrow-location == right {
       @extend %arrow--right;
     }
 
   }
 
-  @if $arrow-edge == left{
+  @if $arrow-edge == left {
 
     @extend %arrow--near;
 
-    &:before{
-      border-right-color:$border-color!important;
+    &:before {
+      border-right-color: $border-color!important;
     }
 
-    &:after{
-      border-right-color:$arrow-color!important;
+    &:after {
+      border-right-color: $arrow-color!important;
     }
 
-    @if $arrow-location == top{
+    @if $arrow-location == top {
       @extend %arrow--upper;
     }
 
-    @if $arrow-location == center{
+    @if $arrow-location == center {
       @extend %arrow--middle;
     }
 
-    @if $arrow-location == bottom{
+    @if $arrow-location == bottom {
       @extend %arrow--lower;
     }
 
@@ -313,47 +316,47 @@
  * We work out your end points for you:
  */
 $small-end:              $medium-start - 1px;
-$medium-end:               $large-start - 1px;
+$medium-end:             $large-start - 1px;
 
-@mixin quick-media-query($media-query, $print: false){
+@mixin quick-media-query($media-query, $print: false) {
 
-  @if $media-query == medium or $media-query == hidden-small{
+  @if $media-query == medium or $media-query == hidden-small {
 
     @include media-query($medium-start, 99999, $print) { @content; }
 
   }
 
-  @if $media-query == large or $media-query == visible-large{
+  @if $media-query == large or $media-query == visible-large {
 
     @include media-query($large-start, 99999, $print) { @content; }
 
   }
 
-  @if $media-query == xlarge{
+  @if $media-query == xlarge {
 
     @include media-query($xlarge-start, 99999, $print) { @content; }
 
   }
 
-  @if $media-query == visible-small{
+  @if $media-query == visible-small {
 
     @include media-query(0, $small-end, $print) { @content; }
 
   }
 
-  @if $media-query == visible-medium{
+  @if $media-query == visible-medium {
 
     @include media-query($medium-start, $medium-end, $print) { @content; }
 
   }
 
-  @if $media-query == hidden-medium{
+  @if $media-query == hidden-medium {
 
     @include media-query($large-start, $small-end, $print) { @content; }
 
   }
 
-  @if $media-query == hidden-large{
+  @if $media-query == hidden-large {
 
     @include media-query(0, $medium-end, $print) { @content; }
 
@@ -369,13 +372,13 @@ $medium-end:               $large-start - 1px;
     only screen and (                min-resolution: 192dpi),
     only screen and (                min-resolution: 2dppx) {
 
-    @content;
+      @content;
 
     }
 
   }
 
-  @if $media-query == ''{
+  @if $media-query == "" {
     @content;
   }
 
@@ -392,9 +395,9 @@ $medium-end:               $large-start - 1px;
  * '@include media-query($small-end){ [styles here] }'
  * '@include media-query($small-end, $large-start, true){ [styles here] }'
  * '@include media-query(511px, 4300px){ [styles here] }'
- **/
+ */
 
-@mixin media-query($min, $max: 99999, $print: false){
+@mixin media-query($min, $max: 99999, $print: false) {
 
   $print-query: "";
   @if $print == true {$print-query: "print, ";}

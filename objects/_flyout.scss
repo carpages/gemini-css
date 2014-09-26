@@ -1,77 +1,79 @@
-@if $use-flyout == true{
-
-/*------------------------------------*\
-    $FLYOUT
-\*------------------------------------*/
-
 /**
-  * @module Flyouts [.flyout]
-  * @description Flyouts are pieces of content that fly out of a parent when said parent is hovered. They typically appear bottom-left of the parent.
-  *
-  * @modifier [.flyout--side] Side flyouts sit out the side of the parent, flush top.
-  */
-.flyout{
-    position:relative;
-    overflow:hidden;
+ ********************************
+ * _FLYOUT.SCSS
+ ********************************
+ */
 
-    &:hover{
-        overflow:visible;
+@if $use-flyout == true {
 
-        /**
-        * Regular flyouts sit all the way from the top, flush left.
-        */
-        > .flyout__content{
-            left: 0;
-        }
-    }
-}
-    .flyout__content{
-        /**
-         * Position the flyouts off-screen. This is typically better than
-         * 'display:none;'.
-         */
-        position:absolute;
-        width:100%;
-        top:100%;
-        left:-99999px;
-        z-index:20;
+  /**
+   * @module Flyouts [.flyout]
+   * @description Flyouts are pieces of content that fly out of a parent when said parent is hovered. They typically appear bottom-left of the parent.
+   *
+   * @modifier [.flyout--side] Side flyouts sit out the side of the parent, flush top.
+   */
+  .flyout {
+    position: relative;
+    overflow: hidden;
 
-        .flyout--right > &{
-          left:auto;
-          right:-99999px;
-        }
-    }
+    &:hover {
+      overflow: visible;
 
-    .flyout__content--small{
-      width:150%;
+      /**
+       * Regular flyouts sit all the way from the top, flush left.
+       */
+      > .flyout__content {
+        left: 0;
+      }
     }
-    .flyout__content--medium{
-      width:200%;
-    }
-    .flyout__content--large{
-      width:400%;
-    }
-    .flyout__content--x-large{
-      width:600%;
-    }
-
+  }
+  .flyout__content {
     /**
-     * Side flyouts sit all the way from the left, flush top.
+     * Position the flyouts off-screen. This is typically better than
+     * 'display:none;'.
      */
-    .flyout--side:hover > .flyout__content{
-        top:0;
-        left:100%;
-    }
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: -99999px;
+    z-index: 20;
 
-    .flyout--right:hover > .flyout__content{
-        right:0;
-        left:auto;
+    .flyout--right > & {
+      left: auto;
+      right: -99999px;
     }
+  }
 
-/**
-  * @example Regular Flyout
-  *
-  * @markup
+  .flyout__content--small {
+    width: 150%;
+  }
+  .flyout__content--medium {
+    width: 200%;
+  }
+  .flyout__content--large {
+    width: 400%;
+  }
+  .flyout__content--x-large {
+    width: 600%;
+  }
+
+  /**
+   * Side flyouts sit all the way from the left, flush top.
+   */
+  .flyout--side:hover > .flyout__content {
+    top: 0;
+    left: 100%;
+  }
+
+  .flyout--right:hover > .flyout__content {
+    right: 0;
+    left: auto;
+  }
+
+  /**
+   * @example Regular Flyout
+   *
+   * @markup
     <div class="flyout">
         Foo
         <div class="flyout__content">
@@ -79,12 +81,12 @@
             <p>Ipsum</p>
         </div>
     </div>
-  */
+   */
 
-/**
-  * @example Flyout Side
-  *
-  * @markup
+  /**
+   * @example Flyout Side
+   *
+   * @markup
     <div class="flyout flyout--side">
         Foo
         <div class="flyout__content">
@@ -92,6 +94,5 @@
             <p>Ipsum</p>
         </div>
     </div>
-  */
-
+   */
 }//endif

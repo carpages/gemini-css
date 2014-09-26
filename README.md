@@ -1,6 +1,6 @@
 # Gemini CSS
 
-Gemini uses SASS and Compass to compile CSS builds for different uses throughout the website.
+Gemini uses SASS and Compass to compile CSS builds for different uses.
 
 ## Style Layers
 
@@ -20,4 +20,4 @@ Finally, in ``sass/objects/``, we have our objects and abstractions; these are a
 
 ## Credits
 
-  - [Inuit.css](https://github.com/csswizardry/inuit.css)
+  Gemini CSS started as a fork from [Inuit.css](https://github.com/csswizardry/inuit.css)

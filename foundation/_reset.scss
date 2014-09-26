@@ -1,6 +1,9 @@
-/*------------------------------------*\
-  $RESET
-\*------------------------------------*/
+/**
+ ********************************
+ * _RESET.SCSS
+ ********************************
+ */
+
 /**
  * @module Reset
  * @description A more considered reset; more of a restart... csswizardry.com/2011/10/reset-restarted
@@ -9,10 +12,10 @@
 /**
  * Let's make the box model all nice, shall we...?
  */
-*{
+* {
   &,
   &:before,
-  &:after{
+  &:after {
     @include vendor(box-sizing, border-box);
   }
 }
@@ -34,33 +37,50 @@ input[type="search"] {
 /**
  * The usual...
  */
-h1,h2,h3,h4,h5,h6,
-p,blockquote,pre,
-dl,dd,ol,ul,
-form,fieldset,legend,
-table,th,td,caption,
-hr{
-  margin:0;
-  padding:0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+dl,
+dd,
+ol,
+ul,
+form,
+fieldset,
+legend,
+table,
+th,
+td,
+caption,
+hr {
+  margin: 0;
+  padding: 0;
 }
 
 /**
  * Give a help cursor to elements that give extra info on ':hover'.
  */
-abbr[title],dfn[title]{
-  cursor:help;
+abbr[title],
+dfn[title] {
+  cursor: help;
 }
 
 /**
  * Remove underlines from potentially troublesome elements.
  */
-u,ins{
-  text-decoration:none;
+u,
+ins {
+  text-decoration: none;
 }
 
 /**
  * Apply faux underline via 'border-bottom'.
  */
-ins{
-  border-bottom:1px solid;
+ins {
+  border-bottom: 1px solid;
 }

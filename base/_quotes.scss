@@ -1,6 +1,8 @@
-/*------------------------------------*\
-	$QUOTES
-\*------------------------------------*/
+/**
+ ********************************
+ * _QUOTES.SCSS
+ ********************************
+ */
 
 /**
  * Big up @boblet: html5doctor.com/blockquote-q-cite
@@ -13,26 +15,26 @@
   * @markup
   *   <p>And with great audacity, he told them, <q>My name is derp!</q></p>
   */
-q{
-	quotes:"\2018" "\2019" "\201C" "\201D";
+q {
+  quotes: "\2018" "\2019" "\201C" "\201D";
 
-	&:before{
-		content:"\2018";
-		content:open-quote;
-	}
-	&:after{
-		content:"\2019";
-		content:close-quote;
-	}
+  &:before {
+    content: "\2018";
+    content: open-quote;
+  }
+  &:after {
+    content: "\2019";
+    content: close-quote;
+  }
 
-	q:before{
-		content:"\201C";
-		content:open-quote;
-	}
-	q:after{
-		content:"\201D";
-		content:close-quote;
-	}
+  q:before {
+    content: "\201C";
+    content: open-quote;
+  }
+  q:after {
+    content: "\201D";
+    content: close-quote;
+  }
 }
 
 /**
@@ -48,55 +50,55 @@ q{
   *   </blockquote>
   */
 
-blockquote{
-	quotes:"\201C" "\201D";
-	text-indent:-0.41em;//.4em is roughly equal to the width of the opening " that we wish to hang.
+blockquote {
+  quotes: "\201C" "\201D";
+  text-indent: -0.41em;//.4em is roughly equal to the width of the opening " that we wish to hang.
 
-	p{
-		font-size: $base-font-size * 1.25;
-		line-height: 1.5;
+  p {
+    font-size: $base-font-size * 1.25;
+    line-height: 1.5;
 
-		&:before{
-			content:"\201C";
-			content:open-quote;
-		}
+    &:before {
+      content: "\201C";
+      content: open-quote;
+    }
 
-		&:after{
-			content:"";
-			content:no-close-quote;
-		}
+    &:after {
+      content: "";
+      content: no-close-quote;
+    }
 
-		&:last-of-type{
-			margin-bottom:0;
-			&:after{
-				content:"\201D";
-				content:close-quote;
-			}
-		}
-	}
+    &:last-of-type {
+      margin-bottom: 0;
+      &:after {
+        content: "\201D";
+        content: close-quote;
+      }
+    }
+  }
 
-	q:before{
-		content:"\2018";
-		content:open-quote;
-	}
-	q:after{
-		content:"\2019";
-		content:close-quote;
-	}
+  q:before {
+    content: "\2018";
+    content: open-quote;
+  }
+  q:after {
+    content: "\2019";
+    content: close-quote;
+  }
 }
-	.blockquote--indent{
-		padding:0 0 0 15px;
-		border-left: 5px solid $lighter-grey;
-	}
+.blockquote--indent {
+  padding: 0 0 0 15px;
+  border-left: 5px solid $lighter-grey;
+}
 
 
 
-.blockquote__source{
-	color:$light-grey;
-	display:block;
-	text-indent:0;
+.blockquote__source {
+  color: $light-grey;
+  display: block;
+  text-indent: 0;
 
-	&:before{
-		content:"\2014";
-	}
+  &:before {
+    content: "\2014";
+  }
 }

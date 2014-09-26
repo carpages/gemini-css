@@ -1,14 +1,16 @@
-/*------------------------------------*\
-	$CODE
-\*------------------------------------*/
+/**
+ ********************************
+ * _CODE.SCSS
+ ********************************
+ */
 
 code,
 pre {
-	padding: 0 3px 2px;
-	font-family: $monaco;
-	font-size: $base-font-size - 2;
-	color: $dark-grey;
-	@include border-radius(3px);
+  padding: 0 3px 2px;
+  font-family: $monaco;
+  font-size: $base-font-size - 2;
+  color: $dark-grey;
+  @include border-radius(3px);
 }
 
 /**
@@ -19,11 +21,11 @@ pre {
   *   <p><code>console.log('Hello World!');</code></p>
   */
 code {
-	padding: 2px 4px;
-	color: $dark-blue;
-	background-color: $lightest-grey;
-	border: 1px solid $lighter-grey;
-	white-space: nowrap;
+  padding: 2px 4px;
+  color: $dark-blue;
+  background-color: $lightest-grey;
+  border: 1px solid $lighter-grey;
+  white-space: nowrap;
 }
 
 /**
@@ -40,32 +42,32 @@ code {
   *   </code></pre>
   */
 pre {
-	display: block;
-	padding: ($half-spacing-unit - 1) / 2;
-	font-size: $base-font-size - 1; // 14px to 13px
-	line-height: $base-line-height;
-	word-break: break-all;
-	word-wrap: break-word;
-	white-space: pre;
-	white-space: pre-wrap;
-	background-color: $lightest-grey;
-	border: 1px solid #ccc; // fallback for IE7-8
-	border: 1px solid rgba(0,0,0,.15);
-	@include border-radius($brand-round);
+  display: block;
+  padding: ($half-spacing-unit - 1) / 2;
+  font-size: $base-font-size - 1; // 14px to 13px
+  line-height: $base-line-height;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre;
+  white-space: pre-wrap;
+  background-color: $lightest-grey;
+  border: 1px solid #CCC; // fallback for IE7-8
+  border: 1px solid rgba(0,0,0,0.15);
+  @include border-radius($brand-round);
 
-	// Enable scrollable blocks of code
-	&.pre__scrollable {
-		max-height: 340px;
-		overflow-y: scroll;
-	}
+  // Enable scrollable blocks of code
+  &.pre__scrollable {
+    max-height: 340px;
+    overflow-y: scroll;
+  }
 
-	// Account for some code outputs that place code tags in pre tags
-	code {
-		padding: 0;
-		color: inherit;
-		white-space: pre;
-		white-space: pre-wrap;
-		background-color: transparent;
-		border: 0;
-	}
+  // Account for some code outputs that place code tags in pre tags
+  code {
+    padding: 0;
+    color: inherit;
+    white-space: pre;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border: 0;
+  }
 }

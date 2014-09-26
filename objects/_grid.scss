@@ -1,6 +1,8 @@
-/*------------------------------------*\
-  $GRID
-\*------------------------------------*/
+/**
+ ********************************
+ * _GRID.SCSS
+ ********************************
+ */
 
 /**
  * This is inspired by the Foundation Grid
@@ -30,7 +32,7 @@
   }
 
   // Remove the margin that spaces the columns on smaller screens
-  [class*="l-column--#{$screen}"]{
+  [class*="l-column--#{$screen}"] {
     margin-bottom:0;
   }
 
@@ -50,8 +52,12 @@
 
   @if $screen != 'small' {
     // Reset pull/push to overwrite the smaller screen setting
-    .l-column--#{$screen}-push-reset { left: inherit; }
-    .l-column--#{$screen}-pull-reset { right: inherit; }
+    .l-column--#{$screen}-push-reset {
+      left: inherit;
+    }
+    .l-column--#{$screen}-pull-reset {
+      right: inherit;
+    }
   }
 
   // Basic push and pulls
@@ -71,24 +77,24 @@
     }
 }
 
-@if $use-grid == true{
+@if $use-grid == true {
 
 /**
-  * @module Grid Row [.l-row]
-  * @description Grid container for columns
-  *
-  * @modifier [.l-row--collapse] Collapse spacing between inner columns
-  *
-  * @markup
-  <div class="l-row">
-    <div class="l-column--small-3 l-column--large-9">
-      <div class="my-class my-class--small">Small: 3, Large: 9</div>
+ * @module Grid Row [.l-row]
+ * @description Grid container for columns
+ *
+ * @modifier [.l-row--collapse] Collapse spacing between inner columns
+ *
+ * @markup
+    <div class="l-row">
+     <div class="l-column--small-3 l-column--large-9">
+       <div class="my-class my-class--small">Small: 3, Large: 9</div>
+     </div>
+     <div class="l-column--small-9 l-column--large-3">
+       <div class="my-class my-class--small">Small: 9, Large: 3</div>
+     </div>
     </div>
-    <div class="l-column--small-9 l-column--large-3">
-      <div class="my-class my-class--small">Small: 9, Large: 3</div>
-    </div>
-  </div>
-  */
+ */
 .l-row {
   @extend .clearfix;
   width: 100%;
@@ -114,17 +120,17 @@
   }
 
 /**
-  * @module Grid Column [.l-column]
-  * @description Column within a row. Screen size is mobile first (ie. small applies to medium, large, and xlarge).
-  *
-  * @modifier [.l-column--{screen}-{number}] The width you want that column to occupy on the specified screen size
-  * @modifier [.l-column--{screen}-offset-{number}] The space that you want offset before the column on the specified screen size
-  * @modifier [.l-column--{screen}-centered] Center the column on the specified screen size
-  * @modifier [.l-column--{screen}-pull-{number}] How many units you want to pull the column to the left on the specified screen size
-  * @modifier [.l-column--{screen}-push-{number}] How many units you want to push the column to the right on the specified screen size
-  * @modifier [.l-column--{screen}-pull-reset] Reset the pull on the specified screen size
-  * @modifier [.l-column--{screen}-push-reset] Reset the push on the specified screen size
-  */
+ * @module Grid Column [.l-column]
+ * @description Column within a row. Screen size is mobile first (ie. small applies to medium, large, and xlarge).
+ *
+ * @modifier [.l-column--{screen}-{number}] The width you want that column to occupy on the specified screen size
+ * @modifier [.l-column--{screen}-offset-{number}] The space that you want offset before the column on the specified screen size
+ * @modifier [.l-column--{screen}-centered] Center the column on the specified screen size
+ * @modifier [.l-column--{screen}-pull-{number}] How many units you want to pull the column to the left on the specified screen size
+ * @modifier [.l-column--{screen}-push-{number}] How many units you want to push the column to the right on the specified screen size
+ * @modifier [.l-column--{screen}-pull-reset] Reset the pull on the specified screen size
+ * @modifier [.l-column--{screen}-push-reset] Reset the push on the specified screen size
+ */
 [class*="l-column"] {
   @extend .clearfix;
   position: relative;
@@ -166,10 +172,10 @@
 }
 
 /**
-  * @example Nest Your Grid
-  * @description The grid allows for nesting down as far as you'd like.
-  *
-  * @markup
+ * @example Nest Your Grid
+ * @description The grid allows for nesting down as far as you'd like.
+ *
+ * @markup
   <div class="l-row">
     <div class="l-column--small-6">
       <div class="l-row">
@@ -179,13 +185,13 @@
     </div>
     <div class="l-column--small-6"><div class="my-class">6</div></div>
   </div>
-  */
+ */
 
 /**
-  * @example Offset
-  * @description Offsets allow you to create additional space between columns in a row.
-  *
-  * @markup
+ * @example Offset
+ * @description Offsets allow you to create additional space between columns in a row.
+ *
+ * @markup
   <div class="l-row">
     <div class="l-column--small-3 l-column--small-offset-2">
       <div class="my-class">3, offset 2</div>
@@ -194,12 +200,12 @@
       <div class="my-class">6, offset 1</div>
     </div>
   </div>
-  */
+ */
 
 /**
-  * @example Pull and push
-  * @description Pull and push allow you to move columns to the left or right of their natural placement. This is useful for changing the order of elements on different devices.
-  * @markup
+ * @example Pull and push
+ * @description Pull and push allow you to move columns to the left or right of their natural placement. This is useful for changing the order of elements on different devices.
+ * @markup
   <div class="l-row">
     <div class="l-column--small-3 l-column--small-push-9
                 l-column--medium-push-reset">
@@ -210,6 +216,6 @@
       <div class="inner">9, last</div>
     </div>
   </div>
-  */
+ */
 
 }//end

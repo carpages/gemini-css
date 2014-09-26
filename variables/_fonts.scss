@@ -1,6 +1,8 @@
-/*------------------------------------*\
-    $FONT STACKS
-\*------------------------------------*/
+/**
+ ********************************
+ * _FONTS.SCSS
+ ********************************
+ */
 
 // Some sweet font stacks found at http://cssfontstack.com/
 
@@ -16,9 +18,9 @@ console.log(fonts);
 */
 
 
-/* SANS SERIF 
- * ------------------------------------
- */
+/********************************
+ * SANS SERIF
+ ********************************/
 
 //Support: Mac: 98.74%, Windows: 99.84%
 $arial: Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -80,9 +82,9 @@ $trebuchet-ms: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida S
 //Support: Mac: 99.10%, Windows: 99.84%
 $verdana: Verdana, Geneva, sans-serif;
 
-/* SERIF
- * ------------------------------------
- */
+/********************************
+ * SERIF
+ ********************************/
 
 //Support: Mac: 93.33%, Windows: 60.35%
 $baskerville: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
@@ -136,9 +138,9 @@ $rockwell-extra-bold: "Rockwell Extra Bold", "Rockwell Bold", monospace;
 $times-new-roman: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
 
 
-/* MONOSPACED
- * ------------------------------------
- */
+/********************************
+ * MONOSPACED
+ ********************************/
 
 //Support: Mac: 94.59%, Windows: 4.16%
 $andale-mono: "Andale Mono", AndaleMono, monospace;
@@ -159,9 +161,9 @@ $lucida-sans-typewriter: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bi
 $monaco: Monaco, Consolas, "Lucida Console", monospace;
 
 
-/* FANTASY
- * ------------------------------------
- */
+/********************************
+ * FANTASY
+ ********************************/
 
 //Support: Mac: 92.61%, Windows: 66.87%
 $copperplate: Copperplate, "Copperplate Gothic Light", fantasy;
@@ -170,9 +172,9 @@ $copperplate: Copperplate, "Copperplate Gothic Light", fantasy;
 $papyrus: Papyrus, fantasy;
 
 
-/* SCRIPT
- * ------------------------------------
- */
+/********************************
+ * SCRIPT
+ ********************************/
 
 //Support: Mac: 90.99%, Windows: 59.64%
 $brush-script-mt: "Brush Script MT", cursive;

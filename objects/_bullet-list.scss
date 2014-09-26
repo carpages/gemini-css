@@ -1,35 +1,35 @@
-@if $use-bullet-list == true{
-
-/*------------------------------------*\
-    $BULLET LISTS
-\*------------------------------------*/
-
 /**
-  * @module Bullet Lists [.bullet-list]
-  * @description Allows you to replace default bullets with icons
-  * Has a dependency of the icons module
-  *
-  * @markup
+ ********************************
+ * _BULLET-LIST.SCSS
+ ********************************
+ */
 
-  */
-.bullet-list{
-  margin-left: 0;
+@if $use-bullet-list == true {
 
-  & > li{
-    list-style:none;
-    position:relative;
-    padding-left: $base-spacing-unit;
-    @extend %icon;
-    @extend .icon--default-arrow-right;
+  /**
+   * @module Bullet Lists [.bullet-list]
+   * @description Allows you to replace default bullets with icons
+   * Has a dependency of the icons module
+   *
+   * @markup
 
-    &:before{
-      position:absolute;
-      top:0;
-      left:0;
-      color:$grey;
+   */
+  .bullet-list {
+    margin-left: 0;
+
+    & > li {
+      list-style: none;
+      position: relative;
+      padding-left: $base-spacing-unit;
+      @extend %icon;
+      @extend .icon--default-arrow-right;
+
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: $grey;
+      }
     }
   }
-}
-
-
 }//endif

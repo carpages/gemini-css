@@ -1,25 +1,26 @@
-@if $use-colors == true{
-
-/*------------------------------------*\
-    $COLORS
-\*------------------------------------*/
 /**
-  * @module Colors
-  * @description Easy references to common global colours. These are variables
-  * that can be handy to use for text colours (esp icons) or backgrounds
-  *
-  * @markup
-  .share--facebook { color: $c--facebook; }
-  .social--facebook { background-color: $c--facebook; }
-  *
-  */
+ ********************************
+ * _COLORS.SCSS
+ ********************************
+ */
 
-/* SOCIAL COLORS */
-$c--facebook: #3A5998;
-$c--twitter: #1AB2E8;
-$c--google: #4386F7;
-$c--google-plus: #DD4C39;
-$c--pinterest: #C9232D;
+@if $use-colors == true {
 
+  /**
+   * @module Colors
+   * @description Easy references to common global colours. These are variables
+   * that can be handy to use for text colours (esp icons) or backgrounds
+   *
+   * @markup
+    .share--facebook { color: $c--facebook; }
+    .social--facebook { background-color: $c--facebook; }
+   *
+   */
 
+  /* SOCIAL COLORS */
+  $c--facebook:     #3A5998;
+  $c--twitter:      #1AB2E8;
+  $c--google:       #4386F7;
+  $c--google-plus:  #DD4C39;
+  $c--pinterest:    #C9232D;
 }//endif

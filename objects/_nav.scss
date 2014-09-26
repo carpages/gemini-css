@@ -1,252 +1,249 @@
-@if $use-nav == true or $use-pagination == true{
-
-/*------------------------------------*\
-  $NAV
-\*------------------------------------*/
-
 /**
-  * @module Navigation Lists [.nav]
-  * @description When used on an 'ol' or 'ul', this class throws the list into horizontal mode. As per: csswizardry.com/2011/09/the-nav-abstraction
-  *
-  * @modifier [.nav--stacked] Throws the list into vertical mode
-  * @modifier [.nav--center] Centers the list
-  * @modifier [.nav--right] Right aligns the list
-  * @modifier [.nav--block] Give nav links a big, blocky hit area
-  * @modifier [.nav--spaced] Spread the nav links out horizontally
-  * @modifier [.nav--fit] Force a nav to occupy 100% of the available width of its parent
-  * @modifier [.nav--keywords] Make a list of keywords
-  * @modifier [.nav--breadcrumb] Simple breadcrumb styling to apply to (ordered) lists
-  *
-  * @markup Default
+ ********************************
+ * _NAV.SCSS
+ ********************************
+ */
+
+@if $use-nav == true or $use-pagination == true {
+
+  /**
+   * @module Navigation Lists [.nav]
+   * @description When used on an 'ol' or 'ul', this class throws the list into horizontal mode. As per: csswizardry.com/2011/09/the-nav-abstraction
+   *
+   * @modifier [.nav--stacked] Throws the list into vertical mode
+   * @modifier [.nav--center] Centers the list
+   * @modifier [.nav--right] Right aligns the list
+   * @modifier [.nav--block] Give nav links a big, blocky hit area
+   * @modifier [.nav--spaced] Spread the nav links out horizontally
+   * @modifier [.nav--fit] Force a nav to occupy 100% of the available width of its parent
+   * @modifier [.nav--keywords] Make a list of keywords
+   * @modifier [.nav--breadcrumb] Simple breadcrumb styling to apply to (ordered) lists
+   *
+   * @markup Default
     <ul class='nav'>
       <li><a href=#>Home</a></li>
       <li><a href=#>About</a></li>
       <li><a href=#>Portfolio</a></li>
       <li><a href=#>Contact</a></li>
     </ul>
-  */
+   */
 
- /**
+  /**
    * 1. Fixes a weird bug in IE8 where tabs overlap
    *    http://compsoftplc.blogspot.ca/2009/11/inline-block-not-quite-inline-blocking.html
    * ​   https://github.com/twbs/bootstrap/issues/5455
    */
-.nav{
-  list-style:none;
-  margin:0;
-  @extend .clearfix;
+  .nav {
+    list-style: none;
+    margin: 0;
+    @extend .clearfix;
 
-  > li{
-    margin-right: 0.1px\9; /* 1 */
+    > li {
+      margin-right: 0.1px\9; /* 1 */
 
-    &,
-    > a{
-      display:inline-block;
-      *display:inline;
-      zoom:1;
-    }
-  }
-}
-
-/**
-  * @example Stacked
-  *
-  * @markup
-  <ul class='nav nav--stacked'>
-    <li><a href=#>Home</a></li>
-    <li><a href=#>About</a></li>
-    <li><a href=#>Portfolio</a></li>
-    <li><a href=#>Contact</a></li>
-  </ul>
-  */
-.nav--stacked{
-
-  > li{
-    display:list-item;
-
-    > a{
-      display:block;
-    }
-  }
-}
-
-
-/**
-  * @example Centred
-  *
-  * @markup
-  <ul class='nav nav--centre'>
-    <li><a href=#>Home</a></li>
-    <li><a href=#>About</a></li>
-    <li><a href=#>Portfolio</a></li>
-    <li><a href=#>Contact</a></li>
-  </ul>
-  */
-.nav--center,
-.nav--centre{
-  text-align:center;
-}
-
-/**
-  * @example Right Justified
-  *
-  * @markup
-  <ul class='nav nav--right'>
-    <li><a href=#>Home</a></li>
-    <li><a href=#>About</a></li>
-    <li><a href=#>Portfolio</a></li>
-    <li><a href=#>Contact</a></li>
-  </ul>
-  */
-.nav--right{
-  text-align:right;
-}
-
-/**
-  * @example Blocked
-  *
-  * @markup
-  <ul class='nav nav--block'>
-    <li><a href=#>Home</a></li>
-    <li><a href=#>About</a></li>
-    <li><a href=#>Portfolio</a></li>
-    <li><a href=#>Contact</a></li>
-  </ul>
-  */
-.nav--block{
-  line-height:1;
-  /**
-   * Remove whitespace caused by 'inline-block'.
-   */
-  letter-spacing:-0.31em;
-  word-spacing:-0.43em;
-  white-space:nowrap;
-
-  > li{
-    letter-spacing:normal;
-    word-spacing:normal;
-
-    &,
-    > a{
-      padding:$half-spacing-unit;
-    }
-  }
-}
-
-/**
-  * @example Spaced
-  *
-  * @markup
-  <ul class='nav nav--spaced'>
-    <li><a href=#>Home</a></li>
-    <li><a href=#>About</a></li>
-    <li><a href=#>Portfolio</a></li>
-    <li><a href=#>Contact</a></li>
-  </ul>
-  */
-.nav--spaced{
-  > li{
-    margin-right: $base-spacing-unit;
-
-    &:last-child{
-    margin-right: 0;
-    }
-  }
-}
-  .nav--spaced-left{
-    > li{
-      margin-left: $base-spacing-unit;
-
-      &:first-child{
-      margin-left: 0;
+      &,
+      > a {
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
       }
     }
   }
 
-/**
-  * @example Fitted
-  *
-  * @markup
-  <ul class='nav nav--fit'>
-    <li><a href=#>Home</a></li>
-    <li><a href=#>About</a></li>
-    <li><a href=#>Portfolio</a></li>
-    <li><a href=#>Contact</a></li>
-  </ul>
-  */
-.nav--fit{
-  display:table;
-  width:100%;
+  /**
+   * @example Stacked
+   *
+   * @markup
+    <ul class='nav nav--stacked'>
+      <li><a href=#>Home</a></li>
+      <li><a href=#>About</a></li>
+      <li><a href=#>Portfolio</a></li>
+      <li><a href=#>Contact</a></li>
+    </ul>
+   */
+  .nav--stacked {
+    > li {
+      display: list-item;
 
-  > li{
-    display:table-cell;
-
-    > a{
-      display:block;
+      > a {
+        display: block;
+      }
     }
   }
-}
 
-/**
-  * @example Keywords
-  *
-  * @markup
-  <ul class='nav nav--keywords'>
-    <li><a href=#>Home</a></li>
-    <li><a href=#>About</a></li>
-    <li><a href=#>Portfolio</a></li>
-    <li><a href=#>Contact</a></li>
-  </ul>
-  */
-.nav--keywords{
 
-  > li{
+  /**
+   * @example Centred
+   *
+   * @markup
+    <ul class='nav nav--centre'>
+      <li><a href=#>Home</a></li>
+      <li><a href=#>About</a></li>
+      <li><a href=#>Portfolio</a></li>
+      <li><a href=#>Contact</a></li>
+    </ul>
+   */
+  .nav--center,
+  .nav--centre {
+    text-align: center;
+  }
 
-    &:after{
-      content:"\002C" "\00A0";
+  /**
+   * @example Right Justified
+   *
+   * @markup
+    <ul class='nav nav--right'>
+      <li><a href=#>Home</a></li>
+      <li><a href=#>About</a></li>
+      <li><a href=#>Portfolio</a></li>
+      <li><a href=#>Contact</a></li>
+    </ul>
+   */
+  .nav--right {
+    text-align: right;
+  }
+
+  /**
+   * @example Blocked
+   *
+   * @markup
+    <ul class='nav nav--block'>
+      <li><a href=#>Home</a></li>
+      <li><a href=#>About</a></li>
+      <li><a href=#>Portfolio</a></li>
+      <li><a href=#>Contact</a></li>
+    </ul>
+   */
+  .nav--block {
+    line-height: 1;
+    /**
+     * Remove whitespace caused by 'inline-block'.
+     */
+    letter-spacing: -0.31em;
+    word-spacing: -0.43em;
+    white-space: nowrap;
+
+    > li {
+      letter-spacing: normal;
+      word-spacing: normal;
+
+      &,
+      > a {
+        padding: $half-spacing-unit;
+      }
+    }
+  }
+
+  /**
+   * @example Spaced
+   *
+   * @markup
+    <ul class='nav nav--spaced'>
+      <li><a href=#>Home</a></li>
+      <li><a href=#>About</a></li>
+      <li><a href=#>Portfolio</a></li>
+      <li><a href=#>Contact</a></li>
+    </ul>
+   */
+  .nav--spaced {
+    > li {
+      margin-right: $base-spacing-unit;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .nav--spaced-left {
+    > li {
+      margin-left: $base-spacing-unit;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  /**
+   * @example Fitted
+   *
+   * @markup
+    <ul class='nav nav--fit'>
+      <li><a href=#>Home</a></li>
+      <li><a href=#>About</a></li>
+      <li><a href=#>Portfolio</a></li>
+      <li><a href=#>Contact</a></li>
+    </ul>
+   */
+  .nav--fit {
+    display: table;
+    width: 100%;
+
+    > li {
+      display: table-cell;
+
+      > a {
+        display: block;
+      }
+    }
+  }
+
+  /**
+   * @example Keywords
+   *
+   * @markup
+    <ul class='nav nav--keywords'>
+      <li><a href=#>Home</a></li>
+      <li><a href=#>About</a></li>
+      <li><a href=#>Portfolio</a></li>
+      <li><a href=#>Contact</a></li>
+    </ul>
+   */
+  .nav--keywords {
+    > li {
+      &:after {
+        content: "\002C" "\00A0";
+      }
+
+      &:last-child:after {
+        display: none;
+      }
+    }
+  }
+
+  /**
+   * @example Breadcrumbs
+   *
+   * @markup
+    <ol class='nav nav--breadcrumb'>
+      <li><a href=#>2013</a></li>
+      <li data-breadcrumb='|'><a href=#>Ford</a></li>
+      <li><a href=#>Mustang</a></li>
+    </ol>
+   */
+  .nav--breadcrumb > li {
+    + li:before {
+      content: "\002F" "\00A0";
     }
 
-    &:last-child:after{
-      display:none;
+    + li[data-breadcrumb]:before {
+      content: attr(data-breadcrumb) "\00A0";
     }
   }
-}
 
-/**
-  * @example Breadcrumbs
-  *
-  * @markup
-  <ol class='nav nav--breadcrumb'>
-    <li><a href=#>2013</a></li>
-    <li data-breadcrumb='|'><a href=#>Ford</a></li>
-    <li><a href=#>Mustang</a></li>
-  </ol>
-  */
-.nav--breadcrumb > li{
-
-  + li:before{
-    content:"\002F" "\00A0";
+  /**
+   * @example Breadcrumbs
+   *
+   * @markup
+    <ul class='nav nav--scroll'>
+      <li><img src="http://www.placetim.com/300/100/"></li>
+      <li><img src="http://www.placetim.com/200/100/"></li>
+      <li><img src="http://www.placetim.com/150/100/"></li>
+      <li><img src="http://www.placetim.com/250/100/"></li>
+    </ul>
+   */
+  .nav--scroll {
+    white-space: nowrap;
+    overflow-x: scroll;
   }
-
-  + li[data-breadcrumb]:before{
-    content:attr(data-breadcrumb) "\00A0";
-  }
-}
-
-/**
-  * @example Breadcrumbs
-  *
-  * @markup
-  <ul class='nav nav--scroll'>
-    <li><img src="http://www.placetim.com/300/100/"></li>
-    <li><img src="http://www.placetim.com/200/100/"></li>
-    <li><img src="http://www.placetim.com/150/100/"></li>
-    <li><img src="http://www.placetim.com/250/100/"></li>
-  </ul>
-  */
-.nav--scroll {
-  white-space: nowrap;
-  overflow-x: scroll;
-}
-
 }//endif

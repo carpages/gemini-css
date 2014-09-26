@@ -1,26 +1,31 @@
-/*------------------------------------*\
-	$IMAGES
-\*------------------------------------*/
 /**
-  * @module Images [img]
-  * @description We got some images o-er he-ya
-  *
-  * @modifier [.img--right] Place right
-  * @modifier [.img--left] Place left
-  * @modifier [.img--center] Place center
-  * @modifier [.round] Rounded images
-  * @modifier [.circle] Circle images
-  *
-  * @markup
-  *   <img src="http://www.placecage.com/c/100/100" />
-  */
+ ********************************
+ * _IMAGES.SCSS
+ ********************************
+ */
+
+/**
+ * @module Images [img]
+ * @description We got some images o-er he-ya
+ *
+ * @modifier [.img--right] Place right
+ * @modifier [.img--left] Place left
+ * @modifier [.img--center] Place center
+ * @modifier [.round] Rounded images
+ * @modifier [.circle] Circle images
+ *
+ * @markup
+ *   <img src="http://www.placecage.com/c/100/100" />
+ */
+
 /**
  * Fluid images.
  */
-img, .img{
-	max-width:100%;
-	display: block;
-	font-style: italic;//So that 'alt' text is visually offset if images don't load.
+img,
+.img {
+  max-width: 100%;
+  display: block;
+  font-style: italic;//So that 'alt' text is visually offset if images don't load.
 }
 
 
@@ -28,44 +33,45 @@ img, .img{
  * Non-fluid images if you specify 'width' and/or 'height' attributes.
  */
 img[width],
-img[height]{
-	max-width:none;
+img[height] {
+  max-width: none;
 }
 
 
 /**
  * Image placement variations.
  */
-.img--right{
-	float:right;
-	margin-bottom:$base-spacing-unit;
-	margin-left:$base-spacing-unit;
+.img--right {
+  float: right;
+  margin-bottom: $base-spacing-unit;
+  margin-left: $base-spacing-unit;
 }
-.img--left{
-	float:left;
-	margin-right:$base-spacing-unit;
-	margin-bottom:$base-spacing-unit;
+.img--left {
+  float: left;
+  margin-right: $base-spacing-unit;
+  margin-bottom: $base-spacing-unit;
 }
-.img--center, .img--centre{
-	display:block;
-	margin-right:auto;
-	margin-bottom:$base-spacing-unit;
-	margin-left:auto;
+.img--center,
+.img--centre {
+  display: block;
+  margin-right: auto;
+  margin-bottom: $base-spacing-unit;
+  margin-left: auto;
 }
 
 /**
-  * @module Inline Image [.inline-img]
-  * @description Display an image inline with the text (small images/ glyphs)
-  *
-  * @markup
+ * @module Inline Image [.inline-img]
+ * @description Display an image inline with the text (small images/ glyphs)
+ *
+ * @markup
   <div class="inline-img">&nbsp;</div>
-  */
+ */
 
-.inline-img{
-  display:inline-block;
-  background:transparent no-repeat center center;
+.inline-img {
+  display: inline-block;
+  background: transparent no-repeat center center;
 
-  &:hover{
-    text-decoration:none;
+  &:hover {
+    text-decoration: none;
   }
 }

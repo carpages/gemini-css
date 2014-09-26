@@ -1,53 +1,56 @@
-/*------------------------------------*\
-  $FUNCTIONS
-\*------------------------------------*/
 /**
-  * @module Function
-  * @description A number of useful functions for writing SASS. I haven't come up with a good way of documenting them yet :(. For now, just check the source code for documentation.
-  */
+ ********************************
+ * _FUNCTIONS.SCSS
+ ********************************
+ */
 
 /**
-  * Convert any unit measurement to a base em size
-  *
-    font-size: base-em(24px);
-  */
+ * @module Function
+ * @description A number of useful functions for writing SASS. I haven't come up with a good way of documenting them yet :(. For now, just check the source code for documentation.
+ */
+
+/**
+ * Convert any unit measurement to a base em size
+ *
+  font-size: base-em(24px);
+ */
 @function base-em($val) {
   $u: unit($val);
 
-  @if $u == 'em' {
+  @if $u == "em" {
     @return $val;
-  } @else if $u == '%' {
+  } @else if $u == "%" {
     @return $val / 100% + 0em;
-  } @else if $u == 'px' {
+  } @else if $u == "px" {
     @return $val / 16px + 0em;
-  } @else if $u == 'pt' {
+  } @else if $u == "pt" {
     @return $val / 12pt + 0em;
-  } @else if $u == '' {
+  } @else if $u == "" {
     @return $val + 0em;
   } @else {
-    @warn '#{$val} has an unrecognizable unit.';
+    @warn "#{$val} has an unrecognizable unit.";
     @return $val;
   }
 }
 
 
 /**
-  * Convert any unit measurement to em
-  *
-  * $context is the measurement size of the parent
-  *
-    font-size: em(24px, 16px);
-  */
-@function em($value, $context: $base-font-size){
+ * Convert any unit measurement to em
+ *
+ * $context is the measurement size of the parent
+ *
+  font-size: em(24px, 16px);
+ */
+@function em($value, $context: $base-font-size) {
   @return ( base-em($value) / base-em($context) ) + 0em;
 }
 
 /**
-  * Convert any unit measurement to rem
-  *
-    font-size: rem(24px);
-  */
-@function rem($value){
+ * Convert any unit measurement to rem
+ *
+  font-size: rem(24px);
+ */
+@function rem($value) {
   @return ( base-em($value) / base-em($base-font-size) ) + 0rem;
 }
 
@@ -65,13 +68,13 @@
 // Returns a number between 0% and 100%, where 100% is fully bright
 // (white) and 0% is fully dark (black).
 @function brightness($color) {
-  @return ((red($color) * .299) + (green($color) * .587) + (blue($color) * .114)) / 255 * 100%;
+  @return ((red($color) * 0.299) + (green($color) * 0.587) + (blue($color) * 0.114)) / 255 * 100%;
 }
 
 @function contrast-color(
     $color,
     $dark: #333,
-    $light: #fff
+    $light: #FFF
   ) {
   @if $color == null {
     @return null;
@@ -87,10 +90,10 @@
 
 // Lighten works weird. https://groups.google.com/d/msg/compass-users/umJGUEn6jpQ/MKeUs97DIj0J
 // https://github.com/nex3/sass/issues/598
-@function lighter($color, $percent){
+@function lighter($color, $percent) {
   @return scale-color($color, $lightness: $percent);
 }
 
-@function darker($color, $percent){
+@function darker($color, $percent) {
   @return scale-color($color, $lightness: -$percent);
 }

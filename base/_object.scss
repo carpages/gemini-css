@@ -1,12 +1,15 @@
-/*------------------------------------*\
-    $OBJECTS
-\*------------------------------------*/
+/**
+ ********************************
+ * _OBJECTS.SCSS
+ ********************************
+ */
+
 /* Object element can be used in the clown car technique (as seen on NCS details page)
  * 1. Allow <object> to be wrapped in anchors
  * 2. Solves bug on Chrome where the SVG media queries won't detect initial width
  *
  */
-object{
+object {
   pointer-events: none;/* 1 */
   width: 100%;/* 2 */
 }
