@@ -5,6 +5,7 @@
 ### 2-space Indenting
 
 Bad
+
 ```css
 .bad {
     font-size: 2em;
@@ -12,6 +13,7 @@ Bad
 ```
 
 Good
+
 ```css
 .good {
   font-size: 2em;
@@ -21,6 +23,7 @@ Good
 ### Space After Declaration Colons
 
 Bad
+
 ```css
 .bad {
   margin:1.5em;
@@ -28,6 +31,7 @@ Bad
 ```
 
 Good
+
 ```css
 .good {
   margin: 1.5em;
@@ -37,6 +41,7 @@ Good
 ### Space Before Opening Bracket
 
 Bad
+
 ```css
 .bad{
   padding: 1em;
@@ -44,6 +49,7 @@ Bad
 ```
 
 Good
+
 ```css
 .good {
   padding: 1em;
@@ -53,6 +59,7 @@ Good
 ### Spaces Between Combinators
 
 Bad
+
 ```css
 .this>.is>.bad {
   padding: 1em;
@@ -60,6 +67,7 @@ Bad
 ```
 
 Good
+
 ```css
 .this > .is > .good {
   padding: 1em;
@@ -69,6 +77,7 @@ Good
 ### Line Breaks Between Declarations
 
 Bad
+
 ```css
 .bad {
   padding: 1em; margin: 1em; top: 1em; left: 1em;
@@ -76,6 +85,7 @@ Bad
 ```
 
 Good
+
 ```css
 .good {
   padding: 1em;
@@ -88,6 +98,7 @@ Good
 ### Line Breaks Between Selectors
 
 Bad
+
 ```css
 .this, .is, .bad {
   padding: 1em;
@@ -95,6 +106,7 @@ Bad
 ```
 
 Good
+
 ```css
 .this,
 .is,
@@ -106,6 +118,7 @@ Good
 ### Lower Case Elements
 
 Bad
+
 ```css
 UL > LI {
   padding: 0;
@@ -113,6 +126,7 @@ UL > LI {
 ```
 
 Good
+
 ```css
 ul > li {
   padding: 0;
@@ -122,6 +136,7 @@ ul > li {
 ### Upper Case Colors
 
 Bad
+
 ```css
 .bad {
   color: #ab3c4a;
@@ -130,6 +145,7 @@ Bad
 ```
 
 Good
+
 ```css
 .good {
   color: #AB3C4A;
@@ -140,6 +156,7 @@ Good
 ### Decimal Units with Leading Zero
 
 Bad
+
 ```css
 .bad {
   margin-bottom: .5em;
@@ -147,6 +164,7 @@ Bad
 ```
 
 Good
+
 ```css
 .good {
   margin-bottom: 0.5em;
@@ -156,6 +174,7 @@ Good
 ### Remove Zero Units
 
 Bad
+
 ```css
 .bad {
   padding: 0px;
@@ -163,6 +182,7 @@ Bad
 ```
 
 Good
+
 ```css
 .good {
   padding: 0;
@@ -172,6 +192,7 @@ Good
 ### Double Quotes
 
 Bad
+
 ```css
 .bad:before {
   content: 'shmuckle';
@@ -179,6 +200,7 @@ Bad
 ```
 
 Good
+
 ```css
 .good:before {
   content: "shmuckle";
