@@ -1,0 +1,18 @@
+/**
+ ********************************
+ * _ALIGN.SCSS
+ ********************************
+ */
+
+/**
+ * @module Text Alignment
+ * @description Easily align text
+ *
+ * @modifier [.align--left] Align left
+ * @modifier [.align--center] Align center
+ * @modifier [.align--right] Align right
+ */
+.align--left     { text-align: left       !important; }
+.align--center   { text-align: center     !important; }
+.align--right    { text-align: right      !important; }
+.align--bottom   { vertical-align: bottom !important; }

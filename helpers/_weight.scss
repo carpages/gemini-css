@@ -1,0 +1,19 @@
+/**
+ ********************************
+ * _WEIGHT.SCSS
+ ********************************
+ */
+
+/**
+ * @module Font Weights
+ * @description Easily add font weights
+ *
+ * @modifier [.weight--light] Light
+ * @modifier [.weight--normal] Normal
+ * @modifier [.weight--semibold] Semibold
+ */
+.weight--light      { font-weight: 300 !important; }
+.weight--normal     { font-weight: 400 !important; }
+.weight--semibold   { font-weight: 600 !important; }
+.weight--bold       { font-weight: 700 !important; }
+.weight--bolder     { font-weight: 900 !important; }

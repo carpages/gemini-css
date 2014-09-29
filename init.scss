@@ -32,21 +32,31 @@
 @import "variables/colours";
 @import "variables/defaults";
 
+/**
+ * Functions
+ */
+@import "functions/color";
+@import "functions/em";
 
 /**
- * Foundational utility styles etc.
+ * Mixins
  */
-@import "foundation/functions";
-@import "foundation/mixins";
-@import "foundation/normalize";
-@import "foundation/reset";
-@import "foundation/clearfix";
-@import "foundation/margins";
-
+@import "mixins/arrows";
+@import "mixins/font-face";
+@import "mixins/font-size";
+@import "mixins/headings";
+@import "mixins/keyframes";
+@import "mixins/media-queries";
+@import "mixins/rgba-background";
+@import "mixins/truncate";
+@import "mixins/vendor";
 
 /**
- * Base styles; unclassed HTML elements etc.
+ * Base Styles
  */
+@import "base/normalize";
+@import "base/reset";
+@import "base/margins";
 @import "base/main";
 @import "base/headings";
 @import "base/paragraphs";
@@ -60,7 +70,6 @@
 @import "base/forms";
 @import "base/iframes";
 @import "base/object";
-
 
 /**
  * Objects and abstractions
@@ -88,9 +97,26 @@
 @import "objects/select";
 @import "objects/checkbox";
 
-
 /**
- * Style trumps - helper and brand classes
+ * Helpers
  */
-@import "foundation/brand";
-@import "foundation/helper";
+@import "helpers/accessibility";
+@import "helpers/align";
+@import "helpers/brand";
+@import "helpers/casing";
+@import "helpers/clearfix";
+@import "helpers/cursor";
+@import "helpers/display";
+@import "helpers/floats";
+@import "helpers/full";
+@import "helpers/gpu";
+@import "helpers/hidden";
+@import "helpers/line-height";
+@import "helpers/margin";
+@import "helpers/mute";
+@import "helpers/padding";
+@import "helpers/radius";
+@import "helpers/scroll";
+@import "helpers/truncate";
+@import "helpers/user-select";
+@import "helpers/weight";

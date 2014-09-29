@@ -1,0 +1,13 @@
+/**
+ ********************************
+ * _CASING.SCSS
+ ********************************
+ */
+
+/**
+ * @module Capitalize [.caps]
+ * @description Apply capital case to an element (usually a 'strong').
+ */
+.caps {
+  text-transform: uppercase !important;
+}

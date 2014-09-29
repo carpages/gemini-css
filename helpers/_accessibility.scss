@@ -1,0 +1,44 @@
+/**
+ ********************************
+ * _ACCESSIBILITY.SCSS
+ ********************************
+ */
+
+/**
+ * @mixin accessibility
+ * @description Hide content off-screen without resorting to 'display:none;'.
+ *
+ * @example
+ *   .foo{
+ *       @include accessibility;
+ *   }
+ */
+@mixin accessibility {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position:  absolute !important;
+  width: 1px !important;
+}
+
+/**
+ * @module Accessibility [.accessibility]
+ * @description Hide content off-screen without resorting to 'display:none;'.
+ *
+ * @markup
+ *   <p class="accessibility">This text is only seen by screen readers!</p>
+ */
+.a11y,
+.accessibility {
+  @include accessibility;
+}
+  @each $state in medium, large, xlarge {
+    @include quick-media-query(#{$state}) {
+      .accessibility--#{$state} {
+        @include accessibility;
+      }
+    }
+  }

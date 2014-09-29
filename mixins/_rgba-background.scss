@@ -1,0 +1,17 @@
+/**
+ ********************************
+ * _RGBA-BACKGROUND.SCSS
+ ********************************
+ */
+
+/**
+ * Have fallback for rgba background for browsers that don't support
+ *
+  @include rgba-background(#090, .5);
+  @include rgba-background(rgb(0,0,0), .5);
+ *
+ */
+@mixin rgba-background($colour, $alpha) {
+  background:$colour;
+  background:rgba($colour, $alpha);
+}

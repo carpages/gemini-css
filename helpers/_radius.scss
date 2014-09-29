@@ -1,0 +1,27 @@
+/**
+ ********************************
+ * _RADIUS.SCSS
+ ********************************
+ */
+
+/**
+ * @module Rounded Corners [.round]
+ * @description Round the corners as much as possible
+ *
+ * @markup
+ * <input type="text" value="Rounded" class="round" />
+ */
+.round{
+  @include border-radius($brand-round !important);
+}
+
+/**
+ * @module Circled Corners [.circle]
+ * @description Circle the corners as much as possible
+ *
+ * @markup
+ * <input type="text" value="Circled" class="circle" />
+ */
+.circle{
+  @include border-radius(999px!important);
+}

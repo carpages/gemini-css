@@ -1,0 +1,72 @@
+/**
+ ********************************
+ * _MARGIN.SCSS
+ ********************************
+ */
+
+/**
+ * @module Block Pusher [.push]
+ * @description Add base spacing as a margin around a block
+ *
+ * @modifier [.push--top] Add margin to top
+ * @modifier [.push--right] Add margin to right
+ * @modifier [.push--bottom] Add margin to bottom
+ * @modifier [.push--left] Add margin to left
+ * @modifier [.push--ends] Add margin to top and bottom
+ * @modifier [.push--sides] Add margin to left and right
+ * @modifier [.push-half] Add half margin
+ * @modifier [.push-half--top] Add half margin to top
+ * @modifier [.push-half--right] Add half margin to right
+ * @modifier [.push-half--bottom] Add half margin to bottom
+ * @modifier [.push-half--left] Add half margin to left
+ * @modifier [.push-half--ends] Add half margin to top and bottom
+ * @modifier [.push-half--sides] Add half margin to left and right
+ */
+.push                { margin:        $base-spacing-unit !important; }
+.push--top           { margin-top:    $base-spacing-unit !important; }
+.push--right         { margin-right:  $base-spacing-unit !important; }
+.push--bottom        { margin-bottom: $base-spacing-unit !important; }
+.push--left          { margin-left:   $base-spacing-unit !important; }
+.push--ends          { margin-top:    $base-spacing-unit !important; margin-bottom: $base-spacing-unit !important; }
+.push--sides         { margin-right:  $base-spacing-unit !important; margin-left:   $base-spacing-unit !important; }
+
+.push-half           { margin:        $half-spacing-unit !important; }
+.push-half--top      { margin-top:    $half-spacing-unit !important; }
+.push-half--right    { margin-right:  $half-spacing-unit !important; }
+.push-half--bottom   { margin-bottom: $half-spacing-unit !important; }
+.push-half--left     { margin-left:   $half-spacing-unit !important; }
+.push-half--ends     { margin-top:    $half-spacing-unit !important; margin-bottom: $half-spacing-unit !important; }
+.push-half--sides    { margin-right:  $half-spacing-unit !important; margin-left:   $half-spacing-unit !important; }
+
+.push-double--bottom { margin-bottom: $double-spacing-unit !important; }
+.push-double--top    { margin-top:    $double-spacing-unit !important; }
+
+/**
+ * @module Block Flusher [.flush]
+ * @description Remove the margin around a block
+ *
+ * @modifier [.flush--top] Remove margin from top
+ * @modifier [.flush--right] Remove margin from right
+ * @modifier [.flush--bottom] Remove margin from bottom
+ * @modifier [.flush--left] Remove margin from left
+ * @modifier [.flush--ends] Remove margin from top and bottom
+ * @modifier [.flush--sides] Remove margin from left and right
+ */
+.flush         { margin:        0 !important; }
+.flush--top    { margin-top:    0 !important; }
+.flush--right  { margin-right:  0 !important; }
+.flush--bottom { margin-bottom: 0 !important; }
+.flush--left   { margin-left:   0 !important; }
+.flush--ends   { margin-top:    0 !important; margin-bottom: 0 !important; }
+.flush--sides  { margin-right:  0 !important; margin-left:   0 !important; }
+
+
+/**
+ * @module Bleed inner block [.flush]
+ * @description Apply negative margins to bleed a child to the edge of the parent
+ *
+ * @modifier [.bleed] Negative margins on the sides
+ * @modifier [.bleed-half] Half negative margins on the sides
+ */
+.bleed      { margin-right: -$base-spacing-unit !important; margin-left:  -$base-spacing-unit !important;}
+.bleed-half { margin-right: -$half-spacing-unit !important; margin-left:  -$half-spacing-unit !important;}
