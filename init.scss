@@ -35,8 +35,8 @@
 /**
  * Functions
  */
-@import "functions/color";
-@import "functions/em";
+@import "functions/colors";
+@import "functions/ems";
 
 /**
  * Mixins
@@ -69,12 +69,12 @@
 @import "base/tables";
 @import "base/forms";
 @import "base/iframes";
-@import "base/object";
+@import "base/objects";
 
 /**
  * Objects and abstractions
  */
-@import "objects/icon";
+@import "objects/icons";
 @import "objects/grid";
 @import "objects/nav";
 @import "objects/pagination";
@@ -85,14 +85,14 @@
 @import "objects/split";
 @import "objects/link-complex";
 @import "objects/flyout";
-@import "objects/arrow";
-@import "objects/button";
-@import "objects/rule";
-@import "objects/stat";
+@import "objects/arrows";
+@import "objects/buttons";
+@import "objects/rules";
+@import "objects/stats";
 @import "objects/fit";
 @import "objects/overlay";
-@import "objects/tag";
-@import "objects/color";
+@import "objects/tags";
+@import "objects/colors";
 @import "objects/copy";
 @import "objects/select";
 @import "objects/checkbox";
@@ -105,7 +105,7 @@
 @import "helpers/brand";
 @import "helpers/casing";
 @import "helpers/clearfix";
-@import "helpers/cursor";
+@import "helpers/cursors";
 @import "helpers/display";
 @import "helpers/floats";
 @import "helpers/full";
