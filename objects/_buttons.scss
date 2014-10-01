@@ -4,7 +4,7 @@
  ********************************
  */
 
-@if $use-button == true {
+@if $use-buttons == true {
 
   /**
    * @module Buttons [.button]
@@ -26,66 +26,48 @@
    *       <a class="button button--large">Large Button</a>
    *       <a class="button button--huge">Huge Button</a>
    *   </p>
-   *   <a class="button button--full">Full Width Button</a>
-   *
-   * @markup Button Font Sizes
-   *   <a class="button button--alpha">Alpha</a>
-   *   <a class="button button--beta">Beta</a>
-   *   <a class="button button--gamma">Gamma</a>
    *
    * @markup Natural Button
    *   <p>This <a class="button button--natural">button</a> will fit in nicely with its context.</p>
    */
 
-  /**
-   * Base button styles.
-   *
-   * 1. Allow us to better style box model properties.
-   * 2. Line up different sized buttons a little nicer.
-   * 3. Stop buttons wrapping and looking broken.
-   * 4. Make buttons inherit font styles.
-   * 5. Force all elements using beautons to appear clickable.
-   * 6. Normalise box model styles.
-   * 7. If the button's text is 1em, and the button is (2 * font-size) tall, then
-   *    there is 1em of space above and below that text. We therefore apply 1em
-   *    of space to the left and right, as padding, to keep consistent spacing.
-   *    We also use height  have consistency with text input's.
-   * 8. Don't allow buttons to have underlines; it kinda ruins the illusion.
-   */
-  .beauton,
-  %beauton {
-    display: inline-block;       /* [1] */
-    vertical-align: middle;      /* [2] */
-    white-space: nowrap;         /* [3] */
-    font-family: inherit;        /* [4] */
-    font-size: 100%;             /* [4] */
-    border: none;                /* [6] */
-    margin: 0;                   /* [6] */
-    padding-top: 0;              /* [6] */
-    padding-bottom: 0;           /* [6] */
-    height: 2em;                 /* [7] */
-    line-height: 2em;            /* [7] */
-    padding-right: 0.5em;        /* [7] */
-    padding-left: 0.5em;         /* [7] */
-  }
+  $button-defaults: (
+    color: #333,
+    background-color: #eee,
+    border-width: 1px,
+    border-color: #333,
+    border-radius: 4px,
+    vpadding: 0.5em,
+    hpadding: 1em
+  );
 
-
-  .button {
-    @extend %beautons;
-    cursor: pointer;             /* [5] */
-
-    //Background
-    background-repeat: no-repeat;
-    background-color: $lighter-grey;
-
-    //Corners
-    @include border-radius($brand-round);
+  $btn: $button-defaults;
+  @if variable-exists(button-settings) {
+    $btn: map-merge($button-defaults, $gemini-button-settings);
   }
 
   .button {
+    display: inline-block;
+    vertical-align: middle;
+    font: inherit;
+    border: none;
+    margin: 0;
+    cursor: pointer;
+    padding: _($btn, vpadding) _($btn, hpadding);
+    padding: calc(#{_($btn, vpadding)} - #{_($btn, border-width)}) _($btn, hpadding);
+
+    border: _($btn, border-width) solid _($btn, border-color);
+
+    @if _($btn, border-radius) > 0 {
+      @include border-radius(_($btn, border-radius));
+    }
+
+    color: _($btn, color);
+    background-color: _($btn, background-color);
+
     &,
     &:hover {
-      text-decoration: none;   /* [8] */
+      text-decoration: none;
     }
 
     &:active,
@@ -94,134 +76,69 @@
     }
   }
 
-  .button-group {
-    display: inline-block;
-    vertical-align: middle;
-    @extend .clearfix;
-    > .button {
-      float: left;
-      @include border-radius(0);
-
-      &:first-child {
-        @include border-left-radius($brand-round);
-      }
-      &:last-child {
-        @include border-right-radius($brand-round);
-      }
-    }
-  }
-  .button-group--2 {
-    width: 100%;
-    > .button {
-      width: 50%;
-      text-align: center;
-    }
-  }
-  .button-group--3 {
-    width: 100%;
-    > .button {
-      width: 33.3332%;
-      text-align: center;
-    }
-  }
-
-
-
-
-  /**
-   * Button size modifiers.
-   *
-   * These all follow the same sizing rules as above; text is 1em, space around it
-   * remains uniform.
-   */
-  .button--small {
-    padding-right: 0.5em;
-    padding-left: 0.5em;
-    line-height: 1.5em;
-    height: 1.5em;
-  }
-
-  .button--large {
-    padding-right: 1.5em;
-    padding-left: 1.5em;
-    line-height: 3em;
-    height: 3em;
-  }
-
-  .button--huge {
-    padding-right: 2em;
-    padding-left: 2em;
-    line-height: 4em;
-    height: 4em;
-  }
-  .button--squeeze {
-    padding-right: 0.25em;
-    padding-left: 0.25em;
-  }
-
-  /**
-   * These buttons will fill the entirety of their container.
-   *
-   * 1. Remove padding so that widths and paddings don't conflict.
-   */
-  .button--full {
-    width: 100%;
-    padding-right: 0;            /* [1] */
-    padding-left: 0;             /* [1] */
-    text-align: center;
-  }
-
-
-
-  /**
-   * Button font-size modifiers.
-   */
-  .button--alpha {
-    font-size: 3em;
-  }
-
-  .button--beta {
-    font-size: 2em;
-  }
-
-  .button--gamma {
-    font-size: 1.5em;
-  }
-
-  .button--delta {
-    font-size: 1.25em;
-  }
-
-  /**
-   * Make the button inherit sizing from its parent.
-   */
   .button--natural {
     vertical-align: baseline;
     font-size: inherit;
     line-height: inherit;
-    padding-right: 1em;
-    padding-left: 1em;
+    line-height: calc(100% - #{_($btn, border-width) * 2});
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
-  .button--inactive,
-  .button--inactive:hover,
-  .button--inactive:active,
-  .button--inactive:focus {
-    background-color: #DDD;
-    color: #777;
-    cursor: text;            /* [1] */
+  .button--small {
+    padding: _($btn, vpadding) * 0.5 _($btn, hpadding) * 0.5;
+  }
+  .button--large {
+    padding: _($btn, vpadding) * 1.5 _($btn, hpadding) * 1.5;
+  }
+  .button--huge {
+    padding: _($btn, vpadding) * 2 _($btn, hpadding) * 2;
   }
 
-  /**
-   * Button style modifiers.
-   *
-   * 1. Use an overly-large number to ensure completely rounded, pill-like ends.
-   */
-  .button--soft {
-    border-radius: 200px;        /* [1] */
-  }
+  .button-group {
+    display: inline-block;
 
-  .button--hard {
-    border-radius: 0;
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    > .button {
+      float: left;
+
+      &:not(:first-child) {
+        border-left: none;
+
+        @if _($btn, border-radius) > 0 {
+          @include border-left-radius(0);
+        }
+
+      }
+      &:not(:last-child) {
+        border-right: _($btn, border-width) solid lighten(_($btn, border-color), 50%);
+
+        @if _($btn, border-radius) > 0 {
+          @include border-right-radius(0);
+        }
+      }
+    }
   }
+    .button-group--2 {
+      width: 100%;
+
+      > .button {
+        width: 50%;
+        text-align: center;
+      }
+    }
+    .button-group--3 {
+      width: 100%;
+
+      > .button {
+        width: 33.3332%;
+        text-align: center;
+      }
+    }
+
 }//endif

@@ -1,0 +1,11 @@
+/**
+ ********************************
+ * _MAPS.SCSS
+ ********************************
+ */
+
+// Shortcuts for using SASS maps
+
+@function _($map, $key) {
+  @return map-get($map, $key);
+}
