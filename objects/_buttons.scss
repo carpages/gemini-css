@@ -43,7 +43,7 @@
 
   $btn: $button-defaults;
   @if variable-exists(button-settings) {
-    $btn: map-merge($button-defaults, $gemini-button-settings);
+    $btn: map-merge($button-defaults, $button-settings);
   }
 
   .button {
