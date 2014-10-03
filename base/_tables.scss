@@ -206,7 +206,7 @@ td {
  */
 .table--striped {
   tbody tr:nth-of-type(odd) {
-    background-color: $lighter-grey; /* Override this color in your theme stylesheet */
+    background-color: get($color, g20); /* Override this color in your theme stylesheet */
   }
 }
 

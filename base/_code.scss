@@ -9,7 +9,7 @@ pre {
   padding: 0 3px 2px;
   font-family: $monaco;
   font-size: $base-font-size - 2;
-  color: $dark-grey;
+  color: get($color, g70);
   @include border-radius(3px);
 }
 
@@ -22,9 +22,9 @@ pre {
   */
 code {
   padding: 2px 4px;
-  color: $dark-blue;
-  background-color: $lightest-grey;
-  border: 1px solid $lighter-grey;
+  color: darkblue;
+  background-color: get($color, g10);
+  border: 1px solid get($color, g20);
   white-space: nowrap;
 }
 
@@ -50,7 +50,7 @@ pre {
   word-wrap: break-word;
   white-space: pre;
   white-space: pre-wrap;
-  background-color: $lightest-grey;
+  background-color: get($color, g10);
   border: 1px solid #CCC; // fallback for IE7-8
   border: 1px solid rgba(0,0,0,0.15);
   @include border-radius($brand-round);

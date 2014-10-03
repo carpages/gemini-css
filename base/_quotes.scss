@@ -88,13 +88,13 @@ blockquote {
 }
 .blockquote--indent {
   padding: 0 0 0 15px;
-  border-left: 5px solid $lighter-grey;
+  border-left: 5px solid get($color, g15);
 }
 
 
 
 .blockquote__source {
-  color: $light-grey;
+  color: get($color, g25);
   display: block;
   text-indent: 0;
 
