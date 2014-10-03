@@ -31,20 +31,17 @@
    *   <p>This <a class="button button--natural">button</a> will fit in nicely with its context.</p>
    */
 
-  $button-defaults: (
+  $button-settings: () !default;
+
+  $g-button: merge((
     color: #333,
     background-color: #eee,
     border-width: 1px,
     border-color: #333,
     border-radius: 4px,
-    vpadding: 0.5em,
-    hpadding: 1em
-  );
-
-  $btn: $button-defaults;
-  @if variable-exists(button-settings) {
-    $btn: map-merge($button-defaults, $button-settings);
-  }
+    padding-ends: 0.5em,
+    padding-sides: 1em
+  ), $button-settings);
 
   .button {
     display: inline-block;
@@ -53,17 +50,17 @@
     border: none;
     margin: 0;
     cursor: pointer;
-    padding: _($btn, vpadding) _($btn, hpadding);
-    padding: calc(#{_($btn, vpadding)} - #{_($btn, border-width)}) _($btn, hpadding);
+    padding: get($g-button, padding-ends) get($g-button, padding-sides);
+    padding: calc(#{get($g-button, padding-ends)} - #{get($g-button, border-width)}) get($g-button, padding-sides);
 
-    border: _($btn, border-width) solid _($btn, border-color);
+    border: get($g-button, border-width) solid get($g-button, border-color);
 
-    @if _($btn, border-radius) > 0 {
-      @include border-radius(_($btn, border-radius));
+    @if get($g-button, border-radius) > 0 {
+      @include border-radius(get($g-button, border-radius));
     }
 
-    color: _($btn, color);
-    background-color: _($btn, background-color);
+    color: get($g-button, color);
+    background-color: get($g-button, background-color);
 
     &,
     &:hover {
@@ -80,19 +77,19 @@
     vertical-align: baseline;
     font-size: inherit;
     line-height: inherit;
-    line-height: calc(100% - #{_($btn, border-width) * 2});
+    line-height: calc(100% - #{get($g-button, border-width) * 2});
     padding-top: 0;
     padding-bottom: 0;
   }
 
   .button--small {
-    padding: _($btn, vpadding) * 0.5 _($btn, hpadding) * 0.5;
+    padding: get($g-button, padding-ends) * 0.5 get($g-button, padding-sides) * 0.5;
   }
   .button--large {
-    padding: _($btn, vpadding) * 1.5 _($btn, hpadding) * 1.5;
+    padding: get($g-button, padding-ends) * 1.5 get($g-button, padding-sides) * 1.5;
   }
   .button--huge {
-    padding: _($btn, vpadding) * 2 _($btn, hpadding) * 2;
+    padding: get($g-button, padding-ends) * 2 get($g-button, padding-sides) * 2;
   }
 
   .button-group {
@@ -110,15 +107,15 @@
       &:not(:first-child) {
         border-left: none;
 
-        @if _($btn, border-radius) > 0 {
+        @if get($g-button, border-radius) > 0 {
           @include border-left-radius(0);
         }
 
       }
       &:not(:last-child) {
-        border-right: _($btn, border-width) solid lighten(_($btn, border-color), 50%);
+        border-right: get($g-button, border-width) solid lighten(get($g-button, border-color), 50%);
 
-        @if _($btn, border-radius) > 0 {
+        @if get($g-button, border-radius) > 0 {
           @include border-right-radius(0);
         }
       }

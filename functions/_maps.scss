@@ -6,6 +6,9 @@
 
 // Shortcuts for using SASS maps
 
-@function _($map, $key) {
+@function get($map, $key) {
   @return map-get($map, $key);
+}
+@function merge($map-1, $map-2) {
+  @return map-merge($map-1, $map-2);
 }
