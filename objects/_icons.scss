@@ -19,7 +19,7 @@
  * The UTF-8 entities have pretty good (IE8+) support except for on Android :(
  */
 
-@if $use-icon == true {
+@if get($gemini-use, icons) {
 
   %icon:before {
     font-family: "icons";

@@ -28,20 +28,18 @@
 /**
  * Variables
  */
-@import "variables/fonts";
-@import "variables/defaults";
+@import "defaults";
 
 /**
  * Functions
  */
 @import "functions/colors";
 @import "functions/ems";
-@import "functions/maps";
+@import "functions/settings";
 
 /**
  * Mixins
  */
-@import "mixins/colors";
 @import "mixins/arrows";
 @import "mixins/font-face";
 @import "mixins/font-size";
@@ -62,7 +60,6 @@
 @import "base/headings";
 @import "base/paragraphs";
 @import "base/links";
-@import "base/smallprint";
 @import "base/quotes";
 @import "base/code";
 @import "base/images";

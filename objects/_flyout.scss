@@ -4,7 +4,7 @@
  ********************************
  */
 
-@if $use-flyout == true {
+@if get($gemini-use, flyout) {
 
   /**
    * @module Flyouts [.flyout]

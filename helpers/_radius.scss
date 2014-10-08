@@ -12,7 +12,7 @@
  * <input type="text" value="Rounded" class="round" />
  */
 .round{
-  @include border-radius($brand-round !important);
+  @include border-radius(get(border-radius) !important);
 }
 
 /**
@@ -23,5 +23,5 @@
  * <input type="text" value="Circled" class="circle" />
  */
 .circle{
-  @include border-radius(999px!important);
+  @include border-radius(999px !important);
 }

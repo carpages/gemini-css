@@ -8,7 +8,7 @@
   padding: ($height/$width * $container / 2) 0;
 }
 
-@if $use-fit == true {
+@if get($gemini-use, fit) {
 
   /**
    * @module Fit [.fit]

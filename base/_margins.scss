@@ -40,10 +40,7 @@ pre,
  */
 %margin-bottom,
 .media {
-  margin-bottom: $base-spacing-unit;
-  @if $use-rem == true {
-    margin-bottom: ($base-spacing-unit / $base-font-size)*1rem;
-  }
+  margin-bottom: get(spacing);
 }
 
 /**
@@ -51,30 +48,21 @@ pre,
  */
 %double-margin-bottom,
 .landmark {
-  margin-bottom: 2 * $base-spacing-unit;
-  @if $use-rem == true {
-    margin-bottom: (2 * $base-spacing-unit / $base-font-size)*1rem;
-  }
+  margin-bottom: get(spacing) * 2;
 }
 
 /**
  * Half 'margin-bottom' helper class.
  */
 %half-margin-bottom {
-  margin-bottom: $half-spacing-unit;
-  @if $use-rem == true {
-    margin-bottom: ($half-spacing-unit / $base-font-size)*1rem;
-  }
+  margin-bottom: get(spacing) / 2;
 }
 
 /**
  * Quarter 'margin-bottom' helper class.
  */
 %quarter-margin-bottom {
-  margin-bottom: $quarter-spacing-unit;
-  @if $use-rem == true {
-    margin-bottom: ($quarter-spacing-unit / $base-font-size)*1rem;
-  }
+  margin-bottom: get(spacing) / 4;
 }
 
 
@@ -83,10 +71,7 @@ pre,
  * treatment regarding vertical rhythm.
  */
 hr {
-  margin-bottom: $base-spacing-unit - 2px;
-  @if $use-rem == true {
-    margin-bottom: (($base-spacing-unit - 2px) / $base-font-size)*1rem;
-  }
+  margin-bottom: get(spacing) - 2px;
 }
 
 
@@ -97,8 +82,5 @@ hr {
 ul,
 ol,
 dd {
-  margin-left: 2 * $base-spacing-unit;
-  @if $use-rem == true {
-    margin-left: (2 * $base-spacing-unit / $base-font-size)*1rem;
-  }
+  margin-left: 2 * get(spacing);
 }

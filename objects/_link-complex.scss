@@ -4,7 +4,7 @@
  ********************************
  */
 
-@if $use-link-complex == true {
+@if get($gemini-use, link-complex) {
   /**
    * @module Complex Links [.link-complex]
    * @description Add hover behaviour to only selected items within links (https://github.com/necolas/suit-utils-link/blob/master/link.css)
@@ -17,7 +17,7 @@
     color: inherit;
   }
   .link-complex__target {
-    color: $link-color;
+    color: get(link-color);
   }
   /**
    * @submodule Link target [.link-complex__target]

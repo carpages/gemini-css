@@ -35,26 +35,26 @@
  *
  * We work out your end points for you:
  */
-$small-end:              $medium-start - 1px;
-$medium-end:             $large-start - 1px;
+$small-end:              get($gemini-screens, medium) - 1px;
+$medium-end:             get($gemini-screens, large) - 1px;
 
 @mixin quick-media-query($media-query, $print: false) {
 
   @if $media-query == medium or $media-query == hidden-small {
 
-    @include media-query($medium-start, 99999, $print) { @content; }
+    @include media-query(get($gemini-screens, medium), 99999, $print) { @content; }
 
   }
 
   @if $media-query == large or $media-query == visible-large {
 
-    @include media-query($large-start, 99999, $print) { @content; }
+    @include media-query(get($gemini-screens, large), 99999, $print) { @content; }
 
   }
 
   @if $media-query == xlarge {
 
-    @include media-query($xlarge-start, 99999, $print) { @content; }
+    @include media-query(get($gemini-screens, xlarge), 99999, $print) { @content; }
 
   }
 
@@ -66,13 +66,13 @@ $medium-end:             $large-start - 1px;
 
   @if $media-query == visible-medium {
 
-    @include media-query($medium-start, $medium-end, $print) { @content; }
+    @include media-query(get($gemini-screens, medium), $medium-end, $print) { @content; }
 
   }
 
   @if $media-query == hidden-medium {
 
-    @include media-query($large-start, $small-end, $print) { @content; }
+    @include media-query(get($gemini-screens, large), $small-end, $print) { @content; }
 
   }
 
@@ -113,7 +113,7 @@ $medium-end:             $large-start - 1px;
  * Inspired by: //http://jakearchibald.github.com/sass-ie/
  *
  * '@include media-query($small-end){ [styles here] }'
- * '@include media-query($small-end, $large-start, true){ [styles here] }'
+ * '@include media-query($small-end, get($gemini-screens, large), true){ [styles here] }'
  * '@include media-query(511px, 4300px){ [styles here] }'
  */
 
@@ -123,7 +123,7 @@ $medium-end:             $large-start - 1px;
   @if $print == true {$print-query: "print, ";}
 
   // If we're outputting for a fixed media query...
-  @if $fixed-queries {
+  @if variable-exists(fixed-queries) {
     //If the fixed query is in the media query range
 
     @if $fixed-queries >= $min and $fixed-queries <= $max { @content }

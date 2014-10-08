@@ -4,7 +4,7 @@
  ********************************
  */
 
-@if $use-rule == true {
+@if get($gemini-use, rules) {
 
   /**
    * @module Horizontal Rules [.rule]
@@ -42,23 +42,23 @@
 
   .rule {
     @extend %rule;
-    border-bottom: 1px solid $base-ui-color;
+    border-bottom: 1px solid lightern(get(color), 50%);
   }
   .rule--left {
     @extend %rule;
-    border-left: 1px solid $base-ui-color;
+    border-left: 1px solid lightern(get(color), 50%);
   }
   .rule--right {
     @extend %rule;
-    border-right: 1px solid $base-ui-color;
+    border-right: 1px solid lightern(get(color), 50%);
   }
   .rule--top {
     @extend %rule;
-    border-top: 1px solid $base-ui-color;
+    border-top: 1px solid lightern(get(color), 50%);
   }
 
   .rule--brand {
-    border-color: $brand-color;
+    border-color: get(brand-color);
   }
 
   .rule--large {

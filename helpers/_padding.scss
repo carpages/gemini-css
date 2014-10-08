@@ -22,25 +22,25 @@
  * @modifier [.soft-half--ends] Add half padding to top and bottom
  * @modifier [.soft-half--sides] Add half padding to left and right
  */
-.soft               { padding:        $base-spacing-unit !important; }
-.soft--top          { padding-top:    $base-spacing-unit !important; }
-.soft--right        { padding-right:  $base-spacing-unit !important; }
-.soft--bottom       { padding-bottom: $base-spacing-unit !important; }
-.soft--left         { padding-left:   $base-spacing-unit !important; }
-.soft--ends         { padding-top:    $base-spacing-unit !important; padding-bottom: $base-spacing-unit !important; }
-.soft--sides        { padding-right:  $base-spacing-unit !important; padding-left:  $base-spacing-unit !important; }
+.soft               { padding:        get(spacing) !important; }
+.soft--top          { padding-top:    get(spacing) !important; }
+.soft--right        { padding-right:  get(spacing) !important; }
+.soft--bottom       { padding-bottom: get(spacing) !important; }
+.soft--left         { padding-left:   get(spacing) !important; }
+.soft--ends         { padding-top:    get(spacing) !important; padding-bottom: get(spacing) !important; }
+.soft--sides        { padding-right:  get(spacing) !important; padding-left:  get(spacing) !important; }
 
-.soft-half          { padding:        $half-spacing-unit !important; }
-.soft-half--top     { padding-top:    $half-spacing-unit !important; }
-.soft-half--right   { padding-right:  $half-spacing-unit !important; }
-.soft-half--bottom  { padding-bottom: $half-spacing-unit !important; }
-.soft-half--left    { padding-left:   $half-spacing-unit !important; }
-.soft-half--ends    { padding-top:    $half-spacing-unit !important; padding-bottom: $half-spacing-unit !important; }
-.soft-half--sides   { padding-right:  $half-spacing-unit !important; padding-left:   $half-spacing-unit !important; }
+.soft-half          { padding:        get(spacing) / 2 !important; }
+.soft-half--top     { padding-top:    get(spacing) / 2 !important; }
+.soft-half--right   { padding-right:  get(spacing) / 2 !important; }
+.soft-half--bottom  { padding-bottom: get(spacing) / 2 !important; }
+.soft-half--left    { padding-left:   get(spacing) / 2 !important; }
+.soft-half--ends    { padding-top:    get(spacing) / 2 !important; padding-bottom: get(spacing) / 2 !important; }
+.soft-half--sides   { padding-right:  get(spacing) / 2 !important; padding-left:   get(spacing) / 2 !important; }
 
-.soft-double        { padding:        $double-spacing-unit !important;}
-.soft-double--ends  { padding:        $double-spacing-unit 0 !important;}
-.soft-double--right { padding-right:  $double-spacing-unit !important;}
+.soft-double        { padding:        get(spacing) * 2 !important;}
+.soft-double--ends  { padding:        get(spacing) * 2 0 !important;}
+.soft-double--right { padding-right:  get(spacing) * 2 !important;}
 
 /**
  * @module Block Hardener [.hard]

@@ -4,28 +4,24 @@
  ********************************
  */
 
+$gemini-colors: () !default;
 
-$color-settings: () !default;
+$gemini-colors: extend((
+  facebook:    #3A5998,
+  twitter:     #1AB2E8,
+  google:      #4386F7,
+  google-plus: #DD4C39,
+  pinterest:   #C9232D,
+), $gemini-colors);
 
-$g-color: merge((
-  grey-interval: 5
-), $color-settings);
 
 
 /**
- * @module Social Colors
- * @description Easy references to common social colors. These are variables
- * that can be handy to use for text colors (esp icons) or backgrounds.
- *
- * @markup
-  .share--facebook { color: get($color, facebook); }
+ * Add all the colors to the color collection
  */
-@include addColor(facebook,    #3A5998, $use-colors);
-@include addColor(twitter,     #1AB2E8, $use-colors);
-@include addColor(google,      #4386F7, $use-colors);
-@include addColor(google-plus, #DD4C39, $use-colors);
-@include addColor(pinterest,   #C9232D, $use-colors);
-
+@each $name, $color in $gemini-colors {
+  $trash: addColor($name, $color);
+}
 
 /**
  * @module Grey Colors
@@ -35,8 +31,30 @@ $g-color: merge((
  * @markup
   .foo { color: get($color, g20); }
  */
-@for $i from 0 through 100 / get($g-color, grey-interval) {
-  $grey-percent: $i * get($g-color, grey-interval);
+@for $i from 0 through 100 / 5 {
+  $grey-percent: $i * 5;
 
-  @include addColor(g + $grey-percent, lighten(#000, $grey-percent), $use-colors)
+  $trash: addColor(g + $grey-percent, lighten(#000, $grey-percent));
+}
+
+
+@if get($gemini-use, colors) {
+
+  @each $name, $color in $gemini-color-collection {
+
+    /**
+     * @module Color Helpers
+     * @description Classes to help you easily set a color. You can easily add
+     * colors in your settings.
+     *
+     * @markup
+      <span class="c-g50">I'm gray!</span>
+      <span class="c-facebook">I'm Facebook blue!</span>
+     */
+    .c-#{$name} {
+      color: $color;
+    }
+
+  }
+
 }

@@ -12,7 +12,7 @@
  *   <a href="http://www.carpages.ca">Click me!</a>
  */
 a {
-  color: $link-color;
+  color: get(link-color);
   text-decoration: none;
 
   &:hover {

@@ -68,9 +68,9 @@ table {
 }
 th,
 td {
-  padding: $base-spacing-unit / 4;
+  padding: get(spacing) / 4;
   @media screen and (min-width:480px) {
-    padding: $half-spacing-unit;
+    padding: get(spacing) / 2;
   }
   text-align: left;
 }
@@ -184,7 +184,7 @@ td {
 .table--bordered {
   th,
   td {
-    border: 1px solid $base-ui-color;
+    border: 1px solid lighten(get(color), 50%);
 
     &:empty {
       border: none;
@@ -206,7 +206,7 @@ td {
  */
 .table--striped {
   tbody tr:nth-of-type(odd) {
-    background-color: get($color, g20); /* Override this color in your theme stylesheet */
+    background-color: lighten(get(color), 75%);
   }
 }
 
@@ -242,7 +242,7 @@ td {
       }
     }
     tr {
-      margin-bottom: $base-spacing-unit;
+      margin-bottom: get(spacing);
     }
   }
 }

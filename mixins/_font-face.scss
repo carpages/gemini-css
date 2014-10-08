@@ -12,13 +12,13 @@
  */
 @mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $version: 1 ) {
   @font-face {
-  font-family: $font-family;
-  src: url('#{$file-path}.eot?bust=v#{$version}');
-  src: url('#{$file-path}.eot?#iefix')               format('embedded-opentype'),
-       url('#{$file-path}.woff?bust=v#{$version}')   format('woff'),
-       url('#{$file-path}.ttf?bust=v#{$version}')    format('truetype'),
-       url('#{$file-path}.svg##{$font-family}')      format('svg');
-  font-weight: $weight;
-  font-style: $style;
+    font-family: $font-family;
+    src: url('#{$file-path}.eot?bust=v#{$version}');
+    src: url('#{$file-path}.eot?#iefix')               format('embedded-opentype'),
+         url('#{$file-path}.woff?bust=v#{$version}')   format('woff'),
+         url('#{$file-path}.ttf?bust=v#{$version}')    format('truetype'),
+         url('#{$file-path}.svg##{$font-family}')      format('svg');
+    font-weight: $weight;
+    font-style: $style;
   }
 }

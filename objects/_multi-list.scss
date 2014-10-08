@@ -4,7 +4,7 @@
  ********************************
  */
 
-@if $use-multi-list == true {
+@if get($gemini-use, multi-list) {
   /**
    * @module Multi Lists [.multi-list]
    * @description Splits a list into multiple columns
@@ -42,7 +42,7 @@
     float: none;
     display: inline-block;
     vertical-align: top;
-    padding-bottom: $base-spacing-unit;
+    padding-bottom: get(spacing);
   }
 
 

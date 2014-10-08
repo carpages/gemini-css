@@ -4,7 +4,7 @@
  ********************************
  */
 
-@if $use-overlay == true {
+@if get($gemini-use, overlay) {
 
   //Use position absolute to overlay items
   /**

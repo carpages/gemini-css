@@ -4,7 +4,15 @@
  ********************************
  */
 
-@if $use-select == true {
+$gemini-select: () !default;
+
+$gemini-select: extend((
+  // Expecting em to be scalable
+  padding: 0.25em,
+), $gemini-select);
+
+
+@if get($gemini-use, select) {
 
   // From http://codepen.io/mattdrose/pen/snCEx
 
@@ -33,9 +41,6 @@
    * 16. Hide the select outline
    */
 
-  // Expecting em to be scalable
-  $select-padding: 0.25em!default;
-
   .select {
     display: inline-block; /* 1 */
     position: relative; /* 2 */
@@ -48,23 +53,23 @@
     color: #555;
     border: 1px solid #AAA;
     text-shadow: none;
-    @include border-radius($brand-round);
+    @include border-radius(get(border-radius));
 
     @extend %icon; /* 6 */
     @extend .icon--default-arrow-down; /* 6 */
 
     &:before {
       position: absolute; /* 7 */
-      top: $select-padding; /* 7 */
-      right: $select-padding + 0.25em; /* 7 */
+      top: get($gemini-select, padding); /* 7 */
+      right: get($gemini-select, padding) + 0.25em; /* 7 */
       pointer-events: none; /* 8 */
     }
 
     select {
       cursor: pointer; /* 9 */
-      padding: $select-padding; /* 10 */
-      padding-left: $select-padding + 0.25; /* 10 */
-      padding-right: $select-padding + 1.75em; /* 11 */
+      padding: get($gemini-select, padding); /* 10 */
+      padding-left: get($gemini-select, padding) + 0.25; /* 10 */
+      padding-right: get($gemini-select, padding) + 1.75em; /* 11 */
       width: 130%; /* 12 */
       border: none; /* 13 */
       background: transparent; /* 13 */

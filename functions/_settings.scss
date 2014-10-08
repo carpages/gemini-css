@@ -1,0 +1,21 @@
+/**
+ ********************************
+ * _SETTINGS.SCSS
+ ********************************
+ */
+
+// Shortcut map-get
+// Default map to $gemini-base-settings if the user doesn't send a map
+// e.g get(brand-round);
+@function get($map, $key: false) {
+  @if $key {
+    @return map-get($map, $key);
+  } @else {
+    @return map-get($gemini-base, $map);
+  }
+}
+
+// Shortcut for map-merge
+@function extend($map-1, $map-2) {
+  @return map-merge($map-1, $map-2);
+}

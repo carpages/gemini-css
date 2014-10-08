@@ -22,24 +22,24 @@
  * @modifier [.push-half--ends] Add half margin to top and bottom
  * @modifier [.push-half--sides] Add half margin to left and right
  */
-.push                { margin:        $base-spacing-unit !important; }
-.push--top           { margin-top:    $base-spacing-unit !important; }
-.push--right         { margin-right:  $base-spacing-unit !important; }
-.push--bottom        { margin-bottom: $base-spacing-unit !important; }
-.push--left          { margin-left:   $base-spacing-unit !important; }
-.push--ends          { margin-top:    $base-spacing-unit !important; margin-bottom: $base-spacing-unit !important; }
-.push--sides         { margin-right:  $base-spacing-unit !important; margin-left:   $base-spacing-unit !important; }
+.push                { margin:        get(spacing) !important; }
+.push--top           { margin-top:    get(spacing) !important; }
+.push--right         { margin-right:  get(spacing) !important; }
+.push--bottom        { margin-bottom: get(spacing) !important; }
+.push--left          { margin-left:   get(spacing) !important; }
+.push--ends          { margin-top:    get(spacing) !important; margin-bottom: get(spacing) !important; }
+.push--sides         { margin-right:  get(spacing) !important; margin-left:   get(spacing) !important; }
 
-.push-half           { margin:        $half-spacing-unit !important; }
-.push-half--top      { margin-top:    $half-spacing-unit !important; }
-.push-half--right    { margin-right:  $half-spacing-unit !important; }
-.push-half--bottom   { margin-bottom: $half-spacing-unit !important; }
-.push-half--left     { margin-left:   $half-spacing-unit !important; }
-.push-half--ends     { margin-top:    $half-spacing-unit !important; margin-bottom: $half-spacing-unit !important; }
-.push-half--sides    { margin-right:  $half-spacing-unit !important; margin-left:   $half-spacing-unit !important; }
+.push-half           { margin:        get(spacing) / 2 !important; }
+.push-half--top      { margin-top:    get(spacing) / 2 !important; }
+.push-half--right    { margin-right:  get(spacing) / 2 !important; }
+.push-half--bottom   { margin-bottom: get(spacing) / 2 !important; }
+.push-half--left     { margin-left:   get(spacing) / 2 !important; }
+.push-half--ends     { margin-top:    get(spacing) / 2 !important; margin-bottom: get(spacing) / 2 !important; }
+.push-half--sides    { margin-right:  get(spacing) / 2 !important; margin-left:   get(spacing) / 2 !important; }
 
-.push-double--bottom { margin-bottom: $double-spacing-unit !important; }
-.push-double--top    { margin-top:    $double-spacing-unit !important; }
+.push-double--bottom { margin-bottom: get(spacing) * 2 !important; }
+.push-double--top    { margin-top:    get(spacing) * 2 !important; }
 
 /**
  * @module Block Flusher [.flush]
@@ -68,5 +68,5 @@
  * @modifier [.bleed] Negative margins on the sides
  * @modifier [.bleed-half] Half negative margins on the sides
  */
-.bleed      { margin-right: -$base-spacing-unit !important; margin-left:  -$base-spacing-unit !important;}
-.bleed-half { margin-right: -$half-spacing-unit !important; margin-left:  -$half-spacing-unit !important;}
+.bleed      { margin-right: -get(spacing) !important; margin-left:  -get(spacing) !important;}
+.bleed-half { margin-right: -get(spacing) / 2 !important; margin-left:  -get(spacing) / 2 !important;}

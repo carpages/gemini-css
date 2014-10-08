@@ -47,3 +47,26 @@
 @function darker($color, $percent) {
   @return scale-color($color, $lightness: -$percent);
 }
+
+
+/**
+ * This helper makes it easy to add and access custom colors.
+ *
+ * How to add a color:
+  addColor(carpages, #090);
+ *
+ * How to access a color:
+  .foo {
+    color: getColor(carpages);
+  }
+ */
+$gemini-color-collection: ();
+
+@function addColor($name, $color) {
+   $gemini-color-collection: extend($gemini-color-collection, ($name: $color)) !global;
+   @return null;
+}
+
+@function getColor($name){
+  @return get($gemini-color-collection, $name);
+}

@@ -4,7 +4,7 @@
  ********************************
  */
 
-@if $use-tag == true {
+@if get($gemini-use, tags) {
 
   /**
    * @module Tags [.tag]
@@ -30,8 +30,8 @@
 
   .tag {
     @extend %beautons;
-    background: $brand-color;
-    color: $white;
+    background: get(brand-color);
+    color: getColor(g100);
     text-shadow: none;
 
     &:hover {

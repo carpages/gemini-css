@@ -12,6 +12,6 @@
  *
  */
 @mixin rgba-background($color, $alpha) {
-  background:$color;
-  background:rgba($color, $alpha);
+  background: $color;
+  background: rgba($color, $alpha);
 }

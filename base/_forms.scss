@@ -47,7 +47,7 @@ label {
 
   input[type="checkbox"] + & {
     display: inline-block;
-    padding-left: $half-spacing-unit;
+    padding-left: get(spacing) / 2;
   }
 
   @include quick-media-query(medium) {
@@ -146,7 +146,7 @@ textarea {
   //Inline
   .form--inline & {
     float: left;
-    margin-right: $half-spacing-unit;
+    margin-right: get(spacing) / 2;
     margin-left: 0;
   }
 }

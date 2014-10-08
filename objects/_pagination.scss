@@ -4,7 +4,7 @@
  ********************************
  */
 
-@if $use-pagination == true {
+@if get($gemini-use, pagination) {
 
   /**
   * @module Pagination [.pagination]
@@ -20,13 +20,13 @@
     word-spacing: -0.43em;
   }
   .pagination > li {
-    padding: $base-spacing-unit / 2;
+    padding: get(spacing) / 2;
     letter-spacing: normal;
     word-spacing: normal;
   }
   .pagination > li > a {
-    padding: $base-spacing-unit / 2;
-    margin: -$base-spacing-unit / 2;
+    padding: get(spacing) / 2;
+    margin: -get(spacing) / 2;
   }
 
   /**

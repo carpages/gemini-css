@@ -41,7 +41,7 @@
  *
   font-size: em(24px, 16px);
  */
-@function em($value, $context: $base-font-size) {
+@function em($value, $context: get(font-size)) {
   @return ( base-em($value) / base-em($context) ) + 0em;
 }
 
@@ -51,5 +51,5 @@
   font-size: rem(24px);
  */
 @function rem($value) {
-  @return ( base-em($value) / base-em($base-font-size) ) + 0rem;
+  @return ( base-em($value) / base-em(get(font-size)) ) + 0rem;
 }

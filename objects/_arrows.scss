@@ -9,12 +9,14 @@
  * arrow, we typically build these with CSS.
  */
 
-$arrow-size: $base-spacing-unit * 0.4!default;
-$arrow-border: 2!default;
-$border: $arrow-size;
-$arrow: $arrow-size - $arrow-border;
+$gemini-arrows: () !default;
 
-@if $use-arrow == true {
+$gemini-arrows: extend((
+  size: get(spacing) * 0.4,
+  border: 2,
+), $gemini-arrows);
+
+@if get($gemini-use, arrows) {
 
   /**
    * @module Arrows
@@ -35,10 +37,10 @@ $arrow: $arrow-size - $arrow-border;
       border-collapse: separate;
     }
     &:before {
-      border: $border solid transparent;
+      border: get($gemini-arrows, size) solid transparent;
     }
     &:after {
-      border: $arrow solid transparent;
+      border: get($gemini-arrows, size) - get($gemini-arrows, border) solid transparent;
     }
   }
 
@@ -59,10 +61,10 @@ $arrow: $arrow-size - $arrow-border;
     @extend %arrow;
 
     &:before {
-      top: $arrow;
+      top: get($gemini-arrows, size) - get($gemini-arrows, border);
     }
     &:after {
-      top: $border;
+      top: get($gemini-arrows, size);
     }
   }
 
@@ -72,10 +74,10 @@ $arrow: $arrow-size - $arrow-border;
     &:before,
     &:after {
       top: 50%;
-      margin-top: -$border;
+      margin-top: -get($gemini-arrows, size);
     }
     &:after {
-      margin-top: -$arrow;
+      margin-top: -get($gemini-arrows, size) - get($gemini-arrows, border);
     }
   }
 
@@ -83,10 +85,10 @@ $arrow: $arrow-size - $arrow-border;
     @extend %arrow;
 
     &:before {
-      bottom: $arrow;
+      bottom: get($gemini-arrows, size) - get($gemini-arrows, border);
     }
     &:after {
-      bottom: $border;
+      bottom: get($gemini-arrows, size);
     }
   }
 
@@ -112,10 +114,10 @@ $arrow: $arrow-size - $arrow-border;
     @extend %arrow;
 
     &:before {
-      left: $arrow;
+      left: get($gemini-arrows, size) - get($gemini-arrows, border);
     }
     &:after {
-      left: $border;
+      left: get($gemini-arrows, size);
     }
   }
 
@@ -125,10 +127,10 @@ $arrow: $arrow-size - $arrow-border;
     &:before,
     &:after {
       left: 50%;
-      margin-left: -$border;
+      margin-left: -get($gemini-arrows, size);
     }
     &:after {
-      margin-left: -$arrow;
+      margin-left: -get($gemini-arrows, size) - get($gemini-arrows, border);
     }
   }
 
@@ -136,10 +138,10 @@ $arrow: $arrow-size - $arrow-border;
     @extend %arrow;
 
     &:before {
-      right: $arrow + 10px;
+      right: get($gemini-arrows, size) - get($gemini-arrows, border) + 10px;
     }
     &:after {
-      right: $border + 10px;
+      right: get($gemini-arrows, size) + 10px;
     }
   }
 
