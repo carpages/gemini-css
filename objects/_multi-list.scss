@@ -4,7 +4,7 @@
  ********************************
  */
 
-@if get($gemini-use, multi-list) {
+@if get(multi-list, $gemini-use) {
   /**
    * @module Multi Lists [.multi-list]
    * @description Splits a list into multiple columns

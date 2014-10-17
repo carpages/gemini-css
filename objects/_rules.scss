@@ -4,7 +4,7 @@
  ********************************
  */
 
-@if get($gemini-use, rules) {
+@if get(rules, $gemini-use) {
 
   /**
    * @module Horizontal Rules [.rule]

@@ -4,7 +4,7 @@
  ********************************
  */
 
-@if get($gemini-use, copy) {
+@if get(copy, $gemini-use) {
 
   /**
    * Styles to make copy more readable.
@@ -19,7 +19,7 @@
     }
 
     p {
-      font-size: get($gemini-headings, epsilon);
+      font-size: get(epsilon, $gemini-headings);
     }
 
     img {

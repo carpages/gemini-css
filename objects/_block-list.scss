@@ -4,7 +4,7 @@
  ********************************
  */
 
-@if get($gemini-use, block-list) {
+@if get(block-list, $gemini-use) {
 
   /**
    * @module Block List [.block-list]

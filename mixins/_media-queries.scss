@@ -35,26 +35,26 @@
  *
  * We work out your end points for you:
  */
-$small-end:              get($gemini-screens, medium) - 1px;
-$medium-end:             get($gemini-screens, large) - 1px;
+$small-end:              get(medium, $gemini-screens) - 1px;
+$medium-end:             get(large, $gemini-screens) - 1px;
 
 @mixin quick-media-query($media-query, $print: false) {
 
   @if $media-query == medium or $media-query == hidden-small {
 
-    @include media-query(get($gemini-screens, medium), 99999, $print) { @content; }
+    @include media-query(get(medium, $gemini-screens), 99999, $print) { @content; }
 
   }
 
   @if $media-query == large or $media-query == visible-large {
 
-    @include media-query(get($gemini-screens, large), 99999, $print) { @content; }
+    @include media-query(get(large, $gemini-screens), 99999, $print) { @content; }
 
   }
 
   @if $media-query == xlarge {
 
-    @include media-query(get($gemini-screens, xlarge), 99999, $print) { @content; }
+    @include media-query(get(xlarge, $gemini-screens), 99999, $print) { @content; }
 
   }
 
@@ -66,13 +66,13 @@ $medium-end:             get($gemini-screens, large) - 1px;
 
   @if $media-query == visible-medium {
 
-    @include media-query(get($gemini-screens, medium), $medium-end, $print) { @content; }
+    @include media-query(get(medium, $gemini-screens), $medium-end, $print) { @content; }
 
   }
 
   @if $media-query == hidden-medium {
 
-    @include media-query(get($gemini-screens, large), $small-end, $print) { @content; }
+    @include media-query(get(large, $gemini-screens), $small-end, $print) { @content; }
 
   }
 
@@ -113,7 +113,7 @@ $medium-end:             get($gemini-screens, large) - 1px;
  * Inspired by: //http://jakearchibald.github.com/sass-ie/
  *
  * '@include media-query($small-end){ [styles here] }'
- * '@include media-query($small-end, get($gemini-screens, large), true){ [styles here] }'
+ * '@include media-query($small-end, get(large, $gemini-screens), true){ [styles here] }'
  * '@include media-query(511px, 4300px){ [styles here] }'
  */
 

@@ -12,7 +12,7 @@ $gemini-select: extend((
 ), $gemini-select);
 
 
-@if get($gemini-use, select) {
+@if get(select, $gemini-use) {
 
   // From http://codepen.io/mattdrose/pen/snCEx
 
@@ -67,9 +67,9 @@ $gemini-select: extend((
 
     select {
       cursor: pointer; /* 9 */
-      padding: get($gemini-select, padding); /* 10 */
-      padding-left: get($gemini-select, padding) + 0.25; /* 10 */
-      padding-right: get($gemini-select, padding) + 1.75em; /* 11 */
+      padding: get(padding, $gemini-select); /* 10 */
+      padding-left: get(padding, $gemini-select) + 0.25; /* 10 */
+      padding-right: get(padding, $gemini-select) + 1.75em; /* 11 */
       width: 130%; /* 12 */
       border: none; /* 13 */
       background: transparent; /* 13 */

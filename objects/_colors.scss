@@ -29,7 +29,7 @@ $gemini-colors: extend((
  * by intervals of 5, where 0 is black, and 100 is white.
  *
  * @markup
-  .foo { color: get($color, g20); }
+  .foo { color: get(g20, $color); }
  */
 @for $i from 0 through 100 / 5 {
   $grey-percent: $i * 5;
@@ -38,7 +38,7 @@ $gemini-colors: extend((
 }
 
 
-@if get($gemini-use, colors) {
+@if get(colors, $gemini-use) {
 
   @each $name, $color in $gemini-color-collection {
 

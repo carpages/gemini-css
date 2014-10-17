@@ -4,7 +4,7 @@
  ********************************
  */
 
-@if get($gemini-use, link-complex) {
+@if get(link-complex, $gemini-use) {
   /**
    * @module Complex Links [.link-complex]
    * @description Add hover behaviour to only selected items within links (https://github.com/necolas/suit-utils-link/blob/master/link.css)

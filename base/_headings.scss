@@ -76,7 +76,7 @@ $mapped-headings: (
 
 //Set line-heights
 %heading-line-height {
-  line-height: get($gemini-headings, line-height);
+  line-height: get(line-height, $gemini-headings);
 }
 
 @each $class, $el in $mapped-headings {
@@ -97,7 +97,7 @@ $mapped-headings: (
     #{$el},
   }*/
   .#{$class} {
-    @include font-size(get($gemini-headings, $class));
+    @include font-size(get($class, $gemini-headings));
   }
 
 }
@@ -108,7 +108,7 @@ $mapped-headings: (
   @each $class, $el in $mapped-headings {
 
     .#{$class}--medium {
-      @include font-size(get($gemini-headings, $class));
+      @include font-size(get($class, $gemini-headings));
     }
 
   }
@@ -121,7 +121,7 @@ $mapped-headings: (
   @each $class, $el in $mapped-headings {
 
     .#{$class}--large {
-      @include font-size(get($gemini-headings, $class));
+      @include font-size(get($class, $gemini-headings));
     }
 
   }

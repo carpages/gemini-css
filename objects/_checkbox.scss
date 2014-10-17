@@ -4,7 +4,7 @@
  ********************************
  */
 
-@if get($gemini-use, checkbox) {
+@if get(checkbox, $gemini-use) {
 
   //Checkboxes
   .checkbox {

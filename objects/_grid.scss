@@ -7,12 +7,12 @@
 $gemini-grid: () !default;
 
 $gemini-grid: extend((
-  max-width: get($gemini-screens, xlarge),
+  max-width: get(xlarge, $gemini-screens),
   gutter: get(spacing),
   columns: 12,
-  medium-breakpoint: get($gemini-screens, medium),
-  large-breakpoint: get($gemini-screens, large),
-  xlarge-breakpoint: get($gemini-screens, xlarge),
+  medium-breakpoint: get(medium, $gemini-screens),
+  large-breakpoint: get(large, $gemini-screens),
+  xlarge-breakpoint: get(xlarge, $gemini-screens),
 ), $gemini-grid);
 
 /**
@@ -48,16 +48,16 @@ $gemini-grid: extend((
   }
 
   // Basic column usage
-  @for $i from 1 through get($gemini-grid, columns) {
+  @for $i from 1 through get(columns, $gemini-grid) {
     .l-column--#{$screen}-#{$i} {
-      width: gridCalc($i, get($gemini-grid, columns));
+      width: gridCalc($i, get(columns, $gemini-grid));
     }
   }
 
   // Column offsets
-  @for $i from 1 through get($gemini-grid, columns) - 2 {
+  @for $i from 1 through get(columns, $gemini-grid) - 2 {
     .l-column--#{$screen}-offset-#{$i} {
-      margin-left: gridCalc($i, get($gemini-grid, columns));
+      margin-left: gridCalc($i, get(columns, $gemini-grid));
     }
   }
 
@@ -72,12 +72,12 @@ $gemini-grid: extend((
   }
 
   // Basic push and pulls
-  @for $i from 2 through get($gemini-grid, columns) - 2 {
+  @for $i from 2 through get(columns, $gemini-grid) - 2 {
     .l-column--#{$screen}-push-#{$i} {
-      left: gridCalc($i, get($gemini-grid, columns));
+      left: gridCalc($i, get(columns, $gemini-grid));
     }
     .l-column--#{$screen}-pull-#{$i} {
-      right: gridCalc($i, get($gemini-grid, columns));
+      right: gridCalc($i, get(columns, $gemini-grid));
     }
   }
     [class*=".l-column--#{$screen}-push"]{
@@ -88,7 +88,7 @@ $gemini-grid: extend((
     }
 }
 
-@if get($gemini-use, grid) {
+@if get(grid, $gemini-use) {
 
 /**
  * @module Grid Row [.l-row]
@@ -110,12 +110,12 @@ $gemini-grid: extend((
   @extend .clearfix;
   width: 100%;
   margin: 0 auto;
-  max-width: get($gemini-grid, max-width);
+  max-width: get(max-width, $gemini-grid);
 
   //Keep the end columns flush with the gutter
   & .l-row {
-    margin-left: -(get($gemini-grid, gutter) / 2);
-    margin-right: -(get($gemini-grid, gutter) / 2);
+    margin-left: -(get(gutter, $gemini-grid) / 2);
+    margin-right: -(get(gutter, $gemini-grid) / 2);
     width: auto;
     max-width: none;
   }
@@ -145,7 +145,7 @@ $gemini-grid: extend((
 [class*="l-column"] {
   @extend .clearfix;
   position: relative;
-  padding: 0 (get($gemini-grid, gutter) / 2);
+  padding: 0 (get(gutter, $gemini-grid) / 2);
   width: 100%;
   float: left;
   margin-bottom: get(spacing);
@@ -166,15 +166,15 @@ $gemini-grid: extend((
  */
 @include screen-grid('small');
 
-@include media-query(get($gemini-grid, medium-breakpoint)) {
+@include media-query(get(medium-breakpoint, $gemini-grid)) {
   @include screen-grid('medium');
 }
 
-@include media-query(get($gemini-grid, large-breakpoint)) {
+@include media-query(get(large-breakpoint, $gemini-grid)) {
   @include screen-grid('large');
 }
 
-@include media-query(get($gemini-grid, xlarge-breakpoint)) {
+@include media-query(get(xlarge-breakpoint, $gemini-grid)) {
   @include screen-grid('xlarge');
 }
 

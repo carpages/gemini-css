@@ -34,35 +34,12 @@ address,
 table,
 fieldset,
 figure,
-pre,
+pre
 /**
  * Objects and abstractions
  */
-%margin-bottom,
-.media {
+{
   margin-bottom: get(spacing);
-}
-
-/**
- * Doubled up 'margin-bottom' helper class.
- */
-%double-margin-bottom,
-.landmark {
-  margin-bottom: get(spacing) * 2;
-}
-
-/**
- * Half 'margin-bottom' helper class.
- */
-%half-margin-bottom {
-  margin-bottom: get(spacing) / 2;
-}
-
-/**
- * Quarter 'margin-bottom' helper class.
- */
-%quarter-margin-bottom {
-  margin-bottom: get(spacing) / 4;
 }
 
 

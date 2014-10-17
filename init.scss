@@ -33,9 +33,10 @@
 /**
  * Functions
  */
+@import "functions/lists";
+@import "functions/maps";
 @import "functions/colors";
 @import "functions/ems";
-@import "functions/settings";
 
 /**
  * Mixins
@@ -49,6 +50,11 @@
 @import "mixins/rgba-background";
 @import "mixins/truncate";
 @import "mixins/vendor";
+
+/**
+ * Load Colors
+ */
+@import "objects/colors";
 
 /**
  * Base Styles
@@ -72,7 +78,6 @@
 /**
  * Objects and abstractions
  */
-@import "objects/colors";
 @import "objects/icons";
 @import "objects/grid";
 @import "objects/nav";
@@ -111,9 +116,7 @@
 @import "helpers/gpu";
 @import "helpers/hidden";
 @import "helpers/line-height";
-@import "helpers/margin";
 @import "helpers/mute";
-@import "helpers/padding";
 @import "helpers/radius";
 @import "helpers/scroll";
 @import "helpers/truncate";

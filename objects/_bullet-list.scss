@@ -4,7 +4,7 @@
  ********************************
  */
 
-@if get($gemini-use, bullet-list) {
+@if get(bullet-list, $gemini-use) {
 
   /**
    * @module Bullet Lists [.bullet-list]

@@ -16,7 +16,7 @@ $gemini-arrows: extend((
   border: 2,
 ), $gemini-arrows);
 
-@if get($gemini-use, arrows) {
+@if get(arrows, $gemini-use) {
 
   /**
    * @module Arrows
@@ -37,10 +37,10 @@ $gemini-arrows: extend((
       border-collapse: separate;
     }
     &:before {
-      border: get($gemini-arrows, size) solid transparent;
+      border: get(size, $gemini-arrows) solid transparent;
     }
     &:after {
-      border: get($gemini-arrows, size) - get($gemini-arrows, border) solid transparent;
+      border: get(size, $gemini-arrows) - get(border, $gemini-arrows) solid transparent;
     }
   }
 
@@ -61,10 +61,10 @@ $gemini-arrows: extend((
     @extend %arrow;
 
     &:before {
-      top: get($gemini-arrows, size) - get($gemini-arrows, border);
+      top: get(size, $gemini-arrows) - get(border, $gemini-arrows);
     }
     &:after {
-      top: get($gemini-arrows, size);
+      top: get(size, $gemini-arrows);
     }
   }
 
@@ -74,10 +74,10 @@ $gemini-arrows: extend((
     &:before,
     &:after {
       top: 50%;
-      margin-top: -get($gemini-arrows, size);
+      margin-top: -get(size, $gemini-arrows);
     }
     &:after {
-      margin-top: -get($gemini-arrows, size) - get($gemini-arrows, border);
+      margin-top: -get(size, $gemini-arrows) - get(border, $gemini-arrows);
     }
   }
 
@@ -85,10 +85,10 @@ $gemini-arrows: extend((
     @extend %arrow;
 
     &:before {
-      bottom: get($gemini-arrows, size) - get($gemini-arrows, border);
+      bottom: get(size, $gemini-arrows) - get(border, $gemini-arrows);
     }
     &:after {
-      bottom: get($gemini-arrows, size);
+      bottom: get(size, $gemini-arrows);
     }
   }
 
@@ -114,10 +114,10 @@ $gemini-arrows: extend((
     @extend %arrow;
 
     &:before {
-      left: get($gemini-arrows, size) - get($gemini-arrows, border);
+      left: get(size, $gemini-arrows) - get(border, $gemini-arrows);
     }
     &:after {
-      left: get($gemini-arrows, size);
+      left: get(size, $gemini-arrows);
     }
   }
 
@@ -127,10 +127,10 @@ $gemini-arrows: extend((
     &:before,
     &:after {
       left: 50%;
-      margin-left: -get($gemini-arrows, size);
+      margin-left: -get(size, $gemini-arrows);
     }
     &:after {
-      margin-left: -get($gemini-arrows, size) - get($gemini-arrows, border);
+      margin-left: -get(size, $gemini-arrows) - get(border, $gemini-arrows);
     }
   }
 
@@ -138,10 +138,10 @@ $gemini-arrows: extend((
     @extend %arrow;
 
     &:before {
-      right: get($gemini-arrows, size) - get($gemini-arrows, border) + 10px;
+      right: get(size, $gemini-arrows) - get(border, $gemini-arrows) + 10px;
     }
     &:after {
-      right: get($gemini-arrows, size) + 10px;
+      right: get(size, $gemini-arrows) + 10px;
     }
   }
 

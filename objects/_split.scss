@@ -4,7 +4,7 @@
  ********************************
  */
 
-@if get($gemini-use, split) {
+@if get(split, $gemini-use) {
 
   /**
    * @module Split [.split]

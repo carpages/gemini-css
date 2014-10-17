@@ -16,7 +16,7 @@ $gemini-buttons: extend((
   padding-sides: 1em
 ), $gemini-buttons);
 
-@if get($gemini-use, buttons) {
+@if get(buttons, $gemini-use) {
 
   /**
    * @module Buttons [.button]
@@ -50,17 +50,17 @@ $gemini-buttons: extend((
     border: none;
     margin: 0;
     cursor: pointer;
-    padding: get($gemini-buttons, padding-ends) get($gemini-buttons, padding-sides);
-    padding: calc(#{get($gemini-buttons, padding-ends)} - #{get($gemini-buttons, border-width)}) get($gemini-buttons, padding-sides);
+    padding: get(padding-ends, $gemini-buttons) get(padding-sides, $gemini-buttons);
+    padding: calc(#{get(padding-ends, $gemini-buttons)} - #{get(border-width, $gemini-buttons)}) get(padding-sides, $gemini-buttons);
 
-    border: get($gemini-buttons, border-width) solid get($gemini-buttons, border-color);
+    border: get(border-width, $gemini-buttons) solid get(border-color, $gemini-buttons);
 
-    @if get($gemini-buttons, border-radius) > 0 {
-      @include border-radius(get($gemini-buttons, border-radius));
+    @if get(border-radius, $gemini-buttons) > 0 {
+      @include border-radius(get(border-radius, $gemini-buttons));
     }
 
-    color: get($gemini-buttons, color);
-    background-color: get($gemini-buttons, background-color);
+    color: get(color, $gemini-buttons);
+    background-color: get(background-color, $gemini-buttons);
 
     &,
     &:hover {
@@ -77,19 +77,19 @@ $gemini-buttons: extend((
     vertical-align: baseline;
     font-size: inherit;
     line-height: inherit;
-    line-height: calc(100% - #{get($gemini-buttons, border-width) * 2});
+    line-height: calc(100% - #{get(border-width, $gemini-buttons) * 2});
     padding-top: 0;
     padding-bottom: 0;
   }
 
   .button--small {
-    padding: get($gemini-buttons, padding-ends) * 0.5 get($gemini-buttons, padding-sides) * 0.5;
+    padding: get(padding-ends, $gemini-buttons) * 0.5 get(padding-sides, $gemini-buttons) * 0.5;
   }
   .button--large {
-    padding: get($gemini-buttons, padding-ends) * 1.5 get($gemini-buttons, padding-sides) * 1.5;
+    padding: get(padding-ends, $gemini-buttons) * 1.5 get(padding-sides, $gemini-buttons) * 1.5;
   }
   .button--huge {
-    padding: get($gemini-buttons, padding-ends) * 2 get($gemini-buttons, padding-sides) * 2;
+    padding: get(padding-ends, $gemini-buttons) * 2 get(padding-sides, $gemini-buttons) * 2;
   }
 
   .button-group {
@@ -107,15 +107,15 @@ $gemini-buttons: extend((
       &:not(:first-child) {
         border-left: none;
 
-        @if get($gemini-buttons, border-radius) > 0 {
+        @if get(border-radius, $gemini-buttons) > 0 {
           @include border-left-radius(0);
         }
 
       }
       &:not(:last-child) {
-        border-right: get($gemini-buttons, border-width) solid lighten(get($gemini-buttons, border-color), 50%);
+        border-right: get(border-width, $gemini-buttons) solid lighten(get(border-color, $gemini-buttons), 50%);
 
-        @if get($gemini-buttons, border-radius) > 0 {
+        @if get(border-radius, $gemini-buttons) > 0 {
           @include border-right-radius(0);
         }
       }

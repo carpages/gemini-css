@@ -4,7 +4,7 @@
  ********************************
  */
 
-@if get($gemini-use, arrows) or get($gemini-use, pagination) {
+@if get(arrows, $gemini-use) or get(pagination, $gemini-use) {
 
   /**
    * @module Navigation Lists [.nav]

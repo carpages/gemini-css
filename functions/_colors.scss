@@ -63,10 +63,15 @@
 $gemini-color-collection: ();
 
 @function addColor($name, $color) {
-   $gemini-color-collection: extend($gemini-color-collection, ($name: $color)) !global;
+   $gemini-color-collection: map-merge($gemini-color-collection, ($name: $color)) !global;
    @return null;
 }
 
 @function getColor($name){
-  @return get($gemini-color-collection, $name);
+  @if map-has-key($gemini-color-collection, $name) {
+    @return get($name, $gemini-color-collection);
+  } @else {
+    @warn "Color #{$name} was not found.";
+    @return null;
+  }
 }

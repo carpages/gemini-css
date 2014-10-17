@@ -4,7 +4,7 @@
  ********************************
  */
 
-@if get($gemini-use, stats) {
+@if get(stats, $gemini-use) {
 
   /**
    * @module Stat Group [.stat-group]
