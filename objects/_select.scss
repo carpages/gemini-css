@@ -60,8 +60,8 @@ $gemini-select: extend((
 
     &:before {
       position: absolute; /* 7 */
-      top: get($gemini-select, padding); /* 7 */
-      right: get($gemini-select, padding) + 0.25em; /* 7 */
+      top: get(padding, $gemini-select); /* 7 */
+      right: get(padding, $gemini-select) + 0.25em; /* 7 */
       pointer-events: none; /* 8 */
     }
 
