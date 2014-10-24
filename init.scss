@@ -8,11 +8,10 @@
  *
  * Framework used for Carpages.ca
  *
- * File structure inspired by Inuit.css
- *
- * Other Credits:
+ * Credits/Inspiration:
  * SMACSS
  * BEM
+ * Inuit.css
  * Bootstrap.css
  * Foundation.css
  * CSS-Tricks
@@ -28,30 +27,44 @@
 /**
  * Variables
  */
-@import "variables/fonts";
-@import "variables/colours";
-@import "variables/defaults";
-
+@import "defaults";
 
 /**
- * Foundational utility styles etc.
+ * Functions
  */
-@import "foundation/functions";
-@import "foundation/mixins";
-@import "foundation/normalize";
-@import "foundation/reset";
-@import "foundation/clearfix";
-@import "foundation/margins";
-
+@import "functions/lists";
+@import "functions/maps";
+@import "functions/colors";
+@import "functions/ems";
 
 /**
- * Base styles; unclassed HTML elements etc.
+ * Mixins
  */
+@import "mixins/arrows";
+@import "mixins/font-face";
+@import "mixins/font-size";
+@import "mixins/headings";
+@import "mixins/keyframes";
+@import "mixins/media-queries";
+@import "mixins/rgba-background";
+@import "mixins/truncate";
+@import "mixins/vendor";
+
+/**
+ * Load Colors
+ */
+@import "objects/colors";
+
+/**
+ * Base Styles
+ */
+@import "base/normalize";
+@import "base/reset";
+@import "base/margins";
 @import "base/main";
 @import "base/headings";
 @import "base/paragraphs";
 @import "base/links";
-@import "base/smallprint";
 @import "base/quotes";
 @import "base/code";
 @import "base/images";
@@ -59,8 +72,7 @@
 @import "base/tables";
 @import "base/forms";
 @import "base/iframes";
-@import "base/object";
-
+@import "base/objects";
 
 /**
  * Objects and abstractions
@@ -77,22 +89,35 @@
 @import "objects/link-complex";
 @import "objects/flyout";
 @import "objects/arrows";
+@import "objects/tags";
 @import "objects/buttons";
 @import "objects/rules";
 @import "objects/stats";
 @import "objects/fit";
-@import "objects/alerts";
 @import "objects/overlay";
-@import "objects/tags";
 @import "objects/colors";
 @import "objects/copy";
 @import "objects/select";
 @import "objects/checkbox";
-@import "objects/order";
-
 
 /**
- * Style trumps - helper and brand classes
+ * Helpers
  */
-@import "foundation/brand";
-@import "foundation/helper";
+@import "helpers/accessibility";
+@import "helpers/align";
+@import "helpers/brand";
+@import "helpers/casing";
+@import "helpers/clearfix";
+@import "helpers/cursors";
+@import "helpers/display";
+@import "helpers/floats";
+@import "helpers/full";
+@import "helpers/gpu";
+@import "helpers/hidden";
+@import "helpers/line-height";
+@import "helpers/mute";
+@import "helpers/radius";
+@import "helpers/scroll";
+@import "helpers/truncate";
+@import "helpers/user-select";
+@import "helpers/weight";

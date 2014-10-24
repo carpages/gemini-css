@@ -55,7 +55,7 @@ blockquote {
   text-indent: -0.41em;//.4em is roughly equal to the width of the opening " that we wish to hang.
 
   p {
-    font-size: $base-font-size * 1.25;
+    font-size: get(font-size) * 1.25;
     line-height: 1.5;
 
     &:before {
@@ -88,13 +88,13 @@ blockquote {
 }
 .blockquote--indent {
   padding: 0 0 0 15px;
-  border-left: 5px solid $lighter-grey;
+  border-left: 5px solid getcolor(g15);
 }
 
 
 
 .blockquote__source {
-  color: $light-grey;
+  color: getColor(g25);
   display: block;
   text-indent: 0;
 

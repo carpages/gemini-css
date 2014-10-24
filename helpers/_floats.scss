@@ -1,0 +1,17 @@
+/**
+ ********************************
+ * _FLOATS.SCSS
+ ********************************
+ */
+
+/**
+ * @module Float
+ * @description Add/remove floats
+ *
+ * @modifier [.float--right] Float right
+ * @modifier [.float--left] Float left
+ * @modifier [.float--none] Clear floats
+ */
+.float--right   { float: right !important; }
+.float--left    { float: left  !important; }
+.float--none    { float: none  !important; }

@@ -4,7 +4,7 @@
  ********************************
  */
 
-@if $use-copy == true {
+@if get(copy, $gemini-use) {
 
   /**
    * Styles to make copy more readable.
@@ -15,11 +15,11 @@
     section,
     .section,
     header {
-      margin-bottom: $base-spacing-unit*3;
+      margin-bottom: get(spacing) * 3;
     }
 
     p {
-      font-size: $h5-size;
+      font-size: get(epsilon, $gemini-headings);
     }
 
     img {

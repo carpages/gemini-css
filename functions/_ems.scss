@@ -1,0 +1,55 @@
+/**
+ ********************************
+ * _EM.SCSS
+ ********************************
+ */
+
+/**
+ * @module Function
+ * @description A number of useful functions for writing SASS. I haven't come up with a good way of documenting them yet :(. For now, just check the source code for documentation.
+ */
+
+/**
+ * Convert any unit measurement to a base em size
+ *
+  font-size: base-em(24px);
+ */
+@function base-em($val) {
+  $u: unit($val);
+
+  @if $u == "em" {
+    @return $val;
+  } @else if $u == "%" {
+    @return $val / 100% + 0em;
+  } @else if $u == "px" {
+    @return $val / 16px + 0em;
+  } @else if $u == "pt" {
+    @return $val / 12pt + 0em;
+  } @else if $u == "" {
+    @return $val + 0em;
+  } @else {
+    @warn "#{$val} has an unrecognizable unit.";
+    @return $val;
+  }
+}
+
+
+/**
+ * Convert any unit measurement to em
+ *
+ * $context is the measurement size of the parent
+ *
+  font-size: em(24px, 16px);
+ */
+@function em($value, $context: get(font-size)) {
+  @return ( base-em($value) / base-em($context) ) + 0em;
+}
+
+/**
+ * Convert any unit measurement to rem
+ *
+  font-size: rem(24px);
+ */
+@function rem($value) {
+  @return ( base-em($value) / base-em(get(font-size)) ) + 0rem;
+}

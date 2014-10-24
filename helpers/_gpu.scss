@@ -1,0 +1,14 @@
+/**
+ ********************************
+ * _GPU.SCSS
+ ********************************
+ */
+
+/**
+ * @module GPU Rendering [%gpu]
+ * @description A SASS helper to use the gpu on that element ( translateZ(0) )
+ */
+.gpu,
+%gpu{
+  @include vendor(transform, translateZ(0));
+}

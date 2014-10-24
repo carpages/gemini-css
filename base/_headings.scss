@@ -5,6 +5,32 @@
  */
 
 /**
+ * Let's size up the rest of our type based on the base (punny)
+ * Want your mind blown on the complexities of type? Read these.
+ * - http://alistapart.com/article/more-meaningful-typography
+ * - http://typecast.com/blog/contrast-through-scale
+ */
+$gemini-headings: () !default;
+
+$gemini-headings: extend((
+  giga:        get(font-size) * 6.5,
+  mega:        get(font-size) * 5,
+  kilo:        get(font-size) * 4,
+
+  alpha:       get(font-size) * 3.3333,
+  beta:        get(font-size) * 2.6667,
+  gamma:       get(font-size) * 2,
+  delta:       get(font-size) * 1.3333,
+  epsilon:     get(font-size) * 1.1667,
+  zeta:        get(font-size) * 1,
+
+  milli:       get(font-size) * 0.8333,
+  micro:       get(font-size) * 0.75,
+
+  line-height: 1.3,
+), $gemini-headings);
+
+/**
   * @module Headings
   * @description When we define a heading we also define a corresponding class to go with it.
   *
@@ -32,36 +58,46 @@
  * heading hierarchy.
  */
 
-//Map headings, class, and font-sizes
-$headings:  ('h1' 'alpha' $h1-size),
-            ('h2' 'beta' $h2-size),
-            ('h3' 'gamma' $h3-size),
-            ('h4' 'delta' $h4-size),
-            ('h5' 'epsilon' $h5-size),
-            ('h6' 'zeta' $h6-size);
+$mapped-headings: (
+  giga:    false,
+  mega:    false,
+  kilo:    false,
+
+  alpha:   h1,
+  beta:    h2,
+  gamma:   h3,
+  delta:   h4,
+  epsilon: h5,
+  zeta:    h6,
+
+  milli:   false,
+  micro:   false,
+);
 
 //Set line-heights
 %heading-line-height {
-  line-height: $heading-line-height;
+  line-height: get(line-height, $gemini-headings);
 }
 
-@each $heading in $headings {
+@each $class, $el in $mapped-headings {
 
-  #{nth($heading, 1)},
-  .#{nth($heading, 2)},
-  .#{nth($heading, 2)}--medium,
-  .#{nth($heading, 2)}--large {
+  /*@if $el {
+    #{$el},
+  }*/
+  .#{$class},
+  .#{$class}--medium,
+  .#{$class}--large {
     @extend %heading-line-height;
   }
 
-}
-
-//Small screens
-@each $heading in $headings {
-
-  #{nth($heading, 1)},
-  .#{nth($heading, 2)} {
-    @include font-size(nth($heading, 3));
+  /**
+   * Small Screens
+   */
+  /*@if $el {
+    #{$el},
+  }*/
+  .#{$class} {
+    @include font-size(get($class, $gemini-headings));
   }
 
 }
@@ -69,10 +105,10 @@ $headings:  ('h1' 'alpha' $h1-size),
 //Medium screens
 @include quick-media-query(medium) {
 
-  @each $heading in $headings {
+  @each $class, $el in $mapped-headings {
 
-    .#{nth($heading, 2)}--medium {
-      @include font-size(nth($heading, 3));
+    .#{$class}--medium {
+      @include font-size(get($class, $gemini-headings));
     }
 
   }
@@ -82,10 +118,10 @@ $headings:  ('h1' 'alpha' $h1-size),
 //Large screens
 @include quick-media-query(large){
 
-  @each $heading in $headings {
+  @each $class, $el in $mapped-headings {
 
-    .#{nth($heading, 2)}--large {
-      @include font-size(nth($heading, 3));
+    .#{$class}--large {
+      @include font-size(get($class, $gemini-headings));
     }
 
   }
@@ -102,32 +138,7 @@ $headings:  ('h1' 'alpha' $h1-size),
     <h3 class=hN>Car shopping made easy.</h3>
   </div>
   */
-.hN{
-}
-.hgroup .hN,
-hgroup .hN {
+hgroup .hN,
+.hgroup .hN {
   margin-bottom: 0;
-}
-
-
-/**
-  * @module Massive Headings
-  * @description A series of classes for setting massive type; for use in heroes, mastheads, promos, etc.
-  *
-  * @markup
-  *   <h2 class="giga">Giga Heading</h2>
-  *   <h2 class="mega">Mega Heading</h2>
-  *   <h2 class="kilo">Kilo Heading</h2>
-  */
-.giga {
-  @extend %heading-line-height;
-  @include font-size($giga-size);
-}
-.mega {
-  @extend %heading-line-height;
-  @include font-size($mega-size);
-}
-.kilo {
-  @extend %heading-line-height;
-  @include font-size($kilo-size);
 }

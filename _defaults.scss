@@ -1,0 +1,110 @@
+/**
+ ********************************
+ * _DEFAULTS.SCSS
+ ********************************
+ */
+
+/**
+ * You can override all of these settings
+ */
+
+/********************************
+ * BASE DEFAULTS
+ ********************************/
+
+$gemini-base-defaults: (
+  /**
+   * Default Round Corners
+   */
+  border-radius:       4px,
+
+  /**
+   * Base Coloring
+   */
+  brand-color:         #090,
+  link-color:          #4374AE,
+  color:               #333,
+  background-color:    #FFF,
+
+  /**
+   * Font Sizing
+   */
+  font-size:           14px,
+  line-height:         24px,
+
+  /**
+   * Spacing
+   */
+  spacing:             24px,
+
+  /**
+   * Type
+   */
+  brand-font-family:   "Helvetica, Arial, sans-serif",
+  font-family:         "Helvetica, Arial, sans-serif",
+
+  /**
+   * Directories
+   */
+  font-directory:      "fonts",
+  image-directory:     "../img",
+);
+
+
+/********************************
+ * SCREEN DEFAULTS
+ ********************************/
+/**
+ * Where breakpoints start
+ */
+$gemini-screens-defaults: (
+  medium:       481px,
+  large:        1024px,
+  xlarge:       1200px,
+);
+
+
+/********************************
+ * OBJECT USE DEFAULTS
+ ********************************/
+/**
+ * Which objects and abstractions would you like to use?
+ */
+$gemini-use-defaults: (
+  arrows:         false,
+  block-list:     false,
+  bullet-list:    false,
+  buttons:        false,
+  checkbox:       false,
+  colors:         false,
+  copy:           false,
+  fit:            false,
+  flyout:         false,
+  grid:           false,
+  icons:          false,
+  link-complex:   false,
+  media:          false,
+  multt-list:     false,
+  nav:            false,
+  overlay:        false,
+  pagination:     false,
+  rules:          false,
+  select:         false,
+  split:          false,
+  stats:          false,
+  tags:           false,
+);
+
+
+/********************************
+ * DEFAULT OVERWRITES
+ ********************************/
+
+$gemini-base: () !default;
+$gemini-base: map-merge($gemini-base-defaults, $gemini-base);
+
+$gemini-screens: () !default;
+$gemini-screens: map-merge($gemini-screens-defaults, $gemini-screens);
+
+$gemini-use: () !default;
+$gemini-use: map-merge($gemini-use-defaults, $gemini-use);

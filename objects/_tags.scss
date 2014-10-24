@@ -4,7 +4,49 @@
  ********************************
  */
 
-@if $use-tags == true {
+$gemini-tags: () !default;
+
+$gemini-tags: extend((
+  color: #333,
+  background-color: #eee,
+  padding-ends: 0.5em,
+  padding-sides: 1em,
+  border-width: 0,
+  border-color: #333,
+  border-radius: 0
+), $gemini-tags);
+
+/**
+ * Tags are a common CSS element that we see multiple elements extend,
+ * including buttons, tabs, and various other tags
+ */
+@mixin tag(
+  $color         : #333,
+  $background    : #eee,
+  $ends          : 0.5em,
+  $sides         : 1em,
+  $border-width  : 0,
+  $border-color  : #333,
+  $border-radius : 0
+  ) {
+  display: inline-block;
+  vertical-align: middle;
+  font: inherit;
+  margin: 0;
+  padding: $ends $sides;
+  padding: calc(#{$ends} - #{$border-width}) $sides;
+
+  color: $color;
+  background: $background;
+
+  border: $border-width solid $border-color;
+
+  @if $border-radius > 0 {
+    @include border-radius($border-radius);
+  }
+};
+
+@if get(tags, $gemini-use) {
 
   /**
    * @module Tags [.tag]
@@ -13,7 +55,7 @@
    * @markup
    * <div class="tag">Tag</div>
    *
-   * Extend this with your own sizes and colours. Eg.:
+   * Extend this with your own sizes and colors. Eg.:
     .tag--zeta{
       font-size:$h6-size;
     }
@@ -29,9 +71,9 @@
    */
 
   .tag {
-    @extend %beautons;
-    background: $brand-color;
-    color: $white;
+    @include tag();
+    background: get(brand-color);
+    color: getColor(g100);
     text-shadow: none;
 
     &:hover {

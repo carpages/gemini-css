@@ -4,7 +4,7 @@
  ********************************
  */
 
-@if $use-bullet-list == true {
+@if get(bullet-list, $gemini-use) {
 
   /**
    * @module Bullet Lists [.bullet-list]
@@ -15,12 +15,13 @@
 
    */
   .bullet-list {
+    list-style: none;
     margin-left: 0;
 
     & > li {
       list-style: none;
       position: relative;
-      padding-left: $base-spacing-unit;
+      padding-left: get(spacing);
       @extend %icon;
       @extend .icon--default-arrow-right;
 
@@ -28,7 +29,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        color: $grey;
+        color: getColor(g50);
       }
     }
   }

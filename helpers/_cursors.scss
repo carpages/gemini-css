@@ -1,0 +1,28 @@
+/**
+ ********************************
+ * _CURSORs.SCSS
+ ********************************
+ */
+
+/**
+ * @module Informative [.informative]
+ * @description Add a help cursor to any element that gives the user extra information on
+ * ':hover'.
+ *
+ * @markup
+ *   <span class="informative">Information on hover</span>
+ */
+.informative {
+  cursor: help !important;
+}
+
+/**
+ * @module Clickable [.clickable]
+ * @description Add a pointer cursor to any element to show that it's clickable
+ *
+ * @markup
+ *   <span class="clickable">Clickable on hover</span>
+*/
+.clickable {
+  cursor: pointer !important;
+}

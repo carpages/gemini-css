@@ -4,7 +4,7 @@
  ********************************
  */
 
-@if $use-media == true {
+@if get(media, $gemini-use) {
 
   /**
    * @module Media [.media]
@@ -23,14 +23,14 @@
    */
   .media__img {
     float: left;
-    margin-right: $base-spacing-unit;
+    margin-right: get(spacing);
   }
   /**
    * Reversed image location (right instead of left).
    */
   .media__img--rev {
     float: right;
-    margin-left: $base-spacing-unit;
+    margin-left: get(spacing);
   }
 
   .media__img img,

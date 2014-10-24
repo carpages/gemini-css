@@ -1,0 +1,18 @@
+/**
+ ********************************
+ * _TRUNCATE.SCSS
+ ********************************
+ */
+
+/**
+ * @module Truncate Ellipsis [.truncate]
+ * @description Truncate a fixed width string with an ellipsis
+ *
+ * @markup
+ * <p style="width:250px;" class="truncate">This is a test for truncating.</p>
+ */
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

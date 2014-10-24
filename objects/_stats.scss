@@ -4,7 +4,7 @@
  ********************************
  */
 
-@if $use-stats == true {
+@if get(stats, $gemini-use) {
 
   /**
    * @module Stat Group [.stat-group]
@@ -12,7 +12,7 @@
    */
   .stat-group {
     @extend .clearfix;
-    margin-left: -$base-spacing-unit;
+    margin-left: -get(spacing);
   }
 
   %stat-group--n {
@@ -49,7 +49,7 @@
    */
   .stat {
     float: left;
-    margin-left: $base-spacing-unit;
+    margin-left: get(spacing);
   }
 
   /**

@@ -1,0 +1,16 @@
+/**
+ ********************************
+ * _USER-SELECT.SCSS
+ ********************************
+ */
+
+/**
+ * @module Unselectable [.unselectable]
+ * @description Make it so that you can't highlight the text
+ *
+ * @markup
+ *   <span class="unselectable">Can't select me >:)</span>
+ */
+.unselectable{
+  @include vendor(user-select, none);
+}

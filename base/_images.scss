@@ -24,7 +24,6 @@
 img,
 .img {
   max-width: 100%;
-  display: block;
   font-style: italic;//So that 'alt' text is visually offset if images don't load.
 }
 
@@ -43,19 +42,19 @@ img[height] {
  */
 .img--right {
   float: right;
-  margin-bottom: $base-spacing-unit;
-  margin-left: $base-spacing-unit;
+  margin-bottom: get(spacing);
+  margin-left: get(spacing);;
 }
 .img--left {
   float: left;
-  margin-right: $base-spacing-unit;
-  margin-bottom: $base-spacing-unit;
+  margin-right: get(spacing);;
+  margin-bottom: get(spacing);;
 }
 .img--center,
 .img--centre {
   display: block;
   margin-right: auto;
-  margin-bottom: $base-spacing-unit;
+  margin-bottom: get(spacing);;
   margin-left: auto;
 }
 

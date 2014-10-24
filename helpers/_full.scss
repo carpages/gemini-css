@@ -1,0 +1,22 @@
+/**
+ ********************************
+ * _FULL.SCSS
+ ********************************
+ */
+
+/**
+ * @module Full Width [.full]
+ * @description Make something full width (100%)
+ *
+ *
+ * @markup
+ * <input type="text" value="Rounded" class="full" />
+ */
+.full{
+  width: 100% !important;
+
+  // Min-width isn't supported well in IE8
+  // Use defaults as appose to 100%
+  max-width: none !important;
+  min-width: 0    !important;
+}

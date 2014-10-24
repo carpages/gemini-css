@@ -1,0 +1,147 @@
+/**
+ ********************************
+ * _MEDIA-QUERIES.SCSS
+ ********************************
+ */
+
+/**
+ * Quick media query mixin.
+ *
+ * It's not great practice to define solid breakpoints up-front, preferring to
+ * modify your design when it needs it, rather than assuming you'll want a
+ * change at 'mobile'. However, as inuit.css is required to take a hands off
+ * approach to design decisions, this is the closest we can get to baked-in
+ * responsiveness. It's flexible enough to allow you to set your own breakpoints
+ * but solid enough to be frameworkified.
+ *
+ * We define some broad breakpoints in our vars file that are picked up here
+ * for use in a simple media query mixin. Our options are:
+ *
+ * medium
+ * large
+ * xlarge
+ *
+ * visible-small
+ * visible-medium
+ * visible-large
+ *
+ * hidden-small
+ * hidden-medium
+ * hidden-large
+ *
+ * Not using a media query will, naturally, serve styles to all devices.
+ *
+ * '@include quick-media-query(medium){ [styles here] }'
+ *
+ * We work out your end points for you:
+ */
+$small-end:              get(medium, $gemini-screens) - 1px;
+$medium-end:             get(large, $gemini-screens) - 1px;
+
+@mixin quick-media-query($media-query, $print: false) {
+
+  @if $media-query == medium or $media-query == hidden-small {
+
+    @include media-query(get(medium, $gemini-screens), 99999, $print) { @content; }
+
+  }
+
+  @if $media-query == large or $media-query == visible-large {
+
+    @include media-query(get(large, $gemini-screens), 99999, $print) { @content; }
+
+  }
+
+  @if $media-query == xlarge {
+
+    @include media-query(get(xlarge, $gemini-screens), 99999, $print) { @content; }
+
+  }
+
+  @if $media-query == visible-small {
+
+    @include media-query(0, $small-end, $print) { @content; }
+
+  }
+
+  @if $media-query == visible-medium {
+
+    @include media-query(get(medium, $gemini-screens), $medium-end, $print) { @content; }
+
+  }
+
+  @if $media-query == hidden-medium {
+
+    @include media-query(get(large, $gemini-screens), $small-end, $print) { @content; }
+
+  }
+
+  @if $media-query == hidden-large {
+
+    @include media-query(0, $medium-end, $print) { @content; }
+
+  }
+
+  @if $media-query == retina{
+
+    @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (   min--moz-device-pixel-ratio: 2),
+    only screen and (     -o-min-device-pixel-ratio: 2/1),
+    only screen and (        min-device-pixel-ratio: 2),
+    only screen and (                min-resolution: 192dpi),
+    only screen and (                min-resolution: 2dppx) {
+
+      @content;
+
+    }
+
+  }
+
+  @if $media-query == "" {
+    @content;
+  }
+
+}
+/**
+ * Media Query Mixin
+ *
+ * This is a simple media query mixin that supports min and max widths.
+ *
+ * IE8 doesn't support media queries, so set $fixed-queries to a width to
+ * create style sheets for that particular width.
+ * Inspired by: //http://jakearchibald.github.com/sass-ie/
+ *
+ * '@include media-query($small-end){ [styles here] }'
+ * '@include media-query($small-end, get(large, $gemini-screens), true){ [styles here] }'
+ * '@include media-query(511px, 4300px){ [styles here] }'
+ */
+
+@mixin media-query($min, $max: 99999, $print: false) {
+
+  $print-query: "";
+  @if $print == true {$print-query: "print, ";}
+
+  // If we're outputting for a fixed media query...
+  @if variable-exists(fixed-queries) {
+    //If the fixed query is in the media query range
+
+    @if $fixed-queries >= $min and $fixed-queries <= $max { @content }
+
+  }
+  @else {
+
+    @if $min >= 0 and $max < 99999 {
+      @media #{$print-query}screen and (min-width: em($min)) and (max-width: em($max)) { @content; }
+    }
+
+    @else if $min >= 0 {
+      @media #{$print-query}screen and (min-width: em($min)) { @content; }
+    }
+
+    @else if $max < 99999 {
+      @media #{$print-query}screen and (max-width: em($max)) { @content; }
+    }
+
+  }
+}

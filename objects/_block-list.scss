@@ -4,7 +4,7 @@
  ********************************
  */
 
-@if $use-block-list == true {
+@if get(block-list, $gemini-use) {
 
   /**
    * @module Block List [.block-list]
@@ -24,18 +24,18 @@
     margin-left: 0;
 
     > li {
-      padding: $half-spacing-unit 0;
+      padding: get(spacing) / 2 0;
     }
   }
   .block-list--sides {
     > li {
-      padding: $half-spacing-unit;
+      padding: get(spacing) / 2;
     }
   }
 
   .block-list__link {
     display: block;
-    padding: $half-spacing-unit 0;
-    margin: -$half-spacing-unit 0;
+    padding: get(spacing) / 2 0;
+    margin: -get(spacing) / 2 0;
   }
 }//endif
