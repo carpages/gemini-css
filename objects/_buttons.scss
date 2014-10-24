@@ -9,11 +9,11 @@ $gemini-buttons: () !default;
 $gemini-buttons: extend((
   color: #333,
   background-color: #eee,
+  padding-ends: 0.5em,
+  padding-sides: 1em,
   border-width: 1px,
   border-color: #333,
-  border-radius: 4px,
-  padding-ends: 0.5em,
-  padding-sides: 1em
+  border-radius: 4px
 ), $gemini-buttons);
 
 @if get(buttons, $gemini-use) {
@@ -44,23 +44,17 @@ $gemini-buttons: extend((
    */
 
   .button {
-    display: inline-block;
-    vertical-align: middle;
-    font: inherit;
-    border: none;
-    margin: 0;
+    @include tag(
+      get(color, $gemini-buttons),
+      get(background-color, $gemini-buttons),
+      get(padding-ends, $gemini-buttons),
+      get(padding-sides, $gemini-buttons),
+      get(border-width, $gemini-buttons),
+      get(border-color, $gemini-buttons),
+      get(border-radius, $gemini-buttons)
+    );
+
     cursor: pointer;
-    padding: get(padding-ends, $gemini-buttons) get(padding-sides, $gemini-buttons);
-    padding: calc(#{get(padding-ends, $gemini-buttons)} - #{get(border-width, $gemini-buttons)}) get(padding-sides, $gemini-buttons);
-
-    border: get(border-width, $gemini-buttons) solid get(border-color, $gemini-buttons);
-
-    @if get(border-radius, $gemini-buttons) > 0 {
-      @include border-radius(get(border-radius, $gemini-buttons));
-    }
-
-    color: get(color, $gemini-buttons);
-    background-color: get(background-color, $gemini-buttons);
 
     &,
     &:hover {
