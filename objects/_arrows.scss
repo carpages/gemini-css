@@ -74,10 +74,10 @@ $gemini-arrows: extend((
     &:before,
     &:after {
       top: 50%;
-      margin-top: -get(size, $gemini-arrows);
+      margin-top: - get(size, $gemini-arrows);
     }
     &:after {
-      margin-top: -get(size, $gemini-arrows) - get(border, $gemini-arrows);
+      margin-top: - get(size, $gemini-arrows) - get(border, $gemini-arrows);
     }
   }
 
@@ -127,10 +127,10 @@ $gemini-arrows: extend((
     &:before,
     &:after {
       left: 50%;
-      margin-left: -get(size, $gemini-arrows);
+      margin-left: - get(size, $gemini-arrows);
     }
     &:after {
-      margin-left: -get(size, $gemini-arrows) - get(border, $gemini-arrows);
+      margin-left: - get(size, $gemini-arrows) - get(border, $gemini-arrows);
     }
   }
 
