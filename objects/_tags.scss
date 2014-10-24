@@ -72,9 +72,6 @@ $gemini-tags: extend((
 
   .tag {
     @include tag();
-    background: get(brand-color);
-    color: getColor(g100);
-    text-shadow: none;
 
     &:hover {
       text-decoration: none;
