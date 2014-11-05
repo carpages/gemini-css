@@ -11,26 +11,21 @@
  * @modifier [.img--right] Place right
  * @modifier [.img--left] Place left
  * @modifier [.img--center] Place center
- * @modifier [.round] Rounded images
- * @modifier [.circle] Circle images
  *
  * @markup
- *   <img src="http://www.placecage.com/c/100/100" />
- */
-
-/**
- * Fluid images.
+    <img src="http://www.placecage.com/c/100/100" />
  */
 img,
 .img {
   max-width: 100%;
-  font-style: italic;//So that 'alt' text is visually offset if images don't load.
+  font-style: italic; // So that 'alt' text is visually offset if images don't load.
+  vertical-align: middle; // Remove space under images
 }
-
 
 /**
  * Non-fluid images if you specify 'width' and/or 'height' attributes.
  */
+.gm-style img, // Remove Google Maps max-width
 img[width],
 img[height] {
   max-width: none;
@@ -50,12 +45,11 @@ img[height] {
   margin-right: get(spacing);;
   margin-bottom: get(spacing);;
 }
-.img--center,
-.img--centre {
+.img--center {
   display: block;
   margin-right: auto;
-  margin-bottom: get(spacing);;
   margin-left: auto;
+  margin-bottom: get(spacing);;
 }
 
 /**
@@ -63,9 +57,8 @@ img[height] {
  * @description Display an image inline with the text (small images/ glyphs)
  *
  * @markup
-  <div class="inline-img">&nbsp;</div>
+    <div class="inline-img">&nbsp;</div>
  */
-
 .inline-img {
   display: inline-block;
   background: transparent no-repeat center center;
