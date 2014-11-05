@@ -4,6 +4,25 @@
  ********************************
  */
 
-.line-height--half   { line-height: 0.5 !important; }
-.line-height--double { line-height: 2   !important; }
-.line-height--triple { line-height: 3   !important; }
+/**
+ * @module Line height
+ * @description Helpers to quickly adjust line-height
+ *
+ * @modifier [.line-height--half, .lh-half] line-height: 0.5
+ * @modifier [.line-height--double, .lh-double] line-height: 2
+ * @modifier [.line-height--triple, .lh-triple] line-height: 3
+ */
+.line-height--half,
+.lh-half {
+  line-height: 0.5 !important;
+}
+
+.line-height--double,
+.lh-double {
+  line-height: 2 !important;
+}
+
+.line-height--triple,
+.lh-triple {
+  line-height: 3 !important;
+}
