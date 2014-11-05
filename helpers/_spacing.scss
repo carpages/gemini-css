@@ -5,10 +5,12 @@
  */
 
 /**
- * Spacing helpers for margin and padding:
- * [push|pad]-[rev]-[none|half|double]-[medium|large|xlarge]-[top|right|bottom|left]
+ * @settings $gemini-spacing
+ * @description Settings for the spacing helper
+ *
+ * @prop {map} [naming] You can add custom naming for the helper. This is complicated: Look at source code
+ * @prop {boolean} [responsive=false] Whether to include responsive helpers
  */
-
 $gemini-spacing: () !default;
 
 $gemini-spacing: extend((
@@ -28,28 +30,35 @@ $gemini-spacing: extend((
       "double":  2,
     ),
     direction: (
-      "":        "",
-      "top":     "top",
-      "right":   "right",
-      "bottom":  "bottom",
-      "left":    "left",
+      "":        (""),
+      "top":     (top),
+      "right":   (right),
+      "bottom":  (bottom),
+      "left":    (left),
+      "sides":   (left right),
+      "ends":    (top bottom),
     ),
   ),
   responsive: false,
 ), $gemini-spacing);
 
+/**
+ * Not documented since this shouldn't be used outside of this conext
+ */
 @mixin spacing-helpers($screen-title: "") {
 
   @each $type-title, $type in get("naming.type", $gemini-spacing) {
     @each $reverse-title, $reverse in get("naming.reverse", $gemini-spacing) {
       @each $size-title, $size in get("naming.size", $gemini-spacing) {
-        @each $direction-title, $direction in get("naming.direction", $gemini-spacing) {
+        @each $direction-title, $direction-list in get("naming.direction", $gemini-spacing) {
 
           @if ($type != "padding" or $reverse != -1) and
               ($size != 0 or $reverse != -1) {
 
             .#{join($type-title $reverse-title $size-title $screen-title $direction-title, "-")} {
-              #{join($type $direction, "-")}: get(spacing) * $size * $reverse !important;
+              @each $direction in $direction-list {
+                #{join($type $direction, "-")}: get(spacing) * $size * $reverse !important;
+              }
             }
 
           }
@@ -61,6 +70,31 @@ $gemini-spacing: extend((
 
 }
 
+/**
+ * @module Spacing
+ * @description Helpers to quickly add margin and spacing to an element.
+ * (push|pad)-(rev)-(none|half|double)-(medium|large|xlarge)-(top|right|bottom|left)
+ *
+ * @modifier [.push] Add margin
+ * @modifier [.pad] Add padding
+ * @modifier [(push|pad)-rev] Give it a negative value
+ * @modifier [(push|pad)-(rev)-none] Set it to zero
+ * @modifier [(push|pad)-(rev)-half] Set it to half the base spacing value
+ * @modifier [(push|pad)-(rev)-double] Set it to double the base spacing value
+ * @modifier [(push|pad)-(rev)-(none|half|double)-medium] Only on medium screens (set responsive to true)
+ * @modifier [(push|pad)-(rev)-(none|half|double)-large] Only on large screens (set responsive to true)
+ * @modifier [(push|pad)-(rev)-(none|half|double)-xlarge] Only on xlarge screens (set responsive to true)
+ * @modifier [(push|pad)-(rev)-(none|half|double)-(medium|large|xlarge)-top] Apply to top
+ * @modifier [(push|pad)-(rev)-(none|half|double)-(medium|large|xlarge)-right] Apply to right
+ * @modifier [(push|pad)-(rev)-(none|half|double)-(medium|large|xlarge)-bottom] Apply to bottom
+ * @modifier [(push|pad)-(rev)-(none|half|double)-(medium|large|xlarge)-left] Apply to left
+ *
+ * @markup
+    <div class="push-bottom">Test!</div> // Base margin to bottom
+    <div class="pad-medium-top">Test!</div> // Adds to top on medium screens
+    <div class="push-rev-half-left">Test!</div> // Bleeds half spacing to the left
+    <div class="push-double-xlarge-right">Test!</div> // Adds double margin to right on xlarge screens
+ */
 @include spacing-helpers();
 
 @if get(responsive, $gemini-spacing) {
