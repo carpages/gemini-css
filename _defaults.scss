@@ -40,8 +40,8 @@ $gemini-base-defaults: (
   /**
    * Type
    */
-  brand-font-family:   "Helvetica, Arial, sans-serif",
-  font-family:         "Helvetica, Arial, sans-serif",
+  brand-font-family:   unquote("'Helvetica', Arial, sans-serif"),
+  font-family:         unquote("'Helvetica', Arial, sans-serif"),
 
   /**
    * Directories
