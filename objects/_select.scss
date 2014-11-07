@@ -55,7 +55,7 @@ $gemini-select: extend((
     text-shadow: none;
     @include border-radius(get(border-radius));
 
-    @extend %icon; /* 6 */
+    @include icon; /* 6 */
     @extend .icon--default-arrow-down; /* 6 */
 
     &:before {

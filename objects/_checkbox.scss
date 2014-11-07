@@ -22,7 +22,7 @@
 
   // Icon
   .checkbox__icon {
-    @extend %icon;
+    @include icon;
     width: 1em;
     display: inline-block;
     display: none\9; /* IE6+ Fallback */

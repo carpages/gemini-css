@@ -22,7 +22,7 @@
       list-style: none;
       position: relative;
       padding-left: get(spacing);
-      @extend %icon;
+      @include icon;
       @extend .icon--default-arrow-right;
 
       &:before {

@@ -19,9 +19,18 @@
  * The UTF-8 entities have pretty good (IE8+) support except for on Android :(
  */
 
-@if get(icons, $gemini-use) {
+/**
+ * @mixin icon
+ * @description Adds icon styles to the :before of a module
+ *
+ * @example
+    .foo{
+      @include icon;
+    }
+ */
 
-  %icon:before {
+@mixin icon {
+  &:before {
     font-family: "icons";
     speak: none;
     font-style: normal;
@@ -33,8 +42,12 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+}
+
+@if get(icons, $gemini-use) {
+
   [class*="icon--"] {
-    @extend %icon;
+    @include icon;
     display: inline-block;
   }
 
