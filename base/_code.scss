@@ -9,38 +9,39 @@ pre {
   padding: 0 3px 2px;
   font-family: Monaco, Consolas, “Lucida Console”, monospace;
   font-size: get(font-size) - 2;
-  color: getColor(g70);
+  color: getColor(g30);
   @include border-radius(3px);
 }
 
 /**
-  * @module Inline Code [code]
-  * @description Display inline code
-  *
-  * @markup
-  *   <p><code>console.log('Hello World!');</code></p>
-  */
+ * @module Inline Code [code]
+ * @description Display inline code
+ *
+ * @markup
+    <code>console.log('Hello World!');</code>
+ */
 code {
   padding: 2px 4px;
   color: darkblue;
-  background-color: getColor(g10);
-  border: 1px solid getColor(g20);
+  background-color: getColor(g80);
+  border: 1px solid getColor(g90);
   white-space: nowrap;
 }
 
+
 /**
-  * @module Blocked Code [pre]
-  * @description Display blocks of code
-  *
-  * @modifier [.pre__scrollable] Gives max height so that block is scrollable
-  *
-  * @markup
-  *   <pre><code>
-  *       var foo = "Hello";<br/>
-  *       var bar = " World!";<br/>
-  *       console.log(foo + bar);
-  *   </code></pre>
-  */
+ * @module Code Block [pre]
+ * @description Display a block of code
+ *
+ * @modifier [.pre__scrollable] Gives max height so that block is scrollable
+ *
+ * @markup
+    <pre><code>
+      var foo = "Hello";<br/>
+      var bar = " World!";<br/>
+      console.log(foo + bar);
+    </code></pre>
+ */
 pre {
   display: block;
   padding: (get(spacing) / 2 - 1) / 2;
@@ -50,8 +51,8 @@ pre {
   word-wrap: break-word;
   white-space: pre;
   white-space: pre-wrap;
-  background-color: getColor(g10);
-  border: 1px solid #CCC; // fallback for IE7-8
+  background-color: getColor(g80);
+  border: 1px solid getColor(g90);; // fallback for IE7-8
   border: 1px solid rgba(0,0,0,0.15);
   @include border-radius(get(border-radius));
 
