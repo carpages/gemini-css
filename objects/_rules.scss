@@ -42,19 +42,19 @@
 
   .rule {
     @extend %rule;
-    border-bottom: 1px solid lightern(get(color), 50%);
+    border-bottom: 1px solid lighten(get(color), 50%);
   }
   .rule--left {
     @extend %rule;
-    border-left: 1px solid lightern(get(color), 50%);
+    border-left: 1px solid lighten(get(color), 50%);
   }
   .rule--right {
     @extend %rule;
-    border-right: 1px solid lightern(get(color), 50%);
+    border-right: 1px solid lighten(get(color), 50%);
   }
   .rule--top {
     @extend %rule;
-    border-top: 1px solid lightern(get(color), 50%);
+    border-top: 1px solid lighten(get(color), 50%);
   }
 
   .rule--brand {
