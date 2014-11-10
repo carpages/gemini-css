@@ -13,12 +13,14 @@
  * Thanks to @redclov3r for the 'line-height' Sass:
  * twitter.com/redclov3r/status/250301539321798657
  */
-@mixin font-size($font-size, $line-height:false, $use-rem:false) {
-  font-size: $font-size;
+@mixin font-size($font-size, $line-height:false, $use-rem:false, $important:false) {
+  $important-text: if($important, ' !important', '');
+
+  font-size: $font-size#{$important-text};
   @if $use-rem == true {
-    font-size: rem($font-size);
+    font-size: rem($font-size)#{$important-text};
   }
   @if $line-height != false {
-    line-height: ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+    line-height: ceil($font-size / $base-line-height) * ($base-line-height / $font-size)#{$important-text};
   }
 }
