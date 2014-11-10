@@ -5,10 +5,24 @@
  */
 
 /**
- * Let's size up the rest of our type based on the base (punny)
- * Want your mind blown on the complexities of type? Read these.
- * - http://alistapart.com/article/more-meaningful-typography
- * - http://typecast.com/blog/contrast-through-scale
+ * @settings $gemini-headings
+ * @description The size of headings based on:
+ * http://alistapart.com/article/more-meaningful-typography
+ * http://typecast.com/blog/contrast-through-scale
+ *
+ * @prop {number} [line-height=1.3]          Line-height for headings
+ * @prop {boolean} [responsive=false]        Use responsive helpers
+ * @prop {number} [giga=font-size * 6.5]     Giga sized fonts
+ * @prop {number} [mega=font-size * 5]       Mega sized fonts
+ * @prop {number} [kilo=font-size * 4]       Kilo sized fonts
+ * @prop {number} [alpha=font-size * 3.33]   h1 sized fonts
+ * @prop {number} [beta=font-size * 2.66]    h2 sized fonts
+ * @prop {number} [gamma=font-size * 2]      h3 sized fonts
+ * @prop {number} [delta=font-size * 1.33]   h4 sized fonts
+ * @prop {number} [epsilon=font-size * 1.16] h5 sized fonts
+ * @prop {number} [zeta=font-size * 1]       Giga h6 fonts
+ * @prop {number} [milli=font-size * 0.83]   Milli sized fonts
+ * @prop {number} [micro=font-size * 0.75]   Micro sized fonts
  */
 $gemini-headings: () !default;
 
@@ -28,36 +42,31 @@ $gemini-headings: extend((
   micro:       get(font-size) * 0.75,
 
   line-height: 1.3,
+  responsive: false,
 ), $gemini-headings);
 
 /**
-  * @module Headings
-  * @description When we define a heading we also define a corresponding class to go with it.
-  *
-  * @markup
-  *   <h1>Heading 1</h1>
-  *   <h2>Heading 2</h2>
-  *   <h3>Heading 3</h3>
-  *   <h4>Heading 4</h4>
-  *   <h5>Heading 5</h5>
-  *   <h6>Heading 6</h6>
-  *
-  *   <h1 class="zeta">Heading 1</h1>
-  *   <h2 class="epsilon">Heading 2</h2>
-  *   <h3 class="delta">Heading 3</h3>
-  *   <h4 class="gamma">Heading 4</h4>
-  *   <h5 class="beta">Heading 5</h5>
-  *   <h6 class="alpha">Heading 6</h6>
-  */
-
-/**
- * As per: csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
+ * @module Headings
+ * @description When we define a heading we also define a corresponding class to go with it.
  *
- * When we define a heading we also define a corresponding class to go with it.
- * This allows us to apply, say, 'class=alpha' to a 'h3'; a double-stranded
- * heading hierarchy.
- */
+ * @modifier [.{heading}--medium] Apply this size on medium screens - set responsive to true
+ * @modifier [.{heading}--large] Apply this size on large screens - set responsive to true
+ *
+ * @markup
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
 
+    <h1 class="zeta">Heading 1</h1>
+    <h2 class="epsilon">Heading 2</h2>
+    <h3 class="delta">Heading 3</h3>
+    <h4 class="gamma">Heading 4</h4>
+    <h5 class="beta">Heading 5</h5>
+    <h6 class="alpha">Heading 6</h6>
+ */
 $mapped-headings: (
   giga:    false,
   mega:    false,
@@ -74,70 +83,69 @@ $mapped-headings: (
   micro:   false,
 );
 
-//Set line-heights
+/**
+ * Set line-heights
+ */
 %heading-line-height {
   line-height: get(line-height, $gemini-headings);
 }
 
 @each $class, $el in $mapped-headings {
 
-  /*@if $el {
-    #{$el},
-  }*/
   .#{$class},
   .#{$class}--medium,
   .#{$class}--large {
     @extend %heading-line-height;
   }
 
-  /**
-   * Small Screens
-   */
-  /*@if $el {
-    #{$el},
-  }*/
+
   .#{$class} {
-    @include font-size(get($class, $gemini-headings));
-  }
-
-}
-
-//Medium screens
-@include quick-media-query(medium) {
-
-  @each $class, $el in $mapped-headings {
-
-    .#{$class}--medium {
-      @include font-size(get($class, $gemini-headings));
-    }
-
-  }
-
-}
-
-//Large screens
-@include quick-media-query(large){
-
-  @each $class, $el in $mapped-headings {
-
-    .#{$class}--large {
-      @include font-size(get($class, $gemini-headings));
-    }
-
+    @include font-size(get($class, $gemini-headings)) !important;
   }
 
 }
 
 /**
-  * @module Any Heading [.hN]
-  * @description A general heading class to target any heading
-  *
-  * @markup
-  <div class="hgroup">
-    <h1 class=hN>Carpages.ca</h1>
-    <h3 class=hN>Car shopping made easy.</h3>
-  </div>
-  */
+ * Responsive helper declerations
+ */
+@if (get(responsive, $gemini-headings)) {
+  // Medium screens
+  @include quick-media-query(medium) {
+
+    @each $class, $el in $mapped-headings {
+
+      .#{$class}--medium {
+        @include font-size(get($class, $gemini-headings)) !important;
+      }
+
+    }
+
+  }
+
+  // Large screens
+  @include quick-media-query(large){
+
+    @each $class, $el in $mapped-headings {
+
+      .#{$class}--large {
+        @include font-size(get($class, $gemini-headings)) !important;
+      }
+
+    }
+
+  }
+}
+
+/**
+ * @module Any Heading [.hN]
+ * @description A general heading class to target any heading
+ *
+ * @markup
+    <div class="hgroup">
+      <h1 class=hN>Carpages.ca</h1>
+      <h3 class=hN>Car shopping made easy.</h3>
+    </div>
+ */
 hgroup .hN,
 .hgroup .hN {
   margin-bottom: 0;
