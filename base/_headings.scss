@@ -98,6 +98,9 @@ $mapped-headings: (
     @extend %heading-line-height;
   }
 
+  #{$el} {
+    @include font-size(get($class, $gemini-headings));
+  }
 
   .#{$class} {
     @include font-size(get($class, $gemini-headings), false, false, true);
