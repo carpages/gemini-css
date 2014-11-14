@@ -5,13 +5,28 @@
  */
 
 /**
- * @module Clearfix [.clearfix]
- * @description Clearfix, as per: http://css-tricks.com/snippets/css/clear-fix/
- * Extend the clearfix class with Sass to avoid the '.clearfix' class appearing over
- * and over in your markup.
+ * @mixin clearfix
+ * @description Make an element clear floating elements as per:
+ * http://css-tricks.com/snippets/css/clear-fix/
+ *
+ * @example
+    .foo{
+      @include clearfix;
+    }
  */
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+/**
+ * @module Clearfix [.clearfix, .cf]
+ * @description Clearfix, as per: http://css-tricks.com/snippets/css/clear-fix/
+ */
+.clearfix,
+.cf {
+  @include clearfix;
 }
