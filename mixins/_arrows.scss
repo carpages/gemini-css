@@ -5,10 +5,9 @@
  */
 
 /**
- * CSS arrows!!! But... before you read on, you might want to grab a coffee...
- *
- * This mixin creates a CSS arrow on a given element. We can have the arrow
- * appear in one of 12 locations, thus:
+ * @mixin arrow
+ * @description This mixin creates a CSS arrow on a given element. We can have
+ * the arrow appear in one of 12 locations, thus:
  *
  *       01    02    03
  *    +------------------+
@@ -20,25 +19,17 @@
  *    +------------------+
  *       09    08    07
  *
- * You pass this position in along with a desired arrow color and optional
- * border color, for example:
+ * @param {string} [$arrow-edge] The edge that the arrow is on (top, right, bottom, left)
+ * @param {string} [$arrow-location] The location placement along the edge (top, right, center, bottom, left)
+ * @param {string} [$arrow-color] The color of the arrow
+ * @param {string} [$border-color=$arrow-color] The color of the border
  *
- * '@include arrow(top, left, red)'
- *
- * for just a single, red arrow, or:
- *
- * '@include arrow(bottom, center, red, black)'
- *
- * which will create a red triangle with a black border which sits at the bottom
- * center of the element. Call the mixin thus:
- *
-   .foo{
-     background-color:#BADA55;
-     border:1px solid #ACE;
-     @include arrow(top, left, #BADA55, #ACE);
-   }
- *
+ * @example
+    .foo {
+      @include arrow(bottom, center, red, black);
+    }
  */
+
 @mixin arrow($arrow-edge, $arrow-location, $arrow-color, $border-color: $arrow-color) {
 
   @if $arrow-edge == top {
@@ -149,4 +140,134 @@
 
   }
 
+}
+
+/**
+ * Forms the basis for any/all CSS arrows.
+ */
+%arrow {
+  position: relative;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    border-collapse: separate;
+  }
+  &:before {
+    border: get(size, $gemini-arrows) solid transparent;
+  }
+  &:after {
+    border: get(size, $gemini-arrows) - get(border, $gemini-arrows) solid transparent;
+  }
+}
+
+
+/**
+* Define individual edges so we can combine what we need, when we need.
+*/
+%arrow--top {
+  @extend %arrow;
+
+  &:before,
+  &:after {
+    bottom: 100%;
+  }
+}
+
+%arrow--upper {
+  @extend %arrow;
+
+  &:before {
+    top: get(size, $gemini-arrows) - get(border, $gemini-arrows);
+  }
+  &:after {
+    top: get(size, $gemini-arrows);
+  }
+}
+
+%arrow--middle {
+  @extend %arrow;
+
+  &:before,
+  &:after {
+    top: 50%;
+    margin-top: - get(size, $gemini-arrows);
+  }
+  &:after {
+    margin-top: - get(size, $gemini-arrows) - get(border, $gemini-arrows);
+  }
+}
+
+%arrow--lower {
+  @extend %arrow;
+
+  &:before {
+    bottom: get(size, $gemini-arrows) - get(border, $gemini-arrows);
+  }
+  &:after {
+    bottom: get(size, $gemini-arrows);
+  }
+}
+
+%arrow--bottom {
+  @extend %arrow;
+
+  &:before,
+  &:after {
+    top: 100%;
+  }
+}
+
+%arrow--near {
+  @extend %arrow;
+
+  &:before,
+  &:after {
+    right: 100%;
+  }
+}
+
+%arrow--left {
+  @extend %arrow;
+
+  &:before {
+    left: get(size, $gemini-arrows) - get(border, $gemini-arrows);
+  }
+  &:after {
+    left: get(size, $gemini-arrows);
+  }
+}
+
+%arrow--center {
+  @extend %arrow;
+
+  &:before,
+  &:after {
+    left: 50%;
+    margin-left: - get(size, $gemini-arrows);
+  }
+  &:after {
+    margin-left: - get(size, $gemini-arrows) - get(border, $gemini-arrows);
+  }
+}
+
+%arrow--right {
+  @extend %arrow;
+
+  &:before {
+    right: get(size, $gemini-arrows) - get(border, $gemini-arrows) + 10px;
+  }
+  &:after {
+    right: get(size, $gemini-arrows) + 10px;
+  }
+}
+
+%arrow--far {
+  @extend %arrow;
+
+  &:before,
+  &:after {
+    left: 100%;
+  }
 }
