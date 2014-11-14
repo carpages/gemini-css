@@ -5,12 +5,12 @@
  */
 
 /**
-  * @module Default Forms [form]
-  * @description Default form layout
-  *
-  * @modifier [.form--inline] Make all elements inline
-  *
-  * @markup
+ * @module Default Forms [form]
+ * @description Default form layout
+ *
+ * @modifier [.form--inline] Make all elements inline
+ *
+ * @markup
     <form>
       <fieldset>
         <legend>Legend</legend>
@@ -22,7 +22,7 @@
         <button type="submit" class="button">Submit</button>
       </fieldset>
     </form>
-  */
+ */
 
 .form--inline {
   .hN {
@@ -51,7 +51,7 @@
 label {
   display: block;
 
-  &.required:before {
+  &.is-required:before {
     content: "* ";
   }
 
@@ -78,21 +78,21 @@ label {
       <span class="label__additional">No spaces</span>
     </label>
  */
-.additional {
+.label__additional {
   display: block;
   font-weight: normal;
 }
 
 /**
-  * @module Text inputs [.text-input]
-  * @description Instead of a '[type]' selector for each kind of form input, we just use a
-  * class to target any/every one, e.g.:
-  *
-  * @markup
+ * @module Text inputs [.text-input]
+ * @description Instead of a '[type]' selector for each kind of form input, we just use a
+ * class to target any/every one, e.g.:
+ *
+ * @markup
     <input type="text" class="text-input" placeholder="Text...">
     <input type="email" class="text-input" placeholder="Email...">
     <input type="password" class="text-input" placeholder="Password...">
-  */
+ */
 
 /**
  * Base Text-Input
@@ -131,14 +131,14 @@ textarea {
 
 
 /**
-  * @module Radio/Checkbox intputs [.checkbox]
+ * @module Radio/Checkbox intputs [.checkbox]
  * @description Basic checkbox and radio elements
-  *
-  * @markup
+ *
+ * @markup
     <label class="checkbox">
         <input type="checkbox" /> Check it!
     </label>
-  */
+ */
 .radio,
 .checkbox {
 
@@ -215,23 +215,4 @@ select {
   :focus {
     outline: none;
   }
-}
-
-
-/**
-  * @module Extra Help [.extra-help]
-  * @description Extra help text displayed after a field when that field is in focus
-  *
-  * @markup
-  *   <label for="email">Email:</label>
-  *   <input type="email" class="text-input" id="email">
-  *   <small class="extra-help">.edu emails only</small>
-  */
-/*small*/.extra-help {
-  display: inline-block;
-  visibility: hidden;
-}
-.text-input:active + .extra-help,
-.text-input:focus + .extra-help {
-  visibility: visible;
 }
