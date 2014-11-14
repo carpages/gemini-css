@@ -5,22 +5,29 @@
  */
 
 /**
- * Create a fully formed type style (sizing and vertical rhythm) by passing in a
- * single value, e.g.:
+ * @mixin font-size
+ * @description Get a fully formed type falue
  *
-   '@include font-size(10px);'
+ * @param {unit} [$font-size] The font size
+ * @param {boolean} [$line-height=false] Whether to include a calculated line-height based on the base line-height
+ * @param {boolean} [$use-rem=false] Include rem value
+ * @param {string} [$iportant=''] The option to add !important
  *
- * Thanks to @redclov3r for the 'line-height' Sass:
- * twitter.com/redclov3r/status/250301539321798657
- */
-@mixin font-size($font-size, $line-height:false, $use-rem:false, $important:false) {
-  $important-text: if($important, ' !important', '');
+ * @example
+    .foo {
+      @include font-size(14px);
+    }
 
-  font-size: $font-size#{$important-text};
+    .bar {
+      @include font-size(14px, true, false, !important);
+    }
+ */
+@mixin font-size($font-size, $line-height:false, $use-rem:false, $important: '') {
+  font-size: $font-size#{$important};
   @if $use-rem == true {
-    font-size: rem($font-size)#{$important-text};
+    font-size: rem($font-size)#{$important};
   }
-  @if $line-height != false {
-    line-height: ceil($font-size / $base-line-height) * ($base-line-height / $font-size)#{$important-text};
+  @if $line-height == true {
+    line-height: ceil($font-size / get(line-height)) * (get(line-height) / $font-size)#{$important};
   }
 }
