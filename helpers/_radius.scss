@@ -9,9 +9,9 @@
  * @description Round the corners as much as possible
  *
  * @markup
- * <input type="text" value="Rounded" class="round" />
+    <input type="text" value="Rounded" class="round" />
  */
-.round{
+.round {
   @include border-radius(get(border-radius) !important);
 }
 
@@ -20,8 +20,8 @@
  * @description Circle the corners as much as possible
  *
  * @markup
- * <input type="text" value="Circled" class="circle" />
+    <input type="text" value="Circled" class="circle" />
  */
-.circle{
-  @include border-radius(999px !important);
+.circle {
+  @include border-radius(100% !important);
 }

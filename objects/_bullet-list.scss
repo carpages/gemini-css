@@ -12,7 +12,12 @@
    * Has a dependency of the icons module
    *
    * @markup
-
+      <ul class="bullet-list">
+        <li>Foo</li>
+        <li>Bar</li>
+        <li>Baz</li>
+        <li>Foo Bar Baz</li>
+      </ul>
    */
   .bullet-list {
     list-style: none;

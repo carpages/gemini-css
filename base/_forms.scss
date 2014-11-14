@@ -11,17 +11,17 @@
   * @modifier [.form--inline] Make all elements inline
   *
   * @markup
-  *   <form>
-  *       <fieldset>
-  *           <legend>Legend</legend>
-  *           <label for="thing">Label name</label>
-  *           <input id="thing" name="thing" class="text-input" type="text" placeholder="Type something...">
-  *           <label class="checkbox">
-  *               <input type="checkbox"> Check me out
-  *           </label>
-  *           <button type="submit" class="button">Submit</button>
-  *       </fieldset>
-  *   </form>
+    <form>
+      <fieldset>
+        <legend>Legend</legend>
+        <label for="thing">Label name</label>
+        <input id="thing" name="thing" class="text-input" type="text" placeholder="Type something...">
+        <label class="checkbox">
+          <input type="checkbox"> Check me out
+        </label>
+        <button type="submit" class="button">Submit</button>
+      </fieldset>
+    </form>
   */
 
 .form--inline {
@@ -36,7 +36,17 @@
 }
 
 /**
- * Labels
+ * @module Label [label]
+ * @description A tag for labelling form elements. Labels become inline when
+ * they're after a checkbox.
+ *
+ * @state [is-required] Adds an asterisk
+ *
+ * @markup
+    <div>
+      <label>Foo</label>
+      <input type="text" class="text-input">
+    </div>
  */
 label {
   display: block;
@@ -58,10 +68,15 @@ label {
 }
 
 /**
- * Extra help text in 'label's, e.g.:
+ * @submodule Additional Help [.label__additional]
+ * @description Additional help for labels
  *
-    <label>Card number <small class=additional>No spaces</small></label>
- *
+ * @markup
+    <label>
+      Email:
+      <input type="text" class="text-input" placeholder="email@fake.com">
+      <span class="label__additional">No spaces</span>
+    </label>
  */
 .additional {
   display: block;
@@ -74,9 +89,9 @@ label {
   * class to target any/every one, e.g.:
   *
   * @markup
-  *   <input type="text" class="text-input" placeholder="Text...">
-  *   <input type="email" class="text-input" placeholder="Email...">
-  *   <input type="password" class="text-input" placeholder="Password...">
+    <input type="text" class="text-input" placeholder="Text...">
+    <input type="email" class="text-input" placeholder="Email...">
+    <input type="password" class="text-input" placeholder="Password...">
   */
 
 /**
@@ -95,7 +110,6 @@ label {
  * 5. Normalise box model padding, and remove vertical padding in order to work
  *    with height styles.
  */
-
 .text-input {
   font-size: 100%;           /*1*/
   max-width: 100%;           /*2*/
@@ -106,10 +120,6 @@ label {
 
 .text-input,
 textarea {
-  /**
-   * Style these via your theme stylesheet.
-   */
-
   //Inline
   .form--inline & {
     display: inline-block;
@@ -122,16 +132,15 @@ textarea {
 
 /**
   * @module Radio/Checkbox intputs [.checkbox]
-  * @description Checkbox elements
+ * @description Basic checkbox and radio elements
   *
   * @markup
-  *   <label class="checkbox">
-  *       <input type="checkbox" /> Check it!
-  *   </label>
+    <label class="checkbox">
+        <input type="checkbox" /> Check it!
+    </label>
   */
 .radio,
 .checkbox {
-  //padding-left: $base-spacing-unit;
 
   //Inline
   .form--inline & {
@@ -151,7 +160,9 @@ textarea {
   }
 }
 
-// Position radios and checkboxes better
+/**
+ * Position radios and checkboxes better
+ */
 input[type="radio"],
 input[type="checkbox"] {
   margin: 4px 0 0;
@@ -159,15 +170,19 @@ input[type="checkbox"] {
   line-height: normal;
 }
 
-// This fixes a bug in webkit where radio buttons get clipped 1px when the
-// container is overflow: hidden;
-// I've opened a ticket with Chromium
-// https://code.google.com/p/chromium/issues/detail?q=radio%20button%20overflow%20hidden&colspec=ID%20Pri%20M%20Iteration%20ReleaseBlock%20Cr%20Status%20Owner%20Summary%20OS%20Modified&id=396726&thanks=396726&ts=1406140510
+/**
+ * This fixes a bug in webkit where radio buttons get clipped 1px when the
+ * container is overflow: hidden;
+ * I've opened a ticket with Chromium
+ * https://code.google.com/p/chromium/issues/detail?q=radio%20button%20overflow%20hidden&colspec=ID%20Pri%20M%20Iteration%20ReleaseBlock%20Cr%20Status%20Owner%20Summary%20OS%20Modified&id=396726&thanks=396726&ts=1406140510
+ */
 input[type="radio"] {
   margin-left: 1px;
 }
 
-// Reset width of input images, buttons, radios, checkboxes
+/**
+ * Reset width of input images, buttons, radios, checkboxes
+ */
 input[type="file"],
 input[type="image"],
 input[type="submit"],
@@ -179,7 +194,9 @@ input[type="checkbox"] {
 }
 
 
-// Change the cursor
+/**
+ * Change the cursor
+ */
 label,
 select,
 input[type="button"],
@@ -190,7 +207,9 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-//Make select boxes look better
+/**
+ * Make select boxes look better
+ */
 select {
   vertical-align: middle;
   :focus {

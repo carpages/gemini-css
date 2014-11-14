@@ -4,6 +4,17 @@
  ********************************
  */
 
+
+/**
+ * @settings $gemini-colors
+ * @description Add custom colors to be used with getColor() or .c-{color}.
+ *
+ * @prop {color} [facebook=#315998] Facebook Blue
+ * @prop {color} [twitter=#1AB2E8] Twitter Blue
+ * @prop {color} [google=#4386F7] Google Blue
+ * @prop {color} [google-plus=#DD4C39] Google Plus Red
+ * @prop {color} [pinterest=#C9232D] Pinterest Red
+ */
 $gemini-colors: () !default;
 
 $gemini-colors: extend((
@@ -29,7 +40,7 @@ $gemini-colors: extend((
  * by intervals of 5, where 0 is black, and 100 is white.
  *
  * @markup
-  .foo { color: get(g20, $color); }
+    .foo { color: get(g20, $color); }
  */
 @for $i from 0 through 100 / 5 {
   $grey-percent: $i * 5;

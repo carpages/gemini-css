@@ -4,23 +4,41 @@
  ********************************
  */
 
-/*
+
+/**
+ * @function brightness
+ * @description Computes the "brightness" of a color.
+ * Brightness is similiar to lightness in HSL but more closely approximates
+ * how humans perceive the intensity of the different RGB components of
+ * a color. Brightness is sometimes called luminance.
+ *
  * This will be in Compass Stable soon
  * https://github.com/chriseppstein/compass/issues/1296
+ *
+ * @param {color} [$color] The color
+ *
+ * @return {percent} Returns a number between 0% and 100%, where 100% is fully bright
+ * (white) and 0% is fully dark (black).
  */
-
-// Computes the "brightness" of a color
-//
-// Brightness is similiar to lightness in HSL but more closely approximates
-// how humans perceive the intensity of the different RGB components of
-// a color. Brightness is sometimes called luminance.
-//
-// Returns a number between 0% and 100%, where 100% is fully bright
-// (white) and 0% is fully dark (black).
 @function brightness($color) {
   @return ((red($color) * 0.299) + (green($color) * 0.587) + (blue($color) * 0.114)) / 255 * 100%;
 }
 
+/**
+ * @function contrast-color
+ * @description Takes a color and returns a contrasting color for readability
+ *
+ * @param {color} [$color] The input color to contrast
+ * @param {color} [$dark=#333] The dark color to contrast with
+ * @param {color} [$light=#FFF] The light color to contrast with
+ *
+ * @return {color} A contrasting color
+ *
+ * @example
+    .foo {
+      color: contrast-color(#090);
+    }
+ */
 @function contrast-color(
     $color,
     $dark: #333,
@@ -38,35 +56,71 @@
   }
 }
 
-// Lighten works weird. https://groups.google.com/d/msg/compass-users/umJGUEn6jpQ/MKeUs97DIj0J
-// https://github.com/nex3/sass/issues/598
+/**
+ * @function lighter
+ * @description Lighter is a replacement of lighten
+ * https://groups.google.com/d/msg/compass-users/umJGUEn6jpQ/MKeUs97DIj0J
+ * https://github.com/nex3/sass/issues/598
+ *
+ * @param {color} [$color] The color that you want to change
+ * @param {percent} [$percent] The percent that you want to lighten by
+ *
+ * @return {color} The lightened color
+ */
 @function lighter($color, $percent) {
   @return scale-color($color, $lightness: $percent);
 }
 
+/**
+ * @function darker
+ * @description Darker is a replacement of darken
+ * https://groups.google.com/d/msg/compass-users/umJGUEn6jpQ/MKeUs97DIj0J
+ * https://github.com/nex3/sass/issues/598
+ *
+ * @param {color} [$color] The color that you want to change
+ * @param {percent} [$percent] The percent that you want to darken by
+ *
+ * @return {color} The darkened color
+ */
 @function darker($color, $percent) {
   @return scale-color($color, $lightness: -$percent);
 }
 
-
 /**
- * This helper makes it easy to add and access custom colors.
- *
- * How to add a color:
-  addColor(carpages, #090);
- *
- * How to access a color:
-  .foo {
-    color: getColor(carpages);
-  }
+ * Stores colors
  */
 $gemini-color-collection: ();
 
+/**
+ * @function addColor
+ * @description Add a color to the map of colors
+ *
+ * @param {string} [$name] The key of the color
+ * @param {color} [$color] The color that you want to store
+ *
+ * @return {color} The color you're storing
+ *
+ * @example
+    $garbage = addColor(blue, #009)
+ */
 @function addColor($name, $color) {
    $gemini-color-collection: map-merge($gemini-color-collection, ($name: $color)) !global;
-   @return null;
+   @return $color;
 }
 
+/**
+ * @function getColor
+ * @description Get one of the colors that you've stored
+ *
+ * @param {string} [$name] The key of the color you want
+ *
+ * @return {color} The corresponding color
+ *
+ * @example
+    .foo {
+      color: getColor(g25);
+    }
+ */
 @function getColor($name){
   @if map-has-key($gemini-color-collection, $name) {
     @return get($name, $gemini-color-collection);

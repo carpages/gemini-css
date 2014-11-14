@@ -8,7 +8,8 @@
  * @module Visibility Utilities
  * @description Helper classes to quickly show and hide elements based on screen size
  *
- * @modifier [.visible--small] Show on small, hide on medium and large
+ * @modifier [.visible--js] Only show if javascript is enabled
+ * @modifier [.hidden--js] Hide if javascript is enaabled
  * @modifier [.visible--medium] Show on medium, hide on small and large
  * @modifier [.visible--large] Show on large, hide on small and medium
  * @modifier [.hidden--small] Hide on small, show on medium and large
@@ -18,25 +19,30 @@
  * @modifier [.hidden--large] Hide on print, show on rest
  *
  * @markup
-  <ul class="block-list">
-    <li class="visible--small">.visible--small</li>
-    <li class="hidden--small">.hidden--small</li>
-    <li class="visible--medium">.visible--medium</li>
-    <li class="hidden--medium">.hidden--medium</li>
-    <li class="visible--large">.visible--large</li>
-    <li class="hidden--large">.hidden--large</li>
-  </ul>
+    <ul class="block-list">
+      <li class="visible--small">.visible--small</li>
+      <li class="hidden--small">.hidden--small</li>
+      <li class="visible--medium">.visible--medium</li>
+      <li class="hidden--medium">.hidden--medium</li>
+      <li class="visible--large">.visible--large</li>
+      <li class="hidden--large">.hidden--large</li>
+    </ul>
  */
 
-%hide-small, .hidden{
+%hide-small,
+.hidden {
   position: absolute !important;
   left: -999% !important;
   top: -999% !important;
 }
 
 //For Javascript
-.no-js .visible--js { @extend %hide-small; }
-.yes-js .hidden--js { @extend %hide-small; }
+.no-js .visible--js {
+  @extend %hide-small;
+}
+.yes-js .hidden--js {
+  @extend %hide-small;
+}
 
 // For small screens
 .visible--small     { }
@@ -47,13 +53,13 @@
 .hidden--large      { }
 
 // For medium screens
-@include quick-media-query(medium, true){
-  %hide-medium{
+@include quick-media-query(medium, true) {
+  %hide-medium {
     position: absolute !important;
     left: -999% !important;
     top: -999% !important;
   }
-  %visible-medium{
+  %visible-medium {
     position: static !important;
     left: auto !important;
     top: auto !important;
@@ -66,13 +72,13 @@
 }
 
 // For large screens
-@include quick-media-query(large, true){
-  %hide-large{
+@include quick-media-query(large, true) {
+  %hide-large {
     position: absolute !important;
     left: -999% !important;
     top: -999% !important;
   }
-  %visible-large{
+  %visible-large {
     position: static !important;
     left: auto !important;
     top: auto !important;
@@ -89,12 +95,12 @@
 .hidden--print     { }
 
 @media print {
-  %hide-print{
+  %hide-print {
     position: absolute !important;
     left: -999% !important;
     top: -999% !important;
   }
-  %visible-print{
+  %visible-print {
     position: static !important;
     left: auto !important;
     top: auto !important;

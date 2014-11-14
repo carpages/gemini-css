@@ -10,7 +10,7 @@
  * ':hover'.
  *
  * @markup
- *   <span class="informative">Information on hover</span>
+    <span class="informative">Information on hover</span>
  */
 .informative {
   cursor: help !important;
@@ -21,8 +21,8 @@
  * @description Add a pointer cursor to any element to show that it's clickable
  *
  * @markup
- *   <span class="clickable">Clickable on hover</span>
-*/
+    <span class="clickable">Clickable on hover</span>
+ */
 .clickable {
   cursor: pointer !important;
 }

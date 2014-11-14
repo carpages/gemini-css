@@ -4,10 +4,15 @@
  ********************************
  */
 
-/* Object element can be used in the clown car technique (as seen on NCS details page)
+/**
+ * @module Objects [object]
+ * @description Basic object element
+ */
+
+/**
+ * Object element can be used in the clown car technique (as seen on NCS details page)
  * 1. Allow <object> to be wrapped in anchors
  * 2. Solves bug on Chrome where the SVG media queries won't detect initial width
- *
  */
 object {
   pointer-events: none;/* 1 */

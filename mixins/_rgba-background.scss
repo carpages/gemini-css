@@ -5,11 +5,17 @@
  */
 
 /**
- * Have fallback for rgba background for browsers that don't support
+ * @mixin rgba-background
+ * @description Have fallback for rgba background for browsers that don't
+ * support
  *
-  @include rgba-background(#090, .5);
-  @include rgba-background(rgb(0,0,0), .5);
+ * @param {color} [$color] The color
+ * @param {number} [$alpha] The alpha value
  *
+ * @example
+    .foo {
+      @include rgba-background(#A55BAD, 0.5)
+    }
  */
 @mixin rgba-background($color, $alpha) {
   background: $color;

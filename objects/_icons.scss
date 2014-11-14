@@ -5,26 +5,11 @@
  */
 
 /**
- * This little beauty right here sets up the foundation for using icon fonts.
- * Out of the box is uses UTF-8 entities, but was intended to work with icon
- * font which are built on a per project basis.
- *
- * Here's a list of UTF-8 entities that resemble icons:
- * http://codepen.io/mattdrose/pen/pGlJr
- *
- * You can see an example of these doo-hicky's here:
- * http://codepen.io/mattdrose/pen/gxLmo
- *
- * NOTE:
- * The UTF-8 entities have pretty good (IE8+) support except for on Android :(
- */
-
-/**
  * @mixin icon
  * @description Adds icon styles to the :before of a module
  *
  * @example
-    .foo{
+    .foo {
       @include icon;
     }
  */
@@ -46,11 +31,32 @@
 
 @if get(icons, $gemini-use) {
 
+  /**
+   * @module Icon [.icon--{name}]
+   * @description Use one of the icon fonts used in your build
+   *
+   * @markup
+      <i class="icon--star" />
+   */
   [class*="icon--"] {
     @include icon;
     display: inline-block;
   }
 
+  /**
+   * This little beauty right here sets up the foundation for using icon fonts.
+   * Out of the box is uses UTF-8 entities, but was intended to work with icon
+   * font which are built on a per project basis.
+   *
+   * Here's a list of UTF-8 entities that resemble icons:
+   * http://codepen.io/mattdrose/pen/pGlJr
+   *
+   * You can see an example of these doo-hicky's here:
+   * http://codepen.io/mattdrose/pen/gxLmo
+   *
+   * NOTE:
+   * The UTF-8 entities have pretty good (IE8+) support except for on Android :(
+   */
   .icon--default-star:before {
     content: "\2605";
   }

@@ -4,6 +4,18 @@
  ********************************
  */
 
+/**
+ * @settings $gemini-buttons
+ * @description The settings for buttons
+ *
+ * @prop {color} [color=#333] The color of the text
+ * @prop {color} [background-color=#eee] The background color
+ * @prop {unit} [padding-ends=0.5em] The padding on the top and bottom
+ * @prop {unit} [padding-sides=1em] The padding on the ends
+ * @prop {unit} [border-width=1px] The border width
+ * @prop {color} [border-color=#333] The border color
+ * @prop {unit} [border-radius=4px] The border radius
+ */
 $gemini-buttons: () !default;
 
 $gemini-buttons: extend((
@@ -25,22 +37,19 @@ $gemini-buttons: extend((
    * @modifier [.button--small] Small button
    * @modifier [.button--large] Large button
    * @modifier [.button--huge] Huge button
-   * @modifier [.button--full] Button is the entirety of the container
-   * @modifier [.button--alpha] Button with 3x font
-   * @modifier [.button--beta] Button with 2x font
-   * @modifier [.button--gamma] Button with 1.5x font
    * @modifier [.button--natural] Button with inherited size
    *
    * @markup Button Sizes
-   *   <p>
-   *       <a class="button">Button</a>
-   *       <a class="button button--small">Small Button</a>
-   *       <a class="button button--large">Large Button</a>
-   *       <a class="button button--huge">Huge Button</a>
-   *   </p>
+      <p>
+        <a class="button">Button</a>
+        <a class="button button--small">Small Button</a>
+        <a class="button button--large">Large Button</a>
+        <a class="button button--huge">Huge Button</a>
+        <a class="button button--huge">Huge Button</a>
+      </p>
    *
    * @markup Natural Button
-   *   <p>This <a class="button button--natural">button</a> will fit in nicely with its context.</p>
+      <p>This <a class="button button--natural">button</a> will fit in nicely with its context.</p>
    */
 
   .button {
@@ -86,6 +95,19 @@ $gemini-buttons: extend((
     padding: get(padding-ends, $gemini-buttons) * 2 get(padding-sides, $gemini-buttons) * 2;
   }
 
+  /**
+   * @module Button Group [.button-group]
+   * @description Contains a group of buttons
+   *
+   * @modifier [.button-group--2] Full width container for 2 buttons
+   * @modifier [.button-group--3] Full width container for 3 buttons
+   *
+   * @markup
+      <div class="button-group">
+        <a class="button">Foo<a/>
+        <a class="button">Bar<a/>
+      </div>
+   */
   .button-group {
     display: inline-block;
 

@@ -7,11 +7,23 @@
 @if get(copy, $gemini-use) {
 
   /**
-   * Styles to make copy more readable.
-   * Ideal for content heavy sections like blog.
+   * @module Copy Text [.copy]
+   * @description These are styles to make text more readability. Mostly used
+   * for heavy copy on a website.
+   *
+   * @markup
+      <div class="copy">
+        <header>
+          <img src="http://www.placetim.com/600/100">
+        </header>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+Repellendus voluptate odio, doloribus illum, cupiditate pariatur tenetur
+laudantium nisi quos architecto, vitae dolor dolore unde ipsa iusto eaque, omnis
+necessitatibus magnam.</p>
+      </div>
    */
-
   .copy {
+
     section,
     .section,
     header {

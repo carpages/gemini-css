@@ -42,9 +42,7 @@ li {
   list-style-type: decimal;
 }
 
-/**
- * Remove list styles
- */
+// Remove list styles
 .list--no-style {
   list-style: none;
   margin-left: 0;

@@ -14,9 +14,6 @@
  * base line-height. This allows us to keep a consistent vertical rhythm.
  * As per: csswizardry.com/2012/06/single-direction-margin-declarations
  */
-/**
- * Base elements
- */
 h1,
 h2,
 h3,
@@ -35,9 +32,6 @@ table,
 fieldset,
 figure,
 pre
-/**
- * Objects and abstractions
- */
 {
   margin-bottom: get(spacing);
 }

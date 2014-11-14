@@ -4,6 +4,12 @@
  ********************************
  */
 
+/**
+ * @settings $gemini-select
+ * @description Setup settings for selects
+ *
+ * @prop {unit} [padding=0.25em] The padding around the selects
+ */
 $gemini-select: () !default;
 
 $gemini-select: extend((
@@ -14,7 +20,27 @@ $gemini-select: extend((
 
 @if get(select, $gemini-use) {
 
-  // From http://codepen.io/mattdrose/pen/snCEx
+
+  /**
+   * @module Custom Select [.select]
+   * @description Custom selects dropdown using native device UI onclick. These
+   * selects use no javascript, are mobile friendly, and extend the icon font
+   * for a custom look.
+   * They got some buzz on Codepen: http://codepen.io/mattdrose/pen/snCEx
+   *
+   * @markup
+      <div class="select">
+        <select name="make">
+          <option>Make</option>
+          <option value="acura">Acura</option>
+          <option value="chrysler" selected>Chrysler</option>
+          <option value="dodge">Dodge</option>
+          <option value="ford">Ford</option>
+          <option value="toyota">Toyota</option>
+          <option value="derp">A really long name for testing</option>
+        </select>
+      </div>
+   */
 
   /**
    *  .select Wrapper

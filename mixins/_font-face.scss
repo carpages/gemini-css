@@ -5,10 +5,19 @@
  */
 
 /**
- * Font Face from the Bourbon library
+ * @mixin font-face
+ * @description Add custom font-face
  *
- * I'm not a big fan of the Compass font-face mixin.
- * Bourbon's is better http://bourbon.io/docs/#font-face
+ * @param {string} [$font-family] The name of the font-family
+ * @param {string} [$file-path] The location of the font files relative to the outputed CSS (.eot, .woff, .ttf, and .svg expected)
+ * @param {string} [$weight=normal] The weight of the font
+ * @param {string} [$style=normal] The style of the font
+ * @param {string} [$version=1] A number to append to the include to bust the cache on font files
+ *
+ * @example
+    .foo {
+      @include font-face('UI Font', '../fonts/ui-font/ui-font', bold, italic);
+    }
  */
 @mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $version: 1 ) {
   @font-face {

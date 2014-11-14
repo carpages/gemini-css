@@ -4,11 +4,23 @@
  ********************************
  */
 
+/**
+ * @settings $gemini-tags
+ * @description The settings to give tags a custom look
+ *
+ * @prop {color} [color=#333] The font color of the font
+ * @prop {color} [background-color=#EEE] The background color
+ * @prop {unit} [padding-ends=0.5em] The padding on the top and bottom
+ * @prop {unit} [padding-sides=1em] The padding on the left and right
+ * @prop {unit} [border-width=0] The width of the border
+ * @prop {color} [borde-color=#333] The color of the border
+ * @prop {unit} [border-radius=0] The border of the radius
+ */
 $gemini-tags: () !default;
 
 $gemini-tags: extend((
   color: #333,
-  background-color: #eee,
+  background-color: #EEE,
   padding-ends: 0.5em,
   padding-sides: 1em,
   border-width: 0,

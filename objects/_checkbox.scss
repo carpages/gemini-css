@@ -6,7 +6,18 @@
 
 @if get(checkbox, $gemini-use) {
 
-  //Checkboxes
+  /**
+   * @module Custom Checkbox [.checkbox]
+   * @description Checkboxes using font icons to create a custom look.
+   * Got some buzz on Codepen: http://codepen.io/mattdrose/details/iswyE/
+   *
+   * @markup
+      <label class="checkbox">
+        <input type="checkbox" checked>
+        <span class="checkbox__icon"></span>
+        Dat checkbox
+      </label>
+   */
   .checkbox {
     cursor: pointer;
     @extend .unselectable;
@@ -20,7 +31,12 @@
     }
   }
 
-  // Icon
+  /**
+   * @submodule Checkbox Icon [.checkbox__icon]
+   * @description Necessary markup for the custom icon. You can use your own
+   * icon by extending the icon on this element. Look at the source markup
+   * for an example of how it works.
+   */
   .checkbox__icon {
     @include icon;
     width: 1em;

@@ -5,14 +5,13 @@
  */
 
 /**
- * Quick media query mixin.
- *
- * It's not great practice to define solid breakpoints up-front, preferring to
- * modify your design when it needs it, rather than assuming you'll want a
- * change at 'mobile'. However, as inuit.css is required to take a hands off
- * approach to design decisions, this is the closest we can get to baked-in
- * responsiveness. It's flexible enough to allow you to set your own breakpoints
- * but solid enough to be frameworkified.
+ * @mixin quick-media-query
+ * @description It's not great practice to define solid breakpoints up-front,
+ * preferring to modify your design when it needs it, rather than assuming
+ * you'll want a change at 'mobile'. However, as inuit.css is required to take a
+ * hands off approach to design decisions, this is the closest we can get to
+ * baked-in responsiveness. It's flexible enough to allow you to set your own
+ * breakpoints but solid enough to be frameworkified.
  *
  * We define some broad breakpoints in our vars file that are picked up here
  * for use in a simple media query mixin. Our options are:
@@ -29,12 +28,17 @@
  * hidden-medium
  * hidden-large
  *
- * Not using a media query will, naturally, serve styles to all devices.
+ * retina
  *
- * '@include quick-media-query(medium){ [styles here] }'
+ * @param {string} [$media-query] The media query breakpoint keyword
+ * @param {boolean} [$print=false] Whether to include print
  *
- * We work out your end points for you:
+ * @example
+    @include quick-media-query(medium) {
+      [styles here]
+    }
  */
+
 $small-end:              get(medium, $gemini-screens) - 1px;
 $medium-end:             get(large, $gemini-screens) - 1px;
 
@@ -103,18 +107,24 @@ $medium-end:             get(large, $gemini-screens) - 1px;
   }
 
 }
+
 /**
- * Media Query Mixin
- *
- * This is a simple media query mixin that supports min and max widths.
+ * @mixin media-query
+ * @description This is a simple media query mixin that supports min and max
+ * widths.
  *
  * IE8 doesn't support media queries, so set $fixed-queries to a width to
  * create style sheets for that particular width.
  * Inspired by: //http://jakearchibald.github.com/sass-ie/
  *
- * '@include media-query($small-end){ [styles here] }'
- * '@include media-query($small-end, get(large, $gemini-screens), true){ [styles here] }'
- * '@include media-query(511px, 4300px){ [styles here] }'
+ * @param {unit} [$min] The min breakpoint
+ * @param {unit} [$max=99999] The max breakpoint
+ * @param {boolean} [$print=false] Whether to include for print
+ *
+ * @example
+    @include media-query(300px) {
+      [styles here]
+    }
  */
 
 @mixin media-query($min, $max: 99999, $print: false) {

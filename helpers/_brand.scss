@@ -13,9 +13,8 @@
  * @modifier [.brand--color] Just apply the color
  *
  * @markup
- *   <h2 class="brand">I like cheese</h2>
+    <h2 class="brand">I like cheese</h2>
  */
-//Use readable fonts for print
 .brand {
   font-family: get(brand-font-family) +!important;
   color: get(brand-color) +!important;

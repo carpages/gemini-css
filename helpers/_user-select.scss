@@ -9,8 +9,8 @@
  * @description Make it so that you can't highlight the text
  *
  * @markup
- *   <span class="unselectable">Can't select me >:)</span>
+    <span class="unselectable">Can't select me >:)</span>
  */
-.unselectable{
+.unselectable {
   @include vendor(user-select, none);
 }

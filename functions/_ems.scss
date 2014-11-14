@@ -5,14 +5,18 @@
  */
 
 /**
- * @module Function
- * @description A number of useful functions for writing SASS. I haven't come up with a good way of documenting them yet :(. For now, just check the source code for documentation.
- */
-
-/**
- * Convert any unit measurement to a base em size
+ * @function base-em
+ * @description Convert any unit measurement to a base em size
+ * (based on 16px/12pt/100% base value).
  *
-  font-size: base-em(24px);
+ * @param {measurement} [$val] A value to convert to em
+ *
+ * @return {em} Returns an the em size
+ *
+ * @example
+    .foo {
+      font-size: base-em(24px);
+    }
  */
 @function base-em($val) {
   $u: unit($val);
@@ -33,22 +37,36 @@
   }
 }
 
-
 /**
- * Convert any unit measurement to em
+ * @function em
+ * @description Convert any unit measurement to em
  *
- * $context is the measurement size of the parent
+ * @param {measurement} [$value] The measurement to convert
+ * @param {measurement} [$context=base font size] The measurement size of the parent
  *
-  font-size: em(24px, 16px);
+ * @return {em} Return an em size
+ *
+ * @example
+    .foo {
+      font-size: em(24px, 16px);
+    }
  */
 @function em($value, $context: get(font-size)) {
   @return ( base-em($value) / base-em($context) ) + 0em;
 }
 
 /**
- * Convert any unit measurement to rem
+ * @function rem
+ * @description Convert any unit measurement to rem
  *
-  font-size: rem(24px);
+ * @param {measurement} [$value] The measurement to convert
+ *
+ * @return {rem} Return an rem size
+ *
+ * @example
+    .foo {
+      font-size: rem(24px);
+    }
  */
 @function rem($value) {
   @return ( base-em($value) / base-em(get(font-size)) ) + 0rem;

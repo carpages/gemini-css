@@ -4,6 +4,15 @@
  ********************************
  */
 
+/**
+ * @mixin fitRatio
+ * @description Spits out the necessary padding to work with a specified ratio
+ * in the .fit module
+ *
+ * @param {integer} [$width=4] The width ratio
+ * @param {integer} [$height=3] THe height ratio
+ * @param {percent} [$container=%100] The width of the container that you want to fit
+ */
 @mixin fitRatio($width: 4, $height: 3, $container: 100%) {
   padding: ($height/$width * $container / 2) 0;
 }
@@ -20,20 +29,20 @@
    * @modifier [.fit--circle] Crops the image in a circle container
    *
    * @markup
-   <div class="fit" style="width:300px;">
-     <img src="http://www.placecage.com/300/150/" alt="">
-   </div>
+      <div class="fit" style="width:300px;">
+       <img src="http://www.placecage.com/300/150/" alt="">
+      </div>
 
-   <div class="fit fit--stretch" style="height:500px;">
-     <img src="http://www.placehold.it/900/900/" alt="">
-   </div>
+      <div class="fit fit--stretch" style="height:500px;">
+       <img src="http://www.placehold.it/900/900/" alt="">
+      </div>
    *
-   * Extend your own viewport ratios in Sass like:
-    .fit--5-2{
-     @include fitRatio(5,2,80%);
-     width:80%;
-     margin: auto;
-    }
+   * @markup Use your own ratios
+      .fit--5-2{
+        @include fitRatio(5,2);
+        width:80%;
+        margin: auto;
+      }
    */
 
   .fit {

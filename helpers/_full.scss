@@ -8,11 +8,10 @@
  * @module Full Width [.full]
  * @description Make something full width (100%)
  *
- *
  * @markup
- * <input type="text" value="Rounded" class="full" />
+    <input type="text" value="Rounded" class="full" />
  */
-.full{
+.full {
   width: 100% !important;
 
   // Min-width isn't supported well in IE8
