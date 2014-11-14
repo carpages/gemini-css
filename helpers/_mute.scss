@@ -25,7 +25,7 @@
 
 @each $percent in 25, 50, 75 {
   .muted--#{$percent} {
-    opacity: 0.#{$percent} !important;
+    opacity: $percent * 0.01 !important;
     filter: alpha(opacity = #{$percent}) !important;
   }
 }

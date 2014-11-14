@@ -39,7 +39,7 @@ $gemini-tags: extend((
   $sides         : get(padding-sides, $gemini-tags),
   $border-width  : get(border-width, $gemini-tags),
   $border-color  : get(border-color, $gemini-tags),
-  $border-radius : get(border-radius, $gemini-tags),
+  $border-radius : get(border-radius, $gemini-tags)
   ) {
   display: inline-block;
   vertical-align: middle;

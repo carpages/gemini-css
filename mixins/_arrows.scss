@@ -5,6 +5,20 @@
  */
 
 /**
+ * @settings $gemini-arrows
+ * @description The settings for the arrows mixin
+ *
+ * @prop {unit} [size=get(spacing) * 0.4] The size of the arrow
+ * @prop {integer} [border=2] The width of the arrow border
+ */
+$gemini-arrows: () !default;
+
+$gemini-arrows: extend((
+  size: get(spacing) * 0.4,
+  border: 2,
+), $gemini-arrows);
+
+/**
  * @mixin arrow
  * @description This mixin creates a CSS arrow on a given element. We can have
  * the arrow appear in one of 12 locations, thus:
