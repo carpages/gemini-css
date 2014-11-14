@@ -99,11 +99,11 @@ $mapped-headings: (
   }
 
   #{$el} {
-    @include font-size(get($class, $gemini-headings));
+    font-size: get($class, $gemini-headings);
   }
 
   .#{$class} {
-    @include font-size(get($class, $gemini-headings), false, false, true);
+    font-size: get($class, $gemini-headings) !important;
   }
 
 }
@@ -118,7 +118,7 @@ $mapped-headings: (
     @each $class, $el in $mapped-headings {
 
       .#{$class}--medium {
-        @include font-size(get($class, $gemini-headings), false, false, true);
+        font-size: get($class, $gemini-headings) !important;
       }
 
     }
@@ -131,7 +131,7 @@ $mapped-headings: (
     @each $class, $el in $mapped-headings {
 
       .#{$class}--large {
-        @include font-size(get($class, $gemini-headings), false, false, true);
+        font-size: get($class, $gemini-headings) !important;
       }
 
     }
