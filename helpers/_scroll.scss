@@ -8,7 +8,7 @@
  * @module Scroll Content [.scroll]
  * @description Make element scrollable on all devices
  */
-.scroll{
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
+.scroll {
+  overflow: scroll !important;
+  -webkit-overflow-scrolling: touch !important;
 }
