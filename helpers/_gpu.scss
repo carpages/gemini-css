@@ -5,10 +5,23 @@
  */
 
 /**
- * @module GPU Rendering [%gpu]
+ * @mixin gpu
+ * @description Force an element to use the gpu to render. Causes for smoother
+ * performance
+ *
+ * @example
+    .foo{
+      @include gpu;
+    }
+ */
+@mixin gpu {
+  @include vendor(transform, translateZ(0));
+}
+
+/**
+ * @module GPU Rendering [.gpu]
  * @description A SASS helper to use the gpu on that element ( translateZ(0) )
  */
-.gpu,
-%gpu{
-  @include vendor(transform, translateZ(0));
+.gpu {
+  @include gpu;
 }
