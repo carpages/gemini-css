@@ -8,15 +8,24 @@
  * @module Muted [.muted]
  * @description Mute an object by reducing its opacity.
  *
+ * @modifier [.muted--25] Opacity of 25%
+ * @modifier [.muted--50] Opacity of 50%
+ * @modifier [.muted--75] Opacity of 75%
+ *
  * @markup
- *   <img class="muted" src="http://www.placecage.com/c/200/200">
- *   <img class="muted-75" src="http://www.placecage.com/c/200/200">
+    <img class="muted" src="http://www.placecage.com/c/200/200">
+    <img class="muted--25" src="http://www.placecage.com/c/200/200">
+    <img class="muted--50" src="http://www.placecage.com/c/200/200">
+    <img class="muted--75" src="http://www.placecage.com/c/200/200">
  */
 .muted {
   opacity: 0.5 !important;
   filter: alpha(opacity = 50) !important;
 }
-  .muted-75 {
-    opacity: 0.75 !important;
-    filter: alpha(opacity = 75) !important;
+
+@each $percent in 25, 50, 75 {
+  .muted--#{$percent} {
+    opacity: 0.#{$percent} !important;
+    filter: alpha(opacity = #{$percent}) !important;
   }
+}
