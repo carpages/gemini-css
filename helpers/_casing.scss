@@ -5,17 +5,17 @@
  */
 
 /**
- * @module Capitals [.caps]
+ * @module Uppercase [.uppercase]
  * @description Apply capital case to an element (usually a 'strong').
  */
-.caps {
+.uppercase {
   text-transform: uppercase !important;
 }
 
 /**
- * @module Minuscule [.minu]
- * @description Apply lower-case to all the letters .
+ * @module Lowercase [.lowercase]
+ * @description Apply lowercase to all the letters .
  */
-.minu {
+.lowercase {
   text-transform: lowercase !important;
 }
