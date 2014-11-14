@@ -4,6 +4,25 @@
  ********************************
  */
 
-.display--inline          { display: inline       !important; }
-.display--block           { display: block        !important; }
-.display--inline-block    { display: inline-block !important; }
+/**
+ * @module Display Helpers
+ * @description Change the display properties for an element
+ *
+ * @modifier [.display--inline, .inline] display: inline
+ * @modifier [.display--block, .block] display: block
+ * @modifier [.display--inline-block, .inline-block] display: inline-block
+ */
+.display--inline,
+.inline {
+  display: inline !important;
+}
+
+.display--block,
+.block {
+  display: block !important;
+}
+
+.display--inline-block,
+.inline-block {
+  display: inline-block !important;
+}
