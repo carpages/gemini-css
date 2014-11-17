@@ -141,6 +141,7 @@ $gemini-grid: extend((
  * @modifier [.l-column--{screen}-push-{number}] How many units you want to push the column to the right on the specified screen size
  * @modifier [.l-column--{screen}-pull-reset] Reset the pull on the specified screen size
  * @modifier [.l-column--{screen}-push-reset] Reset the push on the specified screen size
+ * @modifier [.l-column--end] Floats the last column to the left
  */
 [class*="l-column"] {
   @include clearfix;
@@ -155,8 +156,8 @@ $gemini-grid: extend((
 [class*="l-column"] + [class*="l-column"]:last-child {
   float: right;
 
-  //Unless the last column is specified as end
-  &.end{
+  // Unless the last column is specified as end
+  &.l-column--end {
     float: left;
   }
 }
