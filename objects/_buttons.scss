@@ -32,7 +32,7 @@ $gemini-buttons: extend((
 
   /**
    * @module Buttons [.button]
-   * @description Different buttons
+   * @description Different buttons.
    *
    * @modifier [.button--small] Small button
    * @modifier [.button--large] Large button
@@ -110,12 +110,7 @@ $gemini-buttons: extend((
    */
   .button-group {
     display: inline-block;
-
-    &:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
+    @include clearfix;
 
     > .button {
       float: left;
