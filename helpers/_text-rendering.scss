@@ -1,0 +1,31 @@
+/**
+ ********************************
+ * _TEXT-RENDERING.SCSS
+ ********************************
+ */
+
+/**
+ * @module Text Rendering
+ * @description Render text in different ways
+ *
+ * @modifier [.text-legibility] Renders the text to be legible. This uses the GPU.
+ * @modifier [.text-speed] Optimized rendering for speed
+ * @modifier [.text-smooth] Makes font look smooth on webkit and mozilla OSX
+ *
+ * @markup
+    <div class="hgroup">
+      <h2 class="hN  text-legibility">Legibility</h2>
+      <h2 class="hN  text-speed">Speed</h2>
+      <h2 class="hN  text-smooth">Smooth</h2>
+    </div>
+ */
+.text-legibility {
+  text-rendering: optimizeLegibility;
+}
+.text-speed {
+  text-rendering: optimizeSpeed;
+}
+.text-smooth {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
