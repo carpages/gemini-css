@@ -5,24 +5,6 @@
  */
 
 /**
- * @mixin clearfix
- * @description Make an element clear floating elements as per:
- * http://css-tricks.com/snippets/css/clear-fix/
- *
- * @example
-    .foo{
-      @include clearfix;
-    }
- */
-@mixin clearfix {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-}
-
-/**
  * @module Clearfix [.clearfix, .cf]
  * @description Clearfix, as per: http://css-tricks.com/snippets/css/clear-fix/
  */

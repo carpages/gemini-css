@@ -40,11 +40,16 @@
 /**
  * Mixins
  */
+@import "mixins/accessibility";
 @import "mixins/arrows";
+@import "mixins/clearfix";
 @import "mixins/font-face";
 @import "mixins/font-size";
+@import "mixins/gpu";
 @import "mixins/headings";
 @import "mixins/media-queries";
+@import "mixins/text-rendering";
+@import "mixins/truncate";
 @import "mixins/vendor";
 
 /**
@@ -103,7 +108,6 @@
 @import "helpers/align";
 @import "helpers/brand";
 @import "helpers/casing";
-@import "helpers/clearfix";
 @import "helpers/cursors";
 @import "helpers/display";
 @import "helpers/floats";

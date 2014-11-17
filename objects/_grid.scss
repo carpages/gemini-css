@@ -107,7 +107,7 @@ $gemini-grid: extend((
     </div>
  */
 .l-row {
-  @extend .clearfix;
+  @include clearfix;
   width: 100%;
   margin: 0 auto;
   max-width: get(max-width, $gemini-grid);
@@ -143,7 +143,7 @@ $gemini-grid: extend((
  * @modifier [.l-column--{screen}-push-reset] Reset the push on the specified screen size
  */
 [class*="l-column"] {
-  @extend .clearfix;
+  @include clearfix;
   position: relative;
   padding: 0 (get(gutter, $gemini-grid) / 2);
   width: 100%;

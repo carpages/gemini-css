@@ -12,7 +12,7 @@
    */
   .media {
     display: block;
-    @extend .clearfix;
+    @include clearfix;
   }
 
   /**

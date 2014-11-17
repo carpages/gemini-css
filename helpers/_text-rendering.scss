@@ -20,12 +20,11 @@
     </div>
  */
 .text-legibility {
-  text-rendering: optimizeLegibility;
+  @include text-legibility;
 }
 .text-speed {
-  text-rendering: optimizeSpeed;
+  @include text-speed;
 }
 .text-smooth {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  @include text-smooth;
 }

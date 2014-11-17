@@ -1,0 +1,22 @@
+/**
+ ********************************
+ * _TRUNCATE.SCSS
+ ********************************
+ */
+
+/**
+ * @mixin truncate
+ * @description Add a ... to the end of an element's text
+ *
+ * @param {string} [$important=''] Option to append values with !important
+ *
+ * @example
+    .foo{
+      @include truncate(!important);
+    }
+ */
+@mixin truncate($important: "") {
+  white-space: nowrap #{$important};
+  overflow: hidden #{$important};
+  text-overflow: ellipsis #{$important};
+}

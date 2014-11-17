@@ -1,0 +1,45 @@
+/**
+ ********************************
+ * _TEXT-RENDERING.SCSS
+ ********************************
+ */
+
+/**
+ * @mixin text-legibility
+ * @description Optimizes text for legibility
+ *
+ * @example
+    .foo{
+      @include text-legibility;
+    }
+ */
+@mixin text-legibility {
+  text-rendering: optimizeLegibility;
+}
+
+/**
+ * @mixin text-speed
+ * @description Optimizes text for speed
+ *
+ * @example
+    .foo{
+      @include text-speed;
+    }
+ */
+@mixin text-speed {
+  text-rendering: optimizeSpeed;
+}
+
+/**
+ * @mixin text-smooth
+ * @description Optimizes text to be smooth on webkit and mozilla OSX
+ *
+ * @example
+    .foo{
+      @include text-smooth;
+    }
+ */
+@mixin text-smooth {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

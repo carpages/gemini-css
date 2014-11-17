@@ -1,0 +1,19 @@
+/**
+ ********************************
+ * _GPU.SCSS
+ ********************************
+ */
+
+/**
+ * @mixin gpu
+ * @description Force an element to use the gpu to render. Causes for smoother
+ * performance
+ *
+ * @example
+    .foo{
+      @include gpu;
+    }
+ */
+@mixin gpu {
+  @include vendor(transform, translateZ(0));
+}

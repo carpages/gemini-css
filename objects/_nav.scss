@@ -36,7 +36,7 @@
   .nav {
     list-style: none;
     margin: 0;
-    @extend .clearfix;
+    @include clearfix;
 
     > li {
       margin-right: 0.1px\9; /* 1 */
