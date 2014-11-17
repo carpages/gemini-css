@@ -113,7 +113,7 @@ $mapped-headings: (
  */
 @if (get(responsive, $gemini-headings)) {
   // Medium screens
-  @include quick-media-query(medium) {
+  @include media(medium) {
 
     @each $class, $el in $mapped-headings {
 
@@ -126,7 +126,7 @@ $mapped-headings: (
   }
 
   // Large screens
-  @include quick-media-query(large){
+  @include media(large){
 
     @each $class, $el in $mapped-headings {
 

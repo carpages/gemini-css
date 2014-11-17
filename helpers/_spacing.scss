@@ -99,15 +99,15 @@ $gemini-spacing: extend((
 
 @if get(responsive, $gemini-spacing) {
 
-  @include quick-media-query(medium){
+  @include media(medium){
     @include spacing-helpers(medium);
   }
 
-  @include quick-media-query(large){
+  @include media(large){
     @include spacing-helpers(large);
   }
 
-  @include quick-media-query(xlarge){
+  @include media(xlarge){
     @include spacing-helpers(xlarge);
   }
 

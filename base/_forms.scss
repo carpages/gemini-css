@@ -60,7 +60,7 @@ label {
     padding-left: get(spacing) / 2;
   }
 
-  @include quick-media-query(medium) {
+  @include media(medium) {
     .form--inline & {
       display: inline-block;
     }

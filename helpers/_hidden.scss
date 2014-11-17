@@ -53,7 +53,7 @@
 .hidden-large      { }
 
 // For medium screens
-@include quick-media-query(medium, true) {
+@include media(medium, true) {
   %hide-medium {
     position: absolute !important;
     left: -999% !important;
@@ -72,7 +72,7 @@
 }
 
 // For large screens
-@include quick-media-query(large, true) {
+@include media(large, true) {
   %hide-large {
     position: absolute !important;
     left: -999% !important;

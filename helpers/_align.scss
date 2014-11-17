@@ -37,7 +37,7 @@ $gemini-align: extend((
  */
 @if (get(responsive, $gemini-align)) {
   // Medium screens
-  @include quick-media-query(medium) {
+  @include media(medium) {
 
     .align-medium-left     { text-align: left       !important; }
     .align-medium-center   { text-align: center     !important; }
@@ -47,7 +47,7 @@ $gemini-align: extend((
   }
 
   // Large screens
-  @include quick-media-query(large) {
+  @include media(large) {
 
     .align-large-left     { text-align: left       !important; }
     .align-large-center   { text-align: center     !important; }

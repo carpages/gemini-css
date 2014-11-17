@@ -5,7 +5,7 @@
  */
 
 /**
- * @mixin quick-media-query
+ * @mixin media
  * @description It's not great practice to define solid breakpoints up-front,
  * preferring to modify your design when it needs it, rather than assuming
  * you'll want a change at 'mobile'. However, as inuit.css is required to take a
@@ -34,14 +34,14 @@
  * @param {boolean} [$print=false] Whether to include print
  *
  * @example
-    @include quick-media-query(medium) {
+    @include media(medium) {
       [styles here]
     }
  */
 $small-end:              get(medium, $gemini-screens) - 1px;
 $medium-end:             get(large, $gemini-screens) - 1px;
 
-@mixin quick-media-query($media-query, $print: false) {
+@mixin media($media-query, $print: false) {
 
   @if $media-query == medium or $media-query == hidden-small {
 
