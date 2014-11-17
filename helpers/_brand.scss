@@ -9,8 +9,8 @@
  * @description '.brand' is a quick and simple way to apply your brand face
  * and/or color to any element using a handy helper class.
  *
- * @modifier [.brand--face] Just apply the font face
- * @modifier [.brand--color] Just apply the color
+ * @modifier [.brand-face] Just apply the font face
+ * @modifier [.brand-color] Just apply the color
  *
  * @markup
     <h2 class="brand">I like cheese</h2>
@@ -19,9 +19,9 @@
   font-family: get(brand-font-family) +!important;
   color: get(brand-color) +!important;
 }
-.brand--face {
+.brand-face {
   font-family: get(brand-font-family) +!important;
 }
-.brand--color {
+.brand-color {
   color: get(brand-color) +!important;
 }

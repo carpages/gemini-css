@@ -8,21 +8,21 @@
  * @module Display Helpers
  * @description Change the display properties for an element
  *
- * @modifier [.display--inline, .inline] display: inline
- * @modifier [.display--block, .block] display: block
- * @modifier [.display--inline-block, .inline-block] display: inline-block
+ * @modifier [.display-inline, .inline] display: inline
+ * @modifier [.display-block, .block] display: block
+ * @modifier [.display-inline-block, .inline-block] display: inline-block
  */
-.display--inline,
+.display-inline,
 .inline {
   display: inline !important;
 }
 
-.display--block,
+.display-block,
 .block {
   display: block !important;
 }
 
-.display--inline-block,
+.display-inline-block,
 .inline-block {
   display: inline-block !important;
 }

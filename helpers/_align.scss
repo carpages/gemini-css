@@ -20,17 +20,17 @@ $gemini-align: extend((
  * @module Text Alignment
  * @description Easily align text
  *
- * @modifier [.align--left] Align left
- * @modifier [.align--center] Align center
- * @modifier [.align--right] Align right
- * @modifier [.align--bottom] Vertical-align bottom
- * @modifier [.align--medium-{direction}] Apply on medium screens (set responsive to true)
- * @modifier [.align--large-{direction}] Apply on large screens (set responsive to true)
+ * @modifier [.align-left] Align left
+ * @modifier [.align-center] Align center
+ * @modifier [.align-right] Align right
+ * @modifier [.align-bottom] Vertical-align bottom
+ * @modifier [.align-medium-{direction}] Apply on medium screens (set responsive to true)
+ * @modifier [.align-large-{direction}] Apply on large screens (set responsive to true)
  */
-.align--left     { text-align: left       !important; }
-.align--center   { text-align: center     !important; }
-.align--right    { text-align: right      !important; }
-.align--bottom   { vertical-align: bottom !important; }
+.align-left     { text-align: left       !important; }
+.align-center   { text-align: center     !important; }
+.align-right    { text-align: right      !important; }
+.align-bottom   { vertical-align: bottom !important; }
 
 /**
  * Responsive helper declerations
@@ -39,20 +39,20 @@ $gemini-align: extend((
   // Medium screens
   @include quick-media-query(medium) {
 
-    .align--medium-left     { text-align: left       !important; }
-    .align--medium-center   { text-align: center     !important; }
-    .align--medium-right    { text-align: right      !important; }
-    .align--medium-bottom   { vertical-align: bottom !important; }
+    .align-medium-left     { text-align: left       !important; }
+    .align-medium-center   { text-align: center     !important; }
+    .align-medium-right    { text-align: right      !important; }
+    .align-medium-bottom   { vertical-align: bottom !important; }
 
   }
 
   // Large screens
   @include quick-media-query(large) {
 
-    .align--large-left     { text-align: left       !important; }
-    .align--large-center   { text-align: center     !important; }
-    .align--large-right    { text-align: right      !important; }
-    .align--large-bottom   { vertical-align: bottom !important; }
+    .align-large-left     { text-align: left       !important; }
+    .align-large-center   { text-align: center     !important; }
+    .align-large-right    { text-align: right      !important; }
+    .align-large-bottom   { vertical-align: bottom !important; }
 
   }
 }

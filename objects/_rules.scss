@@ -10,6 +10,10 @@
    * @module Horizontal Rules [.rule]
    * @description Adds a horizontal line as a break (extends 'hr')
    *
+   * @alternative [.rule-left] Puts the rule on the left of an element
+   * @alternative [.rule-right] Puts the rule on the right of an element
+   * @alternative [.rule-top] Puts the rule on the top of an element
+   *
    * @modifier [.rule--dotted] Dotted rules
    * @modifier [.rule--dashed] Dashed rules
    * @modifier [.rule--ornament] Ornament rules
@@ -44,15 +48,15 @@
     @extend %rule;
     border-bottom: 1px solid lighten(get(color), 50%);
   }
-  .rule--left {
+  .rule-left {
     @extend %rule;
     border-left: 1px solid lighten(get(color), 50%);
   }
-  .rule--right {
+  .rule-right {
     @extend %rule;
     border-right: 1px solid lighten(get(color), 50%);
   }
-  .rule--top {
+  .rule-top {
     @extend %rule;
     border-top: 1px solid lighten(get(color), 50%);
   }

@@ -8,24 +8,24 @@
  * @module Visibility Utilities
  * @description Helper classes to quickly show and hide elements based on screen size
  *
- * @modifier [.visible--js] Only show if javascript is enabled
- * @modifier [.hidden--js] Hide if javascript is enaabled
- * @modifier [.visible--medium] Show on medium, hide on small and large
- * @modifier [.visible--large] Show on large, hide on small and medium
- * @modifier [.hidden--small] Hide on small, show on medium and large
- * @modifier [.hidden--medium] Hide on medium, show on small and large
- * @modifier [.hidden--large] Hide on large, show on small and medium
- * @modifier [.visible--print] Show on print, hide on rest
- * @modifier [.hidden--large] Hide on print, show on rest
+ * @modifier [.visible-js] Only show if javascript is enabled
+ * @modifier [.hidden-js] Hide if javascript is enaabled
+ * @modifier [.visible-medium] Show on medium, hide on small and large
+ * @modifier [.visible-large] Show on large, hide on small and medium
+ * @modifier [.hidden-small] Hide on small, show on medium and large
+ * @modifier [.hidden-medium] Hide on medium, show on small and large
+ * @modifier [.hidden-large] Hide on large, show on small and medium
+ * @modifier [.visible-print] Show on print, hide on rest
+ * @modifier [.hidden-large] Hide on print, show on rest
  *
  * @markup
     <ul class="block-list">
-      <li class="visible--small">.visible--small</li>
-      <li class="hidden--small">.hidden--small</li>
-      <li class="visible--medium">.visible--medium</li>
-      <li class="hidden--medium">.hidden--medium</li>
-      <li class="visible--large">.visible--large</li>
-      <li class="hidden--large">.hidden--large</li>
+      <li class="visible-small">.visible-small</li>
+      <li class="hidden-small">.hidden-small</li>
+      <li class="visible-medium">.visible-medium</li>
+      <li class="hidden-medium">.hidden-medium</li>
+      <li class="visible-large">.visible-large</li>
+      <li class="hidden-large">.hidden-large</li>
     </ul>
  */
 
@@ -45,12 +45,12 @@
 }
 
 // For small screens
-.visible--small     { }
-.hidden--small      { @extend %hide-small; }
-.visible--medium    { @extend %hide-small; }
-.hidden--medium     { }
-.visible--large     { @extend %hide-small; }
-.hidden--large      { }
+.visible-small     { }
+.hidden-small      { @extend %hide-small; }
+.visible-medium    { @extend %hide-small; }
+.hidden-medium     { }
+.visible-large     { @extend %hide-small; }
+.hidden-large      { }
 
 // For medium screens
 @include quick-media-query(medium, true) {
@@ -65,10 +65,10 @@
     top: auto !important;
   }
 
-  .visible--small  { @extend %hide-medium; }
-  .hidden--small   { @extend %visible-medium }
-  .visible--medium { @extend %visible-medium }
-  .hidden--medium  { @extend %hide-medium; }
+  .visible-small  { @extend %hide-medium; }
+  .hidden-small   { @extend %visible-medium }
+  .visible-medium { @extend %visible-medium }
+  .hidden-medium  { @extend %hide-medium; }
 }
 
 // For large screens
@@ -84,15 +84,15 @@
     top: auto !important;
   }
 
-  .visible--medium { @extend %hide-large; }
-  .hidden--medium  { @extend %visible-large; }
-  .visible--large  { @extend %visible-large; }
-  .hidden--large   { @extend %hide-large; }
+  .visible-medium { @extend %hide-large; }
+  .hidden-medium  { @extend %visible-large; }
+  .visible-large  { @extend %visible-large; }
+  .hidden-large   { @extend %hide-large; }
 }
 
 // Print utilities
-.visible--print    { @extend %hide-small; }
-.hidden--print     { }
+.visible-print    { @extend %hide-small; }
+.hidden-print     { }
 
 @media print {
   %hide-print {
@@ -106,6 +106,6 @@
     top: auto !important;
   }
 
-  .visible--print  { @extend %visible-print; }
-  .hidden--print   { @extend %hide-print; }
+  .visible-print  { @extend %visible-print; }
+  .hidden-print   { @extend %hide-print; }
 }
