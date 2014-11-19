@@ -110,6 +110,7 @@ $gemini-buttons: extend((
    */
   .button-group {
     display: inline-block;
+    vertical-align: middle;
     @include clearfix;
 
     > .button {
