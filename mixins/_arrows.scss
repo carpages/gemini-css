@@ -8,14 +8,14 @@
  * @settings $gemini-arrows
  * @description The settings for the arrows mixin
  *
- * @prop {unit} [size=get(spacing) * 0.4] The size of the arrow
- * @prop {integer} [border=2] The width of the arrow border
+ * @prop {measurement} [size=get(spacing) * 0.4] The size of the arrow
+ * @prop {measurement} [border=2px] The width of the arrow border in pixels
  */
 $gemini-arrows: () !default;
 
 $gemini-arrows: extend((
   size: get(spacing) * 0.4,
-  border: 2,
+  border: 2px,
 ), $gemini-arrows);
 
 /**

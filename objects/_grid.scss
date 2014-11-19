@@ -4,14 +4,25 @@
  ********************************
  */
 
+/**
+ * @settings $gemini-grid
+ * @description The settings for the grid
+ *
+ * @prop {measurement} [max-width=get(xlarge, $gemini-screens)] The max-width of the grid's rows
+ * @prop {measurement} [gutter=get(spacing)] The gutter size between the columns
+ * @prop {integer} [columns=12] The number of columns in the grid
+ * @prop {measurement} [medium-breakpoint=get(medium, $gemini-screens)] The breakpoint for medium layout
+ * @prop {measurement} [large-breakpoint=get(large, $gemini-screens)] The breakpoint for large layout
+ * @prop {measurement} [xlarge-breakpoint=get(xlarge, $gemini-screens)] The breakpoint for xlarge layout
+ */
 $gemini-grid: () !default;
 
 $gemini-grid: extend((
-  max-width: get(xlarge, $gemini-screens),
-  gutter: get(spacing),
-  columns: 12,
+  max-width:         get(xlarge, $gemini-screens),
+  gutter:            get(spacing),
+  columns:           12,
   medium-breakpoint: get(medium, $gemini-screens),
-  large-breakpoint: get(large, $gemini-screens),
+  large-breakpoint:  get(large, $gemini-screens),
   xlarge-breakpoint: get(xlarge, $gemini-screens),
 ), $gemini-grid);
 

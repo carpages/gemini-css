@@ -11,7 +11,7 @@
  *
  * @param {measurement} [$val] A value to convert to em
  *
- * @return {em} Returns an the em size
+ * @return {measurement} Returns an the em size
  *
  * @example
     .foo {
@@ -44,7 +44,7 @@
  * @param {measurement} [$value] The measurement to convert
  * @param {measurement} [$context=base font size] The measurement size of the parent
  *
- * @return {em} Return an em size
+ * @return {measurement} Return an em size
  *
  * @example
     .foo {
@@ -61,7 +61,7 @@
  *
  * @param {measurement} [$value] The measurement to convert
  *
- * @return {rem} Return an rem size
+ * @return {measurement} Return an rem size
  *
  * @example
     .foo {

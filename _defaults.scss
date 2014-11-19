@@ -12,6 +12,24 @@
  * BASE DEFAULTS
  ********************************/
 
+/**
+ * @settings $gemini-base
+ * @description The base settings for gemini. You can get these values using
+ * get(property);
+ *
+ * @prop {measurement} [border-radius=4px] Default round corners
+ * @prop {color} [brand-color=#090] Base brand color
+ * @prop {color} [link-color=#4374AE] Default link colors
+ * @prop {color} [color=#333] Default text color
+ * @prop {color} [background-color=#FFF] Website background color
+ * @prop {measurement} [font-size=14px] Default font-size
+ * @prop {measurement} [line-height=24px] Default line-height
+ * @prop {measurement} [spacing=24px] Default spacing used throughout the site
+ * @prop {string} [brand-font-family=unquote("'Helvetica', Arial, sans-serif")] Default brand font face
+ * @prop {string} [font-family=unquote("'Helvetica', Arial, sans-serif")] Default font face
+ * @prop {string} [font-directory="fonts"] The location of fonts in relation to outputed CSS
+ * @prop {string} [img-directory="../img"] The location of images in relation to outputed CSS
+ */
 $gemini-base-defaults: (
   /**
    * Default Round Corners
@@ -54,8 +72,15 @@ $gemini-base-defaults: (
 /********************************
  * SCREEN DEFAULTS
  ********************************/
+
 /**
- * Where breakpoints start
+ * @settings $gemini-screens
+ * @description The default breakpoints used throughout the site. These are
+ * automatically converted to em's when used by media queries.
+ *
+ * @prop {measurement} [medium=481px] When medium breakpoint starts
+ * @prop {measurement} [large=1024px] When large breakpoint starts
+ * @prop {measurement} [xlarge=1200px] When xlarge breakpoint starts
  */
 $gemini-screens-defaults: (
   medium:       481px,
@@ -67,8 +92,17 @@ $gemini-screens-defaults: (
 /********************************
  * OBJECT USE DEFAULTS
  ********************************/
+
 /**
- * Which objects and abstractions would you like to use?
+ * @settings $gemini-use
+ * @description Settings for whether to use a certain object or not. By default
+ * all object are set to false. As you need them, set them to true.
+ *
+ * @markup
+    $gemini-use: (
+      block-list: true,
+      grid: true
+    );
  */
 $gemini-use-defaults: (
   block-list:     false,
