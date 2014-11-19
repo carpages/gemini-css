@@ -9,7 +9,9 @@
  * @description Settings for the spacing helper
  *
  * @prop {map} [naming] You can add custom naming for the helper. This is complicated: Look at source code
- * @prop {boolean} [responsive=false] Whether to include responsive helpers
+ * @prop {boolean} [medium=false] Whether to include medium responsive helpers. NOTE: This adds 4kb to output CSS
+ * @prop {boolean} [large=false] Whether to include large responsive helpers. NOTE: This adds 4kb to output CSS
+ * @prop {boolean} [xlarge=false] Whether to include xlarge responsive helpers. NOTE: This adds 4kb to output CSS
  */
 $gemini-spacing: () !default;
 
@@ -39,7 +41,9 @@ $gemini-spacing: extend((
       "ends":    (top bottom),
     ),
   ),
-  responsive: false,
+  medium: false,
+  large: false,
+  xlarge: false,
 ), $gemini-spacing);
 
 /**
@@ -97,15 +101,23 @@ $gemini-spacing: extend((
  */
 @include spacing-helpers();
 
-@if get(responsive, $gemini-spacing) {
+@if get(medium, $gemini-spacing) {
 
   @include media(medium){
     @include spacing-helpers(medium);
   }
 
+}
+
+@if get(large, $gemini-spacing) {
+
   @include media(large){
     @include spacing-helpers(large);
   }
+
+}
+
+@if get(xlarge, $gemini-spacing) {
 
   @include media(xlarge){
     @include spacing-helpers(xlarge);
