@@ -23,8 +23,8 @@ pre {
 code {
   padding: 2px 4px;
   color: darkblue;
-  background-color: getColor(g80);
-  border: 1px solid getColor(g90);
+  background-color: getColor(g95);
+  border: 1px solid getColor(g85);
   white-space: nowrap;
 }
 
@@ -44,16 +44,15 @@ code {
  */
 pre {
   display: block;
-  padding: (get(spacing) / 2 - 1) / 2;
+  padding: (get(spacing) / 4 - 1) / 2;
   font-size: get(font-size) - 1; // 14px to 13px
   line-height: get(line-height);
   word-break: break-all;
   word-wrap: break-word;
   white-space: pre;
   white-space: pre-wrap;
-  background-color: getColor(g80);
-  border: 1px solid getColor(g90);; // fallback for IE7-8
-  border: 1px solid rgba(0,0,0,0.15);
+  background-color: getColor(g95);
+  border: 1px solid getColor(g85);
   @include border-radius(get(border-radius));
 
   // Enable scrollable blocks of code
