@@ -59,9 +59,9 @@ $gemini-spacing: extend((
           @if ($type != "padding" or $reverse != -1) and
               ($size != 0 or $reverse != -1) {
 
-            .#{join($type-title $reverse-title $size-title $screen-title $direction-title, "-")} {
+            .#{implode($type-title $reverse-title $size-title $screen-title $direction-title, "-")} {
               @each $direction in $direction-list {
-                #{join($type $direction, "-")}: get(spacing) * $size * $reverse !important;
+                #{implode($type $direction, "-")}: get(spacing) * $size * $reverse !important;
               }
             }
 

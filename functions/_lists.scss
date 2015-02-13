@@ -1,4 +1,4 @@
-/**
+  /**
  ********************************
  * _LISTS.SCSS
  ********************************
@@ -34,22 +34,22 @@
 }
 
 /**
- * @function join
- * @description Join the items of a list into a string. Similar to javascripts
- * Array.join();
+ * @function implode
+ * @description Implode the items of a list into a string. Similar to javascripts
+ * Array.implode();
  *
- * @param {list} [$list] The list to join
- * @param {string} [$glue=""] The string to join the list with
+ * @param {list} [$list] The list to implode
+ * @param {string} [$glue=""] The string to implode the list with
  * @param {string} [$trim=true] Whether to trim empty strings and nulls
  *
- * @return {string} A string of the joined list
+ * @return {string} A string of the implodeed list
  *
  * @example
     .foo:before {
-      content: join((a,b,c), "-") // a-b-c;
+      content: implode((a,b,c), "-") // a-b-c;
     }
  */
-@function join($list, $glue: "", $trim: true, $is-nested: false) {
+@function implode($list, $glue: "", $trim: true, $is-nested: false) {
   $result: null;
 
   @if $trim {
@@ -61,7 +61,7 @@
     $e: nth($list, $i);
 
     @if type-of($e) == list {
-      $result: $result#{join($e, $glue, $trim true)};
+      $result: $result#{implode($e, $glue, $trim true)};
     }
 
     @else {
