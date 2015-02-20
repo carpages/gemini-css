@@ -12,7 +12,8 @@
   .link-complex,
   .link-complex:hover,
   .link-complex:active,
-  .link-complex:focus {
+  .link-complex:focus,
+  .link-complex:visited {
     text-decoration: none;
     color: inherit;
   }
