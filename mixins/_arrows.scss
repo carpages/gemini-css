@@ -5,20 +5,6 @@
  */
 
 /**
- * @settings $gemini-arrows
- * @description The settings for the arrows mixin
- *
- * @prop {measurement} [size=get(spacing) * 0.4] The size of the arrow
- * @prop {measurement} [border=2px] The width of the arrow border in pixels
- */
-$gemini-arrows: () !default;
-
-$gemini-arrows: extend((
-  size: get(spacing) * 0.4,
-  border: 2px,
-), $gemini-arrows);
-
-/**
  * @mixin arrow
  * @description This mixin creates a CSS arrow on a given element. We can have
  * the arrow appear in one of 12 locations, thus:
@@ -33,9 +19,11 @@ $gemini-arrows: extend((
  *    +------------------+
  *       09    08    07
  *
- * @param {string} [$arrow-edge] The edge that the arrow is on (top, right, bottom, left)
- * @param {string} [$arrow-location] The location placement along the edge (top, right, center, bottom, left)
- * @param {string} [$arrow-color] The color of the arrow
+ * @param {string} [$arrow-edge=bottom] The edge that the arrow is on (top, right, bottom, left)
+ * @param {string} [$arrow-location=center] The location placement along the edge (top, right, center, bottom, left)
+ * @param {string} [$arrow-size=get(spacing)*0.4] The size of the arrow
+ * @param {string} [$arrow-color=#333] The color of the arrow
+ * @param {string} [$arrow-size=get(spacing)*0.4] The size of the border
  * @param {string} [$border-color=$arrow-color] The color of the border
  *
  * @example
@@ -44,41 +32,116 @@ $gemini-arrows: extend((
     }
  */
 
-@mixin arrow($arrow-edge, $arrow-location, $arrow-color, $border-color: $arrow-color) {
+@mixin arrow(
+  $arrow-edge: bottom,
+  $arrow-location: center,
+  $arrow-size: get(spacing) * 0.4,
+  $arrow-color: #333,
+  $border-size: 2px,
+  $border-color: $arrow-color
+  ) {
+
+  position: relative;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    border-collapse: separate;
+  }
+
+  @if $border-size {
+    &:before {
+      border: $arrow-size solid transparent;
+    }
+  } @else {
+    &:before {
+      content: normal;
+    }
+  }
+  &:after {
+    border: $arrow-size - $border-size solid transparent;
+  }
 
   @if $arrow-edge == top {
 
-    @extend %arrow--top;
+    &:before,
+    &:after {
+      bottom: 100%;
+    }
 
-    @if $border-color != false {
+    @if $border-size {
       &:before {
         border-bottom-color: $border-color !important;
       }
     }
-
     &:after {
       border-bottom-color: $arrow-color !important;
     }
 
+  }
+
+  @if $arrow-edge == bottom {
+
+    &:before,
+    &:after {
+      top: 100%;
+    }
+
+    @if $border-size {
+      &:before {
+        border-top-color: $border-color !important;
+      }
+    }
+    &:after {
+      border-top-color: $arrow-color !important;
+    }
+
+  }
+
+  @if $arrow-edge == bottom or $arrow-edge == top {
+
     @if $arrow-location == left {
-      @extend %arrow--left;
+      &:before {
+        left: $arrow-size - $border-size;
+      }
+      &:after {
+        left: $arrow-size;
+      }
     }
 
     @if $arrow-location == center {
-      @extend %arrow--center;
+      &:before,
+      &:after {
+        left: 50%;
+        margin-left: - $arrow-size;
+      }
+      &:after {
+        margin-left: - $arrow-size + $border-size;
+      }
     }
 
     @if $arrow-location == right {
-      @extend %arrow--right;
+      @if $border-size {
+        &:before {
+          right: $arrow-size - $border-size + 10px;
+        }
+      }
+      &:after {
+        right: $arrow-size + 10px;
+      }
     }
 
   }
 
   @if $arrow-edge == right {
 
-    @extend %arrow--far;
+    &:before,
+    &:after {
+      left: 100%;
+    }
 
-    @if $border-color != false {
+    @if $border-size {
       &:before {
         border-bottom-color: $border-color !important;
       }
@@ -88,200 +151,62 @@ $gemini-arrows: extend((
       border-left-color: $arrow-color !important;
     }
 
-    @if $arrow-location == top {
-      @extend %arrow--upper;
-    }
-
-    @if $arrow-location == center {
-      @extend %arrow--middle;
-    }
-
-    @if $arrow-location == bottom {
-      @extend %arrow--lower;
-    }
-
-  }
-
-  @if $arrow-edge == bottom {
-
-    @extend %arrow--bottom;
-
-    &:before {
-      border-top-color: $border-color !important;
-    }
-
-    &:after {
-      border-top-color: $arrow-color !important;
-    }
-
-    @if $arrow-location == left {
-      @extend %arrow--left;
-    }
-
-    @if $arrow-location == center {
-      @extend %arrow--center;
-    }
-
-    @if $arrow-location == right {
-      @extend %arrow--right;
-    }
-
   }
 
   @if $arrow-edge == left {
 
-    @extend %arrow--near;
+    &:before,
+    &:after {
+      right: 100%;
+    }
 
-    &:before {
-      border-right-color: $border-color !important;
+    @if $border-size {
+      &:before {
+        border-right-color: $border-color !important;
+      }
     }
 
     &:after {
       border-right-color: $arrow-color !important;
     }
 
+  }
+
+  @if $arrow-edge == left or $arrow-edge == right {
+
     @if $arrow-location == top {
-      @extend %arrow--upper;
+      @if $border-size {
+        &:before {
+          top: $arrow-size - $border-size;
+        }
+      }
+      &:after {
+        top: $arrow-size;
+      }
     }
 
     @if $arrow-location == center {
-      @extend %arrow--middle;
+      &:before,
+      &:after {
+        top: 50%;
+        margin-top: - $arrow-size;
+      }
+      &:after {
+        margin-top: - $arrow-size + $border-size;
+      }
     }
 
     @if $arrow-location == bottom {
-      @extend %arrow--lower;
+      @if $border-size {
+        &:before {
+          bottom: $arrow-size - $border-size;
+        }
+      }
+      &:after {
+        bottom: $arrow-size;
+      }
     }
 
   }
 
-}
-
-/**
- * Forms the basis for any/all CSS arrows.
- */
-%arrow {
-  position: relative;
-
-  &:before,
-  &:after {
-    content: "";
-    position: absolute;
-    border-collapse: separate;
-  }
-  &:before {
-    border: get(size, $gemini-arrows) solid transparent;
-  }
-  &:after {
-    border: get(size, $gemini-arrows) - get(border, $gemini-arrows) solid transparent;
-  }
-}
-
-
-/**
-* Define individual edges so we can combine what we need, when we need.
-*/
-%arrow--top {
-  @extend %arrow;
-
-  &:before,
-  &:after {
-    bottom: 100%;
-  }
-}
-
-%arrow--upper {
-  @extend %arrow;
-
-  &:before {
-    top: get(size, $gemini-arrows) - get(border, $gemini-arrows);
-  }
-  &:after {
-    top: get(size, $gemini-arrows);
-  }
-}
-
-%arrow--middle {
-  @extend %arrow;
-
-  &:before,
-  &:after {
-    top: 50%;
-    margin-top: - get(size, $gemini-arrows);
-  }
-  &:after {
-    margin-top: - get(size, $gemini-arrows) + get(border, $gemini-arrows);
-  }
-}
-
-%arrow--lower {
-  @extend %arrow;
-
-  &:before {
-    bottom: get(size, $gemini-arrows) - get(border, $gemini-arrows);
-  }
-  &:after {
-    bottom: get(size, $gemini-arrows);
-  }
-}
-
-%arrow--bottom {
-  @extend %arrow;
-
-  &:before,
-  &:after {
-    top: 100%;
-  }
-}
-
-%arrow--near {
-  @extend %arrow;
-
-  &:before,
-  &:after {
-    right: 100%;
-  }
-}
-
-%arrow--left {
-  @extend %arrow;
-
-  &:before {
-    left: get(size, $gemini-arrows) - get(border, $gemini-arrows);
-  }
-  &:after {
-    left: get(size, $gemini-arrows);
-  }
-}
-
-%arrow--center {
-  @extend %arrow;
-
-  &:before,
-  &:after {
-    left: 50%;
-    margin-left: - get(size, $gemini-arrows);
-  }
-  &:after {
-    margin-left: - get(size, $gemini-arrows) + get(border, $gemini-arrows);
-  }
-}
-
-%arrow--right {
-  @extend %arrow;
-
-  &:before {
-    right: get(size, $gemini-arrows) - get(border, $gemini-arrows) + 10px;
-  }
-  &:after {
-    right: get(size, $gemini-arrows) + 10px;
-  }
-}
-
-%arrow--far {
-  @extend %arrow;
-
-  &:before,
-  &:after {
-    left: 100%;
-  }
 }
