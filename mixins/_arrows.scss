@@ -143,7 +143,7 @@
 
     @if $border-size {
       &:before {
-        border-bottom-color: $border-color !important;
+        border-left-color: $border-color !important;
       }
     }
 
