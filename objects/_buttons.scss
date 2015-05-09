@@ -77,10 +77,10 @@ $gemini-buttons: extend((
   }
 
   .button--natural {
+    display: inline;
     vertical-align: baseline;
     font-size: inherit;
     line-height: inherit;
-    line-height: calc(100% - #{get(border-width, $gemini-buttons) * 2});
     padding-top: 0;
     padding-bottom: 0;
   }
