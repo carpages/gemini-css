@@ -1,0 +1,19 @@
+/**
+ ********************************
+ * _LISTS.SCSS
+ ********************************
+ */
+
+/**
+ * @mixin prune-list
+ * @description Remove all styles from a list
+ *
+ * @example
+    .list--prune {
+      @include prune-list;
+    }
+ */
+@mixin prune-list {
+  list-style: none;
+  margin-left: 0;
+}

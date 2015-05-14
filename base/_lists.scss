@@ -8,7 +8,8 @@
  * @module Lists [ul, ol]
  * @description Your basic lists
  *
- * @modifier [.numbered-list] Have a numbered 'ul' without the semantics implied by using an 'ol'.
+ * @modifier [.list--numbered] Have a numbered 'ul' without the semantics implied by using an 'ol'.
+ * @modifier [.list--prune] Clear all the style from a list
  *
  * @markup
   <ul>
@@ -38,12 +39,11 @@ li {
 /**
  * Have a numbered 'ul' without the semantics implied by using an 'ol'.
  */
-/*ul*/.numbered-list {
+/*ul*/.list--numbered {
   list-style-type: decimal;
 }
 
 // Remove list styles
-.list--no-style {
-  list-style: none;
-  margin-left: 0;
+/*ul*/.list--prune {
+  @include prune-list;
 }
