@@ -29,6 +29,14 @@
     @return $val / 16px + 0em;
   } @else if $u == "pt" {
     @return $val / 12pt + 0em;
+  } @else if $u == "in" {
+    @return $val / 0.17in + 0em;
+  } @else if $u == "pc" {
+    @return $val / 1pc + 0em;
+  } @else if $u == "mm" {
+    @return $val / 4.2mm + 0em;
+  } @else if $u == "cm" {
+    @return $val / 0.42cm + 0em;
   } @else if $u == "" {
     @return $val + 0em;
   } @else {
