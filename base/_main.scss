@@ -9,7 +9,7 @@
  * @description Just your basic styling on the document
  */
 html {
-  font: #{(get(font-size) / 16px) * 1em}/#{get(line-height) / get(font-size)} get(font-family);
+  font: #{em(get(font-size))}/#{em(get(line-height)) / em(get(font-size))} get(font-family);
   overflow-y: scroll;
   min-height: 100%;
 }
