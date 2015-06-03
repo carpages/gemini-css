@@ -1,0 +1,16 @@
+{
+  "name": "gemini-css",
+  "version": "1.0.0",
+  "description": "Gemini CSS",
+  "author": {
+    "name": "Matt Rose",
+    "email": "matt@mattrose.ca",
+    "url": "http://mattrose.ca"
+  },
+  "main": "init.scss",
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ]
+}
