@@ -100,6 +100,9 @@
 @import "objects/colors";
 @import "objects/copy";
 
+// Text inputs are an exception to base styles since they extend buttons and tag
+@import "base/text-inputs";
+
 /**
  * Helpers
  */
