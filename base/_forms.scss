@@ -84,53 +84,6 @@ label {
 }
 
 /**
- * @module Text inputs [.text-input]
- * @description Instead of a '[type]' selector for each kind of form input, we just use a
- * class to target any/every one, e.g.:
- *
- * @markup
-    <input type="text" class="text-input" placeholder="Text...">
-    <input type="email" class="text-input" placeholder="Email...">
-    <input type="password" class="text-input" placeholder="Password...">
- */
-
-/**
- * Base Text-Input
- *
- * These styles work well with _buttons.scss
- *
- * 1. Make text-inputs inherit font size.
- * 2. Stop text-inputs from overflowing.
- * 3. Line up different sized form elements a little nicer.
- * 4. Scalable inputs can be a pain in the butt when it comes to height since
- *    line-height has no effect according to spec. Some browser's allow you to
- *    set it anyway, but others don't (like Firefox). Therefore, the best way to
- *    style inputs and buttons is using height attr and em's in order to
- *    properly scale and line them up across all browsers.
- * 5. Normalise box model padding, and remove vertical padding in order to work
- *    with height styles.
- */
-.text-input {
-  font-size: 100%;           /*1*/
-  max-width: 100%;           /*2*/
-  vertical-align: middle;    /*3*/
-  height: 2em;               /*4*/
-  padding: 0 0.5em;          /*5*/
-}
-
-.text-input,
-textarea {
-  //Inline
-  .form--inline & {
-    display: inline-block;
-    margin-bottom: 0;
-    vertical-align: middle;
-  }
-}
-
-
-
-/**
  * @module Radio/Checkbox intputs [.checkbox]
  * @description Basic checkbox and radio elements
  *
@@ -141,7 +94,6 @@ textarea {
  */
 .radio,
 .checkbox {
-
   //Inline
   .form--inline & {
     padding-left: 0;
