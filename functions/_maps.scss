@@ -23,20 +23,17 @@
  */
 @function get($key, $map: $gemini-base) {
 
-  $break: false;
-  @while (str-index($key, ".") or 0) > 0 and $break == false {
+  @if type-of($key) == string and (str-index($key, ".") or 0) > 0 {
 
-    $child-key: str-slice($key, 1, str-index($key, ".") - 1);
-    $key: str-slice($key, str-index($key, ".") + 1);
+    $parent-key: str-slice($key, 1, str-index($key, ".") - 1);
+    $child-key: str-slice($key, str-index($key, ".") + 1);
 
-    @if type-of(map-get($map, $child-key)) == map {
-      $map: map-get($map, $child-key);
-    } @else {
-      $break: true;
+    @if type-of(map-get($map, $parent-key)) == map {
+      @return get($child-key, map-get($map, $parent-key));
     }
   }
 
-  @return if(type-of($map) == map, map-get($map, $key), $map);
+  @return map-get($map, $key);
 }
 
 /**
