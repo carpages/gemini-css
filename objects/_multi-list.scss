@@ -32,7 +32,7 @@
   .multi-list {
     list-style: none;
     margin-left: 0;
-    @extend .clearfix;
+    @include clearfix;
   }
   .multi-list > li {
     float: left;
@@ -86,7 +86,7 @@
    */
   .yes-columnCount {
     .multi-list--vertical {
-      @extend %gpu;
+      @include gpu;
       & > li {
         float: none;
         width: 100%;
