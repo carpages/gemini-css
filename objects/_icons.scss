@@ -38,6 +38,7 @@
    * @markup
       <i class="icon--star" />
    */
+  .icon,
   [class*="icon--"] {
     @include icon;
     display: inline-block;
