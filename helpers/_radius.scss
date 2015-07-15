@@ -6,7 +6,7 @@
 
 /**
  * @module Rounded Corners [.round]
- * @description Round the corners as much as possible
+ * @description Round the corners according to default border-radius
  *
  * @markup
     <input type="text" value="Rounded" class="round" />
@@ -16,12 +16,23 @@
 }
 
 /**
- * @module Circled Corners [.circle]
- * @description Circle the corners as much as possible
+ * @module Fully Rounded Corners [.round-full]
+ * @description Round the corners as much as possible
  *
  * @markup
-    <input type="text" value="Circled" class="circle" />
+    <input type="text" value="Rounded Full" class="round-full" />
  */
-.circle {
+.round-full {
+  @include border-radius(9999px !important);
+}
+
+/**
+ * @module Ellipse [.ellipse]
+ * @description Round the corners to shape an oval or circle
+ *
+ * @markup
+    <input type="text" value="Ellipse" class="ellipse" />
+ */
+.ellipse {
   @include border-radius(100% !important);
 }
