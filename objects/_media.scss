@@ -12,6 +12,7 @@
    */
   .media {
     display: block;
+    margin-bottom: get(spacing);
     @include clearfix;
   }
 
