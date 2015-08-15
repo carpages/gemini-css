@@ -12,7 +12,7 @@
    */
   .stat-group {
     @include clearfix;
-    margin-left: -get(spacing);
+    margin-left: - get(spacing);
   }
 
   %stat-group--n {
