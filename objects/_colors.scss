@@ -62,7 +62,7 @@ $gemini-colors: extend((
       <span class="c-g50">I'm gray!</span>
       <span class="c-facebook">I'm Facebook blue!</span>
      */
-    .c-#{$name} {
+    .c-#{"" + $name} {
       color: $color;
     }
 
