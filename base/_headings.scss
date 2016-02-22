@@ -49,8 +49,8 @@ $gemini-headings: extend((
  * @module Headings
  * @description When we define a heading we also define a corresponding class to go with it.
  *
- * @modifier [.{heading}--medium] Apply this size on medium screens - set responsive to true
- * @modifier [.{heading}--large] Apply this size on large screens - set responsive to true
+ * @modifier [.{heading}-medium] Apply this size on medium screens - set responsive to true
+ * @modifier [.{heading}-large] Apply this size on large screens - set responsive to true
  *
  * @markup
     <h1>Heading 1</h1>
@@ -93,8 +93,8 @@ $mapped-headings: (
 @each $class, $el in $mapped-headings {
 
   .#{$class},
-  .#{$class}--medium,
-  .#{$class}--large {
+  .#{$class}-medium,
+  .#{$class}-large {
     @extend %heading-line-height;
   }
 
@@ -117,7 +117,7 @@ $mapped-headings: (
 
     @each $class, $el in $mapped-headings {
 
-      .#{$class}--medium {
+      .#{$class}-medium {
         font-size: get($class, $gemini-headings) !important;
       }
 
@@ -130,7 +130,7 @@ $mapped-headings: (
 
     @each $class, $el in $mapped-headings {
 
-      .#{$class}--large {
+      .#{$class}-large {
         font-size: get($class, $gemini-headings) !important;
       }
 
