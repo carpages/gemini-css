@@ -41,7 +41,7 @@
 $small-end:              get(medium, $gemini-screens) - 1px;
 $medium-end:             get(large, $gemini-screens) - 1px;
 
-@mixin media($media-query, $print: false) {
+@mixin media($media-query, $print: true) {
 
   @if $media-query == medium or $media-query == hidden-small {
 

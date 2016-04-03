@@ -70,7 +70,7 @@ table {
 th,
 td {
   padding: get(spacing) / 4;
-  @media screen and (min-width:480px) {
+  @include media(medium) {
     padding: get(spacing) / 2;
   }
   text-align: left;
@@ -224,7 +224,7 @@ td {
  * Responsive table
  * This isn't mobile first for the sake of backwards compatability
  */
-@include media(visible-small) {
+@include media(visible-small, false) {
   .table--responsive {
     thead {
       display: none; // Hide heading
