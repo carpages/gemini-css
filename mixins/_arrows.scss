@@ -38,10 +38,13 @@
   $arrow-size: get(spacing) * 0.4,
   $arrow-color: #333,
   $border-size: 2px,
-  $border-color: $arrow-color
+  $border-color: $arrow-color,
+  $set-position: true
   ) {
 
-  position: relative;
+  @if $set-position {
+    position: relative;
+  }
 
   &:before,
   &:after {
