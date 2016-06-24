@@ -82,14 +82,14 @@ blockquote {
 }
 .blockquote--indent {
   padding: 0 0 0 15px;
-  border-left: 5px solid getcolor(g15);
+  border-left: 5px solid getColor(g15);
 }
 
 /**
  * @submodule Blockquote source [.blockquote__source]
  * @description The source of a quote
  *
- * @example
+ * @markup
     <blockquote>
         <p>Rats!!</p>
         <b class="blockquote__source">Tim</b>

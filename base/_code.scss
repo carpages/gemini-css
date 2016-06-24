@@ -9,7 +9,7 @@ pre {
   padding: 0 3px 2px;
   font-family: Monaco, Consolas, “Lucida Console”, monospace;
   font-size: get(font-size) - 2;
-  color: getColor(g30);
+  color: getColor(g70);
   @include border-radius(3px);
 }
 
@@ -23,8 +23,8 @@ pre {
 code {
   padding: 2px 4px;
   color: darkblue;
-  background-color: getColor(g95);
-  border: 1px solid getColor(g85);
+  background-color: getColor(g5);
+  border: 1px solid getColor(g15);
   white-space: nowrap;
 }
 
@@ -51,8 +51,8 @@ pre {
   word-wrap: break-word;
   white-space: pre;
   white-space: pre-wrap;
-  background-color: getColor(g95);
-  border: 1px solid getColor(g85);
+  background-color: getColor(g5);
+  border: 1px solid getColor(g15);
   @include border-radius(get(border-radius));
 
   // Enable scrollable blocks of code
