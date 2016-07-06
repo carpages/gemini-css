@@ -39,8 +39,10 @@ $gemini-colors: extend((
  * @description Easy reference to the color scale. The scale goes from 0 - 100
  * by intervals of 5, where 0 is white, and 100 is black.
  *
- * @markup
-    .foo { color: get(g20, $color); }
+ * @example
+    .foo {
+      color: get(g20, $color);
+    }
  */
 @for $i from 0 through 100 / 5 {
   $grey-percent: $i * 5;

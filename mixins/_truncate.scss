@@ -11,7 +11,7 @@
  * @param {string} [$important=''] Option to append values with !important
  *
  * @example
-    .foo{
+    .foo {
       @include truncate(!important);
     }
  */

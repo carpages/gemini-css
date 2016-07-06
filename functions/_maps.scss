@@ -16,7 +16,7 @@
  * @return {undefined} Returns the assoicated variable
  *
  * @example
-    .foo{
+    .foo {
       color: get(brand-color);
       background-color: get(first.second.color, $some-map);
     }

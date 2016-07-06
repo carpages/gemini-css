@@ -30,15 +30,15 @@
    *
    * @markup
       <div class="fit" style="width:300px;">
-       <img src="http://www.placecage.com/300/150/" alt="">
+       <img src="http://www.placetim.com/300/150/" alt="">
       </div>
 
       <div class="fit fit--stretch" style="height:500px;">
        <img src="http://www.placehold.it/900/900/" alt="">
       </div>
    *
-   * @markup Use your own ratios
-      .fit--5-2{
+   * @example
+      .fit--5-2 {
         @include fitRatio(5,2);
         width:80%;
         margin: auto;

@@ -9,7 +9,7 @@
  * @description Optimizes text for legibility
  *
  * @example
-    .foo{
+    .foo {
       @include text-legibility;
     }
  */
@@ -22,7 +22,7 @@
  * @description Optimizes text for speed
  *
  * @example
-    .foo{
+    .foo {
       @include text-speed;
     }
  */
@@ -35,7 +35,7 @@
  * @description Optimizes text to be smooth on webkit and mozilla OSX
  *
  * @example
-    .foo{
+    .foo {
       @include text-smooth;
     }
  */
