@@ -4,13 +4,45 @@
  ********************************
  */
 
+/**
+ * @settings $gemini-code
+ * @description Set the default look of code and pre blocks
+ *
+ * @prop {color} [font-size=14px] Font size
+ * @prop {color} [font-family=Monaco] Font family
+ * @prop {color} [color=#333] Font color
+ * @prop {color} [background-color=#EEE] Background color
+ * @prop {color} [border-width=0] Border width
+ * @prop {color} [border-color=#DDD] Border color
+ * @prop {color} [border-radius=get(border-radius)] Border radius
+ * @prop {color} [pre-line-height=1.5] Line height for pre
+ */
+$gemini-code: () !default;
+
+$gemini-code: extend((
+  font-size:        14px,
+  font-family:      unquote("Monaco, Consolas, 'Lucida Console', monospace"),
+  color:            #333,
+  background-color: #EEE,
+  border-width:     0,
+  border-color:     #DDD,
+  border-radius:    get(border-radius),
+  pre-line-height:  1.5,
+  pre-padding:      1em
+), $gemini-code);
+
 code,
 pre {
-  padding: 0 3px 2px;
-  font-family: Monaco, Consolas, “Lucida Console”, monospace;
-  font-size: get(font-size) - 2;
-  color: getColor(g70);
-  @include border-radius(3px);
+  font-family: get(font-family, $gemini-code);
+  font-size: get(font-size, $gemini-code);
+  color: get(color, $gemini-code);
+  background-color: get(background-color, $gemini-code);
+  @if get(border-width, $gemini-code) > 0 {
+    border: get(border-width, $gemini-code) solid get(border-width, $gemini-color);
+  }
+  @if get(border-radius, $gemini-code) > 0 {
+  border-radius: get(border-radius, $gemini-code);
+  }
 }
 
 /**
@@ -21,10 +53,6 @@ pre {
     <code>console.log('Hello World!');</code>
  */
 code {
-  padding: 2px 4px;
-  color: darkblue;
-  background-color: getColor(g5);
-  border: 1px solid getColor(g15);
   white-space: nowrap;
 }
 
@@ -37,27 +65,22 @@ code {
  *
  * @markup
     <pre><code>
-      var foo = "Hello";<br/>
-      var bar = " World!";<br/>
+      var foo = "Hello";
+      var bar = " World!";
       console.log(foo + bar);
     </code></pre>
  */
 pre {
   display: block;
-  padding: (get(spacing) / 4 - 1) / 2;
-  font-size: get(font-size) - 1; // 14px to 13px
-  line-height: get(line-height);
+  padding: get(spacing);
+  line-height: get(pre-line-height, $gemini-code);
   word-break: break-all;
   word-wrap: break-word;
-  white-space: pre;
   white-space: pre-wrap;
-  background-color: getColor(g5);
-  border: 1px solid getColor(g15);
-  @include border-radius(get(border-radius));
 
   // Enable scrollable blocks of code
-  &.pre__scrollable {
-    max-height: 340px;
+  &.pre--scrollable {
+    max-height: 200px;
     overflow-y: scroll;
   }
 
@@ -65,7 +88,6 @@ pre {
   code {
     padding: 0;
     color: inherit;
-    white-space: pre;
     white-space: pre-wrap;
     background-color: transparent;
     border: 0;
