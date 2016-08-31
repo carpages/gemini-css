@@ -1,0 +1,40 @@
+/**
+ ********************************
+ * _BORDER.SCSS
+ ********************************
+ */
+
+/**
+ * @mixin border
+ * @description Add custom border
+ *
+ * @param {color} [$color] The color of the border. Defaults to color set as border-color in $gemini-base.
+ * @param {measurement} [$width] The desired width of the border. Defaults to 1px.
+ * @param {string} [$position] The desired position of the border. Defaults to border on all sides.
+ *
+ * @example
+    .foo {
+      @include border(#D6D6D6, 1px, "bottom");
+    }
+ */
+
+@mixin border($color: get(border-color), $width: 1px, $position: "all") {
+  @if $position == "all" {
+    border: $width solid $color;
+  }
+  @else if $position == "bottom" {
+    border-bottom: $width solid $color;
+  }
+  @else if $position == "top" {
+    border-top: $width solid $color;
+  }
+  @else if $position == "right" {
+    border-right: $width solid $color;
+  }
+  @else if $position == "left" {
+    border-left: $width solid $color;
+  }
+  @else {
+    border: $width solid $color;
+  }
+}

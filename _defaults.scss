@@ -22,6 +22,7 @@
  * @prop {color} [link-color=#4374AE] Default link colors
  * @prop {color} [color=#333] Default text color
  * @prop {color} [background-color=#FFF] Website background color
+ * @prop {color} [border-color=#D6D6D6] Website border color
  * @prop {measurement} [font-size=14px] Default font-size
  * @prop {measurement} [line-height=24px] Default line-height
  * @prop {measurement} [spacing=24px] Default spacing used throughout the site
@@ -43,6 +44,7 @@ $gemini-base-defaults: (
   link-color:          #4374AE,
   color:               #333,
   background-color:    #FFF,
+  border-color:        #D6D6D6,
 
   /**
    * Font Sizing
