@@ -16,12 +16,10 @@
     /**
    * Remove whitespace caused by 'inline-block'.
    */
-    letter-spacing: -0.31em;
     word-spacing: -0.43em;
   }
   .pagination > li {
     padding: get(spacing) / 2;
-    letter-spacing: normal;
     word-spacing: normal;
   }
   .pagination > li > a {
