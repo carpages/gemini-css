@@ -7,6 +7,13 @@
     "email": "matt@mattrose.ca",
     "url": "http://mattrose.ca"
   },
+  "contributors": [
+    {
+      "name": "Jeff Andrews",
+      "email": "jeffandrews@me.com",
+      "url": "http://jeffwandrews.com"
+    }
+  ],
   "main": "init.scss",
   "repository": {
     "type": "git",
