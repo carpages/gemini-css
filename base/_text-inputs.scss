@@ -25,7 +25,7 @@ $gemini-text-inputs: extend((
   padding-ends: get(padding-ends, $gemini-buttons),
   padding-sides: get(padding-sides, $gemini-buttons),
   border-width: 1px,
-  border-color: #AAA,
+  border-color: get(border-color),
   border-radius: get(border-radius)
 ), $gemini-text-inputs);
 

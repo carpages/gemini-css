@@ -13,7 +13,7 @@
  * @prop {measurement} [padding-ends=0.5em] The padding on the top and bottom
  * @prop {measurement} [padding-sides=1em] The padding on the left and right
  * @prop {measurement} [border-width=0] The width of the border
- * @prop {color} [borde-color=#333] The color of the border
+ * @prop {color} [border-color=get(border-color)] The color of the border
  * @prop {measurement} [border-radius=0] The border of the radius
  */
 $gemini-tags: () !default;
@@ -24,7 +24,7 @@ $gemini-tags: extend((
   padding-ends: 0.25em,
   padding-sides: 0.5em,
   border-width: 0,
-  border-color: #333,
+  border-color: get(border-color),
   border-radius: 0
 ), $gemini-tags);
 

@@ -24,7 +24,7 @@ code {
   padding: 2px 4px;
   color: darkblue;
   background-color: getColor(g5);
-  border: 1px solid getColor(g15);
+  @include border();
   white-space: nowrap;
 }
 
@@ -52,7 +52,7 @@ pre {
   white-space: pre;
   white-space: pre-wrap;
   background-color: getColor(g5);
-  border: 1px solid getColor(g15);
+  @include border();
   @include border-radius(get(border-radius));
 
   // Enable scrollable blocks of code

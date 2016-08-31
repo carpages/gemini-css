@@ -185,7 +185,7 @@ td {
 .table--bordered {
   th,
   td {
-    border: 1px solid lighten(get(color), 50%);
+    @include border();
 
     &:empty {
       border: none;

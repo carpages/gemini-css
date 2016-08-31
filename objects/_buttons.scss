@@ -13,7 +13,7 @@
  * @prop {measurement} [padding-ends=0.5em] The padding on the top and bottom
  * @prop {measurement} [padding-sides=1em] The padding on the ends
  * @prop {measurement} [border-width=1px] The border width
- * @prop {color} [border-color=#333] The border color
+ * @prop {color} [border-color=get(border-color)] The border color
  * @prop {measurement} [border-radius=get(border-radius)] The border radius
  */
 $gemini-buttons: () !default;
@@ -24,7 +24,7 @@ $gemini-buttons: extend((
   padding-ends: 0.5em,
   padding-sides: 1em,
   border-width: 1px,
-  border-color: #333,
+  border-color: get(border-color),
   border-radius: get(border-radius)
 ), $gemini-buttons);
 
@@ -133,7 +133,7 @@ $gemini-buttons: extend((
 
       }
       &:not(:last-child) {
-        border-right: get(border-width, $gemini-buttons) solid lighten(get(border-color, $gemini-buttons), 50%);
+        border-right: get(border-width, $gemini-buttons) solid get(border-color, $gemini-buttons);
 
         @if get(border-radius, $gemini-buttons) > 0 {
           @include border-right-radius(0);

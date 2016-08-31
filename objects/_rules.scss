@@ -41,21 +41,25 @@
     border: none;
   }
 
+  /**
+   * Default horizontal rules and rules classes
+   */
+  hr,
   .rule {
     @extend %rule;
-    border-bottom: 1px solid lighten(get(color), 50%);
+    @include border($position: "bottom");
   }
   .rule-left {
     @extend %rule;
-    border-left: 1px solid lighten(get(color), 50%);
+    @include border($position: "left");
   }
   .rule-right {
     @extend %rule;
-    border-right: 1px solid lighten(get(color), 50%);
+    @include border($position: "right");
   }
   .rule-top {
     @extend %rule;
-    border-top: 1px solid lighten(get(color), 50%);
+    @include border($position: "top");
   }
 
   .rule--brand {
