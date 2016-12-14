@@ -44,7 +44,9 @@ $gemini-colors: extend((
       color: get(g20, $color);
     }
  */
-@for $i from 0 through 100 / 5 {
+// Need to wrap division in paren since libsass v3.4.0
+// https://github.com/sass/libsass/issues/2149
+@for $i from 0 through (100 / 5) {
   $grey-percent: $i * 5;
 
   $trash: addColor(g + $grey-percent, darken(#FFF, $grey-percent));
