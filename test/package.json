@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "autoprefixer": "^6.5.4",
+    "compass-importer": "^0.4.1",
+    "cssnano": "^3.9.1",
+    "gulp": "^3.9.1",
+    "gulp-parker": "^0.1.4",
+    "gulp-postcss": "^6.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.0.0",
+    "postcss-scss": "^0.4.0"
+  }
+}
