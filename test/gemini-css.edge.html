@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Gemini CSS Test</title>
+    <link rel="stylesheet" href="dist/test.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="l-row">
+      <div class="l-column">
+        <hgroup class="hgroup align-center">
+          <h1 class="hN">Welcome to Gemini</h1>
+          <h4 class="hN epsilon weight-light c-g40">This is an HTML test page that loads vanilla Gemini CSS with all available objects.</h4>
+        </hgroup>
+      </div>
+    </div>
+
+    <hr>
+
+    <div role="main" class="l-row">
+      <div class="l-column">
+
+        <div class="box pad">
+
+          <!-- Cards and Media -->
+          <div class="hgroup--inline">
+            <h3 class="hN hN--highlight">Highlighted Headings</h3>
+            <h6 class="hN pad-left">
+              <a class="c-gray" href="#">Sub Link</a>
+            </h6>
+          </div>
+
+          <div class="l-row">
+            <div class="l-column l-column--medium-6">
+
+              <div class="card">
+                <a href="#" class="clip card__img">
+                  <img alt="Unsplash Placeholder Image" src="http://unsplash.it/600/300/"/>
+                  <i class="clip__arrow"></i>
+                </a>
+                <a href="#">
+                  <h3 class="card__title">Card w/ Clipped Image</h3>
+                </a>
+              </div>
+            </div>
+
+            <div class="l-column l-column--medium-6">
+              <div class="media">
+                <a href="#">
+                  <img alt="Unsplash Placeholder Image" class="media__img" src="http://unsplash.it/200/150/"/>
+                </a>
+                <div class="media__content">
+                  <a href="#">
+                    <h4 class="pad-none">Media Block</h4>
+                  </a>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, tenetur nihil cupiditate laborum totam quia nulla molestiae blanditiis, beatae numquam harum debitis at rem eligendi a et repellendus magnam illo!</p>
+                </div>
+              </div>
+              <div class="media">
+                <a href="#">
+                  <img alt="Unsplash Placeholder Image" class="media__img" src="http://unsplash.it/200/150/"/>
+                </a>
+                <div class="media__content">
+                  <a href="#">
+                    <h4 class="pad-none">Media Block</h4>
+                  </a>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, tenetur nihil cupiditate laborum totam quia nulla molestiae blanditiis, beatae numquam harum debitis at rem eligendi a et repellendus magnam illo!</p>
+                </div>
+              </div>
+              <div class="media">
+                <a href="#">
+                  <img alt="Unsplash Placeholder Image" class="media__img" src="http://unsplash.it/200/150/"/>
+                </a>
+                <div class="media__content">
+                  <a href="#">
+                    <h4 class="pad-none">Media Block</h4>
+                  </a>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, tenetur nihil cupiditate laborum totam quia nulla molestiae blanditiis, beatae numquam harum debitis at rem eligendi a et repellendus magnam illo!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Block Lists -->
+          <h3>Block Lists</h3>
+          <div class="l-row">
+            <div class="l-column--medium-6">
+              <p>Extend from objects/_block-list.scss</p>
+              <ul class="block-list">
+                <li>Foo</li>
+                <li>Bar</li>
+                <li>Baz</li>
+                <li>
+                  <a href="#" class="block-list__link">Foo Bar Baz</a>
+                </li>
+              </ul>
+            </div>
+            <div class="l-column--medium-6">
+              <p>.block-list--sides extension has right/left padding:</p>
+              <ul class="block-list block-list--sides">
+                <li>Foo</li>
+                <li>Bar</li>
+                <li>Baz</li>
+                <li>
+                  <a href="#" class="block-list__link">Foo Bar Baz</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+
+          <h3>Buttons</h3>
+
+          <p>Button padding sizes:</p>
+          <a class="button">Button</a>
+          <a class="button button--small">Small Button</a>
+          <a class="button button--large">Large Button</a>
+          <a class="button button--huge">Huge Button</a>
+
+          <p>Button font sizes</p>
+          <a class="button alpha">Alpha</a>
+          <a class="button beta">Beta</a>
+          <a class="button gamma">Gamma</a>
+
+          <p>This inline
+            <a class="button button--natural">button</a>
+            will fit in nicely with its context.</p>
+
+          <p>Button element:</p>
+          <button>Button element</button>
+          <button class="button">Button element with the class</button>
+
+          <p>Button colours:</p>
+          <a class="button button--brand">Brand</a>
+          <a class="button button--red">Red</a>
+          <a class="button button--green">Green</a>
+          <a class="button button--blue">Blue</a>
+          <a class="button button--yellow">Yellow</a>
+          <a class="button button--black">Black</a>
+          <a class="button button--orange">Orange</a>
+
+          <p>Button Groups:</p>
+          <div class="button-group">
+            <a class="button">Button</a>
+            <a class="button">Button</a>
+            <a class="button">Button</a>
+          </div>
+
+          <div class="button-group button-group--2">
+            <a class="button">Button</a>
+            <a class="button">Button</a>
+          </div>
+
+          <div class="button-group button-group--3">
+            <a class="button">Button</a>
+            <a class="button">Button</a>
+            <a class="button">Button</a>
+          </div>
+
+          <!-- Multi-List -->
+
+          <h3>Multi list</h3>
+          <p>Extend from objects/_multi-list.scss</p>
+
+          <ul class="multi-list">
+            <li>Lorem</li>
+            <li>Ipsum</li>
+            <li>Dolor</li>
+            <li>Sit</li>
+            <li>Lorem</li>
+            <li>Ipsum</li>
+            <li>Dolor</li>
+            <li>Sit</li>
+          </ul>
+
+          <hr>
+
+          <ul class="multi-list  multi-list--small-2">
+            <li>Lorem</li>
+            <li>Ipsum</li>
+            <li>Dolor</li>
+            <li>Sit</li>
+            <li>Lorem</li>
+            <li>Ipsum</li>
+            <li>Dolor</li>
+            <li>Sit</li>
+          </ul>
+
+          <hr>
+
+          <ul class="multi-list  multi-list--small-3">
+            <li>Lorem</li>
+            <li>Ipsum</li>
+            <li>Dolor</li>
+            <li>Sit</li>
+            <li>Lorem</li>
+            <li>Ipsum</li>
+            <li>Dolor</li>
+            <li>Sit</li>
+          </ul>
+
+          <hr>
+
+          <ul class="multi-list  multi-list--small-4">
+            <li>Lorem</li>
+            <li>Ipsum</li>
+            <li>Dolor</li>
+            <li>Sit</li>
+            <li>Lorem</li>
+            <li>Ipsum</li>
+            <li>Dolor</li>
+            <li>Sit</li>
+          </ul>
+
+          <hr>
+          <h5 class="push-none">Vertical:</h5>
+
+          <div class="yes-columnCount">
+            <ul class="multi-list  multi-list--vertical multi-list--small-2 multi-list--medium-4 multi-list--large-5">
+              <li>1Lorem</li>
+              <li>2Ipsum</li>
+              <li>3Dolor</li>
+              <li>4Sit</li>
+              <li>5Lorem</li>
+              <li>6Ipsum</li>
+              <li>7Dolor</li>
+              <li>8Sit</li>
+              <li>8Lorem</li>
+              <li>Ipsum</li>
+              <li>Dolor</li>
+              <li>Sit</li>
+              <li>Lorem</li>
+              <li>Ipsum</li>
+              <li>Dolor</li>
+              <li>Sit</li>
+            </ul>
+          </div>
+
+          <h5 class="push-none">Compare:</h5>
+
+          <ul class="multi-list multi-list--small-2 multi-list--medium-4 multi-list--large-5">
+            <li>1Lorem</li>
+            <li>23Ipsum</li>
+            <li>4D4olor</li>
+            <li>5Sit</li>
+            <li>6Lorem</li>
+            <li>7Ipsum</li>
+            <li>Dolor</li>
+            <li>Sit</li>
+          </ul>
+
+          <!-- Pagination -->
+
+          <h3>Pagination</h3>
+          <p>Extend in objects/_pagination.scss</p>
+
+          <ol class="pagination">
+            <li class="pagination__first">First</li>
+            <!--
+         -->
+            <li class="pagination__prev">Previous</li>
+            <!--
+         -->
+            <li>
+              <a href="/page/1">1</a>
+            </li>
+            <!--
+         -->
+            <li>
+              <a href="/page/2">2</a>
+            </li>
+            <!--
+         -->
+            <li class="current">
+              <a href="/page/3">3</a>
+            </li>
+            <!--
+         -->
+            <li>
+              <a href="/page/4">4</a>
+            </li>
+            <!--
+         -->
+            <li>
+              <a href="/page/5">5</a>
+            </li>
+            <!--
+         -->
+            <li class="pagination__next">
+              <a href="/page/next">Next</a>
+            </li>
+            <!--
+         -->
+            <li class="pagination__last">
+              <a href="/page/last">Last</a>
+            </li>
+          </ol>
+
+          <!-- Rules -->
+
+          <h3>Rules</h3>
+          <p>Extend from objects/_rules.scss</p>
+
+          <p class="rule">Carpages.ca</p>
+
+          <p>This one's dotted</p>
+          <hr class="rule rule--dotted">
+
+          <p>This one's dashed</p>
+          <hr class="rule rule--dashed">
+
+          <p>This one has an ornament over it</p>
+          <hr class="rule rule--ornament">
+
+          <hr class="rule rule--ornament" data-ornament="!">
+
+          <hr class="rule rule--brand">
+
+          <hr class="rule rule--large">
+
+          <!-- Split -->
+
+          <h3>Split</h3>
+          <p>Extend from objects/_split.scss</p>
+          <ol class="split">
+            <li class="first">
+              <b class="split__title">Engine</b>
+              V8</li>
+            <li class="second">
+              <b class="split__title">Seating</b>
+              4 Peeps</li>
+            <li class="third">
+              <b class="split__title">Bluetooth</b>
+              Yup</li>
+          </ol>​
+
+          <p class="pagedsp-label">With rules:</p>
+          <ol class="split">
+            <li class="rule rule--dotted first">
+              <b class="split__title">Engine</b>
+              V8</li>
+            <li class="rule rule--dotted second">
+              <b class="split__title">Seating</b>
+              4 Peeps</li>
+            <li class="rule rule--dotted third">
+              <b class="split__title">Bluetooth</b>
+              Yup</li>
+          </ol>​
+
+          <!-- Fit Images -->
+          <h3>Fit Images</h3>
+
+          <div style="width:300px">
+            <div class="fit">
+              <img src="http://www.unsplash.it/300/150/" alt="">
+            </div>
+            <div class="fit fit--circle">
+              <img src="http://www.unsplash.it/900/900/" alt="">
+            </div>
+          </div>
+
+          <!-- Alerts -->
+          <p>Alerts</p>
+          <div class="alert">
+            <p>Test</p>
+          </div>
+
+          <div class="alert alert--red">
+            Please correct the following:
+            <ul>
+              <li>Please enter your email address</li>
+              <li>Please enter your password</li>
+            </ul>
+          </div>
+
+          <div class="alert alert--green">
+            <p>One liner</p>
+          </div>
+
+          <div class="alert alert--blue">
+            <p>One liner</p>
+            <p>Twice!</p>
+          </div>
+
+          <div class="alert alert--yellow">
+            Please correct the following:
+            <ul>
+              <li>Please enter your email address</li>
+              <li>Please enter your password</li>
+            </ul>
+          </div>
+
+          <!-- Select -->
+          <h3>Select</h3>
+
+          <select name="price_end">
+            <option value="">No Maximum</option>
+            <option value="10000">$10,000</option>
+            <option value="15000">$15,000</option>
+            <option value="20000">$20,000</option>
+            <option value="25000">$25,000</option>
+            <option value="30000">$30,000</option>
+            <option value="35000">$35,000</option>
+            <option value="40000">$40,000</option>
+            <option value="45000">$45,000</option>
+            <option value="50000">$50,000</option>
+            <option value="60000">$60,000</option>
+            <option value="70000">$70,000</option>
+            <option value="80000">$80,000</option>
+            <option value="90000">$90,000</option>
+            <option value="100000">$100,000</option>
+            <option value="110000">$110,000</option>
+            <option value="120000">$120,000</option>
+            <option value="130000">$130,000</option>
+            <option value="140000">$140,000</option>
+            <option value="150000">$150,000</option>
+            <option value="160000">$160,000</option>
+            <option value="170000">$170,000</option>
+            <option value="180000">$180,000</option>
+            <option value="190000">$190,000</option>
+            <option value="200000">$200,000</option>
+          </select>
+
+          <div class="select">
+            <select name="price_end">
+              <option value="">No Maximum</option>
+              <option value="10000">$10,000</option>
+              <option value="15000">$15,000</option>
+              <option value="20000">$20,000</option>
+              <option value="25000">$25,000</option>
+              <option value="30000">$30,000</option>
+              <option value="35000">$35,000</option>
+              <option value="40000">$40,000</option>
+              <option value="45000">$45,000</option>
+              <option value="50000">$50,000</option>
+              <option value="60000">$60,000</option>
+              <option value="70000">$70,000</option>
+              <option value="80000">$80,000</option>
+              <option value="90000">$90,000</option>
+              <option value="100000">$100,000</option>
+              <option value="110000">$110,000</option>
+              <option value="120000">$120,000</option>
+              <option value="130000">$130,000</option>
+              <option value="140000">$140,000</option>
+              <option value="150000">$150,000</option>
+              <option value="160000">$160,000</option>
+              <option value="170000">$170,000</option>
+              <option value="180000">$180,000</option>
+              <option value="190000">$190,000</option>
+              <option value="200000">$200,000</option>
+            </select>
+          </div>
+
+          <!-- Card -->
+          <h3>Fancy Card</h3>
+          <div class="no-touch" style="max-width: 400px;">
+
+            <section class="card--layered card--fancy">
+              <figure class="card__img">
+                <img src="https://www.carpages.ca/photos/item/2225000/2225404.68620129.lg.jpg">
+              </figure>
+              <section class="card__content">
+                <h4 class="brand--face push-half--bottom">
+                  <a href="#">2014 Mazda Mazda3</a>
+                </h4>
+                <div class="hgroup flush">
+                  <span class="hN">posted 6 days ago</span>
+                  <p class="hN">
+                    <a href="#">2014 Mazda3 Sport and Sedan Review</a>
+                  </p>
+                </div>
+              </section>
+            </section>
+            <!-- card -->
+
+          </div>
+          <!-- no-touch -->
+
+          <!-- Color -->
+          <h3>Colors</h3>
+
+          <div class="pad c-facebook">facebook Color Text</div>
+          <div class="pad c-twitter">twitter Color Text</div>
+          <div class="pad c-google">google Color Text</div>
+          <div class="pad c-google-plus">google Color Text</div>
+          <div class="pad c-pinterest">pinterest Color Text</div>
+          <div class="pad c-red">red Color Text</div>
+          <div class="pad c-green">green Color Text</div>
+          <div class="pad c-blue">blue Color Text</div>
+          <div class="pad c-yellow">yellow Color Text</div>
+          <div class="pad c-light-gray">light gray Color Text</div>
+          <div class="pad c-gray">gray Color Text</div>
+          <div class="pad c-dark-gray">dark gray Color Text</div>
+
+          <!-- Boxes -->
+          <h3>Boxes</h3>
+
+          <div class="pad push-bottom box">Plain</div>
+          <div class="pad push-bottom box-brand">Brand</div>
+          <div class="pad push-bottom box-transparent">Transparent</div>
+          <div class="pad push-bottom box-highlight">Highlight</div>
+          <div class="pad push-bottom box-dark">Dark</div>
+          <div class="pad push-bottom box-gray">Gray</div>
+          <div class="pad push-bottom box-light-gray">Light Gray</div>
+          <div class="pad push-bottom box-dark-gray">Dark Gray</div>
+          <div class="pad push-bottom box-gray-grad">Gray Grad</div>
+
+          <!-- Tags -->
+          <h3>3rd Party Branding</h3>
+
+          <p>The home of
+            <span class="inline-img--ucda">&nbsp;</span>
+            member vehicles.
+            <a href="/ucda/" class="more">Learn More</a>
+          </p>
+
+          <strong class="tag tag--ucda">
+            Member</strong>
+
+          <!-- Typography -->
+          <h3>Typography</h3>
+
+          <p class="lead">Lead or Lede paragrah class in base/_paragraph.scss. Curabitur tincidunt iaculis lectus non eleifend. Nulla blandit sodales auctor. Praesent porttitor quam non dolor vestibulum auctor. Nam dapibus odio sit amet dolor faucibus ut aliquam dui euismod. Ut vel laoreet mauris. Aliquam erat volutpat.</p>
+
+          <p>This is body copy lorem
+            <a href="#?test-link">ipsum dolor</a>
+            sit amet, consectetur adipiscing elit. Suspendisse auctor pellentesque semper. Donec elit nibh, pulvinar ut rhoncus dapibus, vestibulum id ipsum. In ac adipiscing mi. Donec fringilla mi ut erat ullamcorper mattis. Class aptent taciti sociosqu ad litora dfdf</p>
+
+          <h2>H2 Heading</h2>
+
+          <p>Test inline icon needs extra class:
+            <a href="#?test-image"><img alt="" src="http://unsplash.it/16/16" class="display--inline"></a>
+            sem in elit dignissim vestibulum. Nam pellentesque, justo ac tincidunt imperdiet, odio lorem gravida est, nec ultricies elit justo nec lectus. Morbi varius mi ut lectus ornare. In nec eleifend orci. Nullam turpis elit, suscipit pulvinar sagittis et, auctor ultricies nunc. Aliquam erat volutpat. Aenean tempor, tellus in cursus adipiscing, ligula lacus convallis augue, pulvinar porta mi felis sed erat.</p>
+
+          <blockquote>
+            <p>This is a regular full-span quote with internal paragraph. It’s a lot like the floating kind, except it breaks up differently. I think I have to manually add classes to others – too hard for clients? Not sure how to interface that.</p>
+          </blockquote>
+
+          <p>Curabitur tincidunt iaculis lectus non eleifend. Nulla blandit sodales auctor. Praesent porttitor quam non dolor vestibulum auctor. Nam dapibus odio sit amet dolor faucibus ut aliquam dui euismod. Ut vel laoreet mauris. Aliquam erat volutpat.</p>
+
+          <blockquote>This is a regular full-span quote with no internal paragraph. It’s a lot like the floating kind, except it breaks up differently. I think I have to manually add classes to others – too hard for clients? Not sure how to interface that.</blockquote>
+
+          <p>Proin dapibus, dui sed scelerisque ullamcorper, massa diam bibendum enim, ut dictum risus nulla non est. Quisque tempor iaculis mauris eu porttitor. Proin sagittis magna et eros vehicula eu vestibulum tortor consequat. Cras a bibendum orci. Mauris tristique tristique velit.</p>
+
+          <p>Curabitur tincidunt iaculis lectus non eleifend. Nulla blandit sodales auctor. Praesent porttitor quam non dolor vestibulum auctor. Nam dapibus odio sit amet dolor faucibus ut aliquam dui euismod. Ut vel laoreet mauris. Aliquam erat volutpat.</p>
+
+          <p>Mauris pulvinar massa ut eros rutrum sed pulvinar urna feugiat. Quisque lacinia commodo nibh, in viverra ipsum suscipit non. Aenean tempor, tellus in cursus adipiscing, ligula lacus convallis augue, pulvinar porta mi felis sed erat.</p>
+
+          <ul>
+            <li>An unordered list</li>
+            <li>An unordered list</li>
+            <li>An unordered list</li>
+            <li>An unordered list with one item that is much longer than the other so as to wrap onto at least two lines for styling purposes. Yup, one item that is much longer than the other so as to wrap onto at least two lines for styling purposes</li>
+            <li>An unordered list</li>
+            <li>An unordered list nesting
+              <ul>
+                <li>An unordered list</li>
+                <li>An unordered list</li>
+                <li>An unordered list</li>
+              </ul>
+            </li>
+            <li>An unordered list</li>
+          </ul>
+
+          <p>More text. <code>A bit wrapped in code</code>.</p>
+
+          <ol>
+            <li>An unordered list</li>
+            <li>An unordered list</li>
+            <li>An unordered list</li>
+            <li>An unordered list with one item that is much longer than the other so as to wrap onto at least two lines for styling purposes. Yup, one item that is much longer than the other so as to wrap onto at least two lines for styling purposes</li>
+            <li>An unordered list</li>
+            <li>An unordered list nesting
+              <ol>
+                <li>An unordered list</li>
+                <li>An unordered list</li>
+                <li>An unordered list</li>
+              </ol>
+            </li>
+            <li>An unordered list</li>
+          </ol>
+
+          <p>No list style (explicitly on child list too)</p>
+          <ol class="list--no-style">
+            <li>An unordered list</li>
+            <li>An unordered list</li>
+            <li>An unordered list</li>
+            <li>An unordered list with one item that is much longer than the other so as to wrap onto at least two lines for styling purposes. Yup, one item that is much longer than the other so as to wrap onto at least two lines for styling purposes</li>
+            <li>An unordered list</li>
+            <li>An unordered list nesting
+              <ol class="list--no-style">
+                <li>An unordered list</li>
+                <li>An unordered list</li>
+                <li>An unordered list</li>
+              </ol>
+            </li>
+            <li>An unordered list</li>
+          </ol>
+
+          <p>A definition list:</p>
+
+          <dl>
+            <dt>This is a term</dt>
+            <dd>This is a description</dd>
+            <dt>This is a term</dt>
+            <dd>This is a description</dd>
+            <dt>This is a term</dt>
+            <dd>This is a description</dd>
+          </dl>
+
+          <h1>Level One Heading</h1>
+          <h2>Level Two Heading</h2>
+          <h3>Level Three Heading</h3>
+          <h4>Level Four Heading</h4>
+          <h5>Level Five Heading</h5>
+          <h6>Level Six Heading</h6>
+
+          <p class="pagedsp-label">Extra headings in base/_headings.scss</p>
+          <p class="alpha">Unsemantic level heading</p>
+          <p class="beta">Unsemantic level heading</p>
+          <p class="gamma">Unsemantic level heading</p>
+          <p class="delta">Unsemantic level heading</p>
+          <p class="epsilon">Unsemantic level heading</p>
+          <p class="zeta">Unsemantic level heading</p>
+
+          <h2 class="giga">Giga Heading</h2>
+          <h2 class="mega">Mega Heading</h2>
+          <h2 class="kilo">Kilo Heading</h2>
+
+          <p>This is a standard paragraph created using the WordPress TinyMCE text editor. It has a
+            <strong>strong tag</strong>, an
+            <em>em tag</em>
+            and a
+            <del>strikethrough</del>
+            which is actually just the del element. There are a few more inline elements which are not in the WordPress admin but we should check for incase your users get busy with the copy and paste. These include
+            <cite>citations</cite>,
+            <abbr title="abbreviation">abbr</abbr>, bits of
+            <code>code</code>
+            and
+            <var>variables</var>,
+            <q>inline quotations</q>,
+            <ins datetime="2011-12-08T20:19:53+00:00">inserted text</ins>, text that is
+            <s>no longer accurate</s>
+            or something so important you might want to mark it. We can also style subscript and superscript characters like C0<sub>2</sub>, here is our 2<sup>nd</sup>
+            example. If they are feeling non-semantic they might even use
+            <strong>bold</strong>,
+            <em>italic</em>, the
+            <b>visually bold</b>,
+            <i>visually italic</i>,
+            <small>small</small>
+            elements too. Here comes a non-breaking-space character.&nbsp;Incidentally, these HTML4.01 tags have been given new life and semantic meaning in HTML5, you may be interested in reading this
+            <a title="HTML5 Semantics" href="http://csswizardry.com/2011/01/html5-and-text-level-semantics">article by Harry Roberts</a>
+            which gives a nice excuse to test a link.&nbsp;&nbsp;It is also worth noting in the “kitchen sink” view you can also add
+            <span style="text-decoration: underline;">underline</span>&nbsp;styling and set
+            <span style="color: #ff0000;">text color</span>
+            with pesky inline CSS.</p>
+
+          <p style="text-align: left;">Additionally, WordPress also sets text alignment with inline styles, like this left aligned paragraph.&nbsp;Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus sit amet fermentum.</p>
+
+          <p style="text-align: right;">This is a right aligned paragraph.&nbsp;Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus sit amet fermentum.</p>
+
+          <p style="text-align: justify;">This is a justified paragraph.&nbsp;Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus sit amet fermentum.</p>
+
+          <p>And last, and by no means least, users can also apply the <code>Address</code> tag to text like this:</p>
+
+          <address>
+            123 Example Street,<br>
+            Testville,<br>
+            West Madeupsburg,<br>
+            CSSland,<br>
+            1234
+          </address>
+
+          <pre>pre {
+  white-space: pre-wrap;       /* css-3 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}</pre>
+
+          <pre class="pre--scrollable"><code>&amp;.pre__scrollable {
+  max-height: 340px;
+  overflow-y: scroll;
+}
+
+var foo = "Hello";
+
+var bar = "World!";
+
+function concatStr() {
+  if (!arguments) throw new Error('No values supplied to concat.');
+  var returnString = '';
+
+  for (i = 0; i <= arguments.length; ++i) {
+    if (i == arguments.length - 1) {
+      return returnString += arguments[i];
+    }
+
+    returnString += arguments[i] + ' ';
+  }
+
+  return returnString;
+}
+
+console.log( concatStr(foo, bar) ); // "Hello World!"</code></pre>
+
+          <!-- Tables -->
+          <h3>Tables</h3>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Table Head Column One</th>
+                <th>Table Head Column Two</th>
+                <th>Table Head Column Three</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <td>Table Footer Column One</td>
+                <td>Table Footer Column Two</td>
+                <td>Table Footer Column Three</td>
+              </tr>
+            </tfoot>
+            <tbody>
+              <tr>
+                <td>Table Row Column One</td>
+                <td>Short Text</td>
+                <td>Testing a table cell with a longer amount of text to see what happens, you’re not using tables for site layouts are you? Testing a table cell with a longer amount of text to see what happens, you’re not using tables for site layouts are you?</td>
+              </tr>
+              <tr>
+                <td>Table Row Column One</td>
+                <td>Table Row Column Two</td>
+                <td>Table Row Column Three</td>
+              </tr>
+              <tr>
+                <td>Table Row Column One</td>
+                <td>Table Row Column Two</td>
+                <td>Table Row Column Three</td>
+              </tr>
+              <tr>
+                <td>Table Row Column One</td>
+                <td>Table Row Column Two</td>
+                <td>Table Row Column Three</td>
+              </tr>
+              <tr>
+                <td>Table Row Column One</td>
+                <td>Table Row Column Two</td>
+                <td>Table Row Column Three</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>With extention classes for border, stripe, data</p>
+          <table class="table--bordered  table--striped  table--data">
+            <colgroup>
+              <col class=t10>
+              <col class=t10>
+              <col class=t10>
+              <col>
+            </colgroup>
+            <thead>
+              <tr>
+                <th colspan=3>Foo</th>
+                <th>Bar</th>
+              </tr>
+              <tr>
+                <th>Lorem</th>
+                <th>Ipsum</th>
+                <th class=numerical>Dolor</th>
+                <th>Sit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th rowspan=3>Sit</th>
+                <td>Dolor</td>
+                <td class=numerical>03.788</td>
+                <td>Lorem</td>
+              </tr>
+              <tr>
+                <td>Dolor</td>
+                <td class=numerical>32.210</td>
+                <td>Lorem</td>
+              </tr>
+              <tr>
+                <td>Dolor</td>
+                <td class=numerical>47.797</td>
+                <td>Lorem</td>
+              </tr>
+              <tr>
+                <th rowspan=2>Sit</th>
+                <td>Dolor</td>
+                <td class=numerical>09.640</td>
+                <td>Lorem</td>
+              </tr>
+              <tr>
+                <td>Dolor</td>
+                <td class=numerical>12.117</td>
+                <td>Lorem</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+      <!-- column -->
+    </div>
+    <!-- row -->
+  </body>
+</html>
