@@ -22,44 +22,64 @@ $gemini-spacing: extend((
       "pad":     "padding",
     ),
     reverse: (
-      "":         1,
-      "rev":     -1,
+      "":           1,
+      "rev":       -1,
     ),
     size: (
-      "none":    0,
-      "half":    0.5,
-      "":        1,
-      "double":  2,
+      "none":      0,
+      "half":      0.5,
+      "":          1,
+      "double":    2,
     ),
     direction: (
-      "":        (""),
-      "top":     (top),
-      "right":   (right),
-      "bottom":  (bottom),
-      "left":    (left),
-      "sides":   (left right),
-      "ends":    (top bottom),
+      "":          (""),
+      "top":       (top),
+      "right":     (right),
+      "bottom":    (bottom),
+      "left":      (left),
+      "sides":     (left right),
+      "ends":      (top bottom),
     ),
   ),
   medium: false,
   large: false,
   xlarge: false,
+  separators: (
+    default: "-",
+    screen: "-",
+    direction: "-"
+  )
 ), $gemini-spacing);
 
 /**
  * Not documented since this shouldn't be used outside of this conext
  */
+
+// Get separators into variables for better readability
+$default-separator:   get("separators.default", $gemini-spacing);
+$screen-separator:    get("separators.screen", $gemini-spacing);
+$direction-separator: get("separators.direction", $gemini-spacing);
+
 @mixin spacing-helpers($screen-title: "") {
+
+  $screen-output: "";
+  @if ($screen-title != "") {
+    $screen-output: $screen-separator + $screen-title;
+  }
 
   @each $type-title, $type in get("naming.type", $gemini-spacing) {
     @each $reverse-title, $reverse in get("naming.reverse", $gemini-spacing) {
       @each $size-title, $size in get("naming.size", $gemini-spacing) {
         @each $direction-title, $direction-list in get("naming.direction", $gemini-spacing) {
 
-          @if ($type != "padding" or $reverse != -1) and
-              ($size != 0 or $reverse != -1) {
+          $direction-output: "";
+          @if ($direction-title != "") {
+            $direction-output: $direction-separator + $direction-title;
+          }
 
-            .#{implode($type-title $reverse-title $size-title $screen-title $direction-title, "-")} {
+          @if ($type != "padding" or $reverse != -1) and ($size != 0 or $reverse != -1) {
+
+            .#{implode(implode(implode($type-title $reverse-title $size-title, $default-separator) $screen-title, $screen-separator) $direction-title, $direction-separator)} {
               @each $direction in $direction-list {
                 #{implode($type $direction, "-")}: get(spacing) * $size * $reverse !important;
               }
