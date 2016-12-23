@@ -41,9 +41,11 @@ $gemini-spacing: extend((
       "ends":      (top bottom),
     ),
   ),
-  medium: false,
-  large: false,
-  xlarge: false,
+  screens: (
+    "medium":      false,
+    "large":       false,
+    "xlarge":      false,
+  ),
   separators: (
     default: "-",
     screen: "-",
@@ -121,26 +123,10 @@ $direction-separator: get("separators.direction", $gemini-spacing);
  */
 @include spacing-helpers();
 
-@if get(medium, $gemini-spacing) {
-
-  @include media(medium){
-    @include spacing-helpers(medium);
+@each $screen-size, $enabled in get(screens, $gemini-spacing) {
+  @if $enabled {
+    @include media($screen-size) {
+      @include spacing-helpers($screen-size);
+    }
   }
-
-}
-
-@if get(large, $gemini-spacing) {
-
-  @include media(large){
-    @include spacing-helpers(large);
-  }
-
-}
-
-@if get(xlarge, $gemini-spacing) {
-
-  @include media(xlarge){
-    @include spacing-helpers(xlarge);
-  }
-
 }
