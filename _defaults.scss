@@ -60,8 +60,8 @@ $gemini-base-defaults: (
   /**
    * Type
    */
-  brand-font-family:   unquote("'Helvetica', Arial, sans-serif"),
-  font-family:         unquote("'Helvetica', Arial, sans-serif"),
+  brand-font-family:   unquote("-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif"),
+  font-family:         unquote("-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif"),
 
   /**
    * Directories
