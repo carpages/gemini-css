@@ -22,7 +22,7 @@
 /**
  * Gotta' get our Compass
  */
- @import "compass/css3";
+@import "compass/css3";
 
 /**
  * Variables
@@ -111,6 +111,7 @@
 @import "helpers/align";
 @import "helpers/brand";
 @import "helpers/casing";
+@import "helpers/clearfix";
 @import "helpers/cursors";
 @import "helpers/display";
 @import "helpers/floats";
@@ -122,6 +123,7 @@
 @import "helpers/radius";
 @import "helpers/scroll";
 @import "helpers/spacing";
+@import "helpers/text-rendering";
 @import "helpers/truncate";
 @import "helpers/user-select";
 @import "helpers/weight";
