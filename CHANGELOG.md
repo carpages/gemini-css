@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.2.2
+
+  - Fix missing imports for helpers
+
 ## v1.2.1
 
   - Add wrapping paren so libsass interprets '/' as division when compiling sass
