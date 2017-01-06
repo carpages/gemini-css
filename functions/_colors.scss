@@ -20,7 +20,7 @@
  * @return {percent} Returns a number between 0% and 100%, where 100% is fully bright
  * (white) and 0% is fully dark (black).
  */
-@function brightness($color) {
+@function get-brightness($color) {
   @return ((red($color) * 0.299) + (green($color) * 0.587) + (blue($color) * 0.114)) / 255 * 100%;
 }
 
@@ -48,9 +48,9 @@
     @return null;
   }
   @else {
-    $color-brightness: brightness($color);
-    $dark-text-brightness: brightness($dark);
-    $light-text-brightness: brightness($light);
+    $color-brightness: get-brightness($color);
+    $dark-text-brightness: get-brightness($dark);
+    $light-text-brightness: get-brightness($light);
 
     @return if(abs($color-brightness - $light-text-brightness) > abs($color-brightness - $dark-text-brightness), $light, $dark);
   }
