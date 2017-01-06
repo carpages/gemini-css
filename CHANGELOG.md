@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.3.0
+
+  - Rename brightness Sass function due to naming collision with filter brightness
+
 ## v1.2.2
 
   - Fix missing imports for helpers
