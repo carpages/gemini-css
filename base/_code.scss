@@ -25,7 +25,7 @@ $gemini-code: extend((
   color:            #333,
   background-color: #EEE,
   border-width:     0,
-  border-color:     #DDD,
+  border-color:     get(border-color),
   border-radius:    get(border-radius),
   pre-line-height:  1.5,
   pre-padding:      1em
@@ -37,11 +37,13 @@ pre {
   font-size: get(font-size, $gemini-code);
   color: get(color, $gemini-code);
   background-color: get(background-color, $gemini-code);
+
   @if get(border-width, $gemini-code) > 0 {
-    border: get(border-width, $gemini-code) solid get(border-width, $gemini-color);
+    @include border(get(border-color, $gemini-code), get(border-width, $gemini-code));
   }
+
   @if get(border-radius, $gemini-code) > 0 {
-  border-radius: get(border-radius, $gemini-code);
+    border-radius: get(border-radius, $gemini-code);
   }
 }
 
