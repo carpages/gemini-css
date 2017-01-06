@@ -1,10 +1,31 @@
 # CHANGELOG
 
-## v2.0.0-prerelease
+## v2.0.0-alpha3
 
-  TODO:
-  [ ] Button mixin for color variants
-  [ ] Improve focus styling
+  - Fix typos in `<pre>` and `<code>` styling
+  - Merge branch '2.0' into v2-dev
+    - Use base spacing for blockquotes
+    - Removed lighter and darker helper functions
+    - Updated tables - Removed table--data - Improved responsive extension
+    - Updated grid as optional - Added table settings
+    - Added settings to customize code styling
+
+## v2.0.0-alpha2
+
+  - Fix missing imports for helpers
+
+## v2.0.0-alpha1
+
+  - Add wrapping paren so libsass interprets ‘/‘ as division
+    - (https://github.com/sass/libsass/issues/2149)[Issue Link]
+  - Compile test css with postcss
+  - Add initial test html file to test different components
+  - Switch to system fonts default font stack
+  - Add option to change separator within generated class name for spacing classes
+  - Add option to add custom screen breakpoint names for spacing helper
+  - Enhance sass compile test build.
+    - Add watch task.
+    - Handle errors while testing compile.
 
 ## v1.2.0
 
