@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v2.0.0-alpha4
+
+  - Rename brightness Sass function due to naming collision with filter brightness()
+
 ## v2.0.0-alpha3
 
   - Fix typos in `<pre>` and `<code>` styling
