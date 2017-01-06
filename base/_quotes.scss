@@ -81,7 +81,7 @@ blockquote {
   }
 }
 .blockquote--indent {
-  padding: 0 0 0 15px;
+  padding: 0 0 0 get(spacing) / 2;
   border-left: 5px solid getColor(g15);
 }
 

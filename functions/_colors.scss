@@ -4,7 +4,6 @@
  ********************************
  */
 
-
 /**
  * @function brightness
  * @description Computes the "brightness" of a color.
@@ -54,36 +53,6 @@
 
     @return if(abs($color-brightness - $light-text-brightness) > abs($color-brightness - $dark-text-brightness), $light, $dark);
   }
-}
-
-/**
- * @function lighter
- * @description Lighter is a replacement of lighten
- * https://groups.google.com/d/msg/compass-users/umJGUEn6jpQ/MKeUs97DIj0J
- * https://github.com/nex3/sass/issues/598
- *
- * @param {color} [$color] The color that you want to change
- * @param {percent} [$percent] The percent that you want to lighten by
- *
- * @return {color} The lightened color
- */
-@function lighter($color, $percent) {
-  @return scale-color($color, $lightness: $percent);
-}
-
-/**
- * @function darker
- * @description Darker is a replacement of darken
- * https://groups.google.com/d/msg/compass-users/umJGUEn6jpQ/MKeUs97DIj0J
- * https://github.com/nex3/sass/issues/598
- *
- * @param {color} [$color] The color that you want to change
- * @param {percent} [$percent] The percent that you want to darken by
- *
- * @return {color} The darkened color
- */
-@function darker($color, $percent) {
-  @return scale-color($color, $lightness: -$percent);
 }
 
 /**
