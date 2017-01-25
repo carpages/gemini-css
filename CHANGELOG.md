@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.3.1
+
+  - Update headings mixin
+
 ## v1.3.0
 
   - Rename brightness Sass function due to naming collision with filter brightness
