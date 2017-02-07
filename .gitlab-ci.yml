@@ -1,0 +1,7 @@
+compile-css:
+  image: carpages/front-end-node
+  before_script:
+    - cd test
+    - npm install
+  script:
+    - gulp
