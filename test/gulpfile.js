@@ -1,11 +1,11 @@
-const gulp = require( 'gulp' );
-const postcss = require( 'gulp-postcss' );
-const sass = require( 'gulp-sass' );
-const plumber = require( 'gulp-plumber' );
-const gutil = require( 'gulp-util' );
-const compass = require( 'compass-importer' );
+const gulp         = require( 'gulp' );
+const postcss      = require( 'gulp-postcss' );
+const sass         = require( 'gulp-sass' );
+const plumber      = require( 'gulp-plumber' );
+const gutil        = require( 'gulp-util' );
+const parker       = require( 'gulp-parker' );
 const autoprefixer = require( 'autoprefixer' );
-const cssnano = require( 'cssnano' );
+const cssnano      = require( 'cssnano' );
 
 const processors = [
   autoprefixer({ browsers: [ 'last 2 versions' ]}),
@@ -21,7 +21,7 @@ gulp.task( 'sass', () => {
       }
     }))
     .pipe( sass({
-      importer: compass
+      includePaths: ['node_modules']
     }))
     .pipe( postcss( processors ))
     .pipe( gulp.dest( './dist' ));
