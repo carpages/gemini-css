@@ -1,6 +1,6 @@
 {
   "name": "gemini-css",
-  "version": "2.0.0-alpha4",
+  "version": "2.0.0-alpha.0",
   "description": "Gemini CSS",
   "author": {
     "name": "Matt Rose",
@@ -17,7 +17,7 @@
   "main": "init.scss",
   "repository": {
     "type": "git",
-    "url": "https://github.com/carpages/gemini-css"
+    "url": "https://gitlab.carpages.ca/gemini/gemini-css"
   },
   "licenses": "MIT"
 }

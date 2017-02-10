@@ -20,9 +20,21 @@
  */
 
 /**
- * Gotta' get our Compass
+ *
+ *  BREAKING CHANGE WARNING.
+ *  ------------------------
+ *  To remove the Ruby dependency, we've had to move compass importing outside
+ *  of this module for now. To add compass mixins to your project:
+ *
+ *  1. Install the 'compass-mixins' npm package (peerDependency of this package).
+ *     'npm install --save-dev compass-mixins'
+ *
+ *  2. Add '@import "compass-mixins/lib/compass";' to your style.scss.
+ *
+ *  3. Move sass compile build step to gulp-sass or grunt-sass,
+ *     add your 'node_modules' folder as an 'includePath' in your sass config.
+ *
  */
-@import "compass/css3";
 
 /**
  * Variables

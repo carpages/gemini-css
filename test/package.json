@@ -2,6 +2,7 @@
   "devDependencies": {
     "autoprefixer": "^6.6.0",
     "compass-importer": "^0.4.1",
+    "compass-mixins": "^0.12.10",
     "cssnano": "^3.9.1",
     "gulp": "^3.9.1",
     "gulp-parker": "^0.1.4",
