@@ -7,5 +7,9 @@
   "main": [
     "init.scss"
   ],
-  "ignore": []
+  "ignore": [
+    ".gitlab-ci.yml",
+    "test",
+    ".npmignore"
+  ]
 }
