@@ -13,12 +13,14 @@
   .link-complex:hover,
   .link-complex:active,
   .link-complex:focus {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
   }
+
   .link-complex__target {
     color: $link-color;
   }
+
   /**
    * @submodule Link target [.link-complex__target]
    * @description Text in link to underline

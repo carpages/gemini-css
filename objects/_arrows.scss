@@ -22,30 +22,31 @@ $arrow: $arrow-size - $arrow-border;
    * These styles have a mixin dependency.
    */
 
- /**
-  * Forms the basis for any/all CSS arrows.
-  */
+  /**
+   * Forms the basis for any/all CSS arrows.
+   */
   %arrow {
     position: relative;
 
     &:before,
     &:after {
-      content: "";
       position: absolute;
       border-collapse: separate;
+      content: "";
     }
+
     &:before {
       border: $border solid transparent;
     }
+
     &:after {
       border: $arrow solid transparent;
     }
   }
 
-
- /**
-  * Define individual edges so we can combine what we need, when we need.
-  */
+  /**
+   * Define individual edges so we can combine what we need, when we need.
+   */
   %arrow--top {
     @extend %arrow;
 
@@ -61,6 +62,7 @@ $arrow: $arrow-size - $arrow-border;
     &:before {
       top: $arrow;
     }
+
     &:after {
       top: $border;
     }
@@ -74,6 +76,7 @@ $arrow: $arrow-size - $arrow-border;
       top: 50%;
       margin-top: -$border;
     }
+
     &:after {
       margin-top: -$arrow;
     }
@@ -85,6 +88,7 @@ $arrow: $arrow-size - $arrow-border;
     &:before {
       bottom: $arrow;
     }
+
     &:after {
       bottom: $border;
     }
@@ -114,6 +118,7 @@ $arrow: $arrow-size - $arrow-border;
     &:before {
       left: $arrow;
     }
+
     &:after {
       left: $border;
     }
@@ -127,6 +132,7 @@ $arrow: $arrow-size - $arrow-border;
       left: 50%;
       margin-left: -$border;
     }
+
     &:after {
       margin-left: -$arrow;
     }
@@ -138,6 +144,7 @@ $arrow: $arrow-size - $arrow-border;
     &:before {
       right: $arrow + 10px;
     }
+
     &:after {
       right: $border + 10px;
     }

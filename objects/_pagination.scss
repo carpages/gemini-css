@@ -12,18 +12,21 @@
   */
   .pagination {
     @extend .nav;
-    text-align: center;
+
     /**
-   * Remove whitespace caused by 'inline-block'.
-   */
+     * Remove whitespace caused by 'inline-block'.
+     */
     letter-spacing: -0.31em;
     word-spacing: -0.43em;
+    text-align: center;
   }
+
   .pagination > li {
     padding: $base-spacing-unit / 2;
     letter-spacing: normal;
     word-spacing: normal;
   }
+
   .pagination > li > a {
     padding: $base-spacing-unit / 2;
     margin: -$base-spacing-unit / 2;

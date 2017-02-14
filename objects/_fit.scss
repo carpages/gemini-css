@@ -37,23 +37,24 @@
    */
 
   .fit {
+    @include fitRatio();
+
+    position: relative;
     display: block;
     width: 100%;
-    position: relative;
     overflow: hidden;
-    @include fitRatio();
 
     > img,
     > .fit__target {
       position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
       width: auto;
       max-width: 100%;
       max-height: 100%;
       margin: auto;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
     }
   }
 
@@ -75,10 +76,10 @@
 
     > img,
     > .fit__target {
+      z-index: -1;
       width: 100%;
       max-height: none;
       min-height: 100%;
-      z-index: -1;
     }
   }
 }//endif

@@ -30,21 +30,23 @@
     --></ul>
    */
   .multi-list {
-    list-style: none;
-    margin-left: 0;
     @extend .clearfix;
+
+    margin-left: 0;
+    list-style: none;
   }
+
   .multi-list > li {
     float: left;
     width: 100%;
   }
-  .multi-list--block > li {
-    float: none;
-    display: inline-block;
-    vertical-align: top;
-    padding-bottom: $base-spacing-unit;
-  }
 
+  .multi-list--block > li {
+    display: inline-block;
+    float: none;
+    padding-bottom: $base-spacing-unit;
+    vertical-align: top;
+  }
 
   /**
    * Apply these classes alongside the '.multi-list' class on
@@ -70,7 +72,6 @@
     }
   }
 
-
   /**
    * @submodule Multi-list Vertical [.multi-list--vertical]
    * Requires Javascript to add the yes-columnCount parent class
@@ -87,6 +88,7 @@
   .yes-columnCount {
     .multi-list--vertical {
       @extend %gpu;
+
       & > li {
         float: none;
         width: 100%;

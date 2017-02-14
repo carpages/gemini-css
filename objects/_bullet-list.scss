@@ -18,11 +18,12 @@
     margin-left: 0;
 
     & > li {
-      list-style: none;
-      position: relative;
-      padding-left: $base-spacing-unit;
       @extend %icon;
       @extend .icon--default-arrow-right;
+
+      position: relative;
+      padding-left: $base-spacing-unit;
+      list-style: none;
 
       &:before {
         position: absolute;

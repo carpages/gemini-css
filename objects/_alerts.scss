@@ -6,8 +6,8 @@
 
 @mixin alert-colour($colour) {
   color: $colour;
-  border: 1px solid lighter($colour, 60%);
   background: lighter($colour, 80%);
+  border: 1px solid lighter($colour, 60%);
 }
 
 @if $use-alerts == true {

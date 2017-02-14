@@ -11,9 +11,9 @@
    * @description Simple split item for creating two elements floated away from one another
    */
   .split {
+    margin-left: 0;
     text-align: right;
     list-style: none;
-    margin-left: 0;
   }
 
   /**
@@ -21,9 +21,9 @@
    * @description Title of the item (pushes it to the left)
    */
   .split__title {
-    text-align: left;
     float: left;
     clear: left;
+    text-align: left;
   }
 
   /**

@@ -19,20 +19,24 @@
 
   @if $u == "em" {
     @return $val;
-  } @else if $u == "%" {
+  }
+  @else if $u == "%" {
     @return $val / 100% + 0em;
-  } @else if $u == "px" {
+  }
+  @else if $u == "px" {
     @return $val / 16px + 0em;
-  } @else if $u == "pt" {
+  }
+  @else if $u == "pt" {
     @return $val / 12pt + 0em;
-  } @else if $u == "" {
+  }
+  @else if $u == "" {
     @return $val + 0em;
-  } @else {
+  }
+  @else {
     @warn "#{$val} has an unrecognizable unit.";
     @return $val;
   }
 }
-
 
 /**
  * Convert any unit measurement to em
@@ -72,10 +76,10 @@
 }
 
 @function contrast-color(
-    $color,
-    $dark: #333,
-    $light: #FFF
-  ) {
+  $color,
+  $dark: #333,
+  $light: #FFF
+) {
   @if $color == null {
     @return null;
   }

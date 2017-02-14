@@ -22,6 +22,7 @@ q {
     content: "\2018";
     content: open-quote;
   }
+
   &:after {
     content: "\2019";
     content: close-quote;
@@ -31,6 +32,7 @@ q {
     content: "\201C";
     content: open-quote;
   }
+
   q:after {
     content: "\201D";
     content: close-quote;
@@ -51,8 +53,8 @@ q {
   */
 
 blockquote {
-  quotes: "\201C" "\201D";
   text-indent: -0.41em;//.4em is roughly equal to the width of the opening " that we wish to hang.
+  quotes: "\201C" "\201D";
 
   p {
     font-size: $base-font-size * 1.25;
@@ -70,6 +72,7 @@ blockquote {
 
     &:last-of-type {
       margin-bottom: 0;
+
       &:after {
         content: "\201D";
         content: close-quote;
@@ -81,21 +84,21 @@ blockquote {
     content: "\2018";
     content: open-quote;
   }
+
   q:after {
     content: "\2019";
     content: close-quote;
   }
 }
+
 .blockquote--indent {
   padding: 0 0 0 15px;
   border-left: 5px solid $lighter-grey;
 }
 
-
-
 .blockquote__source {
-  color: $light-grey;
   display: block;
+  color: $light-grey;
   text-indent: 0;
 
   &:before {

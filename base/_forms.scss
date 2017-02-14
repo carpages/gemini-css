@@ -29,6 +29,7 @@
     display: inline-block;
     margin-bottom: 0;
   }
+
   fieldset {
     display: inline-block;
     margin-bottom: 0;
@@ -97,11 +98,11 @@ label {
  */
 
 .text-input {
-  font-size: 100%;           /*1*/
-  max-width: 100%;           /*2*/
-  vertical-align: middle;    /*3*/
   height: 2em;               /*4*/
+  max-width: 100%;           /*2*/
   padding: 0 0.5em;          /*5*/
+  font-size: 100%;           /*1*/
+  vertical-align: middle;    /*3*/
 }
 
 .text-input,
@@ -117,8 +118,6 @@ textarea {
     vertical-align: middle;
   }
 }
-
-
 
 /**
   * @module Radio/Checkbox intputs [.checkbox]
@@ -155,7 +154,6 @@ textarea {
 input[type="radio"],
 input[type="checkbox"] {
   margin: 4px 0 0;
-  margin-top: 1px \9; /* IE8-9 */
   line-height: normal;
 }
 
@@ -178,7 +176,6 @@ input[type="checkbox"] {
   width: auto; // Override of generic input selector
 }
 
-
 // Change the cursor
 label,
 select,
@@ -193,11 +190,11 @@ input[type="checkbox"] {
 //Make select boxes look better
 select {
   vertical-align: middle;
+
   :focus {
     outline: none;
   }
 }
-
 
 /**
   * @module Extra Help [.extra-help]
@@ -212,6 +209,7 @@ select {
   display: inline-block;
   visibility: hidden;
 }
+
 .text-input:active + .extra-help,
 .text-input:focus + .extra-help {
   visibility: visible;

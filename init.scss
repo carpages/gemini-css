@@ -23,7 +23,7 @@
 /**
  * Gotta' get our Compass
  */
- @import "compass/css3";
+@import "compass/css3";
 
 /**
  * Variables
@@ -31,7 +31,6 @@
 @import "variables/fonts";
 @import "variables/colours";
 @import "variables/defaults";
-
 
 /**
  * Foundational utility styles etc.
@@ -42,7 +41,6 @@
 @import "foundation/reset";
 @import "foundation/clearfix";
 @import "foundation/margins";
-
 
 /**
  * Base styles; unclassed HTML elements etc.
@@ -60,7 +58,6 @@
 @import "base/forms";
 @import "base/iframes";
 @import "base/object";
-
 
 /**
  * Objects and abstractions
@@ -89,7 +86,6 @@
 @import "objects/select";
 @import "objects/checkbox";
 @import "objects/order";
-
 
 /**
  * Style trumps - helper and brand classes

@@ -23,11 +23,10 @@
  */
 img,
 .img {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
   font-style: italic;//So that 'alt' text is visually offset if images don't load.
 }
-
 
 /**
  * Non-fluid images if you specify 'width' and/or 'height' attributes.
@@ -37,7 +36,6 @@ img[height] {
   max-width: none;
 }
 
-
 /**
  * Image placement variations.
  */
@@ -46,11 +44,13 @@ img[height] {
   margin-bottom: $base-spacing-unit;
   margin-left: $base-spacing-unit;
 }
+
 .img--left {
   float: left;
   margin-right: $base-spacing-unit;
   margin-bottom: $base-spacing-unit;
 }
+
 .img--center,
 .img--centre {
   display: block;

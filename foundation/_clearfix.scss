@@ -11,7 +11,7 @@
  * and over in your markup.
  */
 .clearfix:after {
-  content: "";
   display: table;
   clear: both;
+  content: "";
 }

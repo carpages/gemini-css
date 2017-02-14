@@ -14,7 +14,6 @@
  * out over other selectors.
  */
 
-
 /**
  * @module Float
  * @description Add/remove floats
@@ -23,10 +22,17 @@
  * @modifier [.float--left] Float left
  * @modifier [.float--none] Clear floats
  */
-.float--right   { float:right!important; }
-.float--left    { float:left !important; }
-.float--none    { float:none !important; }
+.float--right {
+  float: right!important;
+}
 
+.float--left {
+  float: left !important;
+}
+
+.float--none {
+  float: none !important;
+}
 
 /**
  * @module Text Alignment
@@ -36,15 +42,33 @@
  * @modifier [.align--center] Align center
  * @modifier [.align--right] Align right
  */
-.align--left     { text-align:left  !important; }
-.align--center   { text-align:center!important; }
-.align--right    { text-align:right !important; }
-.align--bottom   { vertical-align: bottom !important; }
+.align--left {
+  text-align: left !important;
+}
 
-.display--inline          { display:inline !important; }
-.display--block           { display:block !important; }
-.display--inline-block    { display:inline-block !important; }
+.align--center {
+  text-align: center !important;
+}
 
+.align--right {
+  text-align: right !important;
+}
+
+.align--bottom {
+  vertical-align: bottom !important;
+}
+
+.display--inline {
+  display: inline !important;
+}
+
+.display--block {
+  display: block !important;
+}
+
+.display--inline-block {
+  display: inline-block !important;
+}
 
 /**
  * @module Font Weights
@@ -54,16 +78,37 @@
  * @modifier [.weight--normal] Normal
  * @modifier [.weight--semibold] Semibold
  */
-.weight--light      { font-weight:300!important; }
-.weight--normal     { font-weight:400!important; }
-.weight--semibold   { font-weight:600!important; }
-.weight--bold       { font-weight:700!important; }
-.weight--bolder     { font-weight:900!important; }
+.weight--light {
+  font-weight: 300!important;
+}
 
-.line-height--half{ line-height:0.5!important; }
-.line-height--double{ line-height:2!important; }
-.line-height--triple{ line-height:3!important; }
+.weight--normal {
+  font-weight: 400!important;
+}
 
+.weight--semibold {
+  font-weight: 600!important;
+}
+
+.weight--bold {
+  font-weight: 700!important;
+}
+
+.weight--bolder {
+  font-weight: 900!important;
+}
+
+.line-height--half {
+  line-height: 0.5!important;
+}
+
+.line-height--double {
+  line-height: 2!important;
+}
+
+.line-height--triple {
+  line-height: 3!important;
+}
 
 /**
  * @module Block Pusher [.push]
@@ -83,24 +128,73 @@
  * @modifier [.push-half--ends] Add half margin to top and bottom
  * @modifier [.push-half--sides] Add half margin to left and right
  */
-.push           { margin:       $base-spacing-unit!important; }
-.push--top      { margin-top:   $base-spacing-unit!important; }
-.push--right    { margin-right: $base-spacing-unit!important; }
-.push--bottom   { margin-bottom:$base-spacing-unit!important; }
-.push--left     { margin-left:  $base-spacing-unit!important; }
-.push--ends     { margin-top:   $base-spacing-unit!important; margin-bottom:$base-spacing-unit!important; }
-.push--sides    { margin-right: $base-spacing-unit!important; margin-left:  $base-spacing-unit!important; }
+.push {
+  margin: $base-spacing-unit!important;
+}
 
-.push-half          { margin:       $half-spacing-unit!important; }
-.push-half--top     { margin-top:   $half-spacing-unit!important; }
-.push-half--right   { margin-right: $half-spacing-unit!important; }
-.push-half--bottom  { margin-bottom:$half-spacing-unit!important; }
-.push-half--left    { margin-left:  $half-spacing-unit!important; }
-.push-half--ends    { margin-top:   $half-spacing-unit!important; margin-bottom:$half-spacing-unit!important; }
-.push-half--sides   { margin-right: $half-spacing-unit!important; margin-left:  $half-spacing-unit!important; }
+.push--top {
+  margin-top: $base-spacing-unit!important;
+}
 
-.push-double--bottom   { margin-bottom:$double-spacing-unit!important; }
-.push-double--top      { margin-top:$double-spacing-unit!important; }
+.push--right {
+  margin-right: $base-spacing-unit!important;
+}
+
+.push--bottom {
+  margin-bottom: $base-spacing-unit!important;
+}
+
+.push--left {
+  margin-left: $base-spacing-unit!important;
+}
+
+.push--ends {
+  margin-top: $base-spacing-unit!important;
+  margin-bottom: $base-spacing-unit!important;
+}
+
+.push--sides {
+  margin-right: $base-spacing-unit!important;
+  margin-left: $base-spacing-unit!important;
+}
+
+.push-half {
+  margin: $half-spacing-unit!important;
+}
+
+.push-half--top {
+  margin-top: $half-spacing-unit!important;
+}
+
+.push-half--right {
+  margin-right: $half-spacing-unit!important;
+}
+
+.push-half--bottom {
+  margin-bottom: $half-spacing-unit!important;
+}
+
+.push-half--left {
+  margin-left: $half-spacing-unit!important;
+}
+
+.push-half--ends {
+  margin-top: $half-spacing-unit!important;
+  margin-bottom: $half-spacing-unit!important;
+}
+
+.push-half--sides {
+  margin-right: $half-spacing-unit!important;
+  margin-left: $half-spacing-unit!important;
+}
+
+.push-double--bottom {
+  margin-bottom: $double-spacing-unit!important;
+}
+
+.push-double--top {
+  margin-top: $double-spacing-unit!important;
+}
 
 /**
  * @module Block Flusher [.flush]
@@ -113,14 +207,35 @@
  * @modifier [.flush--ends] Remove margin from top and bottom
  * @modifier [.flush--sides] Remove margin from left and right
  */
-.flush          { margin:       0!important; }
-.flush--top     { margin-top:   0!important; }
-.flush--right   { margin-right: 0!important; }
-.flush--bottom  { margin-bottom:0!important; }
-.flush--left    { margin-left:  0!important; }
-.flush--ends    { margin-top:   0!important; margin-bottom:0!important; }
-.flush--sides   { margin-right: 0!important; margin-left:  0!important; }
+.flush {
+  margin: 0!important;
+}
 
+.flush--top {
+  margin-top: 0!important;
+}
+
+.flush--right {
+  margin-right: 0!important;
+}
+
+.flush--bottom {
+  margin-bottom: 0!important;
+}
+
+.flush--left {
+  margin-left: 0!important;
+}
+
+.flush--ends {
+  margin-top: 0!important;
+  margin-bottom: 0!important;
+}
+
+.flush--sides {
+  margin-right: 0!important;
+  margin-left: 0!important;
+}
 
 /**
  * @module Bleed inner block [.flush]
@@ -129,9 +244,15 @@
  * @modifier [.bleed] Negative margins on the sides
  * @modifier [.bleed-half] Half negative margins on the sides
  */
-.bleed{margin-right: -$base-spacing-unit!important; margin-left:  -$base-spacing-unit!important;}
-.bleed-half{margin-right: -$half-spacing-unit!important; margin-left:  -$half-spacing-unit!important;}
+.bleed {
+  margin-right: -$base-spacing-unit!important;
+  margin-left: -$base-spacing-unit!important;
+}
 
+.bleed-half {
+  margin-right: -$half-spacing-unit!important;
+  margin-left: -$half-spacing-unit!important;
+}
 
 /**
  * @module Block Softener [.soft]
@@ -151,25 +272,77 @@
  * @modifier [.soft-half--ends] Add half padding to top and bottom
  * @modifier [.soft-half--sides] Add half padding to left and right
  */
-.soft           { padding:       $base-spacing-unit!important; }
-.soft--top      { padding-top:   $base-spacing-unit!important; }
-.soft--right    { padding-right: $base-spacing-unit!important; }
-.soft--bottom   { padding-bottom:$base-spacing-unit!important; }
-.soft--left     { padding-left:  $base-spacing-unit!important; }
-.soft--ends     { padding-top:   $base-spacing-unit!important; padding-bottom:$base-spacing-unit!important; }
-.soft--sides    { padding-right: $base-spacing-unit!important; padding-left:  $base-spacing-unit!important; }
+.soft {
+  padding: $base-spacing-unit!important;
+}
 
-.soft-half           { padding:       $half-spacing-unit!important; }
-.soft-half--top      { padding-top:   $half-spacing-unit!important; }
-.soft-half--right    { padding-right: $half-spacing-unit!important; }
-.soft-half--bottom   { padding-bottom:$half-spacing-unit!important; }
-.soft-half--left     { padding-left:  $half-spacing-unit!important; }
-.soft-half--ends     { padding-top:   $half-spacing-unit!important; padding-bottom:$half-spacing-unit!important; }
-.soft-half--sides    { padding-right: $half-spacing-unit!important; padding-left:  $half-spacing-unit!important; }
+.soft--top {
+  padding-top: $base-spacing-unit!important;
+}
 
-.soft-double{padding:$double-spacing-unit!important;}
-.soft-double--ends{padding:$double-spacing-unit 0!important;}
-.soft-double--right{padding-right:$double-spacing-unit!important;}
+.soft--right {
+  padding-right: $base-spacing-unit!important;
+}
+
+.soft--bottom {
+  padding-bottom: $base-spacing-unit!important;
+}
+
+.soft--left {
+  padding-left: $base-spacing-unit!important;
+}
+
+.soft--ends {
+  padding-top: $base-spacing-unit!important;
+  padding-bottom: $base-spacing-unit!important;
+}
+
+.soft--sides {
+  padding-right: $base-spacing-unit!important;
+  padding-left: $base-spacing-unit!important;
+}
+
+.soft-half {
+  padding: $half-spacing-unit!important;
+}
+
+.soft-half--top {
+  padding-top: $half-spacing-unit!important;
+}
+
+.soft-half--right {
+  padding-right: $half-spacing-unit!important;
+}
+
+.soft-half--bottom {
+  padding-bottom: $half-spacing-unit!important;
+}
+
+.soft-half--left {
+  padding-left: $half-spacing-unit!important;
+}
+
+.soft-half--ends {
+  padding-top: $half-spacing-unit!important;
+  padding-bottom: $half-spacing-unit!important;
+}
+
+.soft-half--sides {
+  padding-right: $half-spacing-unit!important;
+  padding-left: $half-spacing-unit!important;
+}
+
+.soft-double {
+  padding: $double-spacing-unit!important;
+}
+
+.soft-double--ends {
+  padding: $double-spacing-unit 0!important;
+}
+
+.soft-double--right {
+  padding-right: $double-spacing-unit!important;
+}
 
 /**
  * @module Block Hardener [.hard]
@@ -182,14 +355,35 @@
  * @modifier [.hard--ends] Remove padding from top and bottom
  * @modifier [.hard--sides] Remove padding from left and right
  */
-.hard           { padding:       0!important; }
-.hard--top      { padding-top:   0!important; }
-.hard--right    { padding-right: 0!important; }
-.hard--bottom   { padding-bottom:0!important; }
-.hard--left     { padding-left:  0!important; }
-.hard--ends     { padding-top:   0!important; padding-bottom:0!important; }
-.hard--sides    { padding-right: 0!important; padding-left:  0!important; }
+.hard {
+  padding: 0!important;
+}
 
+.hard--top {
+  padding-top: 0!important;
+}
+
+.hard--right {
+  padding-right: 0!important;
+}
+
+.hard--bottom {
+  padding-bottom: 0!important;
+}
+
+.hard--left {
+  padding-left: 0!important;
+}
+
+.hard--ends {
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+}
+
+.hard--sides {
+  padding-right: 0!important;
+  padding-left: 0!important;
+}
 
 /**
  * @module Informative [.informative]
@@ -199,8 +393,8 @@
  * @markup
  *   <span class="informative">Information on hover</span>
  */
-.informative{
-  cursor:help!important;
+.informative {
+  cursor: help!important;
 }
 
 /**
@@ -210,10 +404,9 @@
  * @markup
  *   <span class="clickable">Clickable on hover</span>
 */
-.clickable{
-  cursor:pointer!important;
+.clickable {
+  cursor: pointer!important;
 }
-
 
 /**
  * @module Muted [.muted]
@@ -223,15 +416,15 @@
  *   <img class="muted" src="http://www.placecage.com/c/200/200">
  *   <img class="muted-75" src="http://www.placecage.com/c/200/200">
  */
-.muted{
-  opacity:0.5!important;
-  filter:alpha(opacity = 50)!important;
+.muted {
+  opacity: 0.5!important;
+  filter: alpha(opacity = 50)!important;
 }
-  .muted-75{
-    opacity:0.75!important;
-    filter:alpha(opacity = 75)!important;
-  }
 
+.muted-75 {
+  opacity: 0.75!important;
+  filter: alpha(opacity = 75)!important;
+}
 
 /**
  * @module More [.more]
@@ -243,28 +436,29 @@
  *   <a href=# class="more">Read more</a>
  *
  */
-.more:after{
-  content:"\00A0" "\00BB"!important;
+.more:after {
+  content: "\00A0" "\00BB"!important;
 }
-  /**
-   * @example More Button
-   * @markup
-   *   <a href=# class="more more--button">Read more</a>
-   */
-  .more--button{
-    display:inline-block;
-    padding-right:1em;
-    padding-left:1em;
-    background:$grey;
-    color:$white;
-  }
+
+/**
+ * @example More Button
+ * @markup
+ *   <a href=# class="more more--button">Read more</a>
+ */
+.more--button {
+  display: inline-block;
+  padding-right: 1em;
+  padding-left: 1em;
+  color: $white;
+  background: $grey;
+}
 
 /**
  * @module Capitalize [.caps]
  * @description Apply capital case to an element (usually a 'strong').
  */
-.caps{
-  text-transform:uppercase!important;
+.caps {
+  text-transform: uppercase!important;
 }
 
 /**
@@ -274,10 +468,10 @@
  * @markup
  * <p style="width:250px;" class="truncate">This is a test for truncating.</p>
  */
-.truncate{
-  white-space: nowrap;
+.truncate {
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /**
@@ -287,7 +481,7 @@
  * @markup
  * <input type="text" value="Rounded" class="round" />
  */
-.round{
+.round {
   @include border-radius($brand-round !important);
 }
 
@@ -298,7 +492,7 @@
  * @markup
  * <input type="text" value="Circled" class="circle" />
  */
-.circle{
+.circle {
   @include border-radius(999px!important);
 }
 
@@ -310,21 +504,21 @@
  * @markup
  * <input type="text" value="Rounded" class="full" />
  */
-.full{
-  width:100%!important;
+.full {
+  width: 100%!important;
   // Min-width isn't supported well in IE8
-  // Use defaults as appose to 100%
-  max-width:none!important;
-  min-width:0!important;
+  // Use defaults as opposed to 100%
+  max-width: none!important;
+  min-width: 0!important;
 }
 
 /**
  * @module Scroll Content [.scroll]
  * @description Make element scrollable on all devices
  */
-.scroll{
-  overflow:scroll;
-  -webkit-overflow-scrolling:touch;
+.scroll {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 /**
@@ -332,20 +526,22 @@
  *
  * http://css-tricks.com/centering-in-the-unknown/
  */
-.center-this{
-  text-align:center;
-  &:before{
-  content:'';
-  display:inline-block;
-  height:100%;
-  vertical-align: middle;
-  margin-right:-0.25em;
+.center-this {
+  text-align: center;
+
+  &:before {
+    display: inline-block;
+    height: 100%;
+    margin-right: -0.25em;
+    vertical-align: middle;
+    content: "";
   }
 }
-.center-this__target{
+
+.center-this__target {
   display: inline-block;
+  text-align: left;
   vertical-align: middle;
-  text-align:left;
 }
 
 /**
@@ -355,7 +551,7 @@
  * @markup
  *   <span class="unselectable">Can't select me >:)</span>
  */
-.unselectable{
+.unselectable {
   @include vendor(user-select, none);
 }
 
@@ -368,15 +564,15 @@
  *       @include accessibility;
  *   }
  */
-@mixin accessibility{
-  border:0!important;
-  clip:rect(0 0 0 0)!important;
-  height:1px!important;
-  margin:-1px!important;
-  overflow:hidden!important;
-  padding:0!important;
+@mixin accessibility {
   position: absolute!important;
-  width:1px!important;
+  width: 1px!important;
+  height: 1px!important;
+  padding: 0!important;
+  margin: -1px!important;
+  overflow: hidden!important;
+  clip: rect(0 0 0 0)!important;
+  border: 0!important;
 }
 
 /**
@@ -387,23 +583,23 @@
  *   <p class="accessibility">This text is only seen by screen readers!</p>
  */
 .a11y,
-.accessibility{
+.accessibility {
   @include accessibility;
 }
-  @each $state in medium, large, xlarge{
-    @include quick-media-query(#{$state}){
-      .accessibility--#{$state}{
-        @include accessibility;
-      }
+@each $state in medium, large, xlarge {
+  @include quick-media-query(#{$state}) {
+    .accessibility--#{$state} {
+      @include accessibility;
     }
   }
+}
 
 /**
  * @module GPU Rendering [%gpu]
  * @description A SASS helper to use the gpu on that element ( translateZ(0) )
  */
 .gpu,
-%gpu{
+%gpu {
   @include vendor(transform, translateZ(0));
 }
 
@@ -431,78 +627,128 @@
   </ul>
  */
 
-%hide-small, .hidden{
+%hide-small,
+.hidden {
   position: absolute !important;
-  left: -999% !important;
   top: -999% !important;
+  left: -999% !important;
 }
 
 //For Javascript
-.no-js .visible--js { @extend %hide-small; }
-.yes-js .hidden--js { @extend %hide-small; }
+.no-js .visible--js {
+  @extend %hide-small;
+}
+
+.yes-js .hidden--js {
+  @extend %hide-small;
+}
 
 // For small screens
-.visible--small     { }
-.hidden--small      { @extend %hide-small; }
-.visible--medium    { @extend %hide-small; }
-.hidden--medium     { }
-.visible--large     { @extend %hide-small; }
-.hidden--large      { }
+.visible--small {}
+
+.hidden--small {
+  @extend %hide-small;
+}
+
+.visible--medium {
+  @extend %hide-small;
+}
+
+.hidden--medium {}
+
+.visible--large {
+  @extend %hide-small;
+}
+
+.hidden--large {}
 
 // For medium screens
-@include quick-media-query(medium, true){
-  %hide-medium{
+@include quick-media-query(medium, true) {
+  %hide-medium {
     position: absolute !important;
-    left: -999% !important;
     top: -999% !important;
-  }
-  %visible-medium{
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
+    left: -999% !important;
   }
 
-  .visible--small  { @extend %hide-medium; }
-  .hidden--small   { @extend %visible-medium }
-  .visible--medium { @extend %visible-medium }
-  .hidden--medium  { @extend %hide-medium; }
+  %visible-medium {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+  }
+
+  .visible--small {
+    @extend %hide-medium;
+  }
+
+  .hidden--small {
+    @extend %visible-medium;
+  }
+
+  .visible--medium {
+    @extend %visible-medium;
+  }
+
+  .hidden--medium {
+    @extend %hide-medium;
+  }
 }
 
 // For large screens
-@include quick-media-query(large, true){
-  %hide-large{
+@include quick-media-query(large, true) {
+  %hide-large {
     position: absolute !important;
-    left: -999% !important;
     top: -999% !important;
-  }
-  %visible-large{
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
+    left: -999% !important;
   }
 
-  .visible--medium { @extend %hide-large; }
-  .hidden--medium  { @extend %visible-large; }
-  .visible--large  { @extend %visible-large; }
-  .hidden--large   { @extend %hide-large; }
+  %visible-large {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+  }
+
+  .visible--medium {
+    @extend %hide-large;
+  }
+
+  .hidden--medium {
+    @extend %visible-large;
+  }
+
+  .visible--large {
+    @extend %visible-large;
+  }
+
+  .hidden--large {
+    @extend %hide-large;
+  }
 }
 
 // Print utilities
-.visible--print    { @extend %hide-small; }
-.hidden--print     { }
+.visible--print {
+  @extend %hide-small;
+}
+
+.hidden--print {}
 
 @media print {
-  %hide-print{
+  %hide-print {
     position: absolute !important;
-    left: -999% !important;
     top: -999% !important;
-  }
-  %visible-print{
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
+    left: -999% !important;
   }
 
-  .visible--print  { @extend %visible-print; }
-  .hidden--print   { @extend %hide-print; }
+  %visible-print {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+  }
+
+  .visible--print {
+    @extend %visible-print;
+  }
+
+  .hidden--print {
+    @extend %hide-print;
+  }
 }
