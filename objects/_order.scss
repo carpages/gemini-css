@@ -4,7 +4,7 @@
  ********************************
  */
 
-@if $use-order == true{
+@if $use-order == true {
 
   /*
    * Change the order of elements on smaller screens
@@ -23,28 +23,17 @@
     </div>
    */
 
-
   @include quick-media-query(visible-small) {
-
     .l-order--small {
-      // See https://github.com/KKBOX/FireApp/blob/master/lib/ruby/compass_1.0/compass-core-1.0.0.alpha.19/stylesheets/compass/css3/_flexbox.scss
-      @include flexbox((
-        display: box,
-        box-orient: hoizontal,
-        box-direction: column,
-      ));
+      display: flex;
+      flex-direction: column;
     }
 
     @for $i from 1 through 6 {
       .l-order--small-#{$i} {
-        float:none!important;
-        @include flexbox((
-          box-ordinal-group: $i,
-        ));
+        float: none!important;
+        order: $i;
       }
     }
-
   }
-
-
 }//endif

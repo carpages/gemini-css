@@ -34,9 +34,10 @@
    * ​   https://github.com/twbs/bootstrap/issues/5455
    */
   .nav {
-    list-style: none;
-    margin: 0;
     @extend .clearfix;
+
+    margin: 0;
+    list-style: none;
 
     > li {
       margin-right: 0.1px\9; /* 1 */
@@ -70,7 +71,6 @@
       }
     }
   }
-
 
   /**
    * @example Centred
@@ -154,6 +154,7 @@
       }
     }
   }
+
   .nav--spaced-left {
     > li {
       margin-left: $base-spacing-unit;
@@ -243,7 +244,7 @@
     </ul>
    */
   .nav--scroll {
-    white-space: nowrap;
     overflow-x: scroll;
+    white-space: nowrap;
   }
 }//endif

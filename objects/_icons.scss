@@ -20,17 +20,19 @@
  */
 
 %icon:before {
-  font-family: "icons";
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
   font-variant: normal;
-  text-transform: none;
+  font-family: "icons";
 
   /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none;
+  speak: none;
 }
+
 [class*="icon--"] {
   @extend %icon;
   display: inline-block;
@@ -39,45 +41,59 @@
 .icon--default-star:before {
   content: "\2605";
 }
+
 .icon--default-star-empty:before {
   content: "\2606";
 }
+
 .icon--default-checkbox:before {
   content: "\2610";
 }
+
 .icon--default-checkbox-checked:before {
   content: "\2611";
 }
+
 .icon--default-checkbox-crossed:before {
   content: "\2612";
 }
+
 .icon--default-checkmark:before {
   content: "\2713";
 }
+
 .icon--default-checkmark-heavy:before {
   content: "\2714";
 }
+
 .icon--default-close:before {
   content: "\2715";
 }
+
 .icon--default-close-heavy:before {
   content: "\2716";
 }
+
 .icon--default-close-script:before {
   content: "\2717";
 }
+
 .icon--default-plus:before {
   content: "\271A";
 }
+
 .icon--default-arrow-up:before {
   content: "\25B2";
 }
+
 .icon--default-arrow-down:before {
   content: "\25BC";
 }
+
 .icon--default-arrow-left:before {
   content: "\25C0";
 }
+
 .icon--default-arrow-right:before {
   content: "\25BA";
 }

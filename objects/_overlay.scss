@@ -26,51 +26,66 @@
   .overlay {
     position: relative;
   }
+
   %overlay__content {
     position: absolute;
   }
 
   .overlay__content--top-left {
     @extend %overlay__content;
+
     top: 0;
     left: 0;
   }
+
   .overlay__content--top-right {
     @extend %overlay__content;
+
     top: 0;
     right: 0;
   }
+
   .overlay__content--bottom-left {
     @extend %overlay__content;
+
     bottom: 0;
     left: 0;
   }
+
   .overlay__content--bottom-right {
     @extend %overlay__content;
-    bottom: 0;
+
     right: 0;
+    bottom: 0;
   }
 
   .overlay__content--top {
     @extend %overlay__content;
     @extend .overlay__content--top-left;
+
     width: 100%;
   }
+
   .overlay__content--right {
     @extend %overlay__content;
     @extend .overlay__content--top-right;
-    height: 100%;
+
     width: percentage(1/2);
+    height: 100%;
   }
+
   .overlay__content--bottom {
     @extend %overlay__content;
     @extend .overlay__content--bottom-left;
+
     width: 100%;
   }
+
   .overlay__content--left {
     @extend %overlay__content;
     @extend .overlay__content--top-left;
-    height: 100%;
+
     width: percentage(1/2);
+    height: 100%;
   }
 }//endif

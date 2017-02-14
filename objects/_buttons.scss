@@ -55,28 +55,27 @@
   .beauton,
   %beautons {
     display: inline-block;       /* [1] */
-    vertical-align: middle;      /* [2] */
-    white-space: nowrap;         /* [3] */
+    height: 2em;                 /* [7] */
+    padding-top: 0;              /* [6] */
+    padding-right: 0.5em;        /* [7] */
+    padding-bottom: 0;           /* [6] */
+    padding-left: 0.5em;         /* [7] */
+    margin: 0;                   /* [6] */
     font-family: inherit;        /* [4] */
     font-size: 100%;             /* [4] */
-    border: none;                /* [6] */
-    margin: 0;                   /* [6] */
-    padding-top: 0;              /* [6] */
-    padding-bottom: 0;           /* [6] */
-    height: 2em;                 /* [7] */
     line-height: 2em;            /* [7] */
-    padding-right: 0.5em;        /* [7] */
-    padding-left: 0.5em;         /* [7] */
+    white-space: nowrap;         /* [3] */
+    vertical-align: middle;      /* [2] */
+    border: none;                /* [6] */
   }
-
 
   .button {
     @extend %beautons;
     cursor: pointer;             /* [5] */
 
     //Background
-    background-repeat: no-repeat;
     background-color: $lighter-grey;
+    background-repeat: no-repeat;
 
     //Corners
     @include border-radius($brand-round);
@@ -98,6 +97,7 @@
     display: inline-block;
     vertical-align: middle;
     @extend .clearfix;
+
     > .button {
       float: left;
       @include border-radius(0);
@@ -105,28 +105,30 @@
       &:first-child {
         @include border-left-radius($brand-round);
       }
+
       &:last-child {
         @include border-right-radius($brand-round);
       }
     }
   }
+
   .button-group--2 {
     width: 100%;
+
     > .button {
       width: 50%;
       text-align: center;
     }
   }
+
   .button-group--3 {
     width: 100%;
+
     > .button {
       width: 33.3332%;
       text-align: center;
     }
   }
-
-
-
 
   /**
    * Button size modifiers.
@@ -135,25 +137,26 @@
    * remains uniform.
    */
   .button--small {
+    height: 1.5em;
     padding-right: 0.5em;
     padding-left: 0.5em;
     line-height: 1.5em;
-    height: 1.5em;
   }
 
   .button--large {
+    height: 3em;
     padding-right: 1.5em;
     padding-left: 1.5em;
     line-height: 3em;
-    height: 3em;
   }
 
   .button--huge {
+    height: 4em;
     padding-right: 2em;
     padding-left: 2em;
     line-height: 4em;
-    height: 4em;
   }
+
   .button--squeeze {
     padding-right: 0.25em;
     padding-left: 0.25em;
@@ -170,8 +173,6 @@
     padding-left: 0;             /* [1] */
     text-align: center;
   }
-
-
 
   /**
    * Button font-size modifiers.
@@ -196,20 +197,20 @@
    * Make the button inherit sizing from its parent.
    */
   .button--natural {
-    vertical-align: baseline;
-    font-size: inherit;
-    line-height: inherit;
     padding-right: 1em;
     padding-left: 1em;
+    font-size: inherit;
+    line-height: inherit;
+    vertical-align: baseline;
   }
 
   .button--inactive,
   .button--inactive:hover,
   .button--inactive:active,
   .button--inactive:focus {
-    background-color: #DDD;
     color: #777;
     cursor: text;            /* [1] */
+    background-color: #DDD;
   }
 
   /**

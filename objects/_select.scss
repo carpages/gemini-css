@@ -37,21 +37,21 @@
   $select-padding: 0.25em!default;
 
   .select {
-    display: inline-block; /* 1 */
+    @include border-radius($brand-round);
+    @extend %icon; /* 6 */
+    @extend .icon--default-arrow-down; /* 6 */
+
     position: relative; /* 2 */
-    vertical-align: middle; /* 3 */
+    display: inline-block; /* 1 */
     padding: 0; /* 4 */
     overflow: hidden; /* 5 */
+    color: #555;
+    text-shadow: none;
+    vertical-align: middle; /* 3 */
 
     // A little styling
     background: #FFF;
-    color: #555;
     border: 1px solid #AAA;
-    text-shadow: none;
-    @include border-radius($brand-round);
-
-    @extend %icon; /* 6 */
-    @extend .icon--default-arrow-down; /* 6 */
 
     &:before {
       position: absolute; /* 7 */
@@ -61,24 +61,23 @@
     }
 
     select {
-      cursor: pointer; /* 9 */
-      padding: $select-padding; /* 10 */
-      padding-left: $select-padding + 0.25; /* 10 */
-      padding-right: $select-padding + 1.75em; /* 11 */
       width: 130%; /* 12 */
-      border: none; /* 13 */
-      background: transparent; /* 13 */
-      background-image: none; /* 13 */
-      -webkit-appearance: none; /* 13 */
-         -moz-appearance: none; /* 13 */
-              appearance: none; /* 13 */
+      // IE 6-8 Hack
+      width: 160%\9; /* 15 */
 
+      padding: $select-padding; /* 10 */
+      padding-right: $select-padding + 1.75em; /* 11 */
+      padding-left: $select-padding + 0.25; /* 10 */
       // Mozilla Hack
       text-indent: 0.01px; /* 14 */
       text-overflow: ""; /* 14 */
-
-      // IE 6-8 Hack
-      width: 160%\9; /* 15 */
+      cursor: pointer; /* 9 */
+      background: transparent; /* 13 */
+      background-image: none; /* 13 */
+      border: none; /* 13 */
+      -moz-appearance: none; /* 13 */
+      -webkit-appearance: none; /* 13 */
+      appearance: none; /* 13 */
 
       &:focus {
         outline: none; /* 16 */

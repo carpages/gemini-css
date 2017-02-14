@@ -20,14 +20,13 @@
  */
 @mixin font-size($font-size, $line-height:false) {
   font-size: $font-size;
-  @if $use-rem == true{
+  @if $use-rem == true {
     font-size: rem($font-size);
   }
-  @if $line-height != false{
+  @if $line-height != false {
     line-height: ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
   }
 }
-
 
 /**
  * Style any number of headings in one fell swoop, e.g.:
@@ -43,7 +42,7 @@
  */
 @mixin headings($from: 1, $to: 6) {
   %base-heading {
-    @content
+    @content;
   }
 
   @if $from >= 1 and $to <= 6 {
@@ -55,7 +54,6 @@
   }
 }
 
-
 /**
  * Create vendor-prefixed CSS in one go, e.g.
  *
@@ -64,12 +62,11 @@
  */
 @mixin vendor($property, $value...) {
   -webkit-#{$property}: $value;
-     -moz-#{$property}: $value;
-      -ms-#{$property}: $value;
-       -o-#{$property}: $value;
-          #{$property}: $value;
+  -moz-#{$property}: $value;
+  -ms-#{$property}: $value;
+  -o-#{$property}: $value;
+  #{$property}: $value;
 }
-
 
 /**
  * Create CSS keyframe animations for all vendors in one go, e.g.:
@@ -108,7 +105,6 @@
   }
 }
 
-
 /**
  * Force overly long spans of text to truncate, e.g.:
  *
@@ -117,10 +113,10 @@
  * Where '$truncation-boundary' is a united measurement.
  */
 @mixin truncate($truncation-boundary) {
-  max-width:$truncation-boundary;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+  max-width: $truncation-boundary;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /**
@@ -131,10 +127,9 @@
  *
  */
 @mixin rgba-background($colour, $alpha) {
-  background:$colour;
-  background:rgba($colour, $alpha);
+  background: $colour;
+  background: rgba($colour, $alpha);
 }
-
 
 /**
  * CSS arrows!!! But... before you read on, you might want to grab a coffee...
@@ -283,7 +278,6 @@
 
 }
 
-
 /**
  * Quick media query mixin.
  *
@@ -322,55 +316,69 @@ $medium-end:             $large-start - 1px;
 
   @if $media-query == medium or $media-query == hidden-small {
 
-    @include media-query($medium-start, 99999, $print) { @content; }
+    @include media-query($medium-start, 99999, $print) {
+      @content;
+    }
 
   }
 
   @if $media-query == large or $media-query == visible-large {
 
-    @include media-query($large-start, 99999, $print) { @content; }
+    @include media-query($large-start, 99999, $print) {
+      @content;
+    }
 
   }
 
   @if $media-query == xlarge {
 
-    @include media-query($xlarge-start, 99999, $print) { @content; }
+    @include media-query($xlarge-start, 99999, $print) {
+      @content;
+    }
 
   }
 
   @if $media-query == visible-small {
 
-    @include media-query(0, $small-end, $print) { @content; }
+    @include media-query(0, $small-end, $print) {
+      @content;
+    }
 
   }
 
   @if $media-query == visible-medium {
 
-    @include media-query($medium-start, $medium-end, $print) { @content; }
+    @include media-query($medium-start, $medium-end, $print) {
+      @content;
+    }
 
   }
 
   @if $media-query == hidden-medium {
 
-    @include media-query($large-start, $small-end, $print) { @content; }
+    @include media-query($large-start, $small-end, $print) {
+      @content;
+    }
 
   }
 
   @if $media-query == hidden-large {
 
-    @include media-query(0, $medium-end, $print) { @content; }
+    @include media-query(0, $medium-end, $print) {
+      @content;
+    }
 
   }
 
-  @if $media-query == retina{
+  @if $media-query == retina {
 
     @media
-    only screen and (-webkit-min-device-pixel-ratio: 2),
-    only screen and (   min--moz-device-pixel-ratio: 2),
-    only screen and (     -o-min-device-pixel-ratio: 2/1),
-    only screen and (        min-device-pixel-ratio: 2),
-    only screen and (                min-resolution: 192dpi),
-    only screen and (                min-resolution: 2dppx) {
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (   min--moz-device-pixel-ratio: 2),
+      only screen and (     -o-min-device-pixel-ratio: 2/1),
+      only screen and (        min-device-pixel-ratio: 2),
+      only screen and (                min-resolution: 192dpi),
+      only screen and (                min-resolution: 2dppx) {
 
       @content;
 
@@ -400,27 +408,37 @@ $medium-end:             $large-start - 1px;
 @mixin media-query($min, $max: 99999, $print: false) {
 
   $print-query: "";
-  @if $print == true {$print-query: "print, ";}
+  @if $print == true {
+    $print-query: "print, ";
+  }
 
   // If we're outputting for a fixed media query...
   @if $fixed-queries {
     //If the fixed query is in the media query range
 
-    @if $fixed-queries >= $min and $fixed-queries <= $max { @content }
+    @if $fixed-queries >= $min and $fixed-queries <= $max {
+      @content;
+    }
 
   }
   @else {
 
     @if $min >= 0 and $max < 99999 {
-      @media #{$print-query}screen and (min-width: em($min, 16px)) and (max-width: em($max, 16px)) { @content; }
+      @media #{$print-query}screen and (min-width: em($min, 16px)) and (max-width: em($max, 16px)) {
+        @content;
+      }
     }
 
     @else if $min >= 0 {
-      @media #{$print-query}screen and (min-width: em($min, 16px)) { @content; }
+      @media #{$print-query}screen and (min-width: em($min, 16px)) {
+        @content;
+      }
     }
 
     @else if $max < 99999 {
-      @media #{$print-query}screen and (max-width: em($max, 16px)) { @content; }
+      @media #{$print-query}screen and (max-width: em($max, 16px)) {
+        @content;
+      }
     }
 
   }
@@ -435,13 +453,13 @@ $medium-end:             $large-start - 1px;
 
 @mixin bourbon-font-face($font-family, $file-path, $weight: normal, $style: normal, $version: 1 ) {
   @font-face {
-  font-family: $font-family;
-  src: url('#{$file-path}.eot?bust=v#{$version}');
-  src: url('#{$file-path}.eot?#iefix')               format('embedded-opentype'),
-       url('#{$file-path}.woff?bust=v#{$version}')   format('woff'),
-       url('#{$file-path}.ttf?bust=v#{$version}')    format('truetype'),
-       url('#{$file-path}.svg##{$font-family}')      format('svg');
-  font-weight: $weight;
-  font-style: $style;
+    font-family: $font-family;
+    font-style: $style;
+    font-weight: $weight;
+    src: url("#{$file-path}.eot?bust=v#{$version}");
+    src: url("#{$file-path}.eot?#iefix")               format("embedded-opentype"),
+         url("#{$file-path}.woff?bust=v#{$version}")   format("woff"),
+         url("#{$file-path}.ttf?bust=v#{$version}")    format("truetype"),
+         url("#{$file-path}.svg##{$font-family}")      format("svg");
   }
 }

@@ -17,6 +17,7 @@
 
   %stat-group--n {
     margin-left: 0;
+
     .stat {
       margin-left: 0;
     }
@@ -24,6 +25,7 @@
 
   .stat-group--3 {
     @extend %stat-group--n;
+
     .stat {
       width: 33.333%;
     }
@@ -31,6 +33,7 @@
 
   .stat-group--4 {
     @extend %stat-group--n;
+
     .stat {
       width: 25%;
     }

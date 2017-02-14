@@ -13,6 +13,7 @@ $darkest-grey:      rgb(51,51,51)!default;
 $darker-grey:       rgb(76,76,76)!default;
 $dark-grey:         rgb(102,102,102)!default;
 $grey:              rgb(127,127,127)!default;
+
 .grey {
   color: $grey;
 }
@@ -23,6 +24,7 @@ $lighter-grey:      rgb(214,214,214)!default;
 $lightest-grey:     rgb(228,228,228)!default;
 $lighterest-grey:   rgb(242,242,242)!default;
 $white:             rgb(255,255,255)!default;
+
 .white {
   color: $white;
 }
@@ -30,30 +32,34 @@ $white:             rgb(255,255,255)!default;
 /********************************
  * ACCENTS
  ********************************/
-$red:               #c00!default;
+$red:               #C00!default;
 $light-red:         lighter($red, 25%)!default;
 $dark-red:          darker($red, 25%)!default;
+
 .red {
   color: $red;
 }
 
-$green:             #0c0!default;
+$green:             #0C0!default;
 $light-green:       lighter($green, 25%)!default;
 $dark-green:        darker($green, 25%)!default;
+
 .green {
   color: $green;
 }
 
-$blue:              #00c!default;
+$blue:              #00C!default;
 $light-blue:        lighter($blue, 25%)!default;
 $dark-blue:         darker($blue, 25%)!default;
+
 .blue {
   color: $blue;
 }
 
-$yellow:            #db0!default;
+$yellow:            #DB0!default;
 $light-yellow:      lighter($yellow, 25%)!default;
 $dark-yellow:       darker($yellow, 25%)!default;
+
 .yellow {
   color: $yellow;
 }

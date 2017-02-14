@@ -27,32 +27,36 @@
       }
     }
   }
+
   .flyout__content {
     /**
      * Position the flyouts off-screen. This is typically better than
      * 'display:none;'.
      */
     position: absolute;
-    width: 100%;
     top: 100%;
     left: -99999px;
     z-index: 20;
+    width: 100%;
 
     .flyout--right > & {
-      left: auto;
       right: -99999px;
+      left: auto;
     }
   }
 
   .flyout__content--small {
     width: 150%;
   }
+
   .flyout__content--medium {
     width: 200%;
   }
+
   .flyout__content--large {
     width: 400%;
   }
+
   .flyout__content--x-large {
     width: 600%;
   }

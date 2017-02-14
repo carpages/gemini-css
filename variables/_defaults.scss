@@ -14,9 +14,7 @@
 /**
  * Support IE8
  */
- $support-ie8:       true!default;
-
-
+$support-ie8:       true!default;
 
 /********************************
  * BORER ROUNDING
@@ -25,8 +23,6 @@
  * How big would you like round corners to be by default?
  */
 $brand-round:        4px!default;
-
-
 
 /********************************
  * COLOURING
@@ -40,11 +36,9 @@ $link-color:        $brand-color!default;
 /**
  * Base Colouring
  */
-$base-ui-color:     #ccc!default;
+$base-ui-color:     #CCC!default;
 $base-color:        #333!default;
-$base-bg-color:     #fff!default;
-
-
+$base-bg-color:     #FFF!default;
 
 /********************************
  * TYPOGRAPHY
@@ -73,8 +67,6 @@ $img-dir:         "../img"!default;
  * Whether to use rem
  */
 $use-rem:         true!default;
-
-
 
 /********************************
  * SIZING/SPACING
@@ -115,8 +107,6 @@ $quarter-spacing-unit: $base-spacing-unit / 4!default;
 $double-spacing-unit:  $base-spacing-unit * 2!default;
 $line-height-ratio:    $base-line-height / $base-font-size;
 
-
-
 /********************************
  * RESPONSIVE
  ********************************/
@@ -132,8 +122,6 @@ $fixed-queries: false !default;
 $medium-start:       481px!default;
 $large-start:        1024px!default;
 $xlarge-start:       1200px!default;
-
-
 
 /********************************
  * GRID
@@ -151,8 +139,6 @@ $total-columns: 12!default;
 $grid-medium-breakpoint: $medium-start!default;
 $grid-large-breakpoint: $large-start!default;
 $grid-xlarge-breakpoint: $xlarge-start!default;
-
-
 
 /********************************
  * OBJECTS

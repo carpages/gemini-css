@@ -44,14 +44,17 @@
     @extend %rule;
     border-bottom: 1px solid $base-ui-color;
   }
+
   .rule--left {
     @extend %rule;
     border-left: 1px solid $base-ui-color;
   }
+
   .rule--right {
     @extend %rule;
     border-right: 1px solid $base-ui-color;
   }
+
   .rule--top {
     @extend %rule;
     border-top: 1px solid $base-ui-color;
@@ -72,7 +75,6 @@
     border-bottom-style: dotted;
   }
 
-
   /**
    * Dashed rules
    */
@@ -87,13 +89,13 @@
     position: relative;
 
     &:after {
-      content: "\00A7";
       position: absolute;
       top: 0;
       right: 0;
       left: 0;
       line-height: 0;
       text-align: center;
+      content: "\00A7";
     }
 
     /**

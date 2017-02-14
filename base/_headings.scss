@@ -28,17 +28,18 @@
  * As per: csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
  *
  * When we define a heading we also define a corresponding class to go with it.
- * This allows us to apply, say, 'class=alpha' to a 'h3'; a double-stranded
+ * This allows us to apply, say, "class=alpha" to a "h3"; a double-stranded
  * heading hierarchy.
  */
 
 //Map headings, class, and font-sizes
-$headings:  ('h1' 'alpha' $h1-size),
-            ('h2' 'beta' $h2-size),
-            ('h3' 'gamma' $h3-size),
-            ('h4' 'delta' $h4-size),
-            ('h5' 'epsilon' $h5-size),
-            ('h6' 'zeta' $h6-size);
+$headings:
+  ("h1" "alpha" $h1-size),
+  ("h2" "beta" $h2-size),
+  ("h3" "gamma" $h3-size),
+  ("h4" "delta" $h4-size),
+  ("h5" "epsilon" $h5-size),
+  ("h6" "zeta" $h6-size);
 
 //Set line-heights
 %heading-line-height {
@@ -80,7 +81,7 @@ $headings:  ('h1' 'alpha' $h1-size),
 }
 
 //Large screens
-@include quick-media-query(large){
+@include quick-media-query(large) {
 
   @each $heading in $headings {
 
@@ -102,13 +103,12 @@ $headings:  ('h1' 'alpha' $h1-size),
     <h3 class=hN>Car shopping made easy.</h3>
   </div>
   */
-.hN{
-}
+.hN {}
+
 .hgroup .hN,
 hgroup .hN {
   margin-bottom: 0;
 }
-
 
 /**
   * @module Massive Headings
@@ -123,10 +123,12 @@ hgroup .hN {
   @extend %heading-line-height;
   @include font-size($giga-size);
 }
+
 .mega {
   @extend %heading-line-height;
   @include font-size($mega-size);
 }
+
 .kilo {
   @extend %heading-line-height;
   @include font-size($kilo-size);

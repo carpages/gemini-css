@@ -12,23 +12,21 @@
     @extend .unselectable;
 
     // Hide checkbox
-    > input{
+    > input {
       position: absolute;
-      opacity: 0;
       z-index: -1;
-      position: static\9; /* IE6+ Fallback */
+      opacity: 0;
     }
   }
 
   // Icon
   .checkbox__icon {
-    @extend %icon;
-    width: 1em;
-    display: inline-block;
-    display: none\9; /* IE6+ Fallback */
-
     /* Default State */
+    @extend %icon;
     @extend .icon--default-plus;
+
+    display: inline-block;
+    width: 1em;
 
     /* Active State */
     input:checked ~ & {
