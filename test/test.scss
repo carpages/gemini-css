@@ -5,4 +5,30 @@
  * Make sure the build is compiling without error
  */
 
+$use-grid:         true;
+$use-nav:          true;
+$use-pagination:   true;
+$use-media:        true;
+$use-island:       true;
+$use-block-list:   true;
+$use-multi-list:   true;
+$use-split:        true;
+$use-link-complex: true;
+$use-bullet-list:  true;
+$use-alerts:       true;
+$use-tags:         true;
+$use-colors:       true;
+$use-copy:         true;
+$use-order:        true;
+$use-flyout:       true;
+$use-arrows:       true;
+$use-buttons:      true;
+$use-rules:        true;
+$use-fit:          true;
+$use-stats:        true;
+$use-icons:        true;
+$use-select:       true;
+$use-checkbox:     true;
+$use-overlay:      true;
+
 @import "../init";
