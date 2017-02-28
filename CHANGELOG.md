@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## Alpha 3
+
+  - Rename font-weight values to match common weight name mapping
+    - https://developer.mozilla.org/en/docs/Web/CSS/font-weight#Common_weight_name_mapping
+  - New font-weight helpers added
+    - thin (100), ultralight (200), medium (500), extrabold (800), black (900)
+
 ## Alpha 2
 
   - Ignore CI and test folders when downloading via bower

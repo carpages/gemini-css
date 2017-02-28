@@ -8,14 +8,57 @@
  * @module Font Weights
  * @description Easily add font weights
  *
+ * @modifier [.weight-thin] Thin
+ * @modifier [.weight-ultralight] Ultra Light
  * @modifier [.weight-light] Light
  * @modifier [.weight-normal] Normal
+ * @modifier [.weight-medium] Medium
  * @modifier [.weight-semibold] Semibold
  * @modifier [.weight-bold] Bold
+ * @modifier [.weight-extrabold] Extra Bold
+ * @modifier [.weight-black] Black
+ *
+ * DEPRECATED
+ * ----------
  * @modifier [.weight-bolder] Bolder
+ * ----------
+ * .weight-bolder is deprecated in favour of .weight-black due to the
+ * confusing naming collision with 'font-weight: bolder;'
+ * which has a different semantic meaning.
  */
-.weight-light      { font-weight: 300 !important; }
-.weight-normal     { font-weight: 400 !important; }
-.weight-semibold   { font-weight: 600 !important; }
-.weight-bold       { font-weight: 700 !important; }
-.weight-bolder     { font-weight: 900 !important; }
+.weight-thin {
+  font-weight: 100 !important;
+}
+
+.weight-ultralight {
+  font-weight: 200 !important;
+}
+
+.weight-light {
+  font-weight: 300 !important;
+}
+
+.weight-normal {
+  font-weight: 400 !important;
+}
+
+.weight-medium {
+  font-weight: 500 !important;
+}
+
+.weight-semibold {
+  font-weight: 600 !important;
+}
+
+.weight-bold {
+  font-weight: 700 !important;
+}
+
+.weight-extrabold {
+  font-weight: 800 !important;
+}
+
+.weight-black,
+.weight-bolder {
+  font-weight: 900 !important;
+}
