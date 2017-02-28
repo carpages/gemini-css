@@ -92,6 +92,7 @@ $mapped-headings: (
 
 @each $class, $el in $mapped-headings {
 
+  #{el},
   .#{$class},
   .#{$class}-medium,
   .#{$class}-large {
