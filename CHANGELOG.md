@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## Alpha 3
+## Alpha 3 : [WIP]
 
   - Rename font-weight values to match common weight name mapping
     - https://developer.mozilla.org/en/docs/Web/CSS/font-weight#Common_weight_name_mapping
