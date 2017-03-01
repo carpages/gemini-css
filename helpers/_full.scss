@@ -4,15 +4,6 @@
  ********************************
  */
 
-%full-width {
-  width: 100% !important;
-
-  // Min-width isn't supported well in IE8
-  // Use defaults as appose to 100%
-  max-width: none !important;
-  min-width: 0    !important;
-}
-
 /**
  * @module Full Width [.full]
  * @description Make something full width (100%)
@@ -21,5 +12,10 @@
     <input type="text" value="Rounded" class="full" />
  */
 .full {
-  @extend %full-width;
+  width: 100% !important;
+
+  // Min-width isn't supported well in IE8
+  // Use defaults as appose to 100%
+  max-width: none !important;
+  min-width: 0    !important;
 }

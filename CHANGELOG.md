@@ -2,7 +2,6 @@
 
 ## Alpha 3 : [WIP]
 
-  - Allow extending of full-width helper in media queries. Made it a placeholder.
   - Fix heading elements not inheriting line-height set by Gemini settings
   - Rename font-weight values to match common weight name mapping
     - https://developer.mozilla.org/en/docs/Web/CSS/font-weight#Common_weight_name_mapping
