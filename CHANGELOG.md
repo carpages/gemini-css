@@ -2,6 +2,7 @@
 
 ## Alpha 3 : [WIP]
 
+  - Use unitless line-height
   - Split out shorthand font settings in base/main
   - Fix heading elements not inheriting line-height set by Gemini settings
   - Rename font-weight values to match common weight name mapping

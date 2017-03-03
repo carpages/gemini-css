@@ -14,15 +14,20 @@
  */
 .line-height-half,
 .lh-half {
-  line-height: 0.5 !important;
+  line-height: get(line-height) / 2 !important;
 }
 
 .line-height-double,
 .lh-double {
-  line-height: 2 !important;
+  line-height: get(line-height) * 2 !important;
 }
 
 .line-height-triple,
 .lh-triple {
-  line-height: 3 !important;
+  line-height: get(line-height) * 3 !important;
+}
+
+.line-height-one,
+.lh-one {
+  line-height: 1 !important;
 }
