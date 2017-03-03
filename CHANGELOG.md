@@ -2,6 +2,7 @@
 
 ## Alpha 3 : [WIP]
 
+  - Fix some heading stuff
   - Use unitless line-height
   - Split out shorthand font settings in base/main
   - Fix heading elements not inheriting line-height set by Gemini settings

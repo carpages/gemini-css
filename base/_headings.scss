@@ -92,15 +92,17 @@ $mapped-headings: (
 
 @each $class, $el in $mapped-headings {
 
-  #{$el},
   .#{$class},
   .#{$class}-medium,
   .#{$class}-large {
     @extend %heading-line-height;
   }
 
-  #{$el} {
-    font-size: get($class, $gemini-headings);
+  @if $el {
+    #{$el} {
+      @extend %heading-line-height;
+      font-size: get($class, $gemini-headings);
+    }
   }
 
   .#{$class} {
