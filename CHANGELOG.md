@@ -2,6 +2,7 @@
 
 ## Alpha 3 : [WIP]
 
+  - Split out shorthand font settings in base/main
   - Fix heading elements not inheriting line-height set by Gemini settings
   - Rename font-weight values to match common weight name mapping
     - https://developer.mozilla.org/en/docs/Web/CSS/font-weight#Common_weight_name_mapping

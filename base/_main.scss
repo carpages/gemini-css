@@ -9,13 +9,15 @@
  * @description Just your basic styling on the document
  */
 html {
-  font: #{em(get(font-size), 16px)}/#{em(get(line-height), 16px) / em(get(font-size), 16px)} get(font-family);
   min-height: 100%;
+  font-family: get(font-family);
+  font-size: em(get(font-size), 16px);
+  line-height: get(line-height);
 }
 
 body {
   position: relative;
-  background: get(background-color);
-  color: get(color);
   overflow-x: hidden; //Fixes issue with white box around content
+  color: get(color);
+  background: get(background-color);
 }
