@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## Alpha 3 : [WIP]
+## Alpha 3
 
   - Fix some heading stuff
   - Use unitless line-height
