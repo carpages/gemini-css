@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.3.2
+
+  - 100% width iframes are now opt-out optional
+
 ## v1.3.1
 
   - Update headings mixin
