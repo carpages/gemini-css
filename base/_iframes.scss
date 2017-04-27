@@ -8,6 +8,9 @@
  * @module Iframes [iframe]
  * @description Make iframe 100% width. We can't control the content inside of them.
  */
-iframe {
-  width: 100%;
+
+@if get(iframes, $gemini-use) {
+  iframe {
+    width: 100%;
+  }
 }
