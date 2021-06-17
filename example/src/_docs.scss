@@ -1,0 +1,58 @@
+@use "sass:math";
+
+.doc-section {
+  @extend .rule-all;
+
+  border-radius: get(border-radius) * 2;
+  margin-bottom: get(spacing);
+  overflow: hidden;
+
+  &__title {
+    @extend .hgroup;
+
+    > * {
+      margin-bottom: 0;
+      line-height: 1;
+    }
+
+    > * + * {
+      margin-top: math.div(get(spacing), 3);
+    }
+
+    > p {
+      color: getColor(g60);
+    }
+
+    padding: math.div(get(spacing), 2);
+    background-color: #eee;
+    margin-bottom: 0;
+  }
+
+  &__content {
+    padding: get(spacing);
+  }
+}
+
+.doc-nav {
+  > li {
+    &:not(:last-child) {
+      &:after {
+        @extend .rule;
+        content: "";
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+}
+
+.nav-column {
+  position: sticky;
+  top: get(spacing);
+
+  > nav {
+    @extend .rule-all;
+    border-radius: get(border-radius) * 2;
+    padding: get(spacing);
+  }
+}

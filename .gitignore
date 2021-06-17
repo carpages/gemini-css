@@ -1,4 +1,5 @@
 .DS_Store
 .sass-cache
+./example/public/build
 test.css
 node_modules

@@ -1,0 +1,16 @@
+{
+  "browserslist": [
+    "defaults"
+  ],
+  "scripts": {
+    "start": "gulp build && live-server ./public"
+  },
+  "devDependencies": {
+    "fibers": "^5.0.0",
+    "gulp": "^4.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.1.0",
+    "live-server": "^1.2.1",
+    "sass": "^1.35.1"
+  }
+}
