@@ -15,6 +15,8 @@
  * @prop {measurement} [large-breakpoint=get(large, $gemini-screens)] The breakpoint for large layout
  * @prop {measurement} [xlarge-breakpoint=get(xlarge, $gemini-screens)] The breakpoint for xlarge layout
  */
+@use "sass:math";
+
 $gemini-grid: () !default;
 
 $gemini-grid: extend((
@@ -38,7 +40,7 @@ $gemini-grid: extend((
 // Grid Functions
 //
 @function gridCalc($colNumber, $totalColumns) {
-  @return percentage(($colNumber / $totalColumns));
+  @return percentage(math.div($colNumber, $totalColumns));
 }
 
 /*
@@ -125,8 +127,8 @@ $gemini-grid: extend((
 
   //Keep the end columns flush with the gutter
   & .l-row {
-    margin-left: -(get(gutter, $gemini-grid) / 2);
-    margin-right: -(get(gutter, $gemini-grid) / 2);
+    margin-left: -(math.div(get(gutter, $gemini-grid), 2));
+    margin-right: -(math.div(get(gutter, $gemini-grid), 2));
     width: auto;
     max-width: none;
   }
@@ -157,7 +159,7 @@ $gemini-grid: extend((
 [class*="l-column"] {
   @include clearfix;
   position: relative;
-  padding: 0 (get(gutter, $gemini-grid) / 2);
+  padding: 0 math.div(get(gutter, $gemini-grid), 2);
   width: 100%;
   float: left;
   margin-bottom: get(spacing);

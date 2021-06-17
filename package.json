@@ -19,5 +19,8 @@
     "type": "git",
     "url": "https://github.com/carpages/gemini-css"
   },
-  "licenses": "MIT"
+  "licenses": "MIT",
+  "peerDependencies": {
+    "compass-mixins": "^0.12.10"
+  }
 }

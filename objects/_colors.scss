@@ -15,6 +15,8 @@
  * @prop {color} [google-plus=#DD4C39] Google Plus Red
  * @prop {color} [pinterest=#C9232D] Pinterest Red
  */
+@use "sass:math";
+
 $gemini-colors: () !default;
 
 $gemini-colors: extend((
@@ -46,7 +48,7 @@ $gemini-colors: extend((
  */
 // Need to wrap division in paren since libsass v3.4.0
 // https://github.com/sass/libsass/issues/2149
-@for $i from 0 through (100 / 5) {
+@for $i from 0 through math.div(100, 5) {
   $grey-percent: $i * 5;
 
   $trash: addColor(g + $grey-percent, darken(#FFF, $grey-percent));

@@ -22,12 +22,14 @@
       @include font-size(14px, true, false, !important);
     }
  */
+@use "sass:math";
+
 @mixin font-size($font-size, $line-height:false, $use-rem:false, $important: '') {
   font-size: $font-size#{$important};
   @if $use-rem == true {
     font-size: rem($font-size)#{$important};
   }
   @if $line-height == true {
-    line-height: ceil($font-size / get(line-height)) * (get(line-height) / $font-size)#{$important};
+    line-height: ceil(math.div($font-size, get(line-height))) * math.div(get(line-height), $font-size)#{$important};
   }
 }

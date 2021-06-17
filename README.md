@@ -1,3 +1,3 @@
 # Gemini CSS
 
-Gemini uses SASS and Compass to compile CSS builds for different uses.
+Gemini uses Sass (+ compass-mixins from NPM) to compile CSS builds for different uses.

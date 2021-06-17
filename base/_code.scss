@@ -4,6 +4,8 @@
  ********************************
  */
 
+@use "sass:math";
+
 code,
 pre {
   padding: 0 3px 2px;
@@ -44,7 +46,7 @@ code {
  */
 pre {
   display: block;
-  padding: (get(spacing) / 4 - 1) / 2;
+  padding: math.div(math.div(get(spacing), 4) - 1, 2);
   font-size: get(font-size) - 1; // 14px to 13px
   line-height: get(line-height);
   word-break: break-all;

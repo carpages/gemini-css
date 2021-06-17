@@ -4,6 +4,8 @@
  ********************************
  */
 
+@use "sass:math";
+
 @if get(nav, $gemini-use) or get(pagination, $gemini-use) {
 
   /**
@@ -121,7 +123,7 @@
 
       &,
       > a {
-        padding: get(spacing) / 2;
+        padding: math.div(get(spacing), 2);
       }
     }
   }

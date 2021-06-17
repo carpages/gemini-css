@@ -24,6 +24,8 @@
     </form>
  */
 
+@use "sass:math";
+
 .form--inline {
   .hN {
     display: inline-block;
@@ -57,7 +59,7 @@ label {
 
   input[type="checkbox"] + & {
     display: inline-block;
-    padding-left: get(spacing) / 2;
+    padding-left: math.div(get(spacing), 2);
   }
 
   @include media(medium) {
@@ -107,7 +109,7 @@ label {
   //Inline
   .form--inline & {
     float: left;
-    margin-right: get(spacing) / 2;
+    margin-right: math.div(get(spacing), 2);
     margin-left: 0;
   }
 }

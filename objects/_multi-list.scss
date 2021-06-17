@@ -4,6 +4,8 @@
  ********************************
  */
 
+@use "sass:math";
+
 @if get(multi-list, $gemini-use) {
   /**
    * @module Multi Lists [.multi-list]
@@ -52,20 +54,20 @@
    */
   @for $i from 2 through 4 {
     .multi-list--small-#{$i} > li {
-      width: percentage(1/$i);
+      width: percentage(math.div(1, $i));
     }
   }
   @include media(medium) {
     @for $i from 2 through 4 {
       .multi-list--medium-#{$i} > li {
-        width: percentage(1/$i);
+        width: percentage(math.div(1, $i));
       }
     }
   }
   @include media(large) {
     @for $i from 2 through 5 {
       .multi-list--large-#{$i} > li {
-        width: percentage(1/$i);
+        width: percentage(math.div(1, $i));
       }
     }
   }

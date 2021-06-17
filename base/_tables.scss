@@ -64,14 +64,16 @@
       </tbody>
     </table>
  */
+@use "sass:math";
+
 table {
   width: 100%;
 }
 th,
 td {
-  padding: get(spacing) / 4;
+  padding: math.div(get(spacing), 4);
   @include media(medium) {
-    padding: get(spacing) / 2;
+    padding: math.div(get(spacing), 2);
   }
   text-align: left;
 }

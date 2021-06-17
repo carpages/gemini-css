@@ -16,6 +16,8 @@
  * @prop {color} [border-color=get(border-color)] The border color
  * @prop {measurement} [border-radius=get(border-radius)] The border radius
  */
+@use "sass:math";
+
 $gemini-buttons: () !default;
 
 $gemini-buttons: extend((
@@ -87,8 +89,8 @@ $gemini-buttons: extend((
     padding-bottom: 0;
   }
 
-  $gemini-button-sides-multiplier: if(get(padding-sides, $gemini-buttons) > 0, get(padding-sides, $gemini-buttons), get(spacing) / 2);
-  $gemini-button-ends-multiplier:  if(get(padding-ends, $gemini-buttons) > 0, get(padding-ends, $gemini-buttons), get(spacing) / 4);
+  $gemini-button-sides-multiplier: if(get(padding-sides, $gemini-buttons) > 0, get(padding-sides, $gemini-buttons), math.div(get(spacing), 2));
+  $gemini-button-ends-multiplier:  if(get(padding-ends, $gemini-buttons) > 0, get(padding-ends, $gemini-buttons), math.div(get(spacing), 4));
 
   .button--small {
     padding: $gemini-button-ends-multiplier * 0.5 $gemini-button-sides-multiplier * 0.5;

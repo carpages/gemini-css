@@ -4,6 +4,8 @@
  ********************************
  */
 
+@use "sass:math";
+
 @if get(pagination, $gemini-use) {
 
   /**
@@ -19,12 +21,12 @@
     word-spacing: -0.43em;
   }
   .pagination > li {
-    padding: get(spacing) / 2;
+    padding: math.div(get(spacing), 2);
     word-spacing: normal;
   }
   .pagination > li > a {
-    padding: get(spacing) / 2;
-    margin: - get(spacing) / 2;
+    padding: math.div(get(spacing), 2);
+    margin: math.div(- get(spacing), 2);
   }
 
   /**
