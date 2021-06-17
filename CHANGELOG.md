@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v1.4.0
+
+  - fix bug in implode function
+  - add peer dependency on compass-mixins
+
 ## v1.3.2
 
   - 100% width iframes are now opt-out optional
