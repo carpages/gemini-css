@@ -55,23 +55,17 @@ $gemini-spacing: extend((
     @each $reverse-title, $reverse in get("naming.reverse", $gemini-spacing) {
       @each $size-title, $size in get("naming.size", $gemini-spacing) {
         @each $direction-title, $direction-list in get("naming.direction", $gemini-spacing) {
-
-          @if ($type != "padding" or $reverse != -1) and
-              ($size != 0 or $reverse != -1) {
-
+          @if ($type != "padding" or $reverse != -1) and ($size != 0 or $reverse != -1) {
             .#{implode($type-title $reverse-title $size-title $screen-title $direction-title, "-")} {
               @each $direction in $direction-list {
                 #{implode($type $direction, "-")}: get(spacing) * $size * $reverse !important;
               }
             }
-
           }
-
         }
       }
     }
   }
-
 }
 
 /**
