@@ -61,11 +61,9 @@
     $e: nth($list, $i);
 
     @if type-of($e) == list {
-      $result: $result#{implode($e, $glue, $trim true)};
-    }
-
-    @else {
-      $result: if($i != length($list) or $is-nested, $result#{$e}#{$glue}, $result#{$e});
+      $result: $result#{implode($e, $glue, $trim, true)};
+    } @else {
+      $result: if($i != length($list) or $is-nested, #{$result}#{$e}#{$glue}, #{$result}#{$e});
     }
   }
 
