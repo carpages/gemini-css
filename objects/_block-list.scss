@@ -4,6 +4,8 @@
  ********************************
  */
 
+@use "sass:math";
+
 @if get(block-list, $gemini-use) {
 
   /**
@@ -24,7 +26,7 @@
     margin-left: 0;
 
     > li {
-      padding: get(spacing) / 2 0;
+      padding: math.div(get(spacing), 2) 0;
     }
   }
   .block-list--sides {
@@ -36,7 +38,7 @@
 
   .block-list__link {
     display: block;
-    padding: get(spacing) / 2 0;
-    margin: - get(spacing) / 2 0;
+    padding: math.div(get(spacing), 2) 0;
+    margin: math.div(- get(spacing), 2) 0;
   }
 }//endif

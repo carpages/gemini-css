@@ -18,25 +18,27 @@
       font-size: base-em(24px);
     }
  */
+@use "sass:math";
+
 @function base-em($val) {
   $u: unit($val);
 
   @if $u == "em" {
     @return $val;
   } @else if $u == "%" {
-    @return $val / 100% + 0em;
+    @return math.div($val, 100%) + 0em;
   } @else if $u == "px" {
-    @return $val / 16px + 0em;
+    @return math.div($val, 16px) + 0em;
   } @else if $u == "pt" {
-    @return $val / 12pt + 0em;
+    @return math.div($val, 12pt) + 0em;
   } @else if $u == "in" {
-    @return $val / 0.17in + 0em;
+    @return math.div($val, 0.17in) + 0em;
   } @else if $u == "pc" {
-    @return $val / 1pc + 0em;
+    @return math.div($val, 1pc) + 0em;
   } @else if $u == "mm" {
-    @return $val / 4.2mm + 0em;
+    @return math.div($val, 4.2mm) + 0em;
   } @else if $u == "cm" {
-    @return $val / 0.42cm + 0em;
+    @return math.div($val, 0.42cm) + 0em;
   } @else if $u == "" {
     @return $val + 0em;
   } @else {
@@ -60,7 +62,7 @@
     }
  */
 @function em($value, $context: get(font-size)) {
-  @return ( base-em($value) / base-em($context) ) + 0em;
+  @return  math.div(base-em($value), base-em($context))  + 0em;
 }
 
 /**
@@ -77,5 +79,5 @@
     }
  */
 @function rem($value) {
-  @return ( base-em($value) / base-em(get(font-size)) ) + 0rem;
+  @return  math.div(base-em($value), base-em(get(font-size)))  + 0rem;
 }

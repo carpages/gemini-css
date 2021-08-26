@@ -4,8 +4,9 @@
  ********************************
  */
 
-@if get(nav, $gemini-use) or get(pagination, $gemini-use) {
+@use "sass:math";
 
+@if get(nav, $gemini-use) or get(pagination, $gemini-use) {
   /**
    * @module Navigation Lists [.nav]
    * @description When used on an 'ol' or 'ul', this class throws the list into horizontal mode. As per: csswizardry.com/2011/09/the-nav-abstraction
@@ -34,6 +35,8 @@
    * ​   https://github.com/twbs/bootstrap/issues/5455
    */
   .nav {
+    display: flex;
+
     list-style: none;
     margin: 0;
     @include clearfix;
@@ -48,9 +51,12 @@
         zoom: 1;
       }
     }
-  }
 
-  /**
+    &:not(.nav--stacked) {
+      flex-direction: row;
+    }
+
+    /**
    * @markup
     <ul class='nav nav--stacked'>
       <li><a href=#>Home</a></li>
@@ -59,16 +65,18 @@
       <li><a href=#>Contact</a></li>
     </ul>
    */
-  .nav--stacked {
-    > li {
-      display: list-item;
+    &.nav--stacked {
+      flex-direction: column;
 
-      > a {
-        display: block;
+      > li {
+        display: list-item;
+
+        > a {
+          display: block;
+        }
       }
     }
   }
-
 
   /**
    * @markup
@@ -81,7 +89,7 @@
    */
   .nav--center,
   .nav--centre {
-    text-align: center;
+    justify-content: center;
   }
 
   /**
@@ -94,7 +102,7 @@
     </ul>
    */
   .nav--right {
-    text-align: right;
+    justify-content: flex-end;
   }
 
   /**
@@ -121,7 +129,7 @@
 
       &,
       > a {
-        padding: get(spacing) / 2;
+        padding: math.div(get(spacing), 2);
       }
     }
   }
@@ -188,7 +196,7 @@
   .nav--keywords {
     > li {
       &:after {
-        content: "\002C" "\00A0";
+        content: "\002C""\00A0";
       }
 
       &:last-child:after {
@@ -207,7 +215,7 @@
    */
   .nav--breadcrumb > li {
     + li:before {
-      content: "\002F" "\00A0";
+      content: "\002F""\00A0";
     }
 
     + li[data-breadcrumb]:before {
@@ -228,4 +236,4 @@
     white-space: nowrap;
     overflow-x: scroll;
   }
-}//endif
+} //endif

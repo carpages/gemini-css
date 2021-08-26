@@ -1,11 +1,11 @@
-  /**
+/**
  ********************************
  * _LISTS.SCSS
  ********************************
  */
 
- // Some list helpers thanks to
- // http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/
+// Some list helpers thanks to
+// http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/
 
 /**
  * @function remove
@@ -23,9 +23,7 @@
   @for $i from 1 through length($list) {
     @if type-of(nth($list, $i)) == list and $recursive {
       $result: append($result, remove(nth($list, $i), $value, $recursive));
-    }
-
-    @else if nth($list, $i) != $value {
+    } @else if nth($list, $i) != $value {
       $result: append($result, nth($list, $i));
     }
   }
@@ -42,7 +40,7 @@
  * @param {string} [$glue=""] The string to implode the list with
  * @param {string} [$trim=true] Whether to trim empty strings and nulls
  *
- * @return {string} A string of the implodeed list
+ * @return {string} A string of the imploded list
  *
  * @example
     .foo:before {
@@ -61,9 +59,13 @@
     $e: nth($list, $i);
 
     @if type-of($e) == list {
-      $result: $result#{implode($e, $glue, $trim, true)};
+      $result: unquote("#{$result}#{implode($e, $glue, $trim)}");
     } @else {
-      $result: if($i != length($list) or $is-nested, #{$result}#{$e}#{$glue}, #{$result}#{$e});
+      $result: if(
+        $i != length($list) or $is-nested,
+        unquote("#{$result}#{$e}#{$glue}"),
+        unquote("#{$result}#{$e}")
+      );
     }
   }
 

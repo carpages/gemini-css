@@ -11,6 +11,8 @@
  * @markup
     <p>And with great audacity, he told them, <q>My name is derp!</q></p>
  */
+@use "sass:math";
+
 q {
   quotes: "\2018" "\2019" "\201C" "\201D";
 
@@ -81,7 +83,7 @@ blockquote {
   }
 }
 .blockquote--indent {
-  padding: 0 0 0 get(spacing) / 2;
+  padding: 0 0 0 math.div(get(spacing), 2);
   border-left: 5px solid getColor(g15);
 }
 

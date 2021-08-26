@@ -4,6 +4,8 @@
  ********************************
  */
 
+@use "sass:math";
+
 @if get(overlay, $gemini-use) {
 
   //Use position absolute to overlay items
@@ -60,7 +62,7 @@
     @extend %overlay__content;
     @extend .overlay__content--top-right;
     height: 100%;
-    width: percentage(1/2);
+    width: percentage(math.div(1, 2));
   }
   .overlay__content--bottom {
     @extend %overlay__content;
@@ -71,6 +73,6 @@
     @extend %overlay__content;
     @extend .overlay__content--top-left;
     height: 100%;
-    width: percentage(1/2);
+    width: percentage(math.div(1, 2));
   }
 }//endif

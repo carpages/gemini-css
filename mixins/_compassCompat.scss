@@ -1,0 +1,10 @@
+/**
+ ********************************
+ * _COMPASSCOMPAT.SCSS
+ * Mixins that we use from Compass.
+ ********************************
+ */
+
+@mixin column-count($count) {
+  column-count: $count;
+}

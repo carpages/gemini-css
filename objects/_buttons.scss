@@ -16,20 +16,24 @@
  * @prop {color} [border-color=get(border-color)] The border color
  * @prop {measurement} [border-radius=get(border-radius)] The border radius
  */
+@use "sass:math";
+
 $gemini-buttons: () !default;
 
-$gemini-buttons: extend((
-  color: #333,
-  background-color: #EEE,
-  padding-ends: 0.5em,
-  padding-sides: 1em,
-  border-width: 1px,
-  border-color: get(border-color),
-  border-radius: get(border-radius)
-), $gemini-buttons);
+$gemini-buttons:extend(
+  (
+    color: #333,
+    background-color: #EEE,
+    padding-ends: 0.5em,
+    padding-sides: 1em,
+    border-width: 1px,
+    border-color: get(border-color),
+    border-radius: get(border-radius)
+  ),
+  $gemini-buttons
+);
 
 @if get(buttons, $gemini-use) {
-
   /**
    * @module Buttons [.button]
    * @description Different buttons.
@@ -80,27 +84,50 @@ $gemini-buttons: extend((
 
   .button--natural {
     display: inline;
-    vertical-align: baseline;
-    font-size: inherit;
-    line-height: inherit;
     padding-top: 0;
     padding-bottom: 0;
+    font-size: inherit;
+    line-height: inherit;
+    vertical-align: baseline;
   }
 
-  $gemini-button-sides-multiplier: if(get(padding-sides, $gemini-buttons) > 0, get(padding-sides, $gemini-buttons), get(spacing) / 2);
-  $gemini-button-ends-multiplier:  if(get(padding-ends, $gemini-buttons) > 0, get(padding-ends, $gemini-buttons), get(spacing) / 4);
+  $gemini-button-sides-multiplier: if(
+    get(padding-sides, $gemini-buttons) > 0,
+    get(padding-sides, $gemini-buttons),
+    math.div(get(spacing), 2)
+  );
+  $gemini-button-ends-multiplier: if(
+    get(padding-ends, $gemini-buttons) > 0,
+    get(padding-ends, $gemini-buttons),
+    math.div(get(spacing), 4)
+  );
 
   .button--small {
-    padding: $gemini-button-ends-multiplier * 0.5 $gemini-button-sides-multiplier * 0.5;
+    padding: $gemini-button-ends-multiplier *
+      0.5
+      $gemini-button-sides-multiplier *
+      0.5;
   }
+
   .button--medium {
-    padding: $gemini-button-ends-multiplier * 1.25 $gemini-button-sides-multiplier * 1.25;
+    padding: $gemini-button-ends-multiplier *
+      1.25
+      $gemini-button-sides-multiplier *
+      1.25;
   }
+
   .button--large {
-    padding: $gemini-button-ends-multiplier * 1.5 $gemini-button-sides-multiplier * 1.5;
+    padding: $gemini-button-ends-multiplier *
+      1.5
+      $gemini-button-sides-multiplier *
+      1.5;
   }
+
   .button--huge {
-    padding: $gemini-button-ends-multiplier * 2.0 $gemini-button-sides-multiplier * 2.0;
+    padding: $gemini-button-ends-multiplier *
+      2
+      $gemini-button-sides-multiplier *
+      2;
   }
 
   /**
@@ -130,10 +157,12 @@ $gemini-buttons: extend((
         @if get(border-radius, $gemini-buttons) > 0 {
           @include border-left-radius(0);
         }
-
       }
+
       &:not(:last-child) {
-        border-right: get(border-width, $gemini-buttons) solid get(border-color, $gemini-buttons);
+        border-right: get(border-width, $gemini-buttons)
+          solid
+          get(border-color, $gemini-buttons);
 
         @if get(border-radius, $gemini-buttons) > 0 {
           @include border-right-radius(0);
@@ -141,21 +170,22 @@ $gemini-buttons: extend((
       }
     }
   }
-    .button-group--2 {
-      width: 100%;
 
-      > .button {
-        width: 50%;
-        text-align: center;
-      }
+  .button-group--2 {
+    width: 100%;
+
+    > .button {
+      width: 50%;
+      text-align: center;
     }
-    .button-group--3 {
-      width: 100%;
+  }
 
-      > .button {
-        width: 33.3332%;
-        text-align: center;
-      }
+  .button-group--3 {
+    width: 100%;
+
+    > .button {
+      width: 33.3332%;
+      text-align: center;
     }
-
-}//endif
+  }
+} //endif

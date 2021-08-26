@@ -11,6 +11,8 @@
  * @prop {color} [border-color=lighten(get(color), 50%)] The color of the border when using extension
  * @prop {boolean} [grid=#EEE] Whether to include the table grid (t10, t15, etc.)
  */
+@use "sass:math";
+
 $gemini-tables: () !default;
 
 $gemini-tables: extend((
@@ -82,9 +84,9 @@ table {
 }
 th,
 td {
-  padding: get(spacing) / 4;
+  padding: math.div(get(spacing), 4);
   @include media(medium) {
-    padding: get(spacing) / 2;
+    padding: math.div(get(spacing), 2);
   }
   text-align: left;
 }

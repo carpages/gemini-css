@@ -12,9 +12,11 @@
  * @modifier [.line-height-double, .lh-double] line-height: 2
  * @modifier [.line-height-triple, .lh-triple] line-height: 3
  */
+@use "sass:math";
+
 .line-height-half,
 .lh-half {
-  line-height: get(line-height) / 2 !important;
+  line-height: math.div(get(line-height), 2) !important;
 }
 
 .line-height-double,

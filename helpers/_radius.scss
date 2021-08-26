@@ -15,6 +15,10 @@
   @include border-radius(get(border-radius) !important);
 }
 
+.round-double {
+  @include border-radius(get(border-radius) * 2 !important);
+}
+
 /**
  * @module Fully Rounded Corners [.round-full]
  * @description Round the corners as much as possible

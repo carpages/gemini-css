@@ -24,26 +24,28 @@
  * @prop {number} [milli=font-size * 0.83]   Milli sized fonts
  * @prop {number} [micro=font-size * 0.75]   Micro sized fonts
  */
+@use "sass:math";
+
 $gemini-headings: () !default;
 
-$gemini-headings: extend((
-  giga:        get(font-size) * 6.5,
-  mega:        get(font-size) * 5,
-  kilo:        get(font-size) * 4,
-
-  alpha:       get(font-size) * 3.3333,
-  beta:        get(font-size) * 2.6667,
-  gamma:       get(font-size) * 2,
-  delta:       get(font-size) * 1.3333,
-  epsilon:     get(font-size) * 1.1667,
-  zeta:        get(font-size) * 1,
-
-  milli:       get(font-size) * 0.8333,
-  micro:       get(font-size) * 0.75,
-
-  line-height: 1.3,
-  responsive: false,
-), $gemini-headings);
+$gemini-headings: extend(
+  (
+    giga: get(font-size) * 6.5,
+    mega: get(font-size) * 5,
+    kilo: get(font-size) * 4,
+    alpha: get(font-size) * 3.3333,
+    beta: get(font-size) * 2.6667,
+    gamma: get(font-size) * 2,
+    delta: get(font-size) * 1.3333,
+    epsilon: get(font-size) * 1.1667,
+    zeta: get(font-size) * 1,
+    milli: get(font-size) * 0.8333,
+    micro: get(font-size) * 0.75,
+    line-height: 1.3,
+    responsive: false,
+  ),
+  $gemini-headings
+);
 
 /**
  * @module Headings
@@ -68,19 +70,17 @@ $gemini-headings: extend((
     <h6 class="alpha">Heading 6</h6>
  */
 $mapped-headings: (
-  giga:    false,
-  mega:    false,
-  kilo:    false,
-
-  alpha:   h1,
-  beta:    h2,
-  gamma:   h3,
-  delta:   h4,
+  giga: false,
+  mega: false,
+  kilo: false,
+  alpha: h1,
+  beta: h2,
+  gamma: h3,
+  delta: h4,
   epsilon: h5,
-  zeta:    h6,
-
-  milli:   false,
-  micro:   false,
+  zeta: h6,
+  milli: false,
+  micro: false,
 );
 
 /**
@@ -91,7 +91,6 @@ $mapped-headings: (
 }
 
 @each $class, $el in $mapped-headings {
-
   .#{$class},
   .#{$class}-medium,
   .#{$class}-large {
@@ -108,7 +107,6 @@ $mapped-headings: (
   .#{$class} {
     font-size: get($class, $gemini-headings) !important;
   }
-
 }
 
 /**
@@ -117,35 +115,22 @@ $mapped-headings: (
 @if (get(responsive, $gemini-headings)) {
   // Medium screens
   @include media(medium) {
-
     @each $class, $el in $mapped-headings {
-
       .#{$class}-medium {
         font-size: get($class, $gemini-headings) !important;
       }
-
     }
-
   }
 
   // Large screens
-  @include media(large){
-
+  @include media(large) {
     @each $class, $el in $mapped-headings {
-
       .#{$class}-large {
         font-size: get($class, $gemini-headings) !important;
       }
-
     }
-
   }
 }
-
-/**
- * @module Any Heading [.hN]
- * @description A general heading class to target any heading
- */
 
 /**
  * @module Heading Group [.hgroup]
@@ -163,13 +148,28 @@ $mapped-headings: (
       <h5 class="hN">Heading 4</h5>
     </div>
  */
-.hN {
-  hgroup &,
-  .hgroup & {
-    margin-bottom: 0;
-  }
 
-  .hgroup--inline {
-    display: inline-block;
+[class^="hgroup"] {
+  display: flex;
+
+  > .hN {
+    margin-bottom: 0;
+    line-height: 1;
+  }
+}
+
+.hgroup {
+  flex-direction: column;
+
+  > .hN + .hN {
+    margin-top: math.div(get(spacing), 3);
+  }
+}
+
+.hgroup--inline {
+  flex-direction: row;
+
+  > .hN + .hN {
+    margin-left: math.div(get(spacing), 3);
   }
 }

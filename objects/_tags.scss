@@ -18,48 +18,49 @@
  */
 $gemini-tags: () !default;
 
-$gemini-tags: extend((
-  color: #333,
-  background-color: #EEE,
-  padding-ends: 0.25em,
-  padding-sides: 0.5em,
-  border-width: 0,
-  border-color: get(border-color),
-  border-radius: 0
-), $gemini-tags);
+$gemini-tags:extend(
+  (
+    color: #333,
+    background-color: #EEE,
+    padding-ends: 0.25em,
+    padding-sides: 0.5em,
+    border-width: 0,
+    border-color: get(border-color),
+    border-radius: 0
+  ),
+  $gemini-tags
+);
 
 /**
  * Tags are a common CSS element that we see multiple elements extend,
  * including buttons, tabs, and various other tags
  */
 @mixin tag(
-  $color         : get(color, $gemini-tags),
-  $background    : get(background-color, $gemini-tags),
-  $ends          : get(padding-ends, $gemini-tags),
-  $sides         : get(padding-sides, $gemini-tags),
-  $border-width  : get(border-width, $gemini-tags),
-  $border-color  : get(border-color, $gemini-tags),
-  $border-radius : get(border-radius, $gemini-tags)
-  ) {
+  $color: get(color, $gemini-tags),
+  $background: get(background-color, $gemini-tags),
+  $ends: get(padding-ends, $gemini-tags),
+  $sides: get(padding-sides, $gemini-tags),
+  $border-width: get(border-width, $gemini-tags),
+  $border-color: get(border-color, $gemini-tags),
+  $border-radius: get(border-radius, $gemini-tags)
+) {
   display: inline-block;
-  vertical-align: middle;
-  font: inherit;
-  margin: 0;
   padding: $ends $sides;
   padding: calc(#{$ends} - #{$border-width}) $sides;
-
+  margin: 0;
+  font: inherit;
   color: $color;
+  vertical-align: middle;
   background: $background;
 
   border: $border-width solid $border-color;
 
   @if $border-radius > 0 {
-    @include border-radius($border-radius);
+    border-radius: $border-radius;
   }
-};
+}
 
 @if get(tags, $gemini-use) {
-
   /**
    * @module Tags [.tag]
    * @description Give text a background so it looks like a tag
@@ -76,27 +77,39 @@ $gemini-tags: extend((
   .tag {
     @include tag();
 
-    &, &:hover {
+    &,
+    &:hover {
       text-decoration: none;
     }
   }
 
   .tag--natural {
-    vertical-align: baseline;
+    padding-top: 0;
+    padding-bottom: 0;
     font-size: inherit;
     line-height: inherit;
     line-height: calc(100% - #{get(border-width, $gemini-tags) * 2});
-    padding-top: 0;
-    padding-bottom: 0;
+    vertical-align: baseline;
   }
 
   .tag--small {
-    padding: get(padding-ends, $gemini-tags) * 0.5 get(padding-sides, $gemini-tags) * 0.5;
+    padding: get(padding-ends, $gemini-tags) *
+      0.5
+      get(padding-sides, $gemini-tags) *
+      0.5;
   }
+
   .tag--large {
-    padding: get(padding-ends, $gemini-tags) * 1.5 get(padding-sides, $gemini-tags) * 1.5;
+    padding: get(padding-ends, $gemini-tags) *
+      1.5
+      get(padding-sides, $gemini-tags) *
+      1.5;
   }
+
   .tag--huge {
-    padding: get(padding-ends, $gemini-tags) * 2 get(padding-sides, $gemini-tags) * 2;
+    padding: get(padding-ends, $gemini-tags) *
+      2
+      get(padding-sides, $gemini-tags) *
+      2;
   }
-}//endif
+} //endif

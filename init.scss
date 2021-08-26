@@ -39,103 +39,108 @@
 /**
  * Variables
  */
-@import "defaults";
+@import 'defaults';
 
 /**
  * Functions
  */
-@import "functions/lists";
-@import "functions/maps";
-@import "functions/colors";
-@import "functions/ems";
+@import 'functions/lists';
+@import 'functions/maps';
+@import 'functions/colors';
+@import 'functions/ems';
+
+/**
+ * Compass Compatibility Suite
+ */
+@import 'mixins/compassCompat';
 
 /**
  * Mixins
  */
-@import "mixins/accessibility";
-@import "mixins/arrows";
-@import "mixins/border";
-@import "mixins/clearfix";
-@import "mixins/font-face";
-@import "mixins/font-size";
-@import "mixins/gpu";
-@import "mixins/headings";
-@import "mixins/lists";
-@import "mixins/media-queries";
-@import "mixins/text-rendering";
-@import "mixins/truncate";
-@import "mixins/vendor";
+@import 'mixins/accessibility';
+@import 'mixins/arrows';
+@import 'mixins/border';
+@import 'mixins/clearfix';
+@import 'mixins/font-face';
+@import 'mixins/font-size';
+@import 'mixins/gpu';
+@import 'mixins/headings';
+@import 'mixins/lists';
+@import 'mixins/media-queries';
+@import 'mixins/text-rendering';
+@import 'mixins/truncate';
+@import 'mixins/vendor';
 
 /**
  * Load Colors
  */
-@import "objects/colors";
+@import 'objects/colors';
 
 /**
  * Base Styles
  */
-@import "base/normalize";
-@import "base/reset";
-@import "base/margins";
-@import "base/main";
-@import "base/headings";
-@import "base/paragraphs";
-@import "base/links";
-@import "base/quotes";
-@import "base/code";
-@import "base/images";
-@import "base/lists";
-@import "base/tables";
-@import "base/forms";
-@import "base/iframes";
-@import "base/objects";
+@import 'base/normalize';
+@import 'base/reset';
+@import 'base/margins';
+@import 'base/main';
+@import 'base/headings';
+@import 'base/paragraphs';
+@import 'base/links';
+@import 'base/quotes';
+@import 'base/code';
+@import 'base/images';
+@import 'base/lists';
+@import 'base/tables';
+@import 'base/forms';
+@import 'base/iframes';
+@import 'base/objects';
 
 /**
  * Objects and abstractions
  */
-@import "objects/icons";
-@import "objects/grid";
-@import "objects/nav";
-@import "objects/pagination";
-@import "objects/media";
-@import "objects/block-list";
-@import "objects/multi-list";
-@import "objects/bullet-list";
-@import "objects/split";
-@import "objects/link-complex";
-@import "objects/flyout";
-@import "objects/tags";
-@import "objects/buttons";
-@import "objects/rules";
-@import "objects/stats";
-@import "objects/fit";
-@import "objects/overlay";
-@import "objects/colors";
-@import "objects/copy";
+@import 'objects/icons';
+@import 'objects/grid';
+@import 'objects/nav';
+@import 'objects/pagination';
+@import 'objects/media';
+@import 'objects/block-list';
+@import 'objects/multi-list';
+@import 'objects/bullet-list';
+@import 'objects/split';
+@import 'objects/link-complex';
+@import 'objects/flyout';
+@import 'objects/tags';
+@import 'objects/buttons';
+@import 'objects/rules';
+@import 'objects/stats';
+@import 'objects/fit';
+@import 'objects/overlay';
+@import 'objects/colors';
+@import 'objects/copy';
 
 // Text inputs are an exception to base styles since they extend buttons and tag
-@import "base/text-inputs";
+@import 'base/text-inputs';
 
 /**
  * Helpers
  */
-@import "helpers/accessibility";
-@import "helpers/align";
-@import "helpers/brand";
-@import "helpers/casing";
-@import "helpers/clearfix";
-@import "helpers/cursors";
-@import "helpers/display";
-@import "helpers/floats";
-@import "helpers/full";
-@import "helpers/gpu";
-@import "helpers/hidden";
-@import "helpers/line-height";
-@import "helpers/mute";
-@import "helpers/radius";
-@import "helpers/scroll";
-@import "helpers/spacing";
-@import "helpers/text-rendering";
-@import "helpers/truncate";
-@import "helpers/user-select";
-@import "helpers/weight";
+@import 'helpers/accessibility';
+@import 'helpers/align';
+@import 'helpers/brand';
+@import 'helpers/casing';
+@import 'helpers/clearfix';
+@import 'helpers/cursors';
+@import 'helpers/display';
+@import 'helpers/floats';
+@import 'helpers/full';
+@import 'helpers/gpu';
+@import 'helpers/hidden';
+@import 'helpers/line-height';
+@import 'helpers/mute';
+@import 'helpers/radius';
+@import 'helpers/scroll';
+@import 'helpers/spacing';
+@import 'helpers/text-rendering';
+@import 'helpers/truncate';
+@import 'helpers/user-select';
+@import 'helpers/weight';

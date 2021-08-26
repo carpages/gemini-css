@@ -18,23 +18,42 @@
     }
  */
 
-@mixin border($color: get(border-color), $width: 1px, $position: "all") {
-  @if $position == "all" {
+@mixin border($color: get(border-color), $width: 1px, $position: 'all') {
+  @if $position == 'all' {
     border: $width solid $color;
-  }
-  @else if $position == "bottom" {
+  } @else if $position == 'bottom' {
     border-bottom: $width solid $color;
-  }
-  @else if $position == "top" {
+  } @else if $position == 'top' {
     border-top: $width solid $color;
-  }
-  @else if $position == "right" {
+  } @else if $position == 'right' {
     border-right: $width solid $color;
-  }
-  @else if $position == "left" {
+  } @else if $position == 'left' {
     border-left: $width solid $color;
-  }
-  @else {
+  } @else {
     border: $width solid $color;
   }
+}
+
+@mixin border-radius($borderRadius) {
+  border-radius: $borderRadius;
+}
+
+@mixin border-top-radius($borderRadius) {
+  border-top-right-radius: $borderRadius;
+  border-top-left-radius: $borderRadius;
+}
+
+@mixin border-right-radius($borderRadius) {
+  border-top-right-radius: $borderRadius;
+  border-bottom-right-radius: $borderRadius;
+}
+
+@mixin border-bottom-radius($borderRadius) {
+  border-bottom-right-radius: $borderRadius;
+  border-bottom-left-radius: $borderRadius;
+}
+
+@mixin border-left-radius($borderRadius) {
+  border-bottom-left-radius: $borderRadius;
+  border-top-left-radius: $borderRadius;
 }
