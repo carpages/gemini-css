@@ -15,6 +15,9 @@
     }
   ],
   "main": "init.scss",
+  "engines": {
+    "node": ">=14"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/carpages/gemini-css"
