@@ -16,12 +16,12 @@
     <h2 class="brand">I like cheese</h2>
  */
 .brand {
-  font-family: get(brand-font-family) +!important;
-  color: get(brand-color) +!important;
+  font-family: get(brand-font-family) !important;
+  color: get(brand-color) !important;
 }
 .brand-face {
-  font-family: get(brand-font-family) +!important;
+  font-family: get(brand-font-family) !important;
 }
 .brand-color {
-  color: get(brand-color) +!important;
+  color: get(brand-color) !important;
 }
