@@ -19,8 +19,15 @@
     "type": "git",
     "url": "https://github.com/carpages/gemini-css"
   },
+  "scripts": {
+    "compile": "sass test/test.scss test/test.css -I node_modules --source-map"
+  },
   "license": "MIT",
   "peerDependencies": {
     "compass-mixins": "^0.12.10"
+  },
+  "devDependencies": {
+    "compass-mixins": "^0.12.12",
+    "sass": "^1.64.1"
   }
 }
