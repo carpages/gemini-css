@@ -1,34 +1,27 @@
-const gulp            = require( 'gulp' );
-const postcss         = require( 'gulp-postcss' );
-const sass            = require( 'gulp-sass' );
-const plumber         = require( 'gulp-plumber' );
-const gutil           = require( 'gulp-util' );
-const parker          = require( 'gulp-parker' );
-const autoprefixer    = require( 'autoprefixer' );
-const cssnano         = require( 'cssnano' );
+const { task, src, dest, watch, series } = require('gulp');
+const postcss = require('gulp-postcss');
+const sass = require('gulp-sass')(require('sass'));
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
 
-const processors = [
-  autoprefixer({ browsers: [ 'last 2 versions' ]}),
-  cssnano()
-];
+function compileSass() {
+  return src('./test.scss')
+    .pipe(
+      sass
+        .sync({
+          includePaths: ['node_modules', 'node_modules/compass-mixins/lib'],
+        })
+        .on('error', sass.logError),
+    )
+    .pipe(postcss([autoprefixer(), cssnano()]))
+    .pipe(dest('.'));
+}
 
-gulp.task( 'sass', () => {
-  return gulp.src( './test.scss' )
-    .pipe( plumber({
-      errorHandler: function( error ) {
-        gutil.log( error );
-        this.emit( 'end' );
-      }
-    }))
-    .pipe( sass({
-      includePaths: [ 'node_modules/compass-mixins/lib' ]
-    }))
-    .pipe( postcss( processors ))
-    .pipe( gulp.dest('.'));
-});
+function watchSass() {
+  watch('../**/*.scss', compileSass);
+  console.log('watching sass files...');
+}
 
-gulp.task( 'watch', [ 'sass' ], () => {
-  gulp.watch( '../**/*.scss', [ 'sass' ]);
-});
-
-gulp.task( 'default', [ 'sass' ]);
+task('sass', compileSass);
+task('watch', series(compileSass, watchSass));
+task('default', compileSass);
