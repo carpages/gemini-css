@@ -70,7 +70,7 @@
     @extend %overlay__content;
     @extend .overlay__content--top-right;
 
-    width: percentage(1/2);
+    width: percentage(1*0.5);
     height: 100%;
   }
 
@@ -85,7 +85,7 @@
     @extend %overlay__content;
     @extend .overlay__content--top-left;
 
-    width: percentage(1/2);
+    width: percentage(1*0.5);
     height: 100%;
   }
 }//endif

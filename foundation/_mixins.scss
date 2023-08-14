@@ -18,13 +18,18 @@
  * Thanks to @redclov3r for the 'line-height' Sass:
  * twitter.com/redclov3r/status/250301539321798657
  */
+@use "sass:math";
+@use "functions";
+
 @mixin font-size($font-size, $line-height:false) {
-  font-size: $font-size;
   @if $use-rem == true {
-    font-size: rem($font-size);
+    font-size: functions.rem($font-size, $base-font-size);
+  } 
+  @else {
+    font-size: $font-size;
   }
   @if $line-height != false {
-    line-height: ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+    line-height: ceil(math.div($font-size, $base-line-height)) * math.div($base-line-height, $font-size);
   }
 }
 

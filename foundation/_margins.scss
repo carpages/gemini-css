@@ -17,6 +17,8 @@
 /**
  * Base elements
  */
+@use "sass:math";
+
 h1,
 h2,
 h3,
@@ -42,7 +44,7 @@ pre,
 .media {
   margin-bottom: $base-spacing-unit;
   @if $use-rem == true {
-    margin-bottom: ($base-spacing-unit / $base-font-size)*1rem;
+    margin-bottom: math.div($base-spacing-unit, $base-font-size)*1rem;
   }
 }
 
@@ -53,7 +55,7 @@ pre,
 .landmark {
   margin-bottom: 2 * $base-spacing-unit;
   @if $use-rem == true {
-    margin-bottom: (2 * $base-spacing-unit / $base-font-size)*1rem;
+    margin-bottom: math.div(2 * $base-spacing-unit, $base-font-size)*1rem;
   }
 }
 
@@ -63,7 +65,7 @@ pre,
 %half-margin-bottom {
   margin-bottom: $half-spacing-unit;
   @if $use-rem == true {
-    margin-bottom: ($half-spacing-unit / $base-font-size)*1rem;
+    margin-bottom: math.div($half-spacing-unit, $base-font-size)*1rem;
   }
 }
 
@@ -73,7 +75,7 @@ pre,
 %quarter-margin-bottom {
   margin-bottom: $quarter-spacing-unit;
   @if $use-rem == true {
-    margin-bottom: ($quarter-spacing-unit / $base-font-size)*1rem;
+    margin-bottom: math.div($quarter-spacing-unit, $base-font-size)*1rem;
   }
 }
 
@@ -84,7 +86,7 @@ pre,
 hr {
   margin-bottom: $base-spacing-unit - 2px;
   @if $use-rem == true {
-    margin-bottom: (($base-spacing-unit - 2px) / $base-font-size)*1rem;
+    margin-bottom: math.div($base-spacing-unit - 2px, $base-font-size)*1rem;
   }
 }
 
@@ -97,6 +99,6 @@ ol,
 dd {
   margin-left: 2 * $base-spacing-unit;
   @if $use-rem == true {
-    margin-left: (2 * $base-spacing-unit / $base-font-size)*1rem;
+    margin-left: math.div(2 * $base-spacing-unit, $base-font-size)*1rem;
   }
 }

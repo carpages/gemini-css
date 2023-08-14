@@ -22,14 +22,14 @@
   }
 
   .pagination > li {
-    padding: $base-spacing-unit / 2;
+    padding: $base-spacing-unit * 0.5;
     letter-spacing: normal;
     word-spacing: normal;
   }
 
   .pagination > li > a {
-    padding: $base-spacing-unit / 2;
-    margin: -$base-spacing-unit / 2;
+    padding: $base-spacing-unit * 0.5;
+    margin: -$base-spacing-unit * 0.5;
   }
 
   /**

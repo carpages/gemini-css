@@ -14,6 +14,8 @@
  *
   font-size: base-em(24px);
  */
+@use "sass:math";
+
 @function base-em($val) {
   $u: unit($val);
 
@@ -21,13 +23,13 @@
     @return $val;
   }
   @else if $u == "%" {
-    @return $val / 100% + 0em;
+    @return math.div($val, 100%) + 0em;
   }
   @else if $u == "px" {
-    @return $val / 16px + 0em;
+    @return math.div($val, 16px) + 0em;
   }
   @else if $u == "pt" {
-    @return $val / 12pt + 0em;
+    @return math.div($val, 12pt) + 0em;
   }
   @else if $u == "" {
     @return $val + 0em;
@@ -46,16 +48,20 @@
   font-size: em(24px, 16px);
  */
 @function em($value, $context: $base-font-size) {
-  @return ( base-em($value) / base-em($context) ) + 0em;
+  @return  math.div(base-em($value), base-em($context))  + 0em;
 }
 
 /**
  * Convert any unit measurement to rem
  *
   font-size: rem(24px);
+  font-size: rem(24px, 16px);
  */
-@function rem($value) {
-  @return ( base-em($value) / base-em($base-font-size) ) + 0rem;
+@function rem($value, $context) {
+  $valueAsEm: base-em($value);
+  $contextAsEm: base-em($context);
+  
+  @return math.div($valueAsEm, $contextAsEm) + 0rem;
 }
 
 /*
@@ -72,7 +78,7 @@
 // Returns a number between 0% and 100%, where 100% is fully bright
 // (white) and 0% is fully dark (black).
 @function brightness($color) {
-  @return ((red($color) * 0.299) + (green($color) * 0.587) + (blue($color) * 0.114)) / 255 * 100%;
+  @return math.div((red($color) * 0.299) + (green($color) * 0.587) + (blue($color) * 0.114), 255) * 100%;
 }
 
 @function contrast-color(

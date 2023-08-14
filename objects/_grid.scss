@@ -15,8 +15,10 @@
 //
 // Grid Functions
 //
+@use "sass:math";
+
 @function gridCalc($colNumber, $totalColumns) {
-  @return percentage(($colNumber / $totalColumns));
+  @return percentage(math.div($colNumber, $totalColumns));
 }
 
 /*
@@ -110,8 +112,8 @@
     & .l-row {
       width: auto;
       max-width: none;
-      margin-right: -($column-gutter/2);
-      margin-left: -($column-gutter/2);
+      margin-right: -($column-gutter*0.5);
+      margin-left: -($column-gutter*0.5);
     }
   }
 
@@ -142,7 +144,7 @@
     position: relative;
     float: left;
     width: 100%;
-    padding: 0 ($column-gutter/2);
+    padding: 0 ($column-gutter*0.5);
     margin-bottom: $base-spacing-unit;
   }
 
