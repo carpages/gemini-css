@@ -23,14 +23,16 @@
     "url": "https://github.com/carpages/gemini-css"
   },
   "scripts": {
-    "compile": "sass test/test.scss test/test.css -I node_modules --source-map"
+    "test": "sass test -I node_modules --source-map",
+    "migrate:sass:division": "sass-migrator division \"./**/*.scss\" -I node_modules"
   },
   "license": "MIT",
   "peerDependencies": {
-    "compass-mixins": "^0.12.10"
+    "compass-mixins": "^0.12.12"
   },
   "devDependencies": {
     "compass-mixins": "^0.12.12",
-    "sass": "^1.64.1"
+    "sass": "^1.69.4",
+    "sass-migrator": "^1.7.3"
   }
 }
