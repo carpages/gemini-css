@@ -48,13 +48,13 @@
   ) {
   @if $color == null {
     @return null;
-  }
+  } 
   @else {
     $color-brightness: get-brightness($color);
     $dark-text-brightness: get-brightness($dark);
     $light-text-brightness: get-brightness($light);
 
-    @return if(abs($color-brightness - $light-text-brightness) > abs($color-brightness - $dark-text-brightness), $light, $dark);
+    @return if(math.abs($color-brightness - $light-text-brightness) > math.abs($color-brightness - $dark-text-brightness), $light, $dark);
   }
 }
 
