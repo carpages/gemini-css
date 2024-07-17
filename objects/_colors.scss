@@ -4,7 +4,6 @@
  ********************************
  */
 
-
 /**
  * @settings $gemini-colors
  * @description Add custom colors to be used with getColor() or .c-{color}.
@@ -15,19 +14,20 @@
  * @prop {color} [google-plus=#DD4C39] Google Plus Red
  * @prop {color} [pinterest=#C9232D] Pinterest Red
  */
-@use "sass:math";
+@use 'sass:math';
 
 $gemini-colors: () !default;
 
-$gemini-colors: extend((
-  facebook:    #3A5998,
-  twitter:     #1AB2E8,
-  google:      #4386F7,
-  google-plus: #DD4C39,
-  pinterest:   #C9232D,
-), $gemini-colors);
-
-
+$gemini-colors: extend(
+  (
+    facebook: #3a5998,
+    twitter: #1ab2e8,
+    google: #4386f7,
+    google-plus: #dd4c39,
+    pinterest: #c9232d,
+  ),
+  $gemini-colors
+);
 
 /**
  * Add all the colors to the color collection
@@ -51,14 +51,11 @@ $gemini-colors: extend((
 @for $i from 0 through math.div(100, 5) {
   $grey-percent: $i * 5;
 
-  $trash: addColor(g + $grey-percent, darken(#FFF, $grey-percent));
+  $trash: addColor(g + $grey-percent, darken(#fff, $grey-percent));
 }
 
-
 @if get(colors, $gemini-use) {
-
   @each $name, $color in $gemini-color-collection {
-
     /**
      * @module Color Helpers
      * @description Classes to help you easily set a color. You can easily add
@@ -68,10 +65,8 @@ $gemini-colors: extend((
       <span class="c-g50">I'm gray!</span>
       <span class="c-facebook">I'm Facebook blue!</span>
      */
-    .c-#{"" + $name} {
+    .c-#{'' + $name} {
       color: $color;
     }
-
   }
-
 }

@@ -40,15 +40,14 @@
   $border-size: 2px,
   $border-color: $arrow-color,
   $set-position: true
-  ) {
-
+) {
   @if $set-position {
     position: relative;
   }
 
   &:before,
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     border-collapse: separate;
   }
@@ -67,7 +66,6 @@
   }
 
   @if $arrow-edge == top {
-
     &:before,
     &:after {
       bottom: 100%;
@@ -81,11 +79,9 @@
     &:after {
       border-bottom-color: $arrow-color !important;
     }
-
   }
 
   @if $arrow-edge == bottom {
-
     &:before,
     &:after {
       top: 100%;
@@ -99,11 +95,9 @@
     &:after {
       border-top-color: $arrow-color !important;
     }
-
   }
 
   @if $arrow-edge == bottom or $arrow-edge == top {
-
     @if $arrow-location == left {
       &:before {
         left: $arrow-size - $border-size;
@@ -117,10 +111,10 @@
       &:before,
       &:after {
         left: 50%;
-        margin-left: - $arrow-size;
+        margin-left: -$arrow-size;
       }
       &:after {
-        margin-left: - $arrow-size + $border-size;
+        margin-left: -$arrow-size + $border-size;
       }
     }
 
@@ -134,11 +128,9 @@
         right: $arrow-size + 10px;
       }
     }
-
   }
 
   @if $arrow-edge == right {
-
     &:before,
     &:after {
       left: 100%;
@@ -153,11 +145,9 @@
     &:after {
       border-left-color: $arrow-color !important;
     }
-
   }
 
   @if $arrow-edge == left {
-
     &:before,
     &:after {
       right: 100%;
@@ -172,11 +162,9 @@
     &:after {
       border-right-color: $arrow-color !important;
     }
-
   }
 
   @if $arrow-edge == left or $arrow-edge == right {
-
     @if $arrow-location == top {
       @if $border-size {
         &:before {
@@ -192,10 +180,10 @@
       &:before,
       &:after {
         top: 50%;
-        margin-top: - $arrow-size;
+        margin-top: -$arrow-size;
       }
       &:after {
-        margin-top: - $arrow-size + $border-size;
+        margin-top: -$arrow-size + $border-size;
       }
     }
 
@@ -209,7 +197,5 @@
         bottom: $arrow-size;
       }
     }
-
   }
-
 }

@@ -4,7 +4,7 @@
  ********************************
  */
 
-@use "sass:math";
+@use 'sass:math';
 
 @if get(multi-list, $gemini-use) {
   /**
@@ -47,7 +47,6 @@
     padding-bottom: get(spacing);
   }
 
-
   /**
    * Apply these classes alongside the '.multi-list' class on
    * lists to determine how wide their columns are.
@@ -71,7 +70,6 @@
       }
     }
   }
-
 
   /**
    * @submodule Multi-list Vertical [.multi-list--vertical]
@@ -117,4 +115,4 @@
       }
     }
   }
-}//endif
+} //endif

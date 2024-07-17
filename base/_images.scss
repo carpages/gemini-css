@@ -31,25 +31,24 @@ img[height] {
   max-width: none;
 }
 
-
 /**
  * Image placement variations.
  */
 .img--right {
   float: right;
   margin-bottom: get(spacing);
-  margin-left: get(spacing);;
+  margin-left: get(spacing);
 }
 .img--left {
   float: left;
-  margin-right: get(spacing);;
-  margin-bottom: get(spacing);;
+  margin-right: get(spacing);
+  margin-bottom: get(spacing);
 }
 .img--center {
   display: block;
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: get(spacing);;
+  margin-bottom: get(spacing);
 }
 
 /**

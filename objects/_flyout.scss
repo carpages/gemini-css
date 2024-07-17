@@ -5,7 +5,6 @@
  */
 
 @if get(flyout, $gemini-use) {
-
   /**
    * @module Flyouts [.flyout]
    * @description Flyouts are pieces of content that fly out of a parent when said parent is hovered. They typically appear bottom-left of the parent.
@@ -91,4 +90,4 @@
         </div>
     </div>
    */
-}//endif
+} //endif

@@ -4,10 +4,9 @@
  ********************************
  */
 
-@use "sass:math";
+@use 'sass:math';
 
 @if get(overlay, $gemini-use) {
-
   //Use position absolute to overlay items
   /**
    * @module Overlay [.overlay]
@@ -75,4 +74,4 @@
     height: 100%;
     width: percentage(math.div(1, 2));
   }
-}//endif
+} //endif

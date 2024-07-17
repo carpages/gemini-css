@@ -15,48 +15,64 @@
  */
 $gemini-spacing: () !default;
 
-$gemini-spacing: extend((
-  naming: (
-    type: (
-      "push":    "margin",
-      "pad":     "padding",
+$gemini-spacing: extend(
+  (
+    naming: (
+      type: (
+        'push': 'margin',
+        'pad': 'padding',
+      ),
+      reverse: (
+        '': 1,
+        'rev': -1,
+      ),
+      size: (
+        'none': 0,
+        'half': 0.5,
+        '': 1,
+        'double': 2,
+      ),
+      direction: (
+        '': (
+          '',
+        ),
+        'top': (
+          top,
+        ),
+        'right': (
+          right,
+        ),
+        'bottom': (
+          bottom,
+        ),
+        'left': (
+          left,
+        ),
+        'sides': (
+          left right,
+        ),
+        'ends': (
+          top bottom,
+        ),
+      ),
     ),
-    reverse: (
-      "":         1,
-      "rev":     -1,
-    ),
-    size: (
-      "none":    0,
-      "half":    0.5,
-      "":        1,
-      "double":  2,
-    ),
-    direction: (
-      "":        (""),
-      "top":     (top),
-      "right":   (right),
-      "bottom":  (bottom),
-      "left":    (left),
-      "sides":   (left right),
-      "ends":    (top bottom),
-    ),
+    medium: false,
+    large: false,
+    xlarge: false,
   ),
-  medium: false,
-  large: false,
-  xlarge: false,
-), $gemini-spacing);
+  $gemini-spacing
+);
 
 /**
  * Not documented since this shouldn't be used outside of this conext
  */
-@mixin spacing-helpers($screen-title: "") {
-
-  @each $type-title, $type in get("naming.type", $gemini-spacing) {
-    @each $reverse-title, $reverse in get("naming.reverse", $gemini-spacing) {
-      @each $size-title, $size in get("naming.size", $gemini-spacing) {
-        @each $direction-title, $direction-list in get("naming.direction", $gemini-spacing) {
-          @if ($type != "padding" or $reverse != -1) and ($size != 0 or $reverse != -1) {
-            .#{implode($type-title $reverse-title $size-title $screen-title $direction-title, "-")} {
+@mixin spacing-helpers($screen-title: '') {
+  @each $type-title, $type in get('naming.type', $gemini-spacing) {
+    @each $reverse-title, $reverse in get('naming.reverse', $gemini-spacing) {
+      @each $size-title, $size in get('naming.size', $gemini-spacing) {
+        @each $direction-title, $direction-list in get('naming.direction', $gemini-spacing) {
+          @if ($type != 'padding' or $reverse != -1) and ($size != 0 or $reverse != -1) {
+            .#{implode($type-title $reverse-title $size-title $screen-title $direction-title, '-')} {
               @each $direction in $direction-list {
                 #{implode($type $direction, "-")}: get(spacing) * $size * $reverse !important;
               }
@@ -96,25 +112,19 @@ $gemini-spacing: extend((
 @include spacing-helpers();
 
 @if get(medium, $gemini-spacing) {
-
-  @include media(medium){
+  @include media(medium) {
     @include spacing-helpers(medium);
   }
-
 }
 
 @if get(large, $gemini-spacing) {
-
-  @include media(large){
+  @include media(large) {
     @include spacing-helpers(large);
   }
-
 }
 
 @if get(xlarge, $gemini-spacing) {
-
-  @include media(xlarge){
+  @include media(xlarge) {
     @include spacing-helpers(xlarge);
   }
-
 }

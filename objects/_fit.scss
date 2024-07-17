@@ -13,14 +13,13 @@
  * @param {integer} [$height=3] THe height ratio
  * @param {percent} [$container=%100] The width of the container that you want to fit
  */
-@use "sass:math";
+@use 'sass:math';
 
 @mixin fitRatio($width: 4, $height: 3, $container: 100%) {
   padding: math.div(math.div($height, $width) * $container, 2) 0;
 }
 
 @if get(fit, $gemini-use) {
-
   /**
    * @module Fit [.fit]
    * @description Fits objects into a box that with a dynamic width, but static ratio. Great for unknown image sizes
@@ -91,4 +90,4 @@
       min-height: 100%;
     }
   }
-}//endif
+} //endif

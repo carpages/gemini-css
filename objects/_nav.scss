@@ -4,10 +4,9 @@
  ********************************
  */
 
-@use "sass:math";
+@use 'sass:math';
 
 @if get(nav, $gemini-use) or get(pagination, $gemini-use) {
-
   /**
    * @module Navigation Lists [.nav]
    * @description When used on an 'ol' or 'ul', this class throws the list into horizontal mode. As per: csswizardry.com/2011/09/the-nav-abstraction
@@ -70,7 +69,6 @@
       }
     }
   }
-
 
   /**
    * @markup
@@ -190,7 +188,7 @@
   .nav--keywords {
     > li {
       &:after {
-        content: "\002C" "\00A0";
+        content: '\002C''\00A0';
       }
 
       &:last-child:after {
@@ -209,11 +207,11 @@
    */
   .nav--breadcrumb > li {
     + li:before {
-      content: "\002F" "\00A0";
+      content: '\002F''\00A0';
     }
 
     + li[data-breadcrumb]:before {
-      content: attr(data-breadcrumb) "\00A0";
+      content: attr(data-breadcrumb) '\00A0';
     }
   }
 
@@ -230,4 +228,4 @@
     white-space: nowrap;
     overflow-x: scroll;
   }
-}//endif
+} //endif

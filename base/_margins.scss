@@ -31,11 +31,9 @@ address,
 table,
 fieldset,
 figure,
-pre
-{
+pre {
   margin-bottom: get(spacing);
 }
-
 
 /**
  * 'hr' elements only take up a few pixels, so we need to give them special
@@ -44,7 +42,6 @@ pre
 hr {
   margin-bottom: get(spacing) - 2px;
 }
-
 
 /**
  * Where 'margin-left' is concerned we want to try and indent certain elements

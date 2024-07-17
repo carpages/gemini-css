@@ -5,7 +5,6 @@
  */
 
 @if get(split, $gemini-use) {
-
   /**
    * @module Split [.split]
    * @description Simple split item for creating two elements floated away from one another
@@ -34,4 +33,4 @@
       <li class=third><b class=split__title>Bluetooth</b> Yup</li>
     </ol>
    */
-}//endif
+} //endif
