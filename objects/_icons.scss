@@ -40,9 +40,9 @@
    */
   .icon,
   [class*="icon--"] {
-    @include icon;
     vertical-align: middle;
     display: inline-block;
+    @include icon;
   }
 
   /**

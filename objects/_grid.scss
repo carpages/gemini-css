@@ -120,10 +120,10 @@ $gemini-grid: extend((
     </div>
  */
 .l-row {
-  @include clearfix;
   width: 100%;
   margin: 0 auto;
   max-width: get(max-width, $gemini-grid);
+  @include clearfix;
 
   //Keep the end columns flush with the gutter
   & .l-row {
@@ -157,12 +157,12 @@ $gemini-grid: extend((
  * @modifier [.l-column--end] Floats the last column to the left
  */
 [class*="l-column"] {
-  @include clearfix;
   position: relative;
   padding: 0 math.div(get(gutter, $gemini-grid), 2);
   width: 100%;
   float: left;
   margin-bottom: get(spacing);
+  @include clearfix;
 }
 
 //Float the last column to the right

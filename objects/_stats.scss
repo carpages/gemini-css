@@ -11,8 +11,8 @@
    * @description Group of stat objects
    */
   .stat-group {
-    @include clearfix;
     margin-left: - get(spacing);
+    @include clearfix;
   }
 
   %stat-group--n {
