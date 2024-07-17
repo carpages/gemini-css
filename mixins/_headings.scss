@@ -19,7 +19,7 @@
 @mixin headings($from: 1, $to: 6) {
   $selector: ();
   @for $i from $from through $to {
-    $selector: append($selector, 'h#{$i}', comma);
+    $selector: append($selector, "h#{$i}", comma);
   }
 
   #{$selector} {

@@ -64,21 +64,20 @@
       </tbody>
     </table>
  */
-@use 'sass:math';
+@use "sass:math";
 
 table {
   width: 100%;
 }
-
 th,
 td {
   padding: math.div(get(spacing), 4);
-  text-align: left;
-
   @include media(medium) {
     padding: math.div(get(spacing), 2);
   }
+  text-align: left;
 }
+
 
 /**
  * Cell alignments
@@ -86,13 +85,13 @@ td {
 [colspan] {
   text-align: center;
 }
-[colspan='1'] {
+[colspan="1"] {
   text-align: left;
 }
 [rowspan] {
   vertical-align: middle;
 }
-[rowspan='1'] {
+[rowspan="1"] {
   vertical-align: top;
 }
 .numerical {
@@ -113,7 +112,7 @@ td {
 }
 .t12 {
   width: 12.5%;
-} /* 1/8 */
+}     /* 1/8 */
 .t15 {
   width: 15%;
 }
@@ -122,19 +121,19 @@ td {
 }
 .t25 {
   width: 25%;
-} /* 1/4 */
+}       /* 1/4 */
 .t30 {
   width: 30%;
 }
 .t33 {
   width: 33.333%;
-} /* 1/3 */
+}   /* 1/3 */
 .t35 {
   width: 35%;
 }
 .t37 {
   width: 37.5%;
-} /* 3/8 */
+}     /* 3/8 */
 .t40 {
   width: 40%;
 }
@@ -143,7 +142,7 @@ td {
 }
 .t50 {
   width: 50%;
-} /* 1/2 */
+}       /* 1/2 */
 .t55 {
   width: 55%;
 }
@@ -152,19 +151,19 @@ td {
 }
 .t62 {
   width: 62.5%;
-} /* 5/8 */
+}     /* 5/8 */
 .t65 {
   width: 65%;
 }
 .t66 {
   width: 66.666%;
-} /* 2/3 */
+}   /* 2/3 */
 .t70 {
   width: 70%;
 }
 .t75 {
   width: 75%;
-} /* 3/4*/
+}       /* 3/4*/
 .t80 {
   width: 80%;
 }
@@ -173,13 +172,14 @@ td {
 }
 .t87 {
   width: 87.5%;
-} /* 7/8 */
+}     /* 7/8 */
 .t90 {
   width: 90%;
 }
 .t95 {
   width: 95%;
 }
+
 
 /**
  * Bordered tables
@@ -203,6 +203,7 @@ td {
   }
 }
 
+
 /**
  * Striped tables
  */
@@ -212,12 +213,14 @@ td {
   }
 }
 
+
 /**
  * Data table
  */
 .table--data {
   font: 12px/1.5 sans-serif;
 }
+
 
 /**
  * Responsive table

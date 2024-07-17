@@ -38,66 +38,73 @@
       [styles here]
     }
  */
-$small-end: get(medium, $gemini-screens) - 1px;
-$medium-end: get(large, $gemini-screens) - 1px;
+$small-end:              get(medium, $gemini-screens) - 1px;
+$medium-end:             get(large, $gemini-screens) - 1px;
 
 @mixin media($media-query, $print: true) {
+
   @if $media-query == medium or $media-query == hidden-small {
-    @include media-query(get(medium, $gemini-screens), 99999, $print) {
-      @content;
-    }
+
+    @include media-query(get(medium, $gemini-screens), 99999, $print) { @content; }
+
   }
 
   @if $media-query == large or $media-query == visible-large {
-    @include media-query(get(large, $gemini-screens), 99999, $print) {
-      @content;
-    }
+
+    @include media-query(get(large, $gemini-screens), 99999, $print) { @content; }
+
   }
 
   @if $media-query == xlarge {
-    @include media-query(get(xlarge, $gemini-screens), 99999, $print) {
-      @content;
-    }
+
+    @include media-query(get(xlarge, $gemini-screens), 99999, $print) { @content; }
+
   }
 
   @if $media-query == visible-small {
-    @include media-query(0, $small-end, $print) {
-      @content;
-    }
+
+    @include media-query(0, $small-end, $print) { @content; }
+
   }
 
   @if $media-query == visible-medium {
-    @include media-query(get(medium, $gemini-screens), $medium-end, $print) {
-      @content;
-    }
+
+    @include media-query(get(medium, $gemini-screens), $medium-end, $print) { @content; }
+
   }
 
   @if $media-query == hidden-medium {
-    @include media-query(get(large, $gemini-screens), $small-end, $print) {
-      @content;
-    }
+
+    @include media-query(get(large, $gemini-screens), $small-end, $print) { @content; }
+
   }
 
   @if $media-query == hidden-large {
-    @include media-query(0, $medium-end, $print) {
-      @content;
-    }
+
+    @include media-query(0, $medium-end, $print) { @content; }
+
   }
 
-  @if $media-query == retina {
-    @media only screen and (-webkit-min-device-pixel-ratio: 2),
-      only screen and (min--moz-device-pixel-ratio: 2),
-      only screen and (-o-min-device-pixel-ratio: 2/1),
-      only screen and (min-device-pixel-ratio: 2),
-      only screen and (min-resolution: 192dpi),
-      only screen and (min-resolution: 2dppx) {
+  @if $media-query == retina{
+
+    @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (   min--moz-device-pixel-ratio: 2),
+    only screen and (     -o-min-device-pixel-ratio: 2/1),
+    only screen and (        min-device-pixel-ratio: 2),
+    only screen and (                min-resolution: 192dpi),
+    only screen and (                min-resolution: 2dppx) {
+
       @content;
+
     }
+
   }
 
-  @if $media-query == '' {
+  @if $media-query == "" {
     @content;
   }
+
 }
 
 /**
@@ -120,31 +127,30 @@ $medium-end: get(large, $gemini-screens) - 1px;
  */
 
 @mixin media-query($min, $max: 99999, $print: false) {
-  $print-query: '';
-  @if $print == true {
-    $print-query: 'print, ';
-  }
+
+  $print-query: "";
+  @if $print == true {$print-query: "print, ";}
 
   // If we're outputting for a fixed media query...
   @if variable-exists(fixed-queries) {
     //If the fixed query is in the media query range
 
-    @if $fixed-queries >= $min and $fixed-queries <= $max {
-      @content;
-    }
-  } @else {
+    @if $fixed-queries >= $min and $fixed-queries <= $max { @content }
+
+  }
+  @else {
+
     @if $min >= 0 and $max < 99999 {
-      @media #{$print-query}screen and (min-width: em($min, 16px)) and (max-width: em($max, 16px)) {
-        @content;
-      }
-    } @else if $min >= 0 {
-      @media #{$print-query}screen and (min-width: em($min, 16px)) {
-        @content;
-      }
-    } @else if $max < 99999 {
-      @media #{$print-query}screen and (max-width: em($max, 16px)) {
-        @content;
-      }
+      @media #{$print-query}screen and (min-width: em($min, 16px)) and (max-width: em($max, 16px)) { @content; }
     }
+
+    @else if $min >= 0 {
+      @media #{$print-query}screen and (min-width: em($min, 16px)) { @content; }
+    }
+
+    @else if $max < 99999 {
+      @media #{$print-query}screen and (max-width: em($max, 16px)) { @content; }
+    }
+
   }
 }

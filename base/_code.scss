@@ -4,7 +4,7 @@
  ********************************
  */
 
-@use 'sass:math';
+@use "sass:math";
 
 code,
 pre {
@@ -29,6 +29,7 @@ code {
   @include border();
   white-space: nowrap;
 }
+
 
 /**
  * @module Code Block [pre]

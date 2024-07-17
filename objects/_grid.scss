@@ -15,21 +15,18 @@
  * @prop {measurement} [large-breakpoint=get(large, $gemini-screens)] The breakpoint for large layout
  * @prop {measurement} [xlarge-breakpoint=get(xlarge, $gemini-screens)] The breakpoint for xlarge layout
  */
-@use 'sass:math';
+@use "sass:math";
 
 $gemini-grid: () !default;
 
-$gemini-grid: extend(
-  (
-    max-width: get(xlarge, $gemini-screens),
-    gutter: get(spacing),
-    columns: 12,
-    medium-breakpoint: get(medium, $gemini-screens),
-    large-breakpoint: get(large, $gemini-screens),
-    xlarge-breakpoint: get(xlarge, $gemini-screens),
-  ),
-  $gemini-grid
-);
+$gemini-grid: extend((
+  max-width:         get(xlarge, $gemini-screens),
+  gutter:            get(spacing),
+  columns:           12,
+  medium-breakpoint: get(medium, $gemini-screens),
+  large-breakpoint:  get(large, $gemini-screens),
+  xlarge-breakpoint: get(xlarge, $gemini-screens),
+), $gemini-grid);
 
 /**
  * This is inspired by the Foundation Grid
@@ -49,7 +46,8 @@ $gemini-grid: extend(
 /*
  * SCREEN SPECIFIED GRID STYLINGS
  */
-@mixin screen-grid($screen) {
+@mixin screen-grid($screen){
+
   // Center the column
   .l-column--#{$screen}-centered {
     margin-left: auto;
@@ -58,8 +56,8 @@ $gemini-grid: extend(
   }
 
   // Remove the margin that spaces the columns on smaller screens
-  [class*='l-column--#{$screen}'] {
-    margin-bottom: 0;
+  [class*="l-column--#{$screen}"] {
+    margin-bottom:0;
   }
 
   // Basic column usage
@@ -95,16 +93,17 @@ $gemini-grid: extend(
       right: gridCalc($i, get(columns, $gemini-grid));
     }
   }
-  [class*='.l-column--#{$screen}-push'] {
-    right: auto;
-  }
-  [class*='.l-column--#{$screen}-pull'] {
-    left: auto;
-  }
+    [class*=".l-column--#{$screen}-push"]{
+      right: auto;
+    }
+    [class*=".l-column--#{$screen}-pull"]{
+      left: auto;
+    }
 }
 
 @if get(grid, $gemini-use) {
-  /**
+
+/**
  * @module Grid Row [.l-row]
  * @description Grid container for columns
  *
@@ -120,32 +119,31 @@ $gemini-grid: extend(
      </div>
     </div>
  */
-  .l-row {
-    width: 100%;
-    margin: 0 auto;
-    max-width: get(max-width, $gemini-grid);
+.l-row {
+  @include clearfix;
+  width: 100%;
+  margin: 0 auto;
+  max-width: get(max-width, $gemini-grid);
 
-    @include clearfix;
-
-    //Keep the end columns flush with the gutter
-    & .l-row {
-      margin-left: -(math.div(get(gutter, $gemini-grid), 2));
-      margin-right: -(math.div(get(gutter, $gemini-grid), 2));
-      width: auto;
-      max-width: none;
-    }
+  //Keep the end columns flush with the gutter
+  & .l-row {
+    margin-left: -(math.div(get(gutter, $gemini-grid), 2));
+    margin-right: -(math.div(get(gutter, $gemini-grid), 2));
+    width: auto;
+    max-width: none;
   }
+}
   // Collapsed columns with no spacing
-  .l-row--collapse > [class*='l-column'] {
+  .l-row--collapse > [class*="l-column"] {
     padding: 0;
 
-    & > .l-row {
-      margin-left: 0;
-      margin-right: 0;
+    & > .l-row{
+      margin-left:0;
+      margin-right:0;
     }
   }
 
-  /**
+/**
  * @module Grid Column [.l-column]
  * @description Column within a row. Screen size is mobile first (ie. small applies to medium, large, and xlarge).
  *
@@ -158,47 +156,47 @@ $gemini-grid: extend(
  * @modifier [.l-column--{screen}-push-reset] Reset the push on the specified screen size
  * @modifier [.l-column--end] Floats the last column to the left
  */
-  [class*='l-column'] {
-    position: relative;
-    padding: 0 math.div(get(gutter, $gemini-grid), 2);
-    width: 100%;
+[class*="l-column"] {
+  @include clearfix;
+  position: relative;
+  padding: 0 math.div(get(gutter, $gemini-grid), 2);
+  width: 100%;
+  float: left;
+  margin-bottom: get(spacing);
+}
+
+//Float the last column to the right
+[class*="l-column"] + [class*="l-column"]:last-child {
+  float: right;
+
+  // Unless the last column is specified as end
+  &.l-column--end {
     float: left;
-    margin-bottom: get(spacing);
-    @include clearfix;
   }
+}
 
-  //Float the last column to the right
-  [class*='l-column'] + [class*='l-column']:last-child {
-    float: right;
-
-    // Unless the last column is specified as end
-    &.l-column--end {
-      float: left;
-    }
-  }
-
-  /*
+/*
  * INCLUDE SCREEN BREAKPOINTS
  */
-  @include screen-grid('small');
+@include screen-grid('small');
 
-  @include media-query(get(medium-breakpoint, $gemini-grid)) {
-    @include screen-grid('medium');
-  }
+@include media-query(get(medium-breakpoint, $gemini-grid)) {
+  @include screen-grid('medium');
+}
 
-  @include media-query(get(large-breakpoint, $gemini-grid)) {
-    @include screen-grid('large');
-  }
+@include media-query(get(large-breakpoint, $gemini-grid)) {
+  @include screen-grid('large');
+}
 
-  @include media-query(get(xlarge-breakpoint, $gemini-grid)) {
-    @include screen-grid('xlarge');
-  }
+@include media-query(get(xlarge-breakpoint, $gemini-grid)) {
+  @include screen-grid('xlarge');
+}
 
-  @media print {
-    @include screen-grid('print');
-  }
+@media print{
+  @include screen-grid('print');
+}
 
-  /**
+/**
  * @markup
   <div class="l-row">
     <div class="l-column--small-6">
@@ -211,7 +209,7 @@ $gemini-grid: extend(
   </div>
  */
 
-  /**
+/**
  * @markup
   <div class="l-row">
     <div class="l-column--small-3 l-column--small-offset-2">
@@ -223,7 +221,7 @@ $gemini-grid: extend(
   </div>
  */
 
-  /**
+/**
  * @markup
   <div class="l-row">
     <div class="l-column--small-3 l-column--small-push-9
@@ -236,4 +234,5 @@ $gemini-grid: extend(
     </div>
   </div>
  */
-} //end
+
+}//end

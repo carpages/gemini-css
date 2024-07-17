@@ -19,18 +19,15 @@
  */
 $gemini-text-inputs: () !default;
 
-$gemini-text-inputs: extend(
-  (
-    color: #333,
-    background-color: #fff,
-    padding-ends: get(padding-ends, $gemini-buttons),
-    padding-sides: get(padding-sides, $gemini-buttons),
-    border-width: 1px,
-    border-color: get(border-color),
-    border-radius: get(border-radius),
-  ),
-  $gemini-text-inputs
-);
+$gemini-text-inputs: extend((
+  color: #333,
+  background-color: #FFF,
+  padding-ends: get(padding-ends, $gemini-buttons),
+  padding-sides: get(padding-sides, $gemini-buttons),
+  border-width: 1px,
+  border-color: get(border-color),
+  border-radius: get(border-radius)
+), $gemini-text-inputs);
 
 /**
  * @module Text inputs [.text-input]

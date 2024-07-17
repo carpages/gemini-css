@@ -12,23 +12,23 @@
     <p>And with great audacity, he told them, <q>My name is derp!</q></p>
  */
 q {
-  quotes: '\2018''\2019''\201C''\201D';
+  quotes: "\2018" "\2019" "\201C" "\201D";
 
   &:before {
-    content: '\2018';
+    content: "\2018";
     content: open-quote;
   }
   &:after {
-    content: '\2019';
+    content: "\2019";
     content: close-quote;
   }
 
   q:before {
-    content: '\201C';
+    content: "\201C";
     content: open-quote;
   }
   q:after {
-    content: '\201D';
+    content: "\201D";
     content: close-quote;
   }
 }
@@ -45,7 +45,7 @@ q {
     </blockquote>
  */
 blockquote {
-  quotes: '\201C''\201D';
+  quotes: "\201C" "\201D";
   text-indent: -0.41em; //.4em is roughly equal to the width of the opening " that we wish to hang.
 
   p {
@@ -53,30 +53,30 @@ blockquote {
     line-height: 1.5;
 
     &:before {
-      content: '\201C';
+      content: "\201C";
       content: open-quote;
     }
 
     &:after {
-      content: '';
+      content: "";
       content: no-close-quote;
     }
 
     &:last-of-type {
       margin-bottom: 0;
       &:after {
-        content: '\201D';
+        content: "\201D";
         content: close-quote;
       }
     }
   }
 
   q:before {
-    content: '\2018';
+    content: "\2018";
     content: open-quote;
   }
   q:after {
-    content: '\2019';
+    content: "\2019";
     content: close-quote;
   }
 }
@@ -101,6 +101,6 @@ blockquote {
   text-indent: 0;
 
   &:before {
-    content: '\2014';
+    content: "\2014";
   }
 }

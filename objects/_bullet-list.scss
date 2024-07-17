@@ -5,6 +5,7 @@
  */
 
 @if get(bullet-list, $gemini-use) {
+
   /**
    * @module Bullet Lists [.bullet-list]
    * @description Allows you to replace default bullets with icons
@@ -37,4 +38,4 @@
       }
     }
   }
-} //endif
+}//endif

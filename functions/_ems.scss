@@ -18,28 +18,28 @@
       font-size: base-em(24px);
     }
  */
-@use 'sass:math';
+@use "sass:math";
 
 @function base-em($val) {
   $u: unit($val);
 
-  @if $u == 'em' {
+  @if $u == "em" {
     @return $val;
-  } @else if $u == '%' {
+  } @else if $u == "%" {
     @return math.div($val, 100%) + 0em;
-  } @else if $u == 'px' {
+  } @else if $u == "px" {
     @return math.div($val, 16px) + 0em;
-  } @else if $u == 'pt' {
+  } @else if $u == "pt" {
     @return math.div($val, 12pt) + 0em;
-  } @else if $u == 'in' {
+  } @else if $u == "in" {
     @return math.div($val, 0.17in) + 0em;
-  } @else if $u == 'pc' {
+  } @else if $u == "pc" {
     @return math.div($val, 1pc) + 0em;
-  } @else if $u == 'mm' {
+  } @else if $u == "mm" {
     @return math.div($val, 4.2mm) + 0em;
-  } @else if $u == 'cm' {
+  } @else if $u == "cm" {
     @return math.div($val, 0.42cm) + 0em;
-  } @else if $u == '' {
+  } @else if $u == "" {
     @return $val + 0em;
   } @else {
     @warn "#{$val} has an unrecognizable unit.";
@@ -62,7 +62,7 @@
     }
  */
 @function em($value, $context: get(font-size)) {
-  @return math.div(base-em($value), base-em($context)) + 0em;
+  @return  math.div(base-em($value), base-em($context))  + 0em;
 }
 
 /**
@@ -79,5 +79,5 @@
     }
  */
 @function rem($value) {
-  @return math.div(base-em($value), base-em(get(font-size))) + 0rem;
+  @return  math.div(base-em($value), base-em(get(font-size)))  + 0rem;
 }

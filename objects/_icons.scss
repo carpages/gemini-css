@@ -16,7 +16,7 @@
 
 @mixin icon {
   &:before {
-    font-family: 'icons';
+    font-family: "icons";
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -30,6 +30,7 @@
 }
 
 @if get(icons, $gemini-use) {
+
   /**
    * @module Icon [.icon--{name}]
    * @description Use one of the icon fonts used in your build
@@ -38,10 +39,10 @@
       <i class="icon--star" />
    */
   .icon,
-  [class*='icon--'] {
+  [class*="icon--"] {
+    @include icon;
     vertical-align: middle;
     display: inline-block;
-    @include icon;
   }
 
   /**
@@ -59,48 +60,49 @@
    * The UTF-8 entities have pretty good (IE8+) support except for on Android :(
    */
   .icon--default-star:before {
-    content: '\2605';
+    content: "\2605";
   }
   .icon--default-star-empty:before {
-    content: '\2606';
+    content: "\2606";
   }
   .icon--default-checkbox:before {
-    content: '\2610';
+    content: "\2610";
   }
   .icon--default-checkbox-checked:before {
-    content: '\2611';
+    content: "\2611";
   }
   .icon--default-checkbox-crossed:before {
-    content: '\2612';
+    content: "\2612";
   }
   .icon--default-checkmark:before {
-    content: '\2713';
+    content: "\2713";
   }
   .icon--default-checkmark-heavy:before {
-    content: '\2714';
+    content: "\2714";
   }
   .icon--default-close:before {
-    content: '\2715';
+    content: "\2715";
   }
   .icon--default-close-heavy:before {
-    content: '\2716';
+    content: "\2716";
   }
   .icon--default-close-script:before {
-    content: '\2717';
+    content: "\2717";
   }
   .icon--default-plus:before {
-    content: '\271A';
+    content: "\271A";
   }
   .icon--default-arrow-up:before {
-    content: '\25B2';
+    content: "\25B2";
   }
   .icon--default-arrow-down:before {
-    content: '\25BC';
+    content: "\25BC";
   }
   .icon--default-arrow-left:before {
-    content: '\25C0';
+    content: "\25C0";
   }
   .icon--default-arrow-right:before {
-    content: '\25BA';
+    content: "\25BA";
   }
-} //endif
+
+}//endif

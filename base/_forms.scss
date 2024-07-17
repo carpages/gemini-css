@@ -24,7 +24,7 @@
     </form>
  */
 
-@use 'sass:math';
+@use "sass:math";
 
 .form--inline {
   .hN {
@@ -54,10 +54,10 @@ label {
   display: block;
 
   &.is-required:before {
-    content: '* ';
+    content: "* ";
   }
 
-  input[type='checkbox'] + & {
+  input[type="checkbox"] + & {
     display: inline-block;
     padding-left: math.div(get(spacing), 2);
   }
@@ -104,8 +104,8 @@ label {
   }
 }
 
-.radio input[type='radio'],
-.checkbox input[type='checkbox'] {
+.radio input[type="radio"],
+.checkbox input[type="checkbox"] {
   //Inline
   .form--inline & {
     float: left;
@@ -117,8 +117,8 @@ label {
 /**
  * Position radios and checkboxes better
  */
-input[type='radio'],
-input[type='checkbox'] {
+input[type="radio"],
+input[type="checkbox"] {
   margin: 4px 0 0;
   margin-top: 1px \9; /* IE8-9 */
   line-height: normal;
@@ -130,33 +130,34 @@ input[type='checkbox'] {
  * I've opened a ticket with Chromium
  * https://code.google.com/p/chromium/issues/detail?q=radio%20button%20overflow%20hidden&colspec=ID%20Pri%20M%20Iteration%20ReleaseBlock%20Cr%20Status%20Owner%20Summary%20OS%20Modified&id=396726&thanks=396726&ts=1406140510
  */
-input[type='radio'] {
+input[type="radio"] {
   margin-left: 1px;
 }
 
 /**
  * Reset width of input images, buttons, radios, checkboxes
  */
-input[type='file'],
-input[type='image'],
-input[type='submit'],
-input[type='reset'],
-input[type='button'],
-input[type='radio'],
-input[type='checkbox'] {
+input[type="file"],
+input[type="image"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="radio"],
+input[type="checkbox"] {
   width: auto; // Override of generic input selector
 }
+
 
 /**
  * Change the cursor
  */
 label,
 select,
-input[type='button'],
-input[type='reset'],
-input[type='submit'],
-input[type='radio'],
-input[type='checkbox'] {
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="radio"],
+input[type="checkbox"] {
   cursor: pointer;
 }
 

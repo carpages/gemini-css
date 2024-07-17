@@ -5,6 +5,7 @@
  */
 
 @if get(media, $gemini-use) {
+
   /**
    * @module Media [.media]
    * @description Place any image and text-like content side-by-side
@@ -65,4 +66,4 @@
       <p class="media__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
    */
-} //endif
+}//endif

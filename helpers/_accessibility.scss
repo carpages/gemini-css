@@ -15,10 +15,10 @@
 .accessibility {
   @include accessibility(!important);
 }
-@each $state in medium, large, xlarge {
-  @include media(#{$state}) {
-    .accessibility--#{$state} {
-      @include accessibility(!important);
+  @each $state in medium, large, xlarge {
+    @include media(#{$state}) {
+      .accessibility--#{$state} {
+        @include accessibility(!important);
+      }
     }
   }
-}

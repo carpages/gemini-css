@@ -8,15 +8,11 @@
  * @module Main styling [html, body]
  * @description Just your basic styling on the document
  */
-@use 'sass:list';
-@use 'sass:math';
+@use "sass:list";
+@use "sass:math";
 
 html {
-  font: list.slash(
-      em(get(font-size), 16px),
-      math.div(em(get(line-height), 16px), em(get(font-size), 16px))
-    )
-    get(font-family);
+  font: list.slash(em(get(font-size), 16px), math.div(em(get(line-height), 16px), em(get(font-size), 16px))) get(font-family);
   min-height: 100%;
 }
 

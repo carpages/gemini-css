@@ -5,6 +5,7 @@
  */
 
 @if get(rules, $gemini-use) {
+
   /**
    * @module Horizontal Rules [.rule]
    * @description Adds a horizontal line as a break (extends 'hr')
@@ -46,19 +47,19 @@
   hr,
   .rule {
     @extend %rule;
-    @include border($position: 'bottom');
+    @include border($position: "bottom");
   }
   .rule-left {
     @extend %rule;
-    @include border($position: 'left');
+    @include border($position: "left");
   }
   .rule-right {
     @extend %rule;
-    @include border($position: 'right');
+    @include border($position: "right");
   }
   .rule-top {
     @extend %rule;
-    @include border($position: 'top');
+    @include border($position: "top");
   }
 
   .rule--brand {
@@ -76,6 +77,7 @@
     border-bottom-style: dotted;
   }
 
+
   /**
    * Dashed rules
    */
@@ -90,7 +92,7 @@
     position: relative;
 
     &:after {
-      content: '\00A7';
+      content: "\00A7";
       position: absolute;
       top: 0;
       right: 0;
@@ -106,4 +108,4 @@
       content: attr(data-ornament);
     }
   }
-} //endif
+}//endif

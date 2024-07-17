@@ -5,13 +5,14 @@
  */
 
 @if get(stats, $gemini-use) {
+
   /**
    * @module Stat Group [.stat-group]
    * @description Group of stat objects
    */
   .stat-group {
-    margin-left: -get(spacing);
     @include clearfix;
+    margin-left: - get(spacing);
   }
 
   %stat-group--n {
@@ -86,4 +87,4 @@
       </dl>
     </div>
    */
-} //endif
+}//endif

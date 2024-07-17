@@ -15,6 +15,6 @@
  * 2. Solves bug on Chrome where the SVG media queries won't detect initial width
  */
 object {
-  pointer-events: none; /* 1 */
-  width: 100%; /* 2 */
+  pointer-events: none;/* 1 */
+  width: 100%;/* 2 */
 }

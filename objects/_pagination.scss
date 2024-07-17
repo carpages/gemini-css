@@ -4,9 +4,10 @@
  ********************************
  */
 
-@use 'sass:math';
+@use "sass:math";
 
 @if get(pagination, $gemini-use) {
+
   /**
   * @module Pagination [.pagination]
   * @description Basic pagination object on ol elements (extends 'nav').
@@ -25,7 +26,7 @@
   }
   .pagination > li > a {
     padding: math.div(get(spacing), 2);
-    margin: math.div(-get(spacing), 2);
+    margin: math.div(- get(spacing), 2);
   }
 
   /**
@@ -33,7 +34,7 @@
    * @description First page (prepends arrows)
    */
   .pagination__first a:before {
-    content: '\00AB''\00A0';
+    content: "\00AB" "\00A0";
   }
 
   /**
@@ -41,7 +42,7 @@
    * @description Last page (appends arrows)
    */
   .pagination__last a:after {
-    content: '\00A0''\00BB';
+    content: "\00A0" "\00BB";
   }
 
   /**
@@ -58,4 +59,4 @@
      --><li class=pagination__last><a href=/page/last>Last</a></li>
     </ol>
   */
-} //endif
+}//endif

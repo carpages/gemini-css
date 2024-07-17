@@ -45,21 +45,12 @@
 }
 
 // For small screens
-.visible-small {
-}
-.hidden-small {
-  @extend %hide-small;
-}
-.visible-medium {
-  @extend %hide-small;
-}
-.hidden-medium {
-}
-.visible-large {
-  @extend %hide-small;
-}
-.hidden-large {
-}
+.visible-small     { }
+.hidden-small      { @extend %hide-small; }
+.visible-medium    { @extend %hide-small; }
+.hidden-medium     { }
+.visible-large     { @extend %hide-small; }
+.hidden-large      { }
 
 // For medium screens
 @include media(medium, true) {
@@ -74,18 +65,10 @@
     top: auto !important;
   }
 
-  .visible-small {
-    @extend %hide-medium;
-  }
-  .hidden-small {
-    @extend %visible-medium;
-  }
-  .visible-medium {
-    @extend %visible-medium;
-  }
-  .hidden-medium {
-    @extend %hide-medium;
-  }
+  .visible-small  { @extend %hide-medium; }
+  .hidden-small   { @extend %visible-medium }
+  .visible-medium { @extend %visible-medium }
+  .hidden-medium  { @extend %hide-medium; }
 }
 
 // For large screens
@@ -101,26 +84,15 @@
     top: auto !important;
   }
 
-  .visible-medium {
-    @extend %hide-large;
-  }
-  .hidden-medium {
-    @extend %visible-large;
-  }
-  .visible-large {
-    @extend %visible-large;
-  }
-  .hidden-large {
-    @extend %hide-large;
-  }
+  .visible-medium { @extend %hide-large; }
+  .hidden-medium  { @extend %visible-large; }
+  .visible-large  { @extend %visible-large; }
+  .hidden-large   { @extend %hide-large; }
 }
 
 // Print utilities
-.visible-print {
-  @extend %hide-small;
-}
-.hidden-print {
-}
+.visible-print    { @extend %hide-small; }
+.hidden-print     { }
 
 @media print {
   %hide-print {
@@ -134,10 +106,6 @@
     top: auto !important;
   }
 
-  .visible-print {
-    @extend %visible-print;
-  }
-  .hidden-print {
-    @extend %hide-print;
-  }
+  .visible-print  { @extend %visible-print; }
+  .hidden-print   { @extend %hide-print; }
 }

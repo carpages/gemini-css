@@ -25,6 +25,7 @@
   </ul>
  */
 
+
 /**
  * Remove vertical spacing from nested lists.
  */
@@ -38,13 +39,11 @@ li {
 /**
  * Have a numbered 'ul' without the semantics implied by using an 'ol'.
  */
-/*ul*/
-.list--numbered {
+/*ul*/.list--numbered {
   list-style-type: decimal;
 }
 
 // Remove list styles
-/*ul*/
-.list--prune {
+/*ul*/.list--prune {
   @include prune-list;
 }

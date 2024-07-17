@@ -4,6 +4,7 @@
  ********************************
  */
 
+
 /**
  * @function brightness
  * @description Computes the "brightness" of a color.
@@ -19,11 +20,10 @@
  * @return {percent} Returns a number between 0% and 100%, where 100% is fully bright
  * (white) and 0% is fully dark (black).
  */
-@use 'sass:math';
+@use "sass:math";
 
 @function get-brightness($color) {
-  @return math.div((red($color) * 0.299) + (green($color) * 0.587) + (blue($color) * 0.114), 255) *
-    100%;
+  @return math.div((red($color) * 0.299) + (green($color) * 0.587) + (blue($color) * 0.114), 255) * 100%;
 }
 
 /**
@@ -41,20 +41,20 @@
       color: contrast-color(#090);
     }
  */
-@function contrast-color($color, $dark: #333, $light: #fff) {
+@function contrast-color(
+    $color,
+    $dark: #333,
+    $light: #FFF
+  ) {
   @if $color == null {
     @return null;
-  } @else {
+  } 
+  @else {
     $color-brightness: get-brightness($color);
     $dark-text-brightness: get-brightness($dark);
     $light-text-brightness: get-brightness($light);
 
-    @return if(
-      math.abs($color-brightness - $light-text-brightness) >
-        math.abs($color-brightness - $dark-text-brightness),
-      $light,
-      $dark
-    );
+    @return if(math.abs($color-brightness - $light-text-brightness) > math.abs($color-brightness - $dark-text-brightness), $light, $dark);
   }
 }
 
@@ -106,13 +106,8 @@ $gemini-color-collection: ();
     $garbage = addColor(blue, #009)
  */
 @function addColor($name, $color) {
-  $gemini-color-collection: map-merge(
-    $gemini-color-collection,
-    (
-      $name: $color,
-    )
-  ) !global;
-  @return $color;
+   $gemini-color-collection: map-merge($gemini-color-collection, ($name: $color)) !global;
+   @return $color;
 }
 
 /**
@@ -128,7 +123,7 @@ $gemini-color-collection: ();
       color: getColor(g25);
     }
  */
-@function getColor($name) {
+@function getColor($name){
   @if map-has-key($gemini-color-collection, $name) {
     @return get($name, $gemini-color-collection);
   } @else {

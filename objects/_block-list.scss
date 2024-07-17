@@ -4,9 +4,10 @@
  ********************************
  */
 
-@use 'sass:math';
+@use "sass:math";
 
 @if get(block-list, $gemini-use) {
+
   /**
    * @module Block List [.block-list]
    * @description Create big blocky lists of content.
@@ -38,6 +39,6 @@
   .block-list__link {
     display: block;
     padding: math.div(get(spacing), 2) 0;
-    margin: math.div(-get(spacing), 2) 0;
+    margin: math.div(- get(spacing), 2) 0;
   }
-} //endif
+}//endif

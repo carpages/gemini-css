@@ -5,6 +5,7 @@
  */
 
 @if get(copy, $gemini-use) {
+
   /**
    * @module Copy Text [.copy]
    * @description These are styles to make text more readability. Mostly used
@@ -22,6 +23,7 @@ necessitatibus magnam.</p>
       </div>
    */
   .copy {
+
     section,
     .section,
     header {
@@ -36,4 +38,4 @@ necessitatibus magnam.</p>
       display: inline;
     }
   }
-} //endif
+}//endif

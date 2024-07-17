@@ -15,7 +15,7 @@
       @include truncate(!important);
     }
  */
-@mixin truncate($important: '') {
+@mixin truncate($important: "") {
   white-space: nowrap #{$important};
   overflow: hidden #{$important};
   text-overflow: ellipsis #{$important};

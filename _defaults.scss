@@ -34,34 +34,42 @@
 $gemini-base-defaults: (
   /**
    * Default Round Corners
-   */ border-radius: 4px,
+   */
+  border-radius:       4px,
 
   /**
    * Base Coloring
-   */ brand-color: #090,
-  link-color: #4374ae,
-  color: #333,
-  background-color: #fff,
-  border-color: #d6d6d6,
+   */
+  brand-color:         #090,
+  link-color:          #4374AE,
+  color:               #333,
+  background-color:    #FFF,
+  border-color:        #D6D6D6,
 
   /**
    * Font Sizing
-   */ font-size: 14px,
-  line-height: 24px,
+   */
+  font-size:           14px,
+  line-height:         24px,
 
   /**
    * Spacing
-   */ spacing: 24px,
+   */
+  spacing:             24px,
 
   /**
    * Type
-   */ brand-font-family: unquote("'Helvetica', Arial, sans-serif"),
-  font-family: unquote("'Helvetica', Arial, sans-serif"),
+   */
+  brand-font-family:   unquote("'Helvetica', Arial, sans-serif"),
+  font-family:         unquote("'Helvetica', Arial, sans-serif"),
+
   /**
    * Directories
-   */ font-directory: 'fonts',
-  image-directory: '../img'
+   */
+  font-directory:      "fonts",
+  image-directory:     "../img",
 );
+
 
 /********************************
  * SCREEN DEFAULTS
@@ -77,10 +85,11 @@ $gemini-base-defaults: (
  * @prop {measurement} [xlarge=1200px] When xlarge breakpoint starts
  */
 $gemini-screens-defaults: (
-  medium: 481px,
-  large: 1024px,
-  xlarge: 1200px,
+  medium:       481px,
+  large:        1024px,
+  xlarge:       1200px,
 );
+
 
 /********************************
  * OBJECT USE DEFAULTS
@@ -98,27 +107,28 @@ $gemini-screens-defaults: (
     );
  */
 $gemini-use-defaults: (
-  block-list: false,
-  bullet-list: false,
-  buttons: false,
-  colors: false,
-  copy: false,
-  fit: false,
-  flyout: false,
-  grid: false,
-  iframes: true,
-  icons: false,
-  link-complex: false,
-  media: false,
-  multi-list: false,
-  nav: false,
-  overlay: false,
-  pagination: false,
-  rules: false,
-  split: false,
-  stats: false,
-  tags: false,
+  block-list:      false,
+  bullet-list:     false,
+  buttons:         false,
+  colors:          false,
+  copy:            false,
+  fit:             false,
+  flyout:          false,
+  grid:            false,
+  iframes:         true,
+  icons:           false,
+  link-complex:    false,
+  media:           false,
+  multi-list:      false,
+  nav:             false,
+  overlay:         false,
+  pagination:      false,
+  rules:           false,
+  split:           false,
+  stats:           false,
+  tags:            false,
 );
+
 
 /********************************
  * DEFAULT OVERWRITES
