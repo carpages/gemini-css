@@ -33,6 +33,7 @@
   "devDependencies": {
     "compass-mixins": "^0.12.12",
     "sass": "^1.69.4",
-    "sass-migrator": "^1.7.3"
-  }
+    "sass-migrator": "^2.0.3"
+  },
+  "packageManager": "yarn@1.22.19+sha256.732620bac8b1690d507274f025f3c6cfdc3627a84d9642e38a07452cc00e0f2e"
 }
