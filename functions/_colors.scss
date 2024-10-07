@@ -20,10 +20,16 @@
  * @return {percent} Returns a number between 0% and 100%, where 100% is fully bright
  * (white) and 0% is fully dark (black).
  */
+
 @use "sass:math";
+@use "sass:color";
 
 @function get-brightness($color) {
-  @return math.div((red($color) * 0.299) + (green($color) * 0.587) + (blue($color) * 0.114), 255) * 100%;
+  $red: color.channel($color, "red", $space: rgb);
+  $green: color.channel($color, "green", $space: rgb);
+  $blue: color.channel($color, "blue", $space: rgb);
+  
+  @return math.div(($red * 0.299) + ($green * 0.587) + ($blue * 0.114), 255) * 100%;
 }
 
 /**
