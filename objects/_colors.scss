@@ -15,7 +15,9 @@
  * @prop {color} [google-plus=#DD4C39] Google Plus Red
  * @prop {color} [pinterest=#C9232D] Pinterest Red
  */
+
 @use "sass:math";
+@use "sass:color";
 
 $gemini-colors: () !default;
 
@@ -51,7 +53,7 @@ $gemini-colors: extend((
 @for $i from 0 through math.div(100, 5) {
   $grey-percent: $i * 5;
 
-  $trash: addColor(g + $grey-percent, darken(#FFF, $grey-percent));
+  $trash: addColor(g + $grey-percent, color.adjust(#FFF, $lightness: $grey-percent * -1%, $space: hsl));
 }
 
 

@@ -64,7 +64,9 @@
       </tbody>
     </table>
  */
+
 @use "sass:math";
+@use "sass:color";
 
 table {
   width: 100%;
@@ -209,7 +211,7 @@ td {
  */
 .table--striped {
   tbody tr:nth-of-type(odd) {
-    background-color: lighten(get(color), 75%);
+    background-color: color.adjust(get(color), $lightness: 75%, $space: hsl);
   }
 }
 
