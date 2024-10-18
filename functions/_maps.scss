@@ -4,6 +4,10 @@
  ********************************
  */
 
+@use "sass:map";
+@use "sass:meta";
+@use "sass:string";
+
 /**
  * @function get
  * @description Gets the key from a map. By default it retrieves from
@@ -22,18 +26,17 @@
     }
  */
 @function get($key, $map: $gemini-base) {
+  @if meta.type-of($key)==string and (string.index($key, ".") or 0)>0 {
 
-  @if type-of($key) == string and (str-index($key, ".") or 0) > 0 {
+    $parent-key: string.slice($key, 1, string.index($key, ".") - 1);
+    $child-key: string.slice($key, string.index($key, ".") + 1);
 
-    $parent-key: str-slice($key, 1, str-index($key, ".") - 1);
-    $child-key: str-slice($key, str-index($key, ".") + 1);
-
-    @if type-of(map-get($map, $parent-key)) == map {
-      @return get($child-key, map-get($map, $parent-key));
+    @if meta.type-of(map.get($map, $parent-key))==map {
+      @return get($child-key, map.get($map, $parent-key));
     }
   }
 
-  @return map-get($map, $key);
+  @return map.get($map, $key);
 }
 
 /**
@@ -49,13 +52,14 @@
 @function extend($map1, $map2) {
   $return: $map1;
 
-  @each $key, $value in $map2 {
+  @each $key,
+  $value in $map2 {
 
-    @if map-get($return, $key) != null and type-of($value) == map and type-of(map-get($return, $key)) == map {
-      $value: extend(map-get($return, $key), $value);
+    @if map.get($return, $key) !=null and meta.type-of($value)==map and meta.type-of(map.get($return, $key))==map {
+      $value: extend(map.get($return, $key), $value);
     }
 
-    $return: map-merge($return, ($key: $value));
+    $return: map.merge($return, ($key: $value));
   }
 
   @return $return;

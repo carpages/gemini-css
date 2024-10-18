@@ -4,6 +4,9 @@
  ********************************
  */
 
+@use "sass:map";
+@use "sass:string";
+
 /**
  * You can override all of these settings
  */
@@ -34,11 +37,13 @@
 $gemini-base-defaults: (
   /**
    * Default Round Corners
-   */ border-radius: 4px,
+   */
+  border-radius: 4px,
 
   /**
    * Base Coloring
-   */ brand-color: #090,
+   */
+  brand-color: #090,
   link-color: #4374ae,
   color: #333,
   background-color: #fff,
@@ -46,20 +51,24 @@ $gemini-base-defaults: (
 
   /**
    * Font Sizing
-   */ font-size: 14px,
+   */
+  font-size: 14px,
   line-height: 24px,
 
   /**
    * Spacing
-   */ spacing: 24px,
+   */
+  spacing: 24px,
 
   /**
    * Type
-   */ brand-font-family: unquote("'Helvetica', Arial, sans-serif"),
-  font-family: unquote("'Helvetica', Arial, sans-serif"),
+   */
+  brand-font-family: string.unquote("'Helvetica', Arial, sans-serif"),
+  font-family: string.unquote("'Helvetica', Arial, sans-serif"),
   /**
    * Directories
-   */ font-directory: 'fonts',
+   */
+  font-directory: 'fonts',
   image-directory: '../img'
 );
 
@@ -76,8 +85,7 @@ $gemini-base-defaults: (
  * @prop {measurement} [large=1024px] When large breakpoint starts
  * @prop {measurement} [xlarge=1200px] When xlarge breakpoint starts
  */
-$gemini-screens-defaults: (
-  medium: 481px,
+$gemini-screens-defaults: (medium: 481px,
   large: 1024px,
   xlarge: 1200px,
 );
@@ -97,8 +105,7 @@ $gemini-screens-defaults: (
       grid: true
     );
  */
-$gemini-use-defaults: (
-  block-list: false,
+$gemini-use-defaults: (block-list: false,
   bullet-list: false,
   buttons: false,
   colors: false,
@@ -125,10 +132,10 @@ $gemini-use-defaults: (
  ********************************/
 
 $gemini-base: () !default;
-$gemini-base: map-merge($gemini-base-defaults, $gemini-base);
+$gemini-base: map.merge($gemini-base-defaults, $gemini-base);
 
 $gemini-screens: () !default;
-$gemini-screens: map-merge($gemini-screens-defaults, $gemini-screens);
+$gemini-screens: map.merge($gemini-screens-defaults, $gemini-screens);
 
 $gemini-use: () !default;
-$gemini-use: map-merge($gemini-use-defaults, $gemini-use);
+$gemini-use: map.merge($gemini-use-defaults, $gemini-use);

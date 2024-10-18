@@ -21,7 +21,7 @@
 @use "sass:math";
 
 @function base-em($val) {
-  $u: unit($val);
+  $u: math.unit($val);
 
   @if $u == "em" {
     @return $val;

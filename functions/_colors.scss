@@ -22,13 +22,14 @@
  */
 
 @use "sass:math";
+@use "sass:map";
 @use "sass:color";
 
 @function get-brightness($color) {
   $red: color.channel($color, "red", $space: rgb);
   $green: color.channel($color, "green", $space: rgb);
   $blue: color.channel($color, "blue", $space: rgb);
-  
+
   @return math.div(($red * 0.299) + ($green * 0.587) + ($blue * 0.114), 255) * 100%;
 }
 
@@ -47,14 +48,13 @@
       color: contrast-color(#090);
     }
  */
-@function contrast-color(
-    $color,
-    $dark: #333,
-    $light: #FFF
-  ) {
-  @if $color == null {
+@function contrast-color($color,
+  $dark: #333,
+  $light: #FFF) {
+  @if $color==null {
     @return null;
-  } 
+  }
+
   @else {
     $color-brightness: get-brightness($color);
     $dark-text-brightness: get-brightness($dark);
@@ -112,8 +112,8 @@ $gemini-color-collection: ();
     $garbage = addColor(blue, #009)
  */
 @function addColor($name, $color) {
-   $gemini-color-collection: map-merge($gemini-color-collection, ($name: $color)) !global;
-   @return $color;
+  $gemini-color-collection: map.merge($gemini-color-collection, ($name: $color)) !global;
+  @return $color;
 }
 
 /**
@@ -129,10 +129,12 @@ $gemini-color-collection: ();
       color: getColor(g25);
     }
  */
-@function getColor($name){
-  @if map-has-key($gemini-color-collection, $name) {
+@function getColor($name) {
+  @if map.has-key($gemini-color-collection, $name) {
     @return get($name, $gemini-color-collection);
-  } @else {
+  }
+
+  @else {
     @warn "Color #{$name} was not found.";
     @return null;
   }

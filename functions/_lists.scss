@@ -4,10 +4,13 @@
  ********************************
  */
 
- // Some list helpers thanks to
- // http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/
+  @use "sass:meta";
+  @use "sass:list";
 
-/**
+  // Some list helpers thanks to
+  // http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/
+
+  /**
  * @function remove
  * @description Remove an item from a list
  *
@@ -17,23 +20,23 @@
  *
  * @return {list} The newly trimmed list
  */
-@function remove($list, $value, $recursive: false) {
-  $result: ();
+  @function remove($list, $value, $recursive: false) {
+    $result: ();
 
-  @for $i from 1 through length($list) {
-    @if type-of(nth($list, $i)) == list and $recursive {
-      $result: append($result, remove(nth($list, $i), $value, $recursive));
+    @for $i from 1 through list.length($list) {
+      @if meta.type-of(list.nth($list, $i)) == list and $recursive {
+        $result: list.append($result, list.remove(list.nth($list, $i), $value, $recursive));
+      }
+
+      @else if list.nth($list, $i) !=$value {
+        $result: list.append($result, list.nth($list, $i));
+      }
     }
 
-    @else if nth($list, $i) != $value {
-      $result: append($result, nth($list, $i));
-    }
+    @return $result;
   }
 
-  @return $result;
-}
-
-/**
+  /**
  * @function implode
  * @description Implode the items of a list into a string. Similar to javascripts
  * Array.implode();
@@ -49,23 +52,25 @@
       content: implode((a,b,c), "-") // a-b-c;
     }
  */
-@function implode($list, $glue: "", $trim: true, $is-nested: false) {
-  $result: null;
+  @function implode($list, $glue: "", $trim: true, $is-nested: false) {
+    $result: null;
 
-  @if $trim {
-    $list: remove($list, "", true);
-    $list: remove($list, null, true);
-  }
-
-  @for $i from 1 through length($list) {
-    $e: nth($list, $i);
-
-    @if type-of($e) == list {
-      $result: $result#{implode($e, $glue, $trim, true)};
-    } @else {
-      $result: if($i != length($list) or $is-nested, #{$result}#{$e}#{$glue}, #{$result}#{$e});
+    @if $trim {
+      $list: remove($list, "", true);
+      $list: remove($list, null, true);
     }
-  }
 
-  @return $result;
-}
+    @for $i from 1 through list.length($list) {
+      $e: list.nth($list, $i);
+
+      @if meta.type-of($e) == list {
+        $result: $result#{implode($e, $glue, $trim, true)};
+      }
+
+      @else {
+        $result: if($i != list.length($list) or $is-nested, #{$result}#{$e}#{$glue}, #{$result}#{$e});
+      }
+    }
+
+    @return $result;
+  }

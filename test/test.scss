@@ -5,6 +5,77 @@
  * Make sure the build is compiling without error
  */
 
+@use "sass:map";
+@use "sass:string";
+
+/**
+ * Base Settings
+ */
+$gemini-base: (
+  background-color : #F4F4F4,
+  color : #222222,
+  spacing : 16px,
+  brand-color : #009900,
+  link-color : #4A90E2,
+  bfh-color : #5CB35D,
+  font-size : 14px,
+  line-height : 1.2,
+  border-color : #D6D6D6,
+  border-radius : 4px,
+  font-family : string.unquote("-apple-system, BlinkMacSystemFont, Roboto, Segoe UI, Helvetica Neue, Lucida Grande, sans-serif"),
+  brand-font-family : string.unquote("Proxima, Helvetica Neue, sans-serif"),
+  image-directory : "/dist/images",
+  font-directory : "/dist/fonts",
+  box-shadow : 0 1px 6px rgba(#444, 0.2)
+);
+
+$gemini-screens: (
+  medium : 480px,
+  large : 1024px,
+  xlarge : 1280px
+);
+
+$gemini-colors: (
+  darkerest-gray : rgb(25, 25, 25),
+  darkest-gray : rgb(51, 51, 51),
+  darker-gray : rgb(76, 76, 76),
+  dark-gray : rgb(102, 102, 102),
+  gray : rgb(127, 127, 127),
+  light-gray : rgb(200, 200, 200),
+  lighter-gray : rgb(214, 214, 214),
+  lightest-gray : rgb(228, 228, 228),
+  lighterest-gray : rgb(242, 242, 242),
+  red : #D63A3A,
+  green : #5CB35D,
+  blue : #4677AE,
+  orange : #FF9000,
+  yellow : #FFE228,
+  text: map.get($gemini-base, color),
+  link : map.get($gemini-base, link-color),
+  brand : map.get($gemini-base, brand-color),
+  border : map.get($gemini-base, border-color),
+  bfh: map.get($gemini-base, bfh-color),
+  background-light : #F8F8F9,
+  background-default : #F4F4F4,
+  // This is based on Chrome on OS X
+  // outline         : rgb(59, 153, 252)
+  outline : rgb(76, 183, 76),
+  outline-red : rgba(#D63A3A, 0.3),
+  outline-green : rgba(#5CB35D, 0.5),
+  outline-blue : rgba(#4677AE, 0.5),
+  outline-orange : rgba(#FF9000, 0.5),
+  outline-yellow : rgba(#FFE228, 0.5),
+  // For easily redefining what black & white mean
+  black: #000000,
+  white: #ffffff,
+  // Brands
+  facebook: #3A5998,
+  twitter: #1AB2E8,
+  google: #4386F7,
+  google-plus: #DD4C39,
+  pinterest: #C9232D,
+);
+
 $gemini-use: (
   arrows:         true,
   block-list:     true,

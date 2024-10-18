@@ -23,15 +23,18 @@
     "url": "https://github.com/carpages/gemini-css"
   },
   "scripts": {
-    "test": "sass test --source-map",
+    "test": "sass test --source-map --silence-deprecation import",
     "test:watch": "nodemon -e scss --exec \"yarn test\"",
     "migrate:sass": "concurrently npm:migrate:sass:color npm:migrate:sass:division npm:migrate:sass:module",
-    "migrate:sass:color": "sass-migrator color \"**/*.scss\" --migrate-deps",
-    "migrate:sass:division": "sass-migrator division \"**/*.scss\" --migrate-deps",
-    "migrate:sass:namespace": "sass-migrator namespace \"**/*.scss\" --migrate-deps",
-    "migrate:sass:module": "sass-migrator division \"**/*.scss\" --migrate-deps"
+    "migrate:sass:color": "sass-migrator color --migrate-deps init.scss",
+    "migrate:sass:division": "sass-migrator division --migrate-deps init.scss",
+    "migrate:sass:namespace": "sass-migrator namespace --migrate-deps init.scss",
+    "migrate:sass:module": "sass-migrator division --migrate-deps init.scss"
   },
   "license": "MIT",
+  "peerDependencies": {
+    "sass": "^1.80.2"
+  },
   "devDependencies": {
     "nodemon": "^3.1.7",
     "sass": "^1.80.2",

@@ -7,6 +7,7 @@
 @use 'sass:math';
 
 @if get(multi-list, $gemini-use) {
+
   /**
    * @module Multi Lists [.multi-list]
    * @description Splits a list into multiple columns
@@ -36,11 +37,13 @@
     margin-left: 0;
     @include clearfix;
   }
-  .multi-list > li {
+
+  .multi-list>li {
     float: left;
     width: 100%;
   }
-  .multi-list--block > li {
+
+  .multi-list--block>li {
     float: none;
     display: inline-block;
     vertical-align: top;
@@ -52,21 +55,23 @@
    * lists to determine how wide their columns are.
    */
   @for $i from 2 through 4 {
-    .multi-list--small-#{$i} > li {
-      width: percentage(math.div(1, $i));
+    .multi-list--small-#{$i}>li {
+      width: math.percentage(math.div(1, $i));
     }
   }
+
   @include media(medium) {
     @for $i from 2 through 4 {
-      .multi-list--medium-#{$i} > li {
-        width: percentage(math.div(1, $i));
+      .multi-list--medium-#{$i}>li {
+        width: math.percentage(math.div(1, $i));
       }
     }
   }
+
   @include media(large) {
     @for $i from 2 through 5 {
-      .multi-list--large-#{$i} > li {
-        width: percentage(math.div(1, $i));
+      .multi-list--large-#{$i}>li {
+        width: math.percentage(math.div(1, $i));
       }
     }
   }
@@ -87,7 +92,8 @@
   .yes-columnCount {
     .multi-list--vertical {
       @include gpu;
-      & > li {
+
+      &>li {
         float: none;
         width: 100%;
       }
@@ -115,4 +121,6 @@
       }
     }
   }
-} //endif
+}
+
+//endif

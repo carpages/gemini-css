@@ -4,6 +4,8 @@
  ********************************
  */
 
+@use "sass:meta";
+
 /**
  * @mixin media
  * @description It's not great practice to define solid breakpoints up-front,
@@ -132,7 +134,7 @@ $medium-end:             get(large, $gemini-screens) - 1px;
   @if $print == true {$print-query: "print, ";}
 
   // If we're outputting for a fixed media query...
-  @if variable-exists(fixed-queries) {
+  @if meta.variable-exists(fixed-queries) {
     //If the fixed query is in the media query range
 
     @if $fixed-queries >= $min and $fixed-queries <= $max { @content }
