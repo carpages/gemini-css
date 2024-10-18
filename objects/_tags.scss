@@ -18,29 +18,32 @@
  */
 $gemini-tags: () !default;
 
-$gemini-tags: extend((
-  color: #333,
-  background-color: #EEE,
-  padding-ends: 0.25em,
-  padding-sides: 0.5em,
-  border-width: 0,
-  border-color: get(border-color),
-  border-radius: 0
-), $gemini-tags);
+$gemini-tags: extend(
+  (
+    color: #333,
+    background-color: #eee,
+    padding-ends: 0.25em,
+    padding-sides: 0.5em,
+    border-width: 0,
+    border-color: get(border-color),
+    border-radius: 0,
+  ),
+  $gemini-tags
+);
 
 /**
  * Tags are a common CSS element that we see multiple elements extend,
  * including buttons, tabs, and various other tags
  */
 @mixin tag(
-  $color         : get(color, $gemini-tags),
-  $background    : get(background-color, $gemini-tags),
-  $ends          : get(padding-ends, $gemini-tags),
-  $sides         : get(padding-sides, $gemini-tags),
-  $border-width  : get(border-width, $gemini-tags),
-  $border-color  : get(border-color, $gemini-tags),
-  $border-radius : get(border-radius, $gemini-tags)
-  ) {
+  $color: get(color, $gemini-tags),
+  $background: get(background-color, $gemini-tags),
+  $ends: get(padding-ends, $gemini-tags),
+  $sides: get(padding-sides, $gemini-tags),
+  $border-width: get(border-width, $gemini-tags),
+  $border-color: get(border-color, $gemini-tags),
+  $border-radius: get(border-radius, $gemini-tags)
+) {
   display: inline-block;
   vertical-align: middle;
   font: inherit;
@@ -54,12 +57,11 @@ $gemini-tags: extend((
   border: $border-width solid $border-color;
 
   @if $border-radius > 0 {
-    @include border-radius($border-radius);
+    border-radius: $border-radius;
   }
-};
+}
 
 @if get(tags, $gemini-use) {
-
   /**
    * @module Tags [.tag]
    * @description Give text a background so it looks like a tag
@@ -76,7 +78,8 @@ $gemini-tags: extend((
   .tag {
     @include tag();
 
-    &, &:hover {
+    &,
+    &:hover {
       text-decoration: none;
     }
   }
@@ -99,4 +102,4 @@ $gemini-tags: extend((
   .tag--huge {
     padding: get(padding-ends, $gemini-tags) * 2 get(padding-sides, $gemini-tags) * 2;
   }
-}//endif
+} //endif

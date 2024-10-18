@@ -4,7 +4,7 @@
  ********************************
  */
 
-@use "sass:math";
+@use 'sass:math';
 
 @if get(multi-list, $gemini-use) {
   /**
@@ -47,7 +47,6 @@
     padding-bottom: get(spacing);
   }
 
-
   /**
    * Apply these classes alongside the '.multi-list' class on
    * lists to determine how wide their columns are.
@@ -72,7 +71,6 @@
     }
   }
 
-
   /**
    * @submodule Multi-list Vertical [.multi-list--vertical]
    * Requires Javascript to add the yes-columnCount parent class
@@ -96,14 +94,14 @@
 
       @for $i from 2 through 3 {
         &.multi-list--small-#{$i} {
-          @include column-count($i);
+          column-count: $i;
         }
       }
 
       @include media(medium) {
         @for $i from 2 through 4 {
           &.multi-list--medium-#{$i} {
-            @include column-count($i);
+            column-count: $i;
           }
         }
       }
@@ -111,10 +109,10 @@
       @include media(large) {
         @for $i from 2 through 5 {
           &.multi-list--large-#{$i} {
-            @include column-count($i);
+            column-count: $i;
           }
         }
       }
     }
   }
-}//endif
+} //endif

@@ -23,17 +23,19 @@
     "url": "https://github.com/carpages/gemini-css"
   },
   "scripts": {
-    "test": "sass test -I node_modules --source-map",
-    "migrate:sass:division": "sass-migrator division \"./**/*.scss\" -I node_modules"
+    "test": "sass test --source-map",
+    "test:watch": "nodemon -e scss --exec \"yarn test\"",
+    "migrate:sass": "concurrently npm:migrate:sass:color npm:migrate:sass:division npm:migrate:sass:module",
+    "migrate:sass:color": "sass-migrator color \"**/*.scss\" --migrate-deps",
+    "migrate:sass:division": "sass-migrator division \"**/*.scss\" --migrate-deps",
+    "migrate:sass:namespace": "sass-migrator namespace \"**/*.scss\" --migrate-deps",
+    "migrate:sass:module": "sass-migrator division \"**/*.scss\" --migrate-deps"
   },
   "license": "MIT",
-  "peerDependencies": {
-    "compass-mixins": "^0.12.12"
-  },
   "devDependencies": {
-    "compass-mixins": "^0.12.12",
-    "sass": "^1.69.4",
-    "sass-migrator": "^2.0.3"
+    "nodemon": "^3.1.7",
+    "sass": "^1.80.2",
+    "sass-migrator": "^2.2.0"
   },
-  "packageManager": "yarn@1.22.19+sha256.732620bac8b1690d507274f025f3c6cfdc3627a84d9642e38a07452cc00e0f2e"
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

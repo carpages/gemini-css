@@ -12,7 +12,7 @@
     <input type="text" value="Rounded" class="round" />
  */
 .round {
-  @include border-radius(get(border-radius) !important);
+  border-radius: get(border-radius) !important;
 }
 
 /**
@@ -23,7 +23,7 @@
     <input type="text" value="Rounded Full" class="round-full" />
  */
 .round-full {
-  @include border-radius(9999px !important);
+  border-radius: 9999px !important;
 }
 
 /**
@@ -34,5 +34,5 @@
     <input type="text" value="Ellipse" class="ellipse" />
  */
 .ellipse {
-  @include border-radius(100% !important);
+  border-radius: 100% !important;
 }
