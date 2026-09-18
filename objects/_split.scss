@@ -1,10 +1,9 @@
-/**
+@if get(split, $gemini-use) {
+  /**
  ********************************
  * _SPLIT.SCSS
  ********************************
  */
-
-@if get(split, $gemini-use) {
 
   /**
    * @module Split [.split]
@@ -34,4 +33,4 @@
       <li class=third><b class=split__title>Bluetooth</b> Yup</li>
     </ol>
    */
-}//endif
+}

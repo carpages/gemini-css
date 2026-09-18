@@ -1,10 +1,9 @@
-/**
+@if get(media, $gemini-use) {
+  /**
  ********************************
  * _MEDIA.SCSS
  ********************************
  */
-
-@if get(media, $gemini-use) {
 
   /**
    * @module Media [.media]
@@ -26,6 +25,7 @@
     float: left;
     margin-right: get(spacing);
   }
+
   /**
    * Reversed image location (right instead of left).
    */
@@ -46,8 +46,9 @@
   .media__content {
     overflow: hidden;
   }
+
   .media__content,
-  .media__content > :last-child {
+  .media__content> :last-child {
     margin-bottom: 0;
   }
 
@@ -66,4 +67,4 @@
       <p class="media__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
    */
-}//endif
+}

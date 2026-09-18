@@ -21,19 +21,20 @@
  * @return {list} The newly trimmed list
  */
   @function remove($list, $value, $recursive: false) {
-    $result: ();
+    $result: (
+    );
 
-    @for $i from 1 through list.length($list) {
-      @if meta.type-of(list.nth($list, $i)) == list and $recursive {
-        $result: list.append($result, list.remove(list.nth($list, $i), $value, $recursive));
-      }
-
-      @else if list.nth($list, $i) !=$value {
-        $result: list.append($result, list.nth($list, $i));
-      }
+  @for $i from 1 through list.length($list) {
+    @if meta.type-of(list.nth($list, $i))==list and $recursive {
+      $result: list.append($result, list.remove(list.nth($list, $i), $value, $recursive));
     }
 
-    @return $result;
+    @else if list.nth($list, $i) !=$value {
+      $result: list.append($result, list.nth($list, $i));
+    }
+  }
+
+  @return $result;
   }
 
   /**
@@ -63,12 +64,12 @@
     @for $i from 1 through list.length($list) {
       $e: list.nth($list, $i);
 
-      @if meta.type-of($e) == list {
+      @if meta.type-of($e)==list {
         $result: $result#{implode($e, $glue, $trim, true)};
       }
 
       @else {
-        $result: if($i != list.length($list) or $is-nested, #{$result}#{$e}#{$glue}, #{$result}#{$e});
+        $result: if(sass($i !=list.length($list) or $is-nested): #{$result}#{$e}#{$glue}; else: #{$result}#{$e});
       }
     }
 

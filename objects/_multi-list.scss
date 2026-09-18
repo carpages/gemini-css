@@ -1,12 +1,12 @@
-/**
+@use 'sass:math';
+
+@if get(multi-list, $gemini-use) {
+
+  /**
  ********************************
  * _MULTI-LIST.SCSS
  ********************************
  */
-
-@use 'sass:math';
-
-@if get(multi-list, $gemini-use) {
 
   /**
    * @module Multi Lists [.multi-list]
@@ -122,5 +122,3 @@
     }
   }
 }
-
-//endif

@@ -19,17 +19,16 @@
 @use "sass:math";
 @use "sass:color";
 
-$gemini-colors: () !default;
+$gemini-colors: (
+  ) !default;
 
-$gemini-colors: extend((
-  facebook:    #3A5998,
-  twitter:     #1AB2E8,
-  google:      #4386F7,
-  google-plus: #DD4C39,
-  pinterest:   #C9232D,
-), $gemini-colors);
-
-
+$gemini-colors: extend((facebook: #3A5998,
+      twitter: #1AB2E8,
+      google: #4386F7,
+      google-plus: #DD4C39,
+      pinterest: #C9232D,
+    ), $gemini-colors
+);
 
 /**
  * Add all the colors to the color collection
@@ -52,13 +51,11 @@ $gemini-colors: extend((
 // https://github.com/sass/libsass/issues/2149
 @for $i from 0 through math.div(100, 5) {
   $grey-percent: $i * 5;
-
   $trash: addColor(g + $grey-percent, color.adjust(#FFF, $lightness: $grey-percent * -1%, $space: hsl));
 }
 
 
 @if get(colors, $gemini-use) {
-
   @each $name, $color in $gemini-color-collection {
 
     /**
@@ -73,7 +70,5 @@ $gemini-colors: extend((
     .c-#{"" + $name} {
       color: $color;
     }
-
   }
-
 }

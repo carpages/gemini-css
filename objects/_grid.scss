@@ -1,50 +1,28 @@
-/**
- ********************************
- * _GRID.SCSS
- ********************************
- */
-
-/**
- * @settings $gemini-grid
- * @description The settings for the grid
- *
- * @prop {measurement} [max-width=get(xlarge, $gemini-screens)] The max-width of the grid's rows
- * @prop {measurement} [gutter=get(spacing)] The gutter size between the columns
- * @prop {integer} [columns=12] The number of columns in the grid
- * @prop {measurement} [medium-breakpoint=get(medium, $gemini-screens)] The breakpoint for medium layout
- * @prop {measurement} [large-breakpoint=get(large, $gemini-screens)] The breakpoint for large layout
- * @prop {measurement} [xlarge-breakpoint=get(xlarge, $gemini-screens)] The breakpoint for xlarge layout
- */
 @use "sass:math";
 
-$gemini-grid: () !default;
+$gemini-grid: (
+  ) !default;
 
 $gemini-grid: extend((max-width: get(xlarge, $gemini-screens),
-    gutter: get(spacing),
-    columns: 12,
-    medium-breakpoint: get(medium, $gemini-screens),
-    large-breakpoint: get(large, $gemini-screens),
-    xlarge-breakpoint: get(xlarge, $gemini-screens),
-  ), $gemini-grid);
+      gutter: get(spacing),
+      columns: 12,
+      medium-breakpoint: get(medium, $gemini-screens),
+      large-breakpoint: get(large, $gemini-screens),
+      xlarge-breakpoint: get(xlarge, $gemini-screens),
+    ), $gemini-grid
+);
 
-/**
- * This is inspired by the Foundation Grid
- * http://foundation.zurb.com/docs/components/grid.html
+// This is inspired by the Foundation Grid
+// http://foundation.zurb.com/docs/components/grid.html
+// You can play with a live example here:
+// http://codepen.io/mattdrose/pen/crEHG?editors=100
 
- * You can play with a live example here:
- * http://codepen.io/mattdrose/pen/crEHG?editors=100
- */
-
-//
 // Grid Functions
-//
 @function gridCalc($colNumber, $totalColumns) {
   @return math.percentage(math.div($colNumber, $totalColumns));
 }
 
-/*
- * SCREEN SPECIFIED GRID STYLINGS
- */
+// SCREEN SPECIFIED GRID STYLINGS
 @mixin screen-grid($screen) {
 
   // Center the column
@@ -106,6 +84,23 @@ $gemini-grid: extend((max-width: get(xlarge, $gemini-screens),
 }
 
 @if get(grid, $gemini-use) {
+  /**
+ ********************************
+ * _GRID.SCSS
+ ********************************
+ */
+
+  /**
+ * @settings $gemini-grid
+ * @description The settings for the grid
+ *
+ * @prop {measurement} [max-width=get(xlarge, $gemini-screens)] The max-width of the grid's rows
+ * @prop {measurement} [gutter=get(spacing)] The gutter size between the columns
+ * @prop {integer} [columns=12] The number of columns in the grid
+ * @prop {measurement} [medium-breakpoint=get(medium, $gemini-screens)] The breakpoint for medium layout
+ * @prop {measurement} [large-breakpoint=get(large, $gemini-screens)] The breakpoint for large layout
+ * @prop {measurement} [xlarge-breakpoint=get(xlarge, $gemini-screens)] The breakpoint for xlarge layout
+ */
 
   /**
  * @module Grid Row [.l-row]

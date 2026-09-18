@@ -60,7 +60,7 @@
     $dark-text-brightness: get-brightness($dark);
     $light-text-brightness: get-brightness($light);
 
-    @return if(math.abs($color-brightness - $light-text-brightness) > math.abs($color-brightness - $dark-text-brightness), $light, $dark);
+    @return if(sass(math.abs($color-brightness - $light-text-brightness) > math.abs($color-brightness - $dark-text-brightness)): $light; else: $dark);
   }
 }
 
@@ -97,7 +97,8 @@
 /**
  * Stores colors
  */
-$gemini-color-collection: ();
+$gemini-color-collection: (
+);
 
 /**
  * @function addColor

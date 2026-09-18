@@ -1,10 +1,11 @@
-/**
+@if get(copy, $gemini-use) {
+  /**
  ********************************
  * _COPY.SCSS
  ********************************
  */
 
-@if get(copy, $gemini-use) {
+
 
   /**
    * @module Copy Text [.copy]
@@ -38,4 +39,4 @@ necessitatibus magnam.</p>
       display: inline;
     }
   }
-}//endif
+}

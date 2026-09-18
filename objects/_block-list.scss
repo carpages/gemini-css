@@ -1,12 +1,11 @@
-/**
+@use "sass:math";
+
+@if get(block-list, $gemini-use) {
+  /**
  ********************************
  * _BLOCK-LIST.SCSS
  ********************************
  */
-
-@use "sass:math";
-
-@if get(block-list, $gemini-use) {
 
   /**
    * @module Block List [.block-list]
@@ -25,12 +24,13 @@
     list-style: none;
     margin-left: 0;
 
-    > li {
+    >li {
       padding: math.div(get(spacing), 2) 0;
     }
   }
+
   .block-list--sides {
-    > li {
+    >li {
       padding-left: get(spacing);
       padding-right: get(spacing);
     }
@@ -41,4 +41,6 @@
     padding: math.div(get(spacing), 2) 0;
     margin: math.div(- get(spacing), 2) 0;
   }
-}//endif
+}
+
+//endif

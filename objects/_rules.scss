@@ -1,10 +1,9 @@
-/**
+@if get(rules, $gemini-use) {
+  /**
  ********************************
  * _RULES.SCSS
  ********************************
  */
-
-@if get(rules, $gemini-use) {
 
   /**
    * @module Horizontal Rules [.rule]
@@ -49,14 +48,17 @@
     @extend %rule;
     @include border($position: "bottom");
   }
+
   .rule-left {
     @extend %rule;
     @include border($position: "left");
   }
+
   .rule-right {
     @extend %rule;
     @include border($position: "right");
   }
+
   .rule-top {
     @extend %rule;
     @include border($position: "top");
@@ -108,4 +110,4 @@
       content: attr(data-ornament);
     }
   }
-}//endif
+}

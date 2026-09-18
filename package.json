@@ -1,44 +1,43 @@
 {
-  "name": "gemini-css",
-  "version": "1.5.0",
-  "description": "Gemini CSS",
-  "author": {
-    "name": "Matt Rose",
-    "email": "matt@mattrose.ca",
-    "url": "http://mattrose.ca"
-  },
-  "contributors": [
-    {
-      "name": "Jeff Andrews",
-      "email": "jeffandrews@me.com",
-      "url": "http://jeffwandrews.com"
+    "name": "gemini-css",
+    "version": "1.5.0",
+    "description": "Gemini CSS",
+    "author": {
+        "name": "Matt Rose",
+        "email": "matt@mattrose.ca",
+        "url": "http://mattrose.ca"
+    },
+    "contributors": [
+        {
+            "name": "Jeff Andrews",
+            "email": "jeffandrews@me.com",
+            "url": "http://jeffwandrews.com"
+        }
+    ],
+    "main": "init.scss",
+    "engines": {
+        "node": ">=14"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/carpages/gemini-css"
+    },
+    "scripts": {
+        "test": "sass test --source-map --silence-deprecation import",
+        "test:watch": "nodemon -e scss --exec \"yarn test\"",
+        "migrate:sass": "concurrently npm:migrate:sass:color npm:migrate:sass:division npm:migrate:sass:module",
+        "migrate:sass:color": "sass-migrator color --migrate-deps init.scss",
+        "migrate:sass:division": "sass-migrator division --migrate-deps init.scss",
+        "migrate:sass:namespace": "sass-migrator namespace --migrate-deps init.scss",
+        "migrate:sass:module": "sass-migrator division --migrate-deps init.scss"
+    },
+    "license": "MIT",
+    "peerDependencies": {
+        "sass": "^1.80.2"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.14",
+        "sass": "^1.104.1",
+        "sass-migrator": "^2.6.1"
     }
-  ],
-  "main": "init.scss",
-  "engines": {
-    "node": ">=14"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/carpages/gemini-css"
-  },
-  "scripts": {
-    "test": "sass test --source-map --silence-deprecation import",
-    "test:watch": "nodemon -e scss --exec \"yarn test\"",
-    "migrate:sass": "concurrently npm:migrate:sass:color npm:migrate:sass:division npm:migrate:sass:module",
-    "migrate:sass:color": "sass-migrator color --migrate-deps init.scss",
-    "migrate:sass:division": "sass-migrator division --migrate-deps init.scss",
-    "migrate:sass:namespace": "sass-migrator namespace --migrate-deps init.scss",
-    "migrate:sass:module": "sass-migrator division --migrate-deps init.scss"
-  },
-  "license": "MIT",
-  "peerDependencies": {
-    "sass": "^1.80.2"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.7",
-    "sass": "^1.80.2",
-    "sass-migrator": "^2.2.0"
-  },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

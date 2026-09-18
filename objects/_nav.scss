@@ -1,12 +1,11 @@
-/**
+@use "sass:math";
+
+@if get(nav, $gemini-use) or get(pagination, $gemini-use) {
+  /**
  ********************************
  * _NAV.SCSS
  ********************************
  */
-
-@use "sass:math";
-
-@if get(nav, $gemini-use) or get(pagination, $gemini-use) {
 
   /**
    * @module Navigation Lists [.nav]
@@ -40,11 +39,12 @@
     margin: 0;
     @include clearfix;
 
-    > li {
-      margin-right: 0.1px\9; /* 1 */
+    >li {
+      margin-right: 0.1px\9;
+      /* 1 */
 
       &,
-      > a {
+      >a {
         display: inline-block;
         *display: inline;
         zoom: 1;
@@ -62,10 +62,10 @@
     </ul>
    */
   .nav--stacked {
-    > li {
+    >li {
       display: list-item;
 
-      > a {
+      >a {
         display: block;
       }
     }
@@ -117,12 +117,12 @@
     word-spacing: -0.43em;
     white-space: nowrap;
 
-    > li {
+    >li {
       letter-spacing: normal;
       word-spacing: normal;
 
       &,
-      > a {
+      >a {
         padding: math.div(get(spacing), 2);
       }
     }
@@ -138,7 +138,7 @@
     </ul>
    */
   .nav--spaced {
-    > li {
+    >li {
       margin-right: get(spacing);
 
       &:last-child {
@@ -146,8 +146,9 @@
       }
     }
   }
+
   .nav--spaced-left {
-    > li {
+    >li {
       margin-left: get(spacing);
 
       &:first-child {
@@ -169,10 +170,10 @@
     display: table;
     width: 100%;
 
-    > li {
+    >li {
       display: table-cell;
 
-      > a {
+      >a {
         display: block;
       }
     }
@@ -188,7 +189,7 @@
     </ul>
    */
   .nav--keywords {
-    > li {
+    >li {
       &:after {
         content: "\002C" "\00A0";
       }
@@ -207,12 +208,12 @@
       <li><a href=#>Mustang</a></li>
     </ol>
    */
-  .nav--breadcrumb > li {
-    + li:before {
+  .nav--breadcrumb>li {
+    +li:before {
       content: "\002F" "\00A0";
     }
 
-    + li[data-breadcrumb]:before {
+    +li[data-breadcrumb]:before {
       content: attr(data-breadcrumb) "\00A0";
     }
   }
@@ -230,4 +231,4 @@
     white-space: nowrap;
     overflow-x: scroll;
   }
-}//endif
+}

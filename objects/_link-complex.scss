@@ -1,10 +1,11 @@
-/**
+@if get(link-complex, $gemini-use) {
+  /**
  ********************************
  * _LINK-COMPLEX.SCSS
  ********************************
  */
 
-@if get(link-complex, $gemini-use) {
+
   /**
    * @module Complex Links [.link-complex]
    * @description Add hover behaviour to only selected items within links (https://github.com/necolas/suit-utils-link/blob/master/link.css)
@@ -17,9 +18,11 @@
     text-decoration: none;
     color: inherit;
   }
+
   .link-complex__target {
     color: get(link-color);
   }
+
   /**
    * @submodule Link target [.link-complex__target]
    * @description Text in link to underline
@@ -36,4 +39,4 @@
       <span class=link-complex__target>Log in</span> to your account
     </a>
    */
-}//endif
+}

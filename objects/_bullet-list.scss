@@ -1,10 +1,10 @@
-/**
+@if get(bullet-list, $gemini-use) {
+  /**
  ********************************
  * _BULLET-LIST.SCSS
  ********************************
  */
 
-@if get(bullet-list, $gemini-use) {
 
   /**
    * @module Bullet Lists [.bullet-list]
@@ -23,7 +23,7 @@
     list-style: none;
     margin-left: 0;
 
-    & > li {
+    &>li {
       list-style: none;
       position: relative;
       padding-left: get(spacing);
@@ -38,4 +38,6 @@
       }
     }
   }
-}//endif
+}
+
+//endif

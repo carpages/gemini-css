@@ -1,10 +1,9 @@
-/**
+@if get(stats, $gemini-use) {
+  /**
  ********************************
  * _STATS.SCSS
  ********************************
  */
-
-@if get(stats, $gemini-use) {
 
   /**
    * @module Stat Group [.stat-group]
@@ -17,6 +16,7 @@
 
   %stat-group--n {
     margin-left: 0;
+
     .stat {
       margin-left: 0;
     }
@@ -24,6 +24,7 @@
 
   .stat-group--3 {
     @extend %stat-group--n;
+
     .stat {
       width: 33.333%;
     }
@@ -31,6 +32,7 @@
 
   .stat-group--4 {
     @extend %stat-group--n;
+
     .stat {
       width: 25%;
     }
@@ -87,4 +89,4 @@
       </dl>
     </div>
    */
-}//endif
+}
