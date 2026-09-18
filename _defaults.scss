@@ -85,7 +85,8 @@ $gemini-base-defaults: (
  * @prop {measurement} [large=1024px] When large breakpoint starts
  * @prop {measurement} [xlarge=1200px] When xlarge breakpoint starts
  */
-$gemini-screens-defaults: (medium: 481px,
+$gemini-screens-defaults: (
+  medium: 481px,
   large: 1024px,
   xlarge: 1200px,
 );
@@ -105,7 +106,8 @@ $gemini-screens-defaults: (medium: 481px,
       grid: true
     );
  */
-$gemini-use-defaults: (block-list: false,
+$gemini-use-defaults: (
+  block-list: false,
   bullet-list: false,
   buttons: false,
   colors: false,
@@ -125,17 +127,25 @@ $gemini-use-defaults: (block-list: false,
   split: false,
   stats: false,
   tags: false,
+  reset: true,
+  normalize: true,
 );
 
 /********************************
  * DEFAULT OVERWRITES
  ********************************/
 
-$gemini-base: () !default;
-$gemini-base: map.merge($gemini-base-defaults, $gemini-base);
+$gemini-base: (
+  ) !default;
+$gemini-base: map.merge($gemini-base-defaults, $gemini-base
+);
 
-$gemini-screens: () !default;
-$gemini-screens: map.merge($gemini-screens-defaults, $gemini-screens);
+$gemini-screens: (
+  ) !default;
+$gemini-screens: map.merge($gemini-screens-defaults, $gemini-screens
+);
 
-$gemini-use: () !default;
-$gemini-use: map.merge($gemini-use-defaults, $gemini-use);
+$gemini-use: (
+  ) !default;
+$gemini-use: map.merge($gemini-use-defaults, $gemini-use
+);
